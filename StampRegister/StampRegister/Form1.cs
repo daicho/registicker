@@ -188,8 +188,8 @@ namespace StampRegister
                         nameList.Items[i].SubItems.Add(worksheet.Cell(i + 2, col).Value.ToString());
                     col++;
 
-                    // リリース完了
-                    if (worksheet.Cell(i + 2, col).Value.ToString() == "")
+					// リリース完了
+					if (worksheet.Cell(i + 2, col).Value.ToString() == "")
                         nameList.Items[i].SubItems.Add("0");
                     else
                         nameList.Items[i].SubItems.Add(worksheet.Cell(i + 2, col).Value.ToString());
@@ -200,6 +200,8 @@ namespace StampRegister
                     nameList.Items[i].SubItems.Add(worksheet.Cell(i + 2, col++).Value.ToString()); // Illustratorファイル名
                 }
             }
+
+			releaseCount.Text = countRelease().ToString();
         }
 
         /// <summary>
@@ -238,6 +240,20 @@ namespace StampRegister
                 workbook.Save();
             }
         }
+
+		/// <summary>
+		/// リリース未完数をカウントする
+		/// </summary>
+		/// <returns>リリース未完数</returns>
+		int countRelease()
+		{
+			int relNum = 0;
+			
+			foreach (ListViewItem item in nameList.Items)
+				relNum += 2 - (int.Parse(item.SubItems[8].Text) + 1) / 2;
+
+			return relNum;
+		}
 
         /// <summary>
         /// 登録開始の処理をする。
@@ -1083,6 +1099,8 @@ TagRegister:
 					else
 						item.SubItems[(int)Columns.release].Text = "3";
 
+					releaseCount.Text = countRelease().ToString();
+
 					// 再起動
 					if (++cnt == restartCount.Value)
                         Restart("/rel");
@@ -1358,5 +1376,5 @@ TagRegister:
                 SaveNameList(nameListFile.Text);
             }
         }
-    }
+	}
 }

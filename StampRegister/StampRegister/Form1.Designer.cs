@@ -78,6 +78,8 @@
 			this.forward = new System.Windows.Forms.ToolStripButton();
 			this.reload = new System.Windows.Forms.ToolStripButton();
 			this.url = new StampRegister.ToolStripSpringTextBox();
+			this.label3 = new System.Windows.Forms.Label();
+			this.releaseCount = new System.Windows.Forms.Label();
 			((System.ComponentModel.ISupportInitialize)(this.split)).BeginInit();
 			this.split.Panel1.SuspendLayout();
 			this.split.Panel2.SuspendLayout();
@@ -278,6 +280,8 @@
 			this.nameInfo.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+			this.nameInfo.Controls.Add(this.releaseCount);
+			this.nameInfo.Controls.Add(this.label3);
 			this.nameInfo.Controls.Add(this.nameReload);
 			this.nameInfo.Controls.Add(this.browse);
 			this.nameInfo.Controls.Add(this.nameListFile);
@@ -343,10 +347,10 @@
 			this.nameList.FullRowSelect = true;
 			this.nameList.GridLines = true;
 			this.nameList.HideSelection = false;
-			this.nameList.Location = new System.Drawing.Point(6, 44);
+			this.nameList.Location = new System.Drawing.Point(6, 63);
 			this.nameList.MultiSelect = false;
 			this.nameList.Name = "nameList";
-			this.nameList.Size = new System.Drawing.Size(480, 312);
+			this.nameList.Size = new System.Drawing.Size(480, 293);
 			this.nameList.TabIndex = 15;
 			this.nameList.UseCompatibleStateImageBehavior = false;
 			this.nameList.View = System.Windows.Forms.View.Details;
@@ -604,6 +608,24 @@
 			this.url.Size = new System.Drawing.Size(355, 33);
 			this.url.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Url_KeyDown);
 			// 
+			// label3
+			// 
+			this.label3.AutoSize = true;
+			this.label3.Location = new System.Drawing.Point(6, 48);
+			this.label3.Name = "label3";
+			this.label3.Size = new System.Drawing.Size(48, 12);
+			this.label3.TabIndex = 17;
+			this.label3.Text = "リリース : ";
+			// 
+			// releaseCount
+			// 
+			this.releaseCount.AutoSize = true;
+			this.releaseCount.Location = new System.Drawing.Point(49, 48);
+			this.releaseCount.Name = "releaseCount";
+			this.releaseCount.Size = new System.Drawing.Size(11, 12);
+			this.releaseCount.TabIndex = 18;
+			this.releaseCount.Text = "0";
+			// 
 			// Form1
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -686,6 +708,8 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.NumericUpDown restartCount;
         private System.Windows.Forms.Label label4;
-    }
+		private System.Windows.Forms.Label label3;
+		private System.Windows.Forms.Label releaseCount;
+	}
 }
 
