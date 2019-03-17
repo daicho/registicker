@@ -1,0 +1,37 @@
+C:\Users\Daichi\Desktop\ChangeUserAgent\ChangeUserAgent\bin\Release\ChangeUserAgent.exe
+C:\Users\Daichi\Desktop\ChangeUserAgent\ChangeUserAgent\bin\Release\ChangeUserAgent.pdb
+C:\Users\Daichi\Desktop\ChangeUserAgent\ChangeUserAgent\bin\Release\ChangeUserAgent.xml
+C:\Users\Daichi\Desktop\ChangeUserAgent\ChangeUserAgent\obj\Release\ChangeUserAgent.vbprojResolveAssemblyReference.cache
+C:\Users\Daichi\Desktop\ChangeUserAgent\ChangeUserAgent\obj\Release\ChangeUserAgent.Resources.resources
+C:\Users\Daichi\Desktop\ChangeUserAgent\ChangeUserAgent\obj\Release\ChangeUserAgent.vbproj.GenerateResource.Cache
+C:\Users\Daichi\Desktop\ChangeUserAgent\ChangeUserAgent\obj\Release\ChangeUserAgent.exe
+C:\Users\Daichi\Desktop\ChangeUserAgent\ChangeUserAgent\obj\Release\ChangeUserAgent.xml
+C:\Users\Daichi\Desktop\ChangeUserAgent\ChangeUserAgent\obj\Release\ChangeUserAgent.pdb
+I:\DaichiBox\MyProjects\adidasBoost\adidasBoost 1.00\Code\ChangeUserAgent\ChangeUserAgent\bin\Release\ChangeUserAgent.exe
+I:\DaichiBox\MyProjects\adidasBoost\adidasBoost 1.00\Code\ChangeUserAgent\ChangeUserAgent\bin\Release\ChangeUserAgent.pdb
+I:\DaichiBox\MyProjects\adidasBoost\adidasBoost 1.00\Code\ChangeUserAgent\ChangeUserAgent\bin\Release\ChangeUserAgent.xml
+I:\DaichiBox\MyProjects\adidasBoost\adidasBoost 1.00\Code\ChangeUserAgent\ChangeUserAgent\obj\Release\ChangeUserAgent.Resources.resources
+I:\DaichiBox\MyProjects\adidasBoost\adidasBoost 1.00\Code\ChangeUserAgent\ChangeUserAgent\obj\Release\ChangeUserAgent.vbproj.GenerateResource.Cache
+I:\DaichiBox\MyProjects\adidasBoost\adidasBoost 1.00\Code\ChangeUserAgent\ChangeUserAgent\obj\Release\ChangeUserAgent.exe
+I:\DaichiBox\MyProjects\adidasBoost\adidasBoost 1.00\Code\ChangeUserAgent\ChangeUserAgent\obj\Release\ChangeUserAgent.xml
+I:\DaichiBox\MyProjects\adidasBoost\adidasBoost 1.00\Code\ChangeUserAgent\ChangeUserAgent\obj\Release\ChangeUserAgent.pdb
+C:\Users\Daichi\Desktop\StampRegister\Code\ChangeUserAgent\ChangeUserAgent\obj\Release\ChangeUserAgent.exe
+C:\Users\Daichi\Desktop\StampRegister\Code\ChangeUserAgent\ChangeUserAgent\obj\Release\ChangeUserAgent.xml
+C:\Users\Daichi\Desktop\StampRegister\Code\ChangeUserAgent\ChangeUserAgent\obj\Release\ChangeUserAgent.pdb
+C:\Users\Daichi\Desktop\StampRegister\Code\ChangeUserAgent\ChangeUserAgent\bin\Release\ChangeUserAgent.exe
+C:\Users\Daichi\Desktop\StampRegister\Code\ChangeUserAgent\ChangeUserAgent\bin\Release\ChangeUserAgent.pdb
+C:\Users\Daichi\Desktop\StampRegister\Code\ChangeUserAgent\ChangeUserAgent\bin\Release\ChangeUserAgent.xml
+C:\Users\Daichi\Desktop\StampRegister\Code\ChangeUserAgent\ChangeUserAgent\obj\Release\ChangeUserAgent.vbprojResolveAssemblyReference.cache
+C:\Users\Daichi\Desktop\StampRegister\Code\ChangeUserAgent\ChangeUserAgent\obj\Release\ChangeUserAgent.Resources.resources
+C:\Users\Daichi\Desktop\StampRegister\Code\ChangeUserAgent\ChangeUserAgent\obj\Release\ChangeUserAgent.vbproj.GenerateResource.Cache
+P:\DaichiBox\MyProjects\StampRegister\StampRegister 3.50\Code\ChangeUserAgent\ChangeUserAgent\bin\Release\ChangeUserAgent.exe.config
+P:\DaichiBox\MyProjects\StampRegister\StampRegister 3.50\Code\ChangeUserAgent\ChangeUserAgent\bin\Release\ChangeUserAgent.exe
+P:\DaichiBox\MyProjects\StampRegister\StampRegister 3.50\Code\ChangeUserAgent\ChangeUserAgent\bin\Release\ChangeUserAgent.pdb
+P:\DaichiBox\MyProjects\StampRegister\StampRegister 3.50\Code\ChangeUserAgent\ChangeUserAgent\bin\Release\ChangeUserAgent.xml
+P:\DaichiBox\MyProjects\StampRegister\StampRegister 3.50\Code\ChangeUserAgent\ChangeUserAgent\obj\Release\ChangeUserAgent.vbprojAssemblyReference.cache
+P:\DaichiBox\MyProjects\StampRegister\StampRegister 3.50\Code\ChangeUserAgent\ChangeUserAgent\obj\Release\ChangeUserAgent.Resources.resources
+P:\DaichiBox\MyProjects\StampRegister\StampRegister 3.50\Code\ChangeUserAgent\ChangeUserAgent\obj\Release\ChangeUserAgent.vbproj.GenerateResource.cache
+P:\DaichiBox\MyProjects\StampRegister\StampRegister 3.50\Code\ChangeUserAgent\ChangeUserAgent\obj\Release\ChangeUserAgent.vbproj.CoreCompileInputs.cache
+P:\DaichiBox\MyProjects\StampRegister\StampRegister 3.50\Code\ChangeUserAgent\ChangeUserAgent\obj\Release\ChangeUserAgent.exe
+P:\DaichiBox\MyProjects\StampRegister\StampRegister 3.50\Code\ChangeUserAgent\ChangeUserAgent\obj\Release\ChangeUserAgent.xml
+P:\DaichiBox\MyProjects\StampRegister\StampRegister 3.50\Code\ChangeUserAgent\ChangeUserAgent\obj\Release\ChangeUserAgent.pdb

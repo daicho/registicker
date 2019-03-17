@@ -1,0 +1,228 @@
+C:\Users\Daichi\Desktop\StampRegister\StampRegister\bin\Debug\StampRegister.exe.config
+C:\Users\Daichi\Desktop\StampRegister\StampRegister\bin\Debug\StampRegister.exe
+C:\Users\Daichi\Desktop\StampRegister\StampRegister\bin\Debug\StampRegister.pdb
+C:\Users\Daichi\Desktop\StampRegister\StampRegister\obj\Debug\StampRegister.csprojResolveAssemblyReference.cache
+C:\Users\Daichi\Desktop\StampRegister\StampRegister\obj\Debug\WindowsFormsApplication1.Form1.resources
+C:\Users\Daichi\Desktop\StampRegister\StampRegister\obj\Debug\WindowsFormsApplication1.Properties.Resources.resources
+C:\Users\Daichi\Desktop\StampRegister\StampRegister\obj\Debug\StampRegister.csproj.GenerateResource.Cache
+C:\Users\Daichi\Desktop\StampRegister\StampRegister\obj\Debug\StampRegister.exe
+C:\Users\Daichi\Desktop\StampRegister\StampRegister\obj\Debug\StampRegister.pdb
+C:\Users\Daichi\Desktop\StampRegister\StampRegister\obj\Debug\WindowsFormsApplication1.Form2.resources
+C:\Users\Daichi\Desktop\StampRegister\Code\StampRegister\StampRegister\bin\Debug\StampRegister.exe.config
+C:\Users\Daichi\Desktop\StampRegister\Code\StampRegister\StampRegister\obj\Debug\StampRegister.exe
+C:\Users\Daichi\Desktop\StampRegister\Code\StampRegister\StampRegister\obj\Debug\StampRegister.pdb
+C:\Users\Daichi\Desktop\StampRegister\Code\StampRegister\StampRegister\bin\Debug\StampRegister.exe
+C:\Users\Daichi\Desktop\StampRegister\Code\StampRegister\StampRegister\bin\Debug\StampRegister.pdb
+C:\Users\Daichi\Desktop\StampRegister\Code\StampRegister\StampRegister\obj\Debug\StampRegister.csproj.GenerateResource.Cache
+C:\Users\Daichi\Desktop\StampRegister\Code\StampRegister\StampRegister\obj\Debug\StampRegister.Form1.resources
+C:\Users\Daichi\Desktop\StampRegister\Code\StampRegister\StampRegister\obj\Debug\StampRegister.Form2.resources
+C:\Users\Daichi\Desktop\StampRegister\Code\StampRegister\StampRegister\obj\Debug\StampRegister.Properties.Resources.resources
+C:\Users\Daichi\Desktop\StampRegister\Code\StampRegister\StampRegister\obj\Debug\StampRegister.csprojResolveAssemblyReference.cache
+P:\DaichiBox\MyProjects\StampRegister\Code\StampRegister\StampRegister\bin\Debug\StampRegister.exe.config
+P:\DaichiBox\MyProjects\StampRegister\Code\StampRegister\StampRegister\obj\Debug\StampRegister.exe
+P:\DaichiBox\MyProjects\StampRegister\Code\StampRegister\StampRegister\obj\Debug\StampRegister.pdb
+P:\DaichiBox\MyProjects\StampRegister\Code\StampRegister\StampRegister\bin\Debug\StampRegister.exe
+P:\DaichiBox\MyProjects\StampRegister\Code\StampRegister\StampRegister\bin\Debug\StampRegister.pdb
+P:\DaichiBox\MyProjects\StampRegister\Code\StampRegister\StampRegister\obj\Debug\StampRegister.csprojResolveAssemblyReference.cache
+P:\DaichiBox\MyProjects\StampRegister\Code\StampRegister\StampRegister\obj\Debug\StampRegister.Form1.resources
+P:\DaichiBox\MyProjects\StampRegister\Code\StampRegister\StampRegister\obj\Debug\StampRegister.Form2.resources
+P:\DaichiBox\MyProjects\StampRegister\Code\StampRegister\StampRegister\obj\Debug\StampRegister.Properties.Resources.resources
+P:\DaichiBox\MyProjects\StampRegister\Code\StampRegister\StampRegister\obj\Debug\StampRegister.csproj.GenerateResource.Cache
+P:\DaichiBox\MyProjects\StampRegister\StampRegister 1.20\Code\StampRegister\StampRegister\bin\Debug\StampRegister.exe.config
+P:\DaichiBox\MyProjects\StampRegister\StampRegister 1.20\Code\StampRegister\StampRegister\obj\Debug\StampRegister.exe
+P:\DaichiBox\MyProjects\StampRegister\StampRegister 1.20\Code\StampRegister\StampRegister\obj\Debug\StampRegister.pdb
+P:\DaichiBox\MyProjects\StampRegister\StampRegister 1.20\Code\StampRegister\StampRegister\bin\Debug\StampRegister.exe
+P:\DaichiBox\MyProjects\StampRegister\StampRegister 1.20\Code\StampRegister\StampRegister\bin\Debug\StampRegister.pdb
+P:\DaichiBox\MyProjects\StampRegister\StampRegister 1.20\Code\StampRegister\StampRegister\obj\Debug\StampRegister.csprojResolveAssemblyReference.cache
+P:\DaichiBox\MyProjects\StampRegister\StampRegister 1.20\Code\StampRegister\StampRegister\obj\Debug\StampRegister.Form1.resources
+P:\DaichiBox\MyProjects\StampRegister\StampRegister 1.20\Code\StampRegister\StampRegister\obj\Debug\StampRegister.Form2.resources
+P:\DaichiBox\MyProjects\StampRegister\StampRegister 1.20\Code\StampRegister\StampRegister\obj\Debug\StampRegister.Properties.Resources.resources
+P:\DaichiBox\MyProjects\StampRegister\StampRegister 1.20\Code\StampRegister\StampRegister\obj\Debug\StampRegister.csproj.GenerateResource.Cache
+P:\DaichiBox\MyProjects\StampRegister\StampRegister 1.20\Code\StampRegister\StampRegister\bin\Debug\ClosedXML.dll
+P:\DaichiBox\MyProjects\StampRegister\StampRegister 1.20\Code\StampRegister\StampRegister\bin\Debug\DocumentFormat.OpenXml.dll
+P:\DaichiBox\MyProjects\StampRegister\StampRegister 1.20\Code\StampRegister\StampRegister\bin\Debug\ExcelNumberFormat.dll
+P:\DaichiBox\MyProjects\StampRegister\StampRegister 1.20\Code\StampRegister\StampRegister\bin\Debug\FastMember.Signed.dll
+P:\DaichiBox\MyProjects\StampRegister\StampRegister 1.20\Code\StampRegister\StampRegister\bin\Debug\ClosedXML.pdb
+P:\DaichiBox\MyProjects\StampRegister\StampRegister 1.20\Code\StampRegister\StampRegister\bin\Debug\ClosedXML.xml
+P:\DaichiBox\MyProjects\StampRegister\StampRegister 1.20\Code\StampRegister\StampRegister\bin\Debug\DocumentFormat.OpenXml.xml
+P:\DaichiBox\MyProjects\StampRegister\StampRegister 1.20\Code\StampRegister\StampRegister\bin\Debug\ExcelNumberFormat.xml
+P:\DaichiBox\MyProjects\StampRegister\StampRegister 2.10\Code\StampRegister\StampRegister\bin\Debug\StampRegister.exe.config
+P:\DaichiBox\MyProjects\StampRegister\StampRegister 2.10\Code\StampRegister\StampRegister\obj\Debug\StampRegister.exe
+P:\DaichiBox\MyProjects\StampRegister\StampRegister 2.10\Code\StampRegister\StampRegister\obj\Debug\StampRegister.pdb
+P:\DaichiBox\MyProjects\StampRegister\StampRegister 2.10\Code\StampRegister\StampRegister\bin\Debug\StampRegister.exe
+P:\DaichiBox\MyProjects\StampRegister\StampRegister 2.10\Code\StampRegister\StampRegister\bin\Debug\StampRegister.pdb
+P:\DaichiBox\MyProjects\StampRegister\StampRegister 2.10\Code\StampRegister\StampRegister\bin\Debug\ClosedXML.dll
+P:\DaichiBox\MyProjects\StampRegister\StampRegister 2.10\Code\StampRegister\StampRegister\bin\Debug\DocumentFormat.OpenXml.dll
+P:\DaichiBox\MyProjects\StampRegister\StampRegister 2.10\Code\StampRegister\StampRegister\bin\Debug\ExcelNumberFormat.dll
+P:\DaichiBox\MyProjects\StampRegister\StampRegister 2.10\Code\StampRegister\StampRegister\bin\Debug\FastMember.Signed.dll
+P:\DaichiBox\MyProjects\StampRegister\StampRegister 2.10\Code\StampRegister\StampRegister\bin\Debug\ClosedXML.pdb
+P:\DaichiBox\MyProjects\StampRegister\StampRegister 2.10\Code\StampRegister\StampRegister\bin\Debug\ClosedXML.xml
+P:\DaichiBox\MyProjects\StampRegister\StampRegister 2.10\Code\StampRegister\StampRegister\bin\Debug\DocumentFormat.OpenXml.xml
+P:\DaichiBox\MyProjects\StampRegister\StampRegister 2.10\Code\StampRegister\StampRegister\bin\Debug\ExcelNumberFormat.xml
+P:\DaichiBox\MyProjects\StampRegister\StampRegister 2.10\Code\StampRegister\StampRegister\obj\Debug\StampRegister.csprojResolveAssemblyReference.cache
+P:\DaichiBox\MyProjects\StampRegister\StampRegister 2.10\Code\StampRegister\StampRegister\obj\Debug\StampRegister.Form1.resources
+P:\DaichiBox\MyProjects\StampRegister\StampRegister 2.10\Code\StampRegister\StampRegister\obj\Debug\StampRegister.Form2.resources
+P:\DaichiBox\MyProjects\StampRegister\StampRegister 2.10\Code\StampRegister\StampRegister\obj\Debug\StampRegister.Properties.Resources.resources
+P:\DaichiBox\MyProjects\StampRegister\StampRegister 2.10\Code\StampRegister\StampRegister\obj\Debug\StampRegister.csproj.GenerateResource.Cache
+P:\DaichiBox\MyProjects\StampRegister\StampRegister 2.02\Code\StampRegister\StampRegister\bin\Debug\StampRegister.exe.config
+P:\DaichiBox\MyProjects\StampRegister\StampRegister 2.02\Code\StampRegister\StampRegister\obj\Debug\StampRegister.exe
+P:\DaichiBox\MyProjects\StampRegister\StampRegister 2.02\Code\StampRegister\StampRegister\obj\Debug\StampRegister.pdb
+P:\DaichiBox\MyProjects\StampRegister\StampRegister 2.02\Code\StampRegister\StampRegister\bin\Debug\StampRegister.exe
+P:\DaichiBox\MyProjects\StampRegister\StampRegister 2.02\Code\StampRegister\StampRegister\bin\Debug\StampRegister.pdb
+P:\DaichiBox\MyProjects\StampRegister\StampRegister 2.02\Code\StampRegister\StampRegister\bin\Debug\ClosedXML.dll
+P:\DaichiBox\MyProjects\StampRegister\StampRegister 2.02\Code\StampRegister\StampRegister\bin\Debug\DocumentFormat.OpenXml.dll
+P:\DaichiBox\MyProjects\StampRegister\StampRegister 2.02\Code\StampRegister\StampRegister\bin\Debug\ExcelNumberFormat.dll
+P:\DaichiBox\MyProjects\StampRegister\StampRegister 2.02\Code\StampRegister\StampRegister\bin\Debug\FastMember.Signed.dll
+P:\DaichiBox\MyProjects\StampRegister\StampRegister 2.02\Code\StampRegister\StampRegister\bin\Debug\ClosedXML.pdb
+P:\DaichiBox\MyProjects\StampRegister\StampRegister 2.02\Code\StampRegister\StampRegister\bin\Debug\ClosedXML.xml
+P:\DaichiBox\MyProjects\StampRegister\StampRegister 2.02\Code\StampRegister\StampRegister\bin\Debug\DocumentFormat.OpenXml.xml
+P:\DaichiBox\MyProjects\StampRegister\StampRegister 2.02\Code\StampRegister\StampRegister\bin\Debug\ExcelNumberFormat.xml
+P:\DaichiBox\MyProjects\StampRegister\StampRegister 2.02\Code\StampRegister\StampRegister\obj\Debug\StampRegister.csprojResolveAssemblyReference.cache
+P:\DaichiBox\MyProjects\StampRegister\StampRegister 2.02\Code\StampRegister\StampRegister\obj\Debug\StampRegister.Form1.resources
+P:\DaichiBox\MyProjects\StampRegister\StampRegister 2.02\Code\StampRegister\StampRegister\obj\Debug\StampRegister.Form2.resources
+P:\DaichiBox\MyProjects\StampRegister\StampRegister 2.02\Code\StampRegister\StampRegister\obj\Debug\StampRegister.Properties.Resources.resources
+P:\DaichiBox\MyProjects\StampRegister\StampRegister 2.02\Code\StampRegister\StampRegister\obj\Debug\StampRegister.csproj.GenerateResource.Cache
+P:\DaichiBox\MyProjects\StampRegister\StampRegister 2.10\Code\StampRegister\StampRegister\obj\Debug\Interop.Illustrator.dll
+P:\DaichiBox\MyProjects\StampRegister\StampRegister 2.10\Code\StampRegister\StampRegister\obj\Debug\StampRegister.csproj.ResolveComReference.cache
+P:\DaichiBox\MyProjects\StampRegister\StampRegister 3.10\Code\StampRegister\StampRegister\bin\Debug\StampRegister.exe.config
+P:\DaichiBox\MyProjects\StampRegister\StampRegister 3.10\Code\StampRegister\StampRegister\obj\Debug\Interop.Illustrator.dll
+P:\DaichiBox\MyProjects\StampRegister\StampRegister 3.10\Code\StampRegister\StampRegister\obj\Debug\StampRegister.csproj.ResolveComReference.cache
+P:\DaichiBox\MyProjects\StampRegister\StampRegister 3.10\Code\StampRegister\StampRegister\obj\Debug\StampRegister.exe
+P:\DaichiBox\MyProjects\StampRegister\StampRegister 3.10\Code\StampRegister\StampRegister\obj\Debug\StampRegister.pdb
+P:\DaichiBox\MyProjects\StampRegister\StampRegister 3.10\Code\StampRegister\StampRegister\bin\Debug\StampRegister.exe
+P:\DaichiBox\MyProjects\StampRegister\StampRegister 3.10\Code\StampRegister\StampRegister\bin\Debug\StampRegister.pdb
+P:\DaichiBox\MyProjects\StampRegister\StampRegister 3.10\Code\StampRegister\StampRegister\bin\Debug\ClosedXML.dll
+P:\DaichiBox\MyProjects\StampRegister\StampRegister 3.10\Code\StampRegister\StampRegister\bin\Debug\DocumentFormat.OpenXml.dll
+P:\DaichiBox\MyProjects\StampRegister\StampRegister 3.10\Code\StampRegister\StampRegister\bin\Debug\ExcelNumberFormat.dll
+P:\DaichiBox\MyProjects\StampRegister\StampRegister 3.10\Code\StampRegister\StampRegister\bin\Debug\FastMember.Signed.dll
+P:\DaichiBox\MyProjects\StampRegister\StampRegister 3.10\Code\StampRegister\StampRegister\bin\Debug\ClosedXML.pdb
+P:\DaichiBox\MyProjects\StampRegister\StampRegister 3.10\Code\StampRegister\StampRegister\bin\Debug\ClosedXML.xml
+P:\DaichiBox\MyProjects\StampRegister\StampRegister 3.10\Code\StampRegister\StampRegister\bin\Debug\DocumentFormat.OpenXml.xml
+P:\DaichiBox\MyProjects\StampRegister\StampRegister 3.10\Code\StampRegister\StampRegister\bin\Debug\ExcelNumberFormat.xml
+P:\DaichiBox\MyProjects\StampRegister\StampRegister 3.10\Code\StampRegister\StampRegister\obj\Debug\StampRegister.csprojResolveAssemblyReference.cache
+P:\DaichiBox\MyProjects\StampRegister\StampRegister 3.10\Code\StampRegister\StampRegister\obj\Debug\StampRegister.Form1.resources
+P:\DaichiBox\MyProjects\StampRegister\StampRegister 3.10\Code\StampRegister\StampRegister\obj\Debug\StampRegister.Form2.resources
+P:\DaichiBox\MyProjects\StampRegister\StampRegister 3.10\Code\StampRegister\StampRegister\obj\Debug\StampRegister.Properties.Resources.resources
+P:\DaichiBox\MyProjects\StampRegister\StampRegister 3.10\Code\StampRegister\StampRegister\obj\Debug\StampRegister.csproj.GenerateResource.Cache
+P:\DaichiBox\MyProjects\StampRegister\StampRegister 3.20\Code\StampRegister\StampRegister\bin\Debug\StampRegister.exe.config
+P:\DaichiBox\MyProjects\StampRegister\StampRegister 3.20\Code\StampRegister\StampRegister\bin\Debug\StampRegister.exe
+P:\DaichiBox\MyProjects\StampRegister\StampRegister 3.20\Code\StampRegister\StampRegister\bin\Debug\StampRegister.pdb
+P:\DaichiBox\MyProjects\StampRegister\StampRegister 3.20\Code\StampRegister\StampRegister\bin\Debug\ClosedXML.dll
+P:\DaichiBox\MyProjects\StampRegister\StampRegister 3.20\Code\StampRegister\StampRegister\bin\Debug\DocumentFormat.OpenXml.dll
+P:\DaichiBox\MyProjects\StampRegister\StampRegister 3.20\Code\StampRegister\StampRegister\bin\Debug\ExcelNumberFormat.dll
+P:\DaichiBox\MyProjects\StampRegister\StampRegister 3.20\Code\StampRegister\StampRegister\bin\Debug\FastMember.Signed.dll
+P:\DaichiBox\MyProjects\StampRegister\StampRegister 3.20\Code\StampRegister\StampRegister\bin\Debug\ClosedXML.pdb
+P:\DaichiBox\MyProjects\StampRegister\StampRegister 3.20\Code\StampRegister\StampRegister\bin\Debug\ClosedXML.xml
+P:\DaichiBox\MyProjects\StampRegister\StampRegister 3.20\Code\StampRegister\StampRegister\bin\Debug\DocumentFormat.OpenXml.xml
+P:\DaichiBox\MyProjects\StampRegister\StampRegister 3.20\Code\StampRegister\StampRegister\bin\Debug\ExcelNumberFormat.xml
+P:\DaichiBox\MyProjects\StampRegister\StampRegister 3.20\Code\StampRegister\StampRegister\obj\Debug\Interop.Illustrator.dll
+P:\DaichiBox\MyProjects\StampRegister\StampRegister 3.20\Code\StampRegister\StampRegister\obj\Debug\StampRegister.csproj.ResolveComReference.cache
+P:\DaichiBox\MyProjects\StampRegister\StampRegister 3.20\Code\StampRegister\StampRegister\obj\Debug\StampRegister.Form1.resources
+P:\DaichiBox\MyProjects\StampRegister\StampRegister 3.20\Code\StampRegister\StampRegister\obj\Debug\StampRegister.Form2.resources
+P:\DaichiBox\MyProjects\StampRegister\StampRegister 3.20\Code\StampRegister\StampRegister\obj\Debug\StampRegister.Properties.Resources.resources
+P:\DaichiBox\MyProjects\StampRegister\StampRegister 3.20\Code\StampRegister\StampRegister\obj\Debug\StampRegister.csproj.GenerateResource.Cache
+P:\DaichiBox\MyProjects\StampRegister\StampRegister 3.20\Code\StampRegister\StampRegister\obj\Debug\StampRegister.exe
+P:\DaichiBox\MyProjects\StampRegister\StampRegister 3.20\Code\StampRegister\StampRegister\obj\Debug\StampRegister.pdb
+P:\DaichiBox\MyProjects\StampRegister\StampRegister 3.20\Code\StampRegister\StampRegister\obj\Debug\StampRegister.csprojResolveAssemblyReference.cache
+P:\DaichiBox\MyProjects\StampRegister\StampRegister 3.30\Code\StampRegister\StampRegister\bin\Debug\StampRegister.exe.config
+P:\DaichiBox\MyProjects\StampRegister\StampRegister 3.30\Code\StampRegister\StampRegister\obj\Debug\Interop.Illustrator.dll
+P:\DaichiBox\MyProjects\StampRegister\StampRegister 3.30\Code\StampRegister\StampRegister\obj\Debug\StampRegister.csproj.ResolveComReference.cache
+P:\DaichiBox\MyProjects\StampRegister\StampRegister 3.30\Code\StampRegister\StampRegister\obj\Debug\StampRegister.exe
+P:\DaichiBox\MyProjects\StampRegister\StampRegister 3.30\Code\StampRegister\StampRegister\obj\Debug\StampRegister.pdb
+P:\DaichiBox\MyProjects\StampRegister\StampRegister 3.30\Code\StampRegister\StampRegister\bin\Debug\StampRegister.exe
+P:\DaichiBox\MyProjects\StampRegister\StampRegister 3.30\Code\StampRegister\StampRegister\bin\Debug\StampRegister.pdb
+P:\DaichiBox\MyProjects\StampRegister\StampRegister 3.30\Code\StampRegister\StampRegister\bin\Debug\ClosedXML.dll
+P:\DaichiBox\MyProjects\StampRegister\StampRegister 3.30\Code\StampRegister\StampRegister\bin\Debug\DocumentFormat.OpenXml.dll
+P:\DaichiBox\MyProjects\StampRegister\StampRegister 3.30\Code\StampRegister\StampRegister\bin\Debug\ExcelNumberFormat.dll
+P:\DaichiBox\MyProjects\StampRegister\StampRegister 3.30\Code\StampRegister\StampRegister\bin\Debug\FastMember.Signed.dll
+P:\DaichiBox\MyProjects\StampRegister\StampRegister 3.30\Code\StampRegister\StampRegister\bin\Debug\ClosedXML.pdb
+P:\DaichiBox\MyProjects\StampRegister\StampRegister 3.30\Code\StampRegister\StampRegister\bin\Debug\ClosedXML.xml
+P:\DaichiBox\MyProjects\StampRegister\StampRegister 3.30\Code\StampRegister\StampRegister\bin\Debug\DocumentFormat.OpenXml.xml
+P:\DaichiBox\MyProjects\StampRegister\StampRegister 3.30\Code\StampRegister\StampRegister\bin\Debug\ExcelNumberFormat.xml
+P:\DaichiBox\MyProjects\StampRegister\StampRegister 3.30\Code\StampRegister\StampRegister\obj\Debug\StampRegister.csprojResolveAssemblyReference.cache
+P:\DaichiBox\MyProjects\StampRegister\StampRegister 3.30\Code\StampRegister\StampRegister\obj\Debug\StampRegister.Form1.resources
+P:\DaichiBox\MyProjects\StampRegister\StampRegister 3.30\Code\StampRegister\StampRegister\obj\Debug\StampRegister.Form2.resources
+P:\DaichiBox\MyProjects\StampRegister\StampRegister 3.30\Code\StampRegister\StampRegister\obj\Debug\StampRegister.Properties.Resources.resources
+P:\DaichiBox\MyProjects\StampRegister\StampRegister 3.30\Code\StampRegister\StampRegister\obj\Debug\StampRegister.csproj.GenerateResource.Cache
+P:\DaichiBox\MyProjects\StampRegister\StampRegister 3.31\Code\StampRegister\StampRegister\bin\Debug\StampRegister.exe.config
+P:\DaichiBox\MyProjects\StampRegister\StampRegister 3.31\Code\StampRegister\StampRegister\obj\Debug\Interop.Illustrator.dll
+P:\DaichiBox\MyProjects\StampRegister\StampRegister 3.31\Code\StampRegister\StampRegister\obj\Debug\StampRegister.csproj.ResolveComReference.cache
+P:\DaichiBox\MyProjects\StampRegister\StampRegister 3.31\Code\StampRegister\StampRegister\obj\Debug\StampRegister.exe
+P:\DaichiBox\MyProjects\StampRegister\StampRegister 3.31\Code\StampRegister\StampRegister\obj\Debug\StampRegister.pdb
+P:\DaichiBox\MyProjects\StampRegister\StampRegister 3.31\Code\StampRegister\StampRegister\bin\Debug\StampRegister.exe
+P:\DaichiBox\MyProjects\StampRegister\StampRegister 3.31\Code\StampRegister\StampRegister\bin\Debug\StampRegister.pdb
+P:\DaichiBox\MyProjects\StampRegister\StampRegister 3.31\Code\StampRegister\StampRegister\bin\Debug\ClosedXML.dll
+P:\DaichiBox\MyProjects\StampRegister\StampRegister 3.31\Code\StampRegister\StampRegister\bin\Debug\DocumentFormat.OpenXml.dll
+P:\DaichiBox\MyProjects\StampRegister\StampRegister 3.31\Code\StampRegister\StampRegister\bin\Debug\ExcelNumberFormat.dll
+P:\DaichiBox\MyProjects\StampRegister\StampRegister 3.31\Code\StampRegister\StampRegister\bin\Debug\FastMember.Signed.dll
+P:\DaichiBox\MyProjects\StampRegister\StampRegister 3.31\Code\StampRegister\StampRegister\bin\Debug\ClosedXML.pdb
+P:\DaichiBox\MyProjects\StampRegister\StampRegister 3.31\Code\StampRegister\StampRegister\bin\Debug\ClosedXML.xml
+P:\DaichiBox\MyProjects\StampRegister\StampRegister 3.31\Code\StampRegister\StampRegister\bin\Debug\DocumentFormat.OpenXml.xml
+P:\DaichiBox\MyProjects\StampRegister\StampRegister 3.31\Code\StampRegister\StampRegister\bin\Debug\ExcelNumberFormat.xml
+P:\DaichiBox\MyProjects\StampRegister\StampRegister 3.31\Code\StampRegister\StampRegister\obj\Debug\StampRegister.csprojResolveAssemblyReference.cache
+P:\DaichiBox\MyProjects\StampRegister\StampRegister 3.31\Code\StampRegister\StampRegister\obj\Debug\StampRegister.Form1.resources
+P:\DaichiBox\MyProjects\StampRegister\StampRegister 3.31\Code\StampRegister\StampRegister\obj\Debug\StampRegister.Form2.resources
+P:\DaichiBox\MyProjects\StampRegister\StampRegister 3.31\Code\StampRegister\StampRegister\obj\Debug\StampRegister.Properties.Resources.resources
+P:\DaichiBox\MyProjects\StampRegister\StampRegister 3.31\Code\StampRegister\StampRegister\obj\Debug\StampRegister.csproj.GenerateResource.Cache
+P:\DaichiBox\MyProjects\StampRegister\StampRegister 3.32\Code\StampRegister\StampRegister\bin\Debug\StampRegister.exe.config
+P:\DaichiBox\MyProjects\StampRegister\StampRegister 3.32\Code\StampRegister\StampRegister\bin\Debug\StampRegister.exe
+P:\DaichiBox\MyProjects\StampRegister\StampRegister 3.32\Code\StampRegister\StampRegister\bin\Debug\StampRegister.pdb
+P:\DaichiBox\MyProjects\StampRegister\StampRegister 3.32\Code\StampRegister\StampRegister\bin\Debug\ClosedXML.dll
+P:\DaichiBox\MyProjects\StampRegister\StampRegister 3.32\Code\StampRegister\StampRegister\bin\Debug\DocumentFormat.OpenXml.dll
+P:\DaichiBox\MyProjects\StampRegister\StampRegister 3.32\Code\StampRegister\StampRegister\bin\Debug\ExcelNumberFormat.dll
+P:\DaichiBox\MyProjects\StampRegister\StampRegister 3.32\Code\StampRegister\StampRegister\bin\Debug\FastMember.Signed.dll
+P:\DaichiBox\MyProjects\StampRegister\StampRegister 3.32\Code\StampRegister\StampRegister\bin\Debug\ClosedXML.pdb
+P:\DaichiBox\MyProjects\StampRegister\StampRegister 3.32\Code\StampRegister\StampRegister\bin\Debug\ClosedXML.xml
+P:\DaichiBox\MyProjects\StampRegister\StampRegister 3.32\Code\StampRegister\StampRegister\bin\Debug\DocumentFormat.OpenXml.xml
+P:\DaichiBox\MyProjects\StampRegister\StampRegister 3.32\Code\StampRegister\StampRegister\bin\Debug\ExcelNumberFormat.xml
+P:\DaichiBox\MyProjects\StampRegister\StampRegister 3.32\Code\StampRegister\StampRegister\obj\Debug\StampRegister.csprojResolveAssemblyReference.cache
+P:\DaichiBox\MyProjects\StampRegister\StampRegister 3.32\Code\StampRegister\StampRegister\obj\Debug\Interop.Illustrator.dll
+P:\DaichiBox\MyProjects\StampRegister\StampRegister 3.32\Code\StampRegister\StampRegister\obj\Debug\StampRegister.csproj.ResolveComReference.cache
+P:\DaichiBox\MyProjects\StampRegister\StampRegister 3.32\Code\StampRegister\StampRegister\obj\Debug\StampRegister.Form1.resources
+P:\DaichiBox\MyProjects\StampRegister\StampRegister 3.32\Code\StampRegister\StampRegister\obj\Debug\StampRegister.Form2.resources
+P:\DaichiBox\MyProjects\StampRegister\StampRegister 3.32\Code\StampRegister\StampRegister\obj\Debug\StampRegister.Properties.Resources.resources
+P:\DaichiBox\MyProjects\StampRegister\StampRegister 3.32\Code\StampRegister\StampRegister\obj\Debug\StampRegister.csproj.GenerateResource.Cache
+P:\DaichiBox\MyProjects\StampRegister\StampRegister 3.32\Code\StampRegister\StampRegister\obj\Debug\StampRegister.csproj.CoreCompileInputs.cache
+P:\DaichiBox\MyProjects\StampRegister\StampRegister 3.32\Code\StampRegister\StampRegister\obj\Debug\StampRegister.exe
+P:\DaichiBox\MyProjects\StampRegister\StampRegister 3.32\Code\StampRegister\StampRegister\obj\Debug\StampRegister.pdb
+P:\DaichiBox\MyProjects\StampRegister\StampRegister 3.40\Code\StampRegister\StampRegister\bin\Debug\StampRegister.exe.config
+P:\DaichiBox\MyProjects\StampRegister\StampRegister 3.40\Code\StampRegister\StampRegister\bin\Debug\StampRegister.exe
+P:\DaichiBox\MyProjects\StampRegister\StampRegister 3.40\Code\StampRegister\StampRegister\bin\Debug\StampRegister.pdb
+P:\DaichiBox\MyProjects\StampRegister\StampRegister 3.40\Code\StampRegister\StampRegister\bin\Debug\ClosedXML.dll
+P:\DaichiBox\MyProjects\StampRegister\StampRegister 3.40\Code\StampRegister\StampRegister\bin\Debug\DocumentFormat.OpenXml.dll
+P:\DaichiBox\MyProjects\StampRegister\StampRegister 3.40\Code\StampRegister\StampRegister\bin\Debug\ExcelNumberFormat.dll
+P:\DaichiBox\MyProjects\StampRegister\StampRegister 3.40\Code\StampRegister\StampRegister\bin\Debug\FastMember.Signed.dll
+P:\DaichiBox\MyProjects\StampRegister\StampRegister 3.40\Code\StampRegister\StampRegister\bin\Debug\ClosedXML.pdb
+P:\DaichiBox\MyProjects\StampRegister\StampRegister 3.40\Code\StampRegister\StampRegister\bin\Debug\ClosedXML.xml
+P:\DaichiBox\MyProjects\StampRegister\StampRegister 3.40\Code\StampRegister\StampRegister\bin\Debug\DocumentFormat.OpenXml.xml
+P:\DaichiBox\MyProjects\StampRegister\StampRegister 3.40\Code\StampRegister\StampRegister\bin\Debug\ExcelNumberFormat.xml
+P:\DaichiBox\MyProjects\StampRegister\StampRegister 3.40\Code\StampRegister\StampRegister\obj\Debug\Interop.Illustrator.dll
+P:\DaichiBox\MyProjects\StampRegister\StampRegister 3.40\Code\StampRegister\StampRegister\obj\Debug\StampRegister.csproj.ResolveComReference.cache
+P:\DaichiBox\MyProjects\StampRegister\StampRegister 3.40\Code\StampRegister\StampRegister\obj\Debug\StampRegister.Form1.resources
+P:\DaichiBox\MyProjects\StampRegister\StampRegister 3.40\Code\StampRegister\StampRegister\obj\Debug\StampRegister.Form2.resources
+P:\DaichiBox\MyProjects\StampRegister\StampRegister 3.40\Code\StampRegister\StampRegister\obj\Debug\StampRegister.Properties.Resources.resources
+P:\DaichiBox\MyProjects\StampRegister\StampRegister 3.40\Code\StampRegister\StampRegister\obj\Debug\StampRegister.csproj.GenerateResource.Cache
+P:\DaichiBox\MyProjects\StampRegister\StampRegister 3.40\Code\StampRegister\StampRegister\obj\Debug\StampRegister.exe
+P:\DaichiBox\MyProjects\StampRegister\StampRegister 3.40\Code\StampRegister\StampRegister\obj\Debug\StampRegister.pdb
+P:\DaichiBox\MyProjects\StampRegister\StampRegister 3.40\Code\StampRegister\StampRegister\obj\Debug\StampRegister.csprojResolveAssemblyReference.cache
+P:\DaichiBox\MyProjects\StampRegister\StampRegister 3.42\Code\StampRegister\StampRegister\bin\Debug\StampRegister.exe.config
+P:\DaichiBox\MyProjects\StampRegister\StampRegister 3.42\Code\StampRegister\StampRegister\bin\Debug\StampRegister.exe
+P:\DaichiBox\MyProjects\StampRegister\StampRegister 3.42\Code\StampRegister\StampRegister\bin\Debug\StampRegister.pdb
+P:\DaichiBox\MyProjects\StampRegister\StampRegister 3.42\Code\StampRegister\StampRegister\bin\Debug\ClosedXML.dll
+P:\DaichiBox\MyProjects\StampRegister\StampRegister 3.42\Code\StampRegister\StampRegister\bin\Debug\DocumentFormat.OpenXml.dll
+P:\DaichiBox\MyProjects\StampRegister\StampRegister 3.42\Code\StampRegister\StampRegister\bin\Debug\ExcelNumberFormat.dll
+P:\DaichiBox\MyProjects\StampRegister\StampRegister 3.42\Code\StampRegister\StampRegister\bin\Debug\FastMember.Signed.dll
+P:\DaichiBox\MyProjects\StampRegister\StampRegister 3.42\Code\StampRegister\StampRegister\bin\Debug\ClosedXML.pdb
+P:\DaichiBox\MyProjects\StampRegister\StampRegister 3.42\Code\StampRegister\StampRegister\bin\Debug\ClosedXML.xml
+P:\DaichiBox\MyProjects\StampRegister\StampRegister 3.42\Code\StampRegister\StampRegister\bin\Debug\DocumentFormat.OpenXml.xml
+P:\DaichiBox\MyProjects\StampRegister\StampRegister 3.42\Code\StampRegister\StampRegister\bin\Debug\ExcelNumberFormat.xml
+P:\DaichiBox\MyProjects\StampRegister\StampRegister 3.42\Code\StampRegister\StampRegister\obj\Debug\StampRegister.csprojResolveAssemblyReference.cache
+P:\DaichiBox\MyProjects\StampRegister\StampRegister 3.42\Code\StampRegister\StampRegister\obj\Debug\Interop.Illustrator.dll
+P:\DaichiBox\MyProjects\StampRegister\StampRegister 3.42\Code\StampRegister\StampRegister\obj\Debug\StampRegister.csproj.ResolveComReference.cache
+P:\DaichiBox\MyProjects\StampRegister\StampRegister 3.42\Code\StampRegister\StampRegister\obj\Debug\StampRegister.Form1.resources
+P:\DaichiBox\MyProjects\StampRegister\StampRegister 3.42\Code\StampRegister\StampRegister\obj\Debug\StampRegister.Form2.resources
+P:\DaichiBox\MyProjects\StampRegister\StampRegister 3.42\Code\StampRegister\StampRegister\obj\Debug\StampRegister.Properties.Resources.resources
+P:\DaichiBox\MyProjects\StampRegister\StampRegister 3.42\Code\StampRegister\StampRegister\obj\Debug\StampRegister.csproj.GenerateResource.Cache
+P:\DaichiBox\MyProjects\StampRegister\StampRegister 3.42\Code\StampRegister\StampRegister\obj\Debug\StampRegister.csproj.CoreCompileInputs.cache
+P:\DaichiBox\MyProjects\StampRegister\StampRegister 3.42\Code\StampRegister\StampRegister\obj\Debug\StampRegister.exe
+P:\DaichiBox\MyProjects\StampRegister\StampRegister 3.42\Code\StampRegister\StampRegister\obj\Debug\StampRegister.pdb

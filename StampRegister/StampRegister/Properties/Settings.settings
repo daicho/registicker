@@ -1,0 +1,180 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="StampRegister.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="MailAddress" Type="System.String" Scope="User">
+      <Value Profile="(Default)">f@sekiei.jp</Value>
+    </Setting>
+    <Setting Name="Password" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="Copyright" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Copyright © 2018 Hammer. All Rights Reserved.</Value>
+    </Setting>
+    <Setting Name="BoyTitle1_en" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Mr. Panda for *** only [ver.1]</Value>
+    </Setting>
+    <Setting Name="BoyTitle1_jp" Type="System.String" Scope="User">
+      <Value Profile="(Default)">***専用 Mr.パンダ [ver.1]</Value>
+    </Setting>
+    <Setting Name="BoyDescription1_en" Type="System.String" Scope="User">
+      <Value Profile="(Default)">This is cute &amp; cool stickers for *** only. Enjoy LINE more by using the stickers.</Value>
+    </Setting>
+    <Setting Name="BoyDescription1_jp" Type="System.String" Scope="User">
+      <Value Profile="(Default)">世界中の「***」くんのために贈るキュートでクールなお名前スタンプ「Mr.パンダ」です。ほかのバージョンとセットで長～～く愛用してくださいネ～★</Value>
+    </Setting>
+    <Setting Name="BoyTaste1" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">1</Value>
+    </Setting>
+    <Setting Name="BoyChara1" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">9</Value>
+    </Setting>
+    <Setting Name="BoyTitle2_en" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Mr. Panda for *** only [ver.2]</Value>
+    </Setting>
+    <Setting Name="BoyTitle2_jp" Type="System.String" Scope="User">
+      <Value Profile="(Default)">***専用 Mr.パンダ [ver.2]</Value>
+    </Setting>
+    <Setting Name="GirlTitle1_en" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Miss Panda for *** only [ver.1]</Value>
+    </Setting>
+    <Setting Name="GirlTitle1_jp" Type="System.String" Scope="User">
+      <Value Profile="(Default)">***専用 Missパンダ [ver.1]</Value>
+    </Setting>
+    <Setting Name="GirlDescription1_en" Type="System.String" Scope="User">
+      <Value Profile="(Default)">This is cute stickers for *** only. Enjoy LINE more by using the stickers.</Value>
+    </Setting>
+    <Setting Name="GirlDescription1_jp" Type="System.String" Scope="User">
+      <Value Profile="(Default)">世界中の「***」ちゃんのために贈るキュートなお名前スタンプ「Missパンダ」です。ほかのバージョンとセットで長～～く可愛がってあげてくださいネ～★</Value>
+    </Setting>
+    <Setting Name="GirlTaste1" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">1</Value>
+    </Setting>
+    <Setting Name="GirlChara1" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">9</Value>
+    </Setting>
+    <Setting Name="GirlTitle2_en" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Miss Panda for *** only [ver.2]</Value>
+    </Setting>
+    <Setting Name="GirlTitle2_jp" Type="System.String" Scope="User">
+      <Value Profile="(Default)">***専用 Missパンダ [ver.2]</Value>
+    </Setting>
+    <Setting Name="NameListFile" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="WindowState" Type="System.Windows.Forms.FormWindowState" Scope="User">
+      <Value Profile="(Default)">Normal</Value>
+    </Setting>
+    <Setting Name="Rectangle" Type="System.Drawing.Rectangle" Scope="User">
+      <Value Profile="(Default)">100, 100, 1000, 600</Value>
+    </Setting>
+    <Setting Name="SplitWidth" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">500</Value>
+    </Setting>
+    <Setting Name="TagFilePath" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="SanBoyTitle1_en" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Mr. Panda for *** only [ver.1]</Value>
+    </Setting>
+    <Setting Name="SanBoyTitle1_jp" Type="System.String" Scope="User">
+      <Value Profile="(Default)">***専用 Mr.パンダ [ver.1]</Value>
+    </Setting>
+    <Setting Name="SanBoyTitle2_en" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Mr. Panda for *** only [ver.2]</Value>
+    </Setting>
+    <Setting Name="SanBoyTitle2_jp" Type="System.String" Scope="User">
+      <Value Profile="(Default)">***専用 Mr.パンダ [ver.2]</Value>
+    </Setting>
+    <Setting Name="SanBoyDescription1_en" Type="System.String" Scope="User">
+      <Value Profile="(Default)">This is cute &amp; cool stickers for *** only. Enjoy LINE more by using the stickers.</Value>
+    </Setting>
+    <Setting Name="SanBoyDescription1_jp" Type="System.String" Scope="User">
+      <Value Profile="(Default)">世界中の「***」さんのために贈るキュートでクールなお名前スタンプ「Mr.パンダ」です。ほかのバージョンとセットで長～～く愛用してくださいネ～★</Value>
+    </Setting>
+    <Setting Name="SanBoyTaste1" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">1</Value>
+    </Setting>
+    <Setting Name="SanBoyChara1" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">9</Value>
+    </Setting>
+    <Setting Name="SanGirlTitle1_en" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Miss Panda for *** only [ver.1]</Value>
+    </Setting>
+    <Setting Name="SanGirlTitle1_jp" Type="System.String" Scope="User">
+      <Value Profile="(Default)">***専用 Missパンダ [ver.1]</Value>
+    </Setting>
+    <Setting Name="SanGirlTitle2_en" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Miss Panda for *** only [ver.2]</Value>
+    </Setting>
+    <Setting Name="SanGirlTitle2_jp" Type="System.String" Scope="User">
+      <Value Profile="(Default)">***専用 Missパンダ [ver.2]</Value>
+    </Setting>
+    <Setting Name="SanGirlDescription1_en" Type="System.String" Scope="User">
+      <Value Profile="(Default)">This is cute stickers for *** only. Enjoy LINE more by using the stickers.</Value>
+    </Setting>
+    <Setting Name="SanGirlDescription1_jp" Type="System.String" Scope="User">
+      <Value Profile="(Default)">世界中の「***」さんのために贈るキュートなお名前スタンプ「Missパンダ」です。ほかのバージョンとセットで長～～く可愛がってあげてくださいネ～★</Value>
+    </Setting>
+    <Setting Name="SanGirlTaste1" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">1</Value>
+    </Setting>
+    <Setting Name="SanGirlChara1" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">9</Value>
+    </Setting>
+    <Setting Name="AllBoyTitle1_en" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Mr. Panda for *** only [ver.1]</Value>
+    </Setting>
+    <Setting Name="AllBoyTitle1_jp" Type="System.String" Scope="User">
+      <Value Profile="(Default)">***専用 Mr.パンダ [ver.1]</Value>
+    </Setting>
+    <Setting Name="AllBoyTitle2_en" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Mr. Panda for *** only [ver.2]</Value>
+    </Setting>
+    <Setting Name="AllBoyTitle2_jp" Type="System.String" Scope="User">
+      <Value Profile="(Default)">***専用 Mr.パンダ [ver.2]</Value>
+    </Setting>
+    <Setting Name="AllBoyDescription1_en" Type="System.String" Scope="User">
+      <Value Profile="(Default)">This is cute &amp; cool stickers for *** only. Enjoy LINE more by using the stickers.</Value>
+    </Setting>
+    <Setting Name="AllBoyDescription1_jp" Type="System.String" Scope="User">
+      <Value Profile="(Default)">世界中の「***」@@@のために贈るキュートでクールなお名前スタンプ「Mr.パンダ」です。ほかのバージョンとセットで長～～く愛用してくださいネ～★</Value>
+    </Setting>
+    <Setting Name="AllBoyTaste1" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">1</Value>
+    </Setting>
+    <Setting Name="AllBoyChara1" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">9</Value>
+    </Setting>
+    <Setting Name="AllGirlTitle1_en" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Miss Panda for *** only [ver.1]</Value>
+    </Setting>
+    <Setting Name="AllGirlTitle1_jp" Type="System.String" Scope="User">
+      <Value Profile="(Default)">***専用 Missパンダ [ver.1]</Value>
+    </Setting>
+    <Setting Name="AllGirlTitle2_en" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Miss Panda for *** only [ver.2]</Value>
+    </Setting>
+    <Setting Name="AllGirlTitle2_jp" Type="System.String" Scope="User">
+      <Value Profile="(Default)">***専用 Missパンダ [ver.2]</Value>
+    </Setting>
+    <Setting Name="AllGirlDescription1_en" Type="System.String" Scope="User">
+      <Value Profile="(Default)">This is cute stickers for *** only. Enjoy LINE more by using the stickers.</Value>
+    </Setting>
+    <Setting Name="AllGirlDescription1_jp" Type="System.String" Scope="User">
+      <Value Profile="(Default)">世界中の「***」@@@のために贈るキュートなお名前スタンプ「Missパンダ」です。ほかのバージョンとセットで長～～く可愛がってあげてくださいネ～★</Value>
+    </Setting>
+    <Setting Name="AllGirlTaste1" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">1</Value>
+    </Setting>
+    <Setting Name="AllGirlChara1" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">9</Value>
+    </Setting>
+    <Setting Name="SettingRectangle" Type="System.Drawing.Rectangle" Scope="User">
+      <Value Profile="(Default)">100, 100, 343, 580</Value>
+    </Setting>
+    <Setting Name="RestartCount" Type="System.Decimal" Scope="User">
+      <Value Profile="(Default)">16</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>
