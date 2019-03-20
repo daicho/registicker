@@ -250,7 +250,7 @@ namespace StampRegister
 			int relNum = 0;
 			
 			foreach (ListViewItem item in nameList.Items)
-				relNum += 2 - (int.Parse(item.SubItems[8].Text) + 1) / 2;
+				relNum += 2;
 
 			return relNum;
 		}
@@ -1098,8 +1098,6 @@ TagRegister:
 						item.SubItems[(int)Columns.release].Text = (i + 1).ToString();
 					else
 						item.SubItems[(int)Columns.release].Text = "3";
-
-					releaseCount.Text = countRelease().ToString();
 
 					// 再起動
 					if (++cnt == restartCount.Value)
