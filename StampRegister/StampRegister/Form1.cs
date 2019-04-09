@@ -174,11 +174,6 @@ namespace StampRegister
                         nameList.Items[i].SubItems.Add(worksheet.Cell(i + 2, col).Value.ToString());
                     col++;
 
-                    // タグ付け完了
-                    /*if (worksheet.Cell(i + 2, col).Value.ToString() == "")
-                        nameList.Items[i].SubItems.Add("0");
-                    else
-                        nameList.Items[i].SubItems.Add(worksheet.Cell(i + 2, col).Value.ToString());*/
                     col++;
 
                     // リクエスト完了
@@ -267,7 +262,6 @@ namespace StampRegister
             exportImages.Enabled = false;
             start.Enabled = false;
             registerImages.Enabled = false;
-            //tagStart.Enabled = false;
             request.Enabled = false;
             release.Enabled = false;
             settingFile.Enabled = false;
@@ -807,116 +801,6 @@ namespace StampRegister
             Restart("");
         }
         
-        /*private void TagStart_Click(object sender, EventArgs e)
-        {
-            XLWorkbook workbook;
-            DateTime startTime;
-
-            try
-            {
-                // Excelファイルを開く
-                workbook = new XLWorkbook(tagFilePath.Text);
-            }
-            catch
-            {
-                MessageBox.Show("タグ情報ファイルを開けませんでした", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-
-            StartRegister();
-            if (Login()) { StopRegister(); return; } // ログイン
-
-            foreach (ListViewItem item in nameList.Items)
-            {
-                for (int i = int.Parse(item.SubItems[(int)Columns.tag].Text); i < 2; i++)
-                {
-                    IXLWorksheet worksheet;
-
-                    if (item.SubItems[(int)Columns.url1 + i].Text == "")
-                        continue;
-
-                    // 性別によって参照するシートを変える
-                    if (item.SubItems[(int)Columns.gender].Text == "女")
-                        worksheet = workbook.Worksheet(1 + i);
-                    else
-                        worksheet = workbook.Worksheet(3 + i);
-
-                    for (int j = 0; j < 40; j++)
-                    {
-                        HtmlElement okButton;
-                        
-                        if (worksheet.Cell(j + 2, 2).Value.ToString() == "") continue;
-
-TagRegister:
-                        // タグ登録ページに移動
-                        mainBrowser.Navigate(item.SubItems[(int)Columns.url1 + i].Text + "/tag#/" + (j + 1).ToString("D2"));
-                        if (WaitLoad()) { StopRegister(); return; }
-
-                        if (SearchElementByInnerText("h1", "エラーが発生しました") != null)
-                            continue;
-
-                        // 完全に読み込むまで待機
-                        startTime = DateTime.Now;
-                        do
-                        {
-                            Thread.Sleep(10);
-                            Application.DoEvents();
-                            if (stop) { StopRegister(); return; }
-                            if ((DateTime.Now - startTime).TotalSeconds >= waitSeconds) goto TagRegister;
-                        } while (SearchElementByMix("div", "ng-click", "toggleTag($event, tagId)", "まさか") == null);
-
-                        // タグクリック
-                        for (int k = 0; k < 3; k++)
-                        {
-                            if (worksheet.Cell(j + 2, k + 2).Value.ToString() != "")
-                            {
-                                string tagName = worksheet.Cell(j + 2, k + 2).Value.ToString();
-                                HtmlElement tag = SearchElementByMix("div", "ng-click", "toggleTag($event, tagId)", tagName);
-
-                                if (tag.GetAttribute("className") != "ng-binding ng-scope ExSelected")
-                                {
-                                    tag.InvokeMember("click");
-
-                                    startTime = DateTime.Now;
-                                    do
-                                    {
-                                        Thread.Sleep(10);
-                                        Application.DoEvents();
-                                        if (stop) { StopRegister(); return; }
-                                        if ((DateTime.Now - startTime).TotalSeconds >= waitSeconds) goto TagRegister;
-                                    } while (SearchElementByMix("div", "ng-click", "toggleTag($event, tagId)", tagName).GetAttribute("className") != "ng-binding ng-scope ExSelected");
-                                }
-                            }
-                        }
-
-                        // 保存ボタンクリック
-                        SearchElementByInnerText("a", "保存").InvokeMember("click");
-
-                        startTime = DateTime.Now;
-                        do
-                        {
-                            Thread.Sleep(10);
-                            Application.DoEvents();
-                            if (stop) { StopRegister(); return; }
-                            if ((DateTime.Now - startTime).TotalSeconds >= waitSeconds) goto TagRegister;
-                        } while ((okButton = SearchElementByAttribute("a", "ng-click", "close(true)")) == null);
-
-                        okButton.InvokeMember("click");
-                        if (WaitLoad()) { StopRegister(); return; }
-                    }
-
-                    // 完了状況保存
-                    item.SubItems[(int)Columns.tag].Text = (i + 1).ToString();
-
-                    // 再起動
-                    Restart("/tag");
-                }
-            }
-
-            StopRegister();
-            MessageBox.Show("終了！");
-        }*/
-
         private void Request_Click(object sender, EventArgs e)
         {
             int cnt = 0;
@@ -1107,24 +991,103 @@ TagRegister:
 
             StopRegister();
             MessageBox.Show("終了！");
-        }
+		}
 
-        private void StampSetting_Click(object sender, EventArgs e)
+		private void change_Click(object sender, EventArgs e)
+		{
+			int cnt = 0;
+
+			StartRegister();
+			if (Login()) { StopRegister(); return; } // ログイン
+
+			foreach (ListViewItem item in nameList.Items)
+			{
+				for (int i = 0; i < 2; i++)
+				{
+					HtmlElement okButton;
+					HtmlElement releaseButton;
+					string relComp = item.SubItems[(int)Columns.release].Text;
+
+					if (relComp == "3" || relComp == (i + 1).ToString())
+						continue;
+
+					if (item.SubItems[(int)Columns.url1 + i].Text == "")
+						continue;
+
+					// アイテム管理ページに移動
+					mainBrowser.Navigate(item.SubItems[(int)Columns.url1 + i].Text);
+					if (WaitLoad()) { StopRegister(); return; }
+
+					if (SearchElementByInnerText("h1", "エラーが発生しました") != null)
+						continue;
+
+					// 完全に読み込むまで待機
+					do
+					{
+						Thread.Sleep(10);
+						Application.DoEvents();
+						if (stop) { StopRegister(); return; }
+					} while (SearchElementByInnerText("a", "削除") == null &&
+							 SearchElementByInnerText("a", "編集") == null &&
+							 SearchElementByInnerText("label", "編集に戻す  ") == null);
+
+					if ((releaseButton = SearchElementByInnerText("label", "リリース  ")) == null)
+						continue;
+
+					do
+					{
+						// リリースボタンクリック
+						releaseButton.All[0].InvokeMember("click");
+
+						do
+						{
+							Thread.Sleep(10);
+							Application.DoEvents();
+							if (stop) { StopRegister(); return; }
+						} while ((okButton = SearchElementByAttribute("a", "ng-click", "close(true)")) == null);
+
+						okButton.InvokeMember("click");
+						if (WaitLoad()) { StopRegister(); return; }
+
+						// 完全に読み込むまで待機
+						do
+						{
+							Thread.Sleep(10);
+							Application.DoEvents();
+							if (stop) { StopRegister(); return; }
+
+							if (SearchElementByInnerText("h1", "エラーが発生しました") != null)
+							{
+								// アイテム管理ページに移動
+								mainBrowser.Navigate(item.SubItems[(int)Columns.url1 + i].Text);
+								if (WaitLoad()) { StopRegister(); return; }
+							}
+						} while (SearchElementByInnerText("a", "削除") == null &&
+								 SearchElementByInnerText("a", "編集") == null &&
+								 SearchElementByInnerText("label", "編集に戻す  ") == null);
+					} while ((releaseButton = SearchElementByInnerText("label", "リリース  ")) != null);
+
+					// 完了状況保存
+					if (relComp == "0")
+						item.SubItems[(int)Columns.release].Text = (i + 1).ToString();
+					else
+						item.SubItems[(int)Columns.release].Text = "3";
+
+					// 再起動
+					if (++cnt == restartCount.Value)
+						Restart("/rel");
+				}
+			}
+
+			StopRegister();
+			MessageBox.Show("終了！");
+		}
+
+		private void StampSetting_Click(object sender, EventArgs e)
         {
             var f = new Form2();
             f.ShowDialog(this);
         }
-
-        /*private void TagBrowse_Click(object sender, EventArgs e)
-        {
-            var dialog = new OpenFileDialog();
-
-            dialog.Title = "タグ情報ファイルの選択";
-            dialog.Filter = "Excelファイル (*.xlsx)|*.xlsx|すべてのファイル (*.*)|*.*";
-
-            if (dialog.ShowDialog() == DialogResult.OK)
-                tagFilePath.Text = dialog.FileName;
-        }*/
 
         private void Browse_Click(object sender, EventArgs e)
         {
@@ -1304,7 +1267,6 @@ TagRegister:
             mailAddress.Text = Properties.Settings.Default.MailAddress;
             password.Text = Properties.Settings.Default.Password;
             nameListFile.Text = Properties.Settings.Default.NameListFile;
-            //tagFilePath.Text = Properties.Settings.Default.TagFilePath;
             restartCount.Value = Properties.Settings.Default.RestartCount;
             LoadNameList(nameListFile.Text);
         }
@@ -1324,7 +1286,6 @@ TagRegister:
             Properties.Settings.Default.MailAddress = mailAddress.Text;
             Properties.Settings.Default.Password = password.Text;
             Properties.Settings.Default.NameListFile = nameListFile.Text;
-            //Properties.Settings.Default.TagFilePath = tagFilePath.Text;
             Properties.Settings.Default.RestartCount = restartCount.Value;
             Properties.Settings.Default.Save();
         }
@@ -1352,10 +1313,6 @@ TagRegister:
             if (Environment.GetCommandLineArgs().Length >= 2) { 
                 switch (Environment.GetCommandLineArgs()[1])
                 {
-                    case "/tag":
-                        //tagStart.PerformClick();
-                        break;
-
                     case "/req":
                         request.PerformClick();
                         break;

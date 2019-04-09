@@ -43,6 +43,8 @@
 			this.loadSetting = new System.Windows.Forms.Button();
 			this.saveSetting = new System.Windows.Forms.Button();
 			this.nameInfo = new System.Windows.Forms.GroupBox();
+			this.releaseCount = new System.Windows.Forms.Label();
+			this.label3 = new System.Windows.Forms.Label();
 			this.nameReload = new System.Windows.Forms.Button();
 			this.browse = new System.Windows.Forms.Button();
 			this.nameListFile = new System.Windows.Forms.TextBox();
@@ -78,8 +80,7 @@
 			this.forward = new System.Windows.Forms.ToolStripButton();
 			this.reload = new System.Windows.Forms.ToolStripButton();
 			this.url = new StampRegister.ToolStripSpringTextBox();
-			this.label3 = new System.Windows.Forms.Label();
-			this.releaseCount = new System.Windows.Forms.Label();
+			this.change = new System.Windows.Forms.Button();
 			((System.ComponentModel.ISupportInitialize)(this.split)).BeginInit();
 			this.split.Panel1.SuspendLayout();
 			this.split.Panel2.SuspendLayout();
@@ -126,7 +127,7 @@
 			// 
 			this.tableLayoutPanel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-			this.tableLayoutPanel2.ColumnCount = 6;
+			this.tableLayoutPanel2.ColumnCount = 7;
 			this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.28477F));
 			this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.28477F));
 			this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.28477F));
@@ -134,6 +135,7 @@
 			this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.28442F));
 			this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.28442F));
 			this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.28816F));
+			this.tableLayoutPanel2.Controls.Add(this.change, 6, 0);
 			this.tableLayoutPanel2.Controls.Add(this.escape, 0, 0);
 			this.tableLayoutPanel2.Controls.Add(this.exportImages, 1, 0);
 			this.tableLayoutPanel2.Controls.Add(this.registerImages, 3, 0);
@@ -155,7 +157,7 @@
 			this.escape.Location = new System.Drawing.Point(2, 0);
 			this.escape.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
 			this.escape.Name = "escape";
-			this.escape.Size = new System.Drawing.Size(78, 23);
+			this.escape.Size = new System.Drawing.Size(66, 23);
 			this.escape.TabIndex = 16;
 			this.escape.Text = "中断";
 			this.escape.UseVisualStyleBackColor = true;
@@ -164,10 +166,10 @@
 			// exportImages
 			// 
 			this.exportImages.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.exportImages.Location = new System.Drawing.Point(84, 0);
+			this.exportImages.Location = new System.Drawing.Point(72, 0);
 			this.exportImages.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
 			this.exportImages.Name = "exportImages";
-			this.exportImages.Size = new System.Drawing.Size(78, 23);
+			this.exportImages.Size = new System.Drawing.Size(66, 23);
 			this.exportImages.TabIndex = 16;
 			this.exportImages.Text = "画像出力";
 			this.exportImages.UseVisualStyleBackColor = true;
@@ -176,10 +178,10 @@
 			// registerImages
 			// 
 			this.registerImages.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.registerImages.Location = new System.Drawing.Point(248, 0);
+			this.registerImages.Location = new System.Drawing.Point(212, 0);
 			this.registerImages.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
 			this.registerImages.Name = "registerImages";
-			this.registerImages.Size = new System.Drawing.Size(78, 23);
+			this.registerImages.Size = new System.Drawing.Size(66, 23);
 			this.registerImages.TabIndex = 20;
 			this.registerImages.Text = "画像登録";
 			this.registerImages.UseVisualStyleBackColor = true;
@@ -188,10 +190,10 @@
 			// start
 			// 
 			this.start.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.start.Location = new System.Drawing.Point(166, 0);
+			this.start.Location = new System.Drawing.Point(142, 0);
 			this.start.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
 			this.start.Name = "start";
-			this.start.Size = new System.Drawing.Size(78, 23);
+			this.start.Size = new System.Drawing.Size(66, 23);
 			this.start.TabIndex = 17;
 			this.start.Text = "新規登録";
 			this.start.UseVisualStyleBackColor = true;
@@ -200,10 +202,10 @@
 			// request
 			// 
 			this.request.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.request.Location = new System.Drawing.Point(330, 0);
+			this.request.Location = new System.Drawing.Point(282, 0);
 			this.request.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
 			this.request.Name = "request";
-			this.request.Size = new System.Drawing.Size(78, 23);
+			this.request.Size = new System.Drawing.Size(66, 23);
 			this.request.TabIndex = 21;
 			this.request.Text = "リクエスト";
 			this.request.UseVisualStyleBackColor = true;
@@ -212,10 +214,10 @@
 			// release
 			// 
 			this.release.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.release.Location = new System.Drawing.Point(412, 0);
+			this.release.Location = new System.Drawing.Point(352, 0);
 			this.release.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
 			this.release.Name = "release";
-			this.release.Size = new System.Drawing.Size(82, 23);
+			this.release.Size = new System.Drawing.Size(66, 23);
 			this.release.TabIndex = 19;
 			this.release.Text = "リリース";
 			this.release.UseVisualStyleBackColor = true;
@@ -292,6 +294,24 @@
 			this.nameInfo.TabIndex = 12;
 			this.nameInfo.TabStop = false;
 			this.nameInfo.Text = "名前情報";
+			// 
+			// releaseCount
+			// 
+			this.releaseCount.AutoSize = true;
+			this.releaseCount.Location = new System.Drawing.Point(49, 48);
+			this.releaseCount.Name = "releaseCount";
+			this.releaseCount.Size = new System.Drawing.Size(11, 12);
+			this.releaseCount.TabIndex = 18;
+			this.releaseCount.Text = "0";
+			// 
+			// label3
+			// 
+			this.label3.AutoSize = true;
+			this.label3.Location = new System.Drawing.Point(6, 48);
+			this.label3.Name = "label3";
+			this.label3.Size = new System.Drawing.Size(48, 12);
+			this.label3.TabIndex = 17;
+			this.label3.Text = "リリース : ";
 			// 
 			// nameReload
 			// 
@@ -608,23 +628,17 @@
 			this.url.Size = new System.Drawing.Size(355, 33);
 			this.url.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Url_KeyDown);
 			// 
-			// label3
+			// change
 			// 
-			this.label3.AutoSize = true;
-			this.label3.Location = new System.Drawing.Point(6, 48);
-			this.label3.Name = "label3";
-			this.label3.Size = new System.Drawing.Size(48, 12);
-			this.label3.TabIndex = 17;
-			this.label3.Text = "リリース : ";
-			// 
-			// releaseCount
-			// 
-			this.releaseCount.AutoSize = true;
-			this.releaseCount.Location = new System.Drawing.Point(49, 48);
-			this.releaseCount.Name = "releaseCount";
-			this.releaseCount.Size = new System.Drawing.Size(11, 12);
-			this.releaseCount.TabIndex = 18;
-			this.releaseCount.Text = "0";
+			this.change.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.change.Location = new System.Drawing.Point(422, 0);
+			this.change.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+			this.change.Name = "change";
+			this.change.Size = new System.Drawing.Size(72, 23);
+			this.change.TabIndex = 22;
+			this.change.Text = "修正";
+			this.change.UseVisualStyleBackColor = true;
+			this.change.Click += new System.EventHandler(this.change_Click);
 			// 
 			// Form1
 			// 
@@ -710,6 +724,7 @@
         private System.Windows.Forms.Label label4;
 		private System.Windows.Forms.Label label3;
 		private System.Windows.Forms.Label releaseCount;
+		private System.Windows.Forms.Button change;
 	}
 }
 
