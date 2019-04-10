@@ -1006,16 +1006,54 @@ namespace StampRegister
 				{
 					HtmlElement okButton;
 					HtmlElement releaseButton;
-					string relComp = item.SubItems[(int)Columns.release].Text;
 
-					if (relComp == "3" || relComp == (i + 1).ToString())
-						continue;
+					int baseTaste;
+					int baseChara;
+					
+					// 入力文字列識別
+					switch (item.SubItems[(int)Columns.honorific].Text)
+					{
+						case "くん":
+							baseTaste = Properties.Settings.Default.BoyTaste1;
+							baseChara = Properties.Settings.Default.BoyChara1;
+							break;
 
-					if (item.SubItems[(int)Columns.url1 + i].Text == "")
-						continue;
+						case "ちゃん":
+							baseTaste = Properties.Settings.Default.GirlTaste1;
+							baseChara = Properties.Settings.Default.GirlChara1;
+							break;
+
+						case "さん":
+							if (item.SubItems[(int)Columns.gender].Text == "男")
+							{
+								baseTaste = Properties.Settings.Default.SanBoyTaste1;
+								baseChara = Properties.Settings.Default.SanBoyChara1;
+							}
+							else
+							{
+								baseTaste = Properties.Settings.Default.SanGirlTaste1;
+								baseChara = Properties.Settings.Default.SanGirlChara1;
+							}
+
+							break;
+
+						default:
+							if (item.SubItems[(int)Columns.gender].Text == "男")
+							{
+								baseTaste = Properties.Settings.Default.AllBoyTaste1;
+								baseChara = Properties.Settings.Default.AllBoyChara1;
+							}
+							else
+							{
+								baseTaste = Properties.Settings.Default.AllGirlTaste1;
+								baseChara = Properties.Settings.Default.AllGirlChara1;
+							}
+
+							break;
+					}
 
 					// アイテム管理ページに移動
-					mainBrowser.Navigate(item.SubItems[(int)Columns.url1 + i].Text);
+					mainBrowser.Navigate(item.SubItems[(int)Columns.url1 + i].Text + "/update");
 					if (WaitLoad()) { StopRegister(); return; }
 
 					if (SearchElementByInnerText("h1", "エラーが発生しました") != null)
@@ -1027,51 +1065,9 @@ namespace StampRegister
 						Thread.Sleep(10);
 						Application.DoEvents();
 						if (stop) { StopRegister(); return; }
-					} while (SearchElementByInnerText("a", "削除") == null &&
-							 SearchElementByInnerText("a", "編集") == null &&
-							 SearchElementByInnerText("label", "編集に戻す  ") == null);
+					} while (SearchElementByInnerText("span", "選択したエリアで販売する") == null);
+					
 
-					if ((releaseButton = SearchElementByInnerText("label", "リリース  ")) == null)
-						continue;
-
-					do
-					{
-						// リリースボタンクリック
-						releaseButton.All[0].InvokeMember("click");
-
-						do
-						{
-							Thread.Sleep(10);
-							Application.DoEvents();
-							if (stop) { StopRegister(); return; }
-						} while ((okButton = SearchElementByAttribute("a", "ng-click", "close(true)")) == null);
-
-						okButton.InvokeMember("click");
-						if (WaitLoad()) { StopRegister(); return; }
-
-						// 完全に読み込むまで待機
-						do
-						{
-							Thread.Sleep(10);
-							Application.DoEvents();
-							if (stop) { StopRegister(); return; }
-
-							if (SearchElementByInnerText("h1", "エラーが発生しました") != null)
-							{
-								// アイテム管理ページに移動
-								mainBrowser.Navigate(item.SubItems[(int)Columns.url1 + i].Text);
-								if (WaitLoad()) { StopRegister(); return; }
-							}
-						} while (SearchElementByInnerText("a", "削除") == null &&
-								 SearchElementByInnerText("a", "編集") == null &&
-								 SearchElementByInnerText("label", "編集に戻す  ") == null);
-					} while ((releaseButton = SearchElementByInnerText("label", "リリース  ")) != null);
-
-					// 完了状況保存
-					if (relComp == "0")
-						item.SubItems[(int)Columns.release].Text = (i + 1).ToString();
-					else
-						item.SubItems[(int)Columns.release].Text = "3";
 
 					// 再起動
 					if (++cnt == restartCount.Value)
