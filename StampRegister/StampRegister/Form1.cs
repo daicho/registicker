@@ -1066,8 +1066,37 @@ namespace StampRegister
 						Application.DoEvents();
 						if (stop) { StopRegister(); return; }
 					} while (SearchElementByInnerText("span", "選択したエリアで販売する") == null);
-					
 
+					mainBrowser.Document.Window.ScrollTo(0, 800);
+
+					HtmlElement chara = SearchElementByAttribute("select", "ng-model", "sticker.categories.character");
+					foreach (HtmlElement charaOption in chara.All)
+					{
+						if (charaOption.GetAttribute("value") != "" && charaOption.GetAttribute("value") != (baseChara - 1).ToString())
+							charaOption.OuterHtml = "";
+					}
+
+					// 手動部分が終わるまで待機
+					do
+					{
+						Thread.Sleep(10);
+						Application.DoEvents();
+						if (stop) { StopRegister(); return; }
+					} while (baseChara != 0 && chara.GetAttribute("selectedIndex") == "0");
+
+
+					// 保存ボタンクリック
+					SearchElementByAttribute("input", "type", "submit").InvokeMember("click");
+
+					do
+					{
+						Thread.Sleep(10);
+						Application.DoEvents();
+						if (stop) { StopRegister(); return; }
+					} while ((okButton = SearchElementByAttribute("a", "ng-click", "close(true)")) == null);
+
+					okButton.InvokeMember("click");
+					if (WaitLoad()) { StopRegister(); return; }
 
 					// 再起動
 					if (++cnt == restartCount.Value)
