@@ -264,7 +264,8 @@ namespace StampRegister
             registerImages.Enabled = false;
             request.Enabled = false;
             release.Enabled = false;
-            settingFile.Enabled = false;
+			change.Enabled = false;
+			settingFile.Enabled = false;
             loginInfo.Enabled = false;
             stampInfo.Enabled = false;
             nameListFile.Enabled = false;
@@ -272,7 +273,8 @@ namespace StampRegister
             nameReload.Enabled = false;
             broserMenu.Enabled = false;
             nameMenu.Enabled = false;
-        }
+
+		}
 
         /// <summary>
         /// 終了の処理をする。
@@ -285,11 +287,11 @@ namespace StampRegister
             exportImages.Enabled = true;
             start.Enabled = true;
             registerImages.Enabled = true;
-            //tagStart.Enabled = true;
             request.Enabled = true;
             release.Enabled = true;
+			change.Enabled = true;
             exportImages.Enabled = true;
-            settingFile.Enabled = true;
+			settingFile.Enabled = true;
             loginInfo.Enabled = true;
             stampInfo.Enabled = true;
             nameListFile.Enabled = true;
@@ -858,8 +860,9 @@ namespace StampRegister
                         } while (mainBrowser.IsBusy || mainBrowser.ReadyState != WebBrowserReadyState.Complete || (agreeCheck = SearchElementByAttribute("input", "ng-model", "photoAgreement")) == null);
 
                         agreeCheck.InvokeMember("click");
+						Thread.Sleep(1000);
 
-                        do
+						do
                         {
                             Thread.Sleep(10);
                             Application.DoEvents();
@@ -1097,10 +1100,6 @@ namespace StampRegister
 
 					okButton.InvokeMember("click");
 					if (WaitLoad()) { StopRegister(); return; }
-
-					// 再起動
-					if (++cnt == restartCount.Value)
-						Restart("/rel");
 				}
 			}
 

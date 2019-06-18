@@ -32,6 +32,7 @@
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
 			this.split = new System.Windows.Forms.SplitContainer();
 			this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+			this.change = new System.Windows.Forms.Button();
 			this.escape = new System.Windows.Forms.Button();
 			this.exportImages = new System.Windows.Forms.Button();
 			this.registerImages = new System.Windows.Forms.Button();
@@ -80,7 +81,6 @@
 			this.forward = new System.Windows.Forms.ToolStripButton();
 			this.reload = new System.Windows.Forms.ToolStripButton();
 			this.url = new StampRegister.ToolStripSpringTextBox();
-			this.change = new System.Windows.Forms.Button();
 			((System.ComponentModel.ISupportInitialize)(this.split)).BeginInit();
 			this.split.Panel1.SuspendLayout();
 			this.split.Panel2.SuspendLayout();
@@ -149,6 +149,18 @@
 			this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 23F));
 			this.tableLayoutPanel2.Size = new System.Drawing.Size(496, 23);
 			this.tableLayoutPanel2.TabIndex = 18;
+			// 
+			// change
+			// 
+			this.change.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.change.Location = new System.Drawing.Point(422, 0);
+			this.change.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+			this.change.Name = "change";
+			this.change.Size = new System.Drawing.Size(72, 23);
+			this.change.TabIndex = 22;
+			this.change.Text = "修正";
+			this.change.UseVisualStyleBackColor = true;
+			this.change.Click += new System.EventHandler(this.change_Click);
 			// 
 			// escape
 			// 
@@ -627,18 +639,6 @@
 			this.url.Name = "url";
 			this.url.Size = new System.Drawing.Size(355, 33);
 			this.url.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Url_KeyDown);
-			// 
-			// change
-			// 
-			this.change.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.change.Location = new System.Drawing.Point(422, 0);
-			this.change.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-			this.change.Name = "change";
-			this.change.Size = new System.Drawing.Size(72, 23);
-			this.change.TabIndex = 22;
-			this.change.Text = "修正";
-			this.change.UseVisualStyleBackColor = true;
-			this.change.Click += new System.EventHandler(this.change_Click);
 			// 
 			// Form1
 			// 
