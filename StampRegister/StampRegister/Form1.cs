@@ -805,6 +805,7 @@ namespace StampRegister
         
         private void Request_Click(object sender, EventArgs e)
         {
+			Random random = new Random();
             int cnt = 0;
 
             StartRegister();
@@ -847,7 +848,10 @@ namespace StampRegister
                     if (requestButton.All[0].GetAttribute("disabled") == "disabled")
                         continue;
 
-                    do
+					Thread.Sleep(random.Next(1000, 2000));
+					Application.DoEvents();
+
+					do
                     {
                         // リクエストボタンクリック
                         requestButton.All[0].InvokeMember("click");
@@ -860,7 +864,7 @@ namespace StampRegister
                         } while (mainBrowser.IsBusy || mainBrowser.ReadyState != WebBrowserReadyState.Complete || (agreeCheck = SearchElementByAttribute("input", "ng-model", "photoAgreement")) == null);
 
                         agreeCheck.InvokeMember("click");
-						Thread.Sleep(1000);
+						Thread.Sleep(random.Next(1000, 2000));
 
 						do
                         {
