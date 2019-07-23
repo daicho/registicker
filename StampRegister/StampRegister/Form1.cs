@@ -381,7 +381,7 @@ namespace StampRegister
                         else
                             continue;
                     }
-
+					
 					// Illustratorファイルを開く
 					if (!File.Exists(Application.StartupPath + @"\スタンプ\" + fileName))
                         continue;
