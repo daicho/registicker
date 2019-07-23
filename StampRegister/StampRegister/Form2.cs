@@ -17,7 +17,9 @@ namespace StampRegister
             else
                 Properties.Settings.Default.SettingRectangle = this.RestoreBounds;
 
-            Properties.Settings.Default.Copyright = copyright.Text;
+			Properties.Settings.Default.BoyStampName = boyStampName.Text;
+			Properties.Settings.Default.GirlStampName = girlStampName.Text;
+			Properties.Settings.Default.Copyright = copyright.Text;
 
             Properties.Settings.Default.BoyTitle1_en = boyTitle1_en.Text;
             Properties.Settings.Default.BoyTitle1_jp = boyTitle1_jp.Text;
@@ -91,7 +93,10 @@ namespace StampRegister
         private void Form2_Load(object sender, EventArgs e)
         {
             this.Bounds = Properties.Settings.Default.SettingRectangle;
-            copyright.Text = Properties.Settings.Default.Copyright;
+
+			boyStampName.Text = Properties.Settings.Default.BoyStampName;
+			girlStampName.Text = Properties.Settings.Default.GirlStampName;
+			copyright.Text = Properties.Settings.Default.Copyright;
 
             boyTitle1_en.Text = Properties.Settings.Default.BoyTitle1_en;
             boyTitle1_jp.Text = Properties.Settings.Default.BoyTitle1_jp;

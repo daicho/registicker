@@ -176,5 +176,11 @@
     <Setting Name="RestartCount" Type="System.Decimal" Scope="User">
       <Value Profile="(Default)">16</Value>
     </Setting>
+    <Setting Name="BoyStampName" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Mr.パンダ</Value>
+    </Setting>
+    <Setting Name="GirlStampName" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Missパンダ</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

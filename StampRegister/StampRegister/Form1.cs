@@ -349,38 +349,41 @@ namespace StampRegister
                 for (int i = int.Parse(item.SubItems[(int)Columns.export].Text); i < 2; i++)
                 {
                     string name = item.SubItems[(int)Columns.name].Text;
-                    string stampName = name + item.SubItems[(int)Columns.gender].Text + (i + 1);
-                    string pandaName;
+                    string stampName;
+					string pandaName;
                     string fileName;
 
-                    // 既にzipがあるかどうか
-                    if (File.Exists(desptopPath + @"\LINE zip\" + stampName + @".zip"))
-                        continue;
+					// パンダの名前
+					if (item.SubItems[(int)Columns.gender].Text == "男")
+						pandaName = Properties.Settings.Default.BoyStampName;
+					else
+						pandaName = Properties.Settings.Default.GirlStampName;
 
-                    // パンダの名前
-                    if (item.SubItems[(int)Columns.gender].Text == "男")
-                        pandaName = "Mr.パンダ" + (i + 1);
-                    else
-                        pandaName = "Missパンダ" + (i + 1);
+					// 出力ファイル名
+					stampName = pandaName + "-" + name + "-" + (i + 1);
+
+					// 既にzipがあるかどうか
+					if (File.Exists(desptopPath + @"\LINE zip\" + stampName + @".zip"))
+                        continue;
 
                     // 特殊パターンかどうか
                     if (item.SubItems[(int)Columns.origin].Text != "")
                     {
-                        fileName = pandaName + "-" + item.SubItems[(int)Columns.origin].Text + ".ai";
+                        fileName = pandaName + "-" + item.SubItems[(int)Columns.origin].Text + "-" + (i + 1) + ".ai";
                     }
                     else
                     {
                         // ひらがな・カタカナ・漢字判定
                         if (Regex.IsMatch(name, @"^[\p{IsHiragana}\p{IsKatakana}\da-zA-Zａ-ｚＡ-Ｚ～！？★☆●○♪]+$"))
-                            fileName = pandaName + "-ひらがな" + name.Length + "文字.ai";
+                            fileName = pandaName + "-ひらがな" + name.Length + "文字-" + (i + 1) + ".ai";
                         else if (Regex.IsMatch(name, @"^[^\p{IsHiragana}\p{IsKatakana}\da-zA-Zａ-ｚＡ-Ｚ～！？★☆●○♪]+$"))
-                            fileName = pandaName + "-漢字" + name.Length + "文字.ai";
+                            fileName = pandaName + "-漢字" + name.Length + "文字-" + (i + 1) + ".ai";
                         else
                             continue;
                     }
 
-                    // Illustratorファイルを開く
-                    if (!File.Exists(Application.StartupPath + @"\スタンプ\" + fileName))
+					// Illustratorファイルを開く
+					if (!File.Exists(Application.StartupPath + @"\スタンプ\" + fileName))
                         continue;
 
                     dynamic doc = app.Open(Application.StartupPath + @"\スタンプ\" + fileName);
@@ -1002,8 +1005,6 @@ namespace StampRegister
 
 		private void change_Click(object sender, EventArgs e)
 		{
-			int cnt = 0;
-
 			StartRegister();
 			if (Login()) { StopRegister(); return; } // ログイン
 
@@ -1012,7 +1013,6 @@ namespace StampRegister
 				for (int i = 0; i < 2; i++)
 				{
 					HtmlElement okButton;
-					HtmlElement releaseButton;
 
 					int baseTaste;
 					int baseChara;

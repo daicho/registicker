@@ -721,5 +721,29 @@ namespace StampRegister.Properties {
                 this["RestartCount"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Mr.パンダ")]
+        public string BoyStampName {
+            get {
+                return ((string)(this["BoyStampName"]));
+            }
+            set {
+                this["BoyStampName"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Missパンダ")]
+        public string GirlStampName {
+            get {
+                return ((string)(this["GirlStampName"]));
+            }
+            set {
+                this["GirlStampName"] = value;
+            }
+        }
     }
 }
