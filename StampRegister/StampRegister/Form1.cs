@@ -619,15 +619,23 @@ namespace StampRegister
                             langOption.OuterHtml = "";
                     }
 
-                    // 手動部分が終わるまで待機
-                    do
-                    {
+					HtmlElement chara = SearchElementByAttribute("select", "ng-model", "sticker.categories.character");
+					foreach (HtmlElement charaOption in chara.All)
+					{
+						if (charaOption.GetAttribute("value") != "" && charaOption.GetAttribute("value") != (baseChara - 1).ToString())
+							charaOption.OuterHtml = "";
+					}
+
+					// 手動部分が終わるまで待機
+					do
+					{
                         Thread.Sleep(10);
                         Application.DoEvents();
                         if (stop) { StopRegister(); return; }
-                    } while (mainBrowser.Document.GetElementsByTagName("input").GetElementsByName("meta[ja][title]").Count == 0);
+                    } while (mainBrowser.Document.GetElementsByTagName("input").GetElementsByName("meta[ja][title]").Count == 0 ||
+							 (baseChara != 0 && chara.GetAttribute("selectedIndex") == "0"));
 
-                    mainBrowser.Document.GetElementsByTagName("input").GetElementsByName("meta[ja][title]")[0].InnerText = jpTitle;
+					mainBrowser.Document.GetElementsByTagName("input").GetElementsByName("meta[ja][title]")[0].InnerText = jpTitle;
                     mainBrowser.Document.GetElementsByTagName("textarea").GetElementsByName("meta[ja][description]")[0].InnerText = jpDescription;
 
                     foreach (HtmlElement element in mainBrowser.Document.GetElementsByTagName("input").GetElementsByName("areas[]"))
@@ -699,9 +707,21 @@ namespace StampRegister
                 {
                     HtmlElement perSet;
                     HtmlElement okButton;
-                    string stampName = item.SubItems[(int)Columns.name].Text + item.SubItems[(int)Columns.gender].Text + (i + 1);
 
-                    if (item.SubItems[(int)Columns.url1 + i].Text == "")
+					string name = item.SubItems[(int)Columns.name].Text;
+					string pandaName;
+					string stampName;
+
+					// パンダの名前
+					if (item.SubItems[(int)Columns.gender].Text == "男")
+						pandaName = Properties.Settings.Default.BoyStampName;
+					else
+						pandaName = Properties.Settings.Default.GirlStampName;
+
+					// スタンプ名
+					stampName = pandaName + "-" + name + "-" + (i + 1);
+
+					if (item.SubItems[(int)Columns.url1 + i].Text == "")
                         continue;
 
                     // zipファイルを移動
