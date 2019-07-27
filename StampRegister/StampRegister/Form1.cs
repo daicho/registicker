@@ -439,7 +439,7 @@ namespace StampRegister
 
         private void Start_Click(object sender, EventArgs e)
         {
-            string[] countries = { "JP", "TW", "TH", "AU", "US", "CA", "GU", "BR", "GB", "SE", "ES" }; // 販売する国
+			string[] countries = Properties.Settings.Default.Countries.Split(','); // 販売する国
 
             StartRegister();
             if (Login()) { StopRegister(); return; } // ログイン

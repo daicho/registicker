@@ -745,5 +745,17 @@ namespace StampRegister.Properties {
                 this["GirlStampName"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("JP,TW,TH,AU,US,CA,GU,BR,GB,SE,ES")]
+        public string Countries {
+            get {
+                return ((string)(this["Countries"]));
+            }
+            set {
+                this["Countries"] = value;
+            }
+        }
     }
 }

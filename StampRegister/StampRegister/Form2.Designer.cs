@@ -153,6 +153,8 @@
 			this.label51 = new System.Windows.Forms.Label();
 			this.boyStampName = new System.Windows.Forms.TextBox();
 			this.label52 = new System.Windows.Forms.Label();
+			this.countries = new System.Windows.Forms.TextBox();
+			this.label53 = new System.Windows.Forms.Label();
 			this.tabControl1.SuspendLayout();
 			this.tabPage1.SuspendLayout();
 			this.groupBox2.SuspendLayout();
@@ -176,7 +178,8 @@
 			// 
 			// label17
 			// 
-			this.label17.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+			this.label17.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
 			this.label17.AutoSize = true;
 			this.label17.Location = new System.Drawing.Point(166, 455);
 			this.label17.Name = "label17";
@@ -188,7 +191,7 @@
 			// 
 			this.ok.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
 			this.ok.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-			this.ok.Location = new System.Drawing.Point(240, 556);
+			this.ok.Location = new System.Drawing.Point(240, 581);
 			this.ok.Name = "ok";
 			this.ok.Size = new System.Drawing.Size(75, 23);
 			this.ok.TabIndex = 22;
@@ -200,7 +203,7 @@
 			// 
 			this.cancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
 			this.cancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-			this.cancel.Location = new System.Drawing.Point(159, 556);
+			this.cancel.Location = new System.Drawing.Point(159, 581);
 			this.cancel.Name = "cancel";
 			this.cancel.Size = new System.Drawing.Size(75, 23);
 			this.cancel.TabIndex = 21;
@@ -1625,7 +1628,8 @@
 			// 
 			// label51
 			// 
-			this.label51.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+			this.label51.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
 			this.label51.AutoSize = true;
 			this.label51.Location = new System.Drawing.Point(16, 503);
 			this.label51.Name = "label51";
@@ -1644,7 +1648,8 @@
 			// 
 			// label52
 			// 
-			this.label52.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+			this.label52.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
 			this.label52.AutoSize = true;
 			this.label52.Location = new System.Drawing.Point(16, 478);
 			this.label52.Name = "label52";
@@ -1652,17 +1657,38 @@
 			this.label52.TabIndex = 19;
 			this.label52.Text = "スタンプ名 (男)";
 			// 
+			// countries
+			// 
+			this.countries.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+			this.countries.Location = new System.Drawing.Point(98, 550);
+			this.countries.Name = "countries";
+			this.countries.Size = new System.Drawing.Size(213, 19);
+			this.countries.TabIndex = 20;
+			// 
+			// label53
+			// 
+			this.label53.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+			this.label53.AutoSize = true;
+			this.label53.Location = new System.Drawing.Point(16, 553);
+			this.label53.Name = "label53";
+			this.label53.Size = new System.Drawing.Size(41, 12);
+			this.label53.TabIndex = 19;
+			this.label53.Text = "販売国";
+			// 
 			// Form2
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(327, 591);
+			this.ClientSize = new System.Drawing.Size(327, 616);
 			this.Controls.Add(this.tabControl1);
 			this.Controls.Add(this.label52);
 			this.Controls.Add(this.label51);
+			this.Controls.Add(this.label53);
 			this.Controls.Add(this.label26);
 			this.Controls.Add(this.boyStampName);
 			this.Controls.Add(this.girlStampName);
+			this.Controls.Add(this.countries);
 			this.Controls.Add(this.copyright);
 			this.Controls.Add(this.cancel);
 			this.Controls.Add(this.ok);
@@ -1839,5 +1865,7 @@
 		private System.Windows.Forms.Label label51;
 		private System.Windows.Forms.TextBox boyStampName;
 		private System.Windows.Forms.Label label52;
+		private System.Windows.Forms.TextBox countries;
+		private System.Windows.Forms.Label label53;
 	}
 }

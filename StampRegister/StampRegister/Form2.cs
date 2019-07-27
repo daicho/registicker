@@ -20,8 +20,9 @@ namespace StampRegister
 			Properties.Settings.Default.BoyStampName = boyStampName.Text;
 			Properties.Settings.Default.GirlStampName = girlStampName.Text;
 			Properties.Settings.Default.Copyright = copyright.Text;
+			Properties.Settings.Default.Countries = countries.Text;
 
-            Properties.Settings.Default.BoyTitle1_en = boyTitle1_en.Text;
+			Properties.Settings.Default.BoyTitle1_en = boyTitle1_en.Text;
             Properties.Settings.Default.BoyTitle1_jp = boyTitle1_jp.Text;
             Properties.Settings.Default.BoyTitle2_en = boyTitle2_en.Text;
             Properties.Settings.Default.BoyTitle2_jp = boyTitle2_jp.Text;
@@ -97,8 +98,9 @@ namespace StampRegister
 			boyStampName.Text = Properties.Settings.Default.BoyStampName;
 			girlStampName.Text = Properties.Settings.Default.GirlStampName;
 			copyright.Text = Properties.Settings.Default.Copyright;
+			countries.Text = Properties.Settings.Default.Countries;
 
-            boyTitle1_en.Text = Properties.Settings.Default.BoyTitle1_en;
+			boyTitle1_en.Text = Properties.Settings.Default.BoyTitle1_en;
             boyTitle1_jp.Text = Properties.Settings.Default.BoyTitle1_jp;
             boyTitle2_en.Text = Properties.Settings.Default.BoyTitle2_en;
             boyTitle2_jp.Text = Properties.Settings.Default.BoyTitle2_jp;
