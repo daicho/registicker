@@ -796,7 +796,7 @@ namespace StampRegister
                         Thread.Sleep(10);
                         Application.DoEvents();
                         if (stop) { StopRegister(); return; }
-                    } while (SearchElementByAttribute("div", "ng-if", "sticker.stickerType === 'static' || image.key === 'tab'") == null);
+                    } while (SearchElementByAttribute("div", "ng-if", "sticker.stickerType === 'static' || sticker.stickerType === 'custom' || image.key === 'tab'") == null);
 
                     string[] files = Directory.GetFiles(desptopPath + @"\LINE zip\", "*.zip");
                     foreach (string file in files)
