@@ -150,7 +150,7 @@
   </ItemGroup>
   <ItemGroup>
     <COMReference Include="Illustrator">
-      <Guid>{5E6A9019-F846-4AF0-871E-EC2B30421F1C}</Guid>
+      <Guid>{6302455F-E28B-4425-B2A1-B7A34F025651}</Guid>
       <VersionMajor>1</VersionMajor>
       <VersionMinor>0</VersionMinor>
       <Lcid>0</Lcid>

@@ -964,7 +964,7 @@ namespace StampRegister
                     // 完全に読み込むまで待機
                     do
                     {
-                        Thread.Sleep(10);
+                        Thread.Sleep(500);
                         Application.DoEvents();
                         if (stop) { StopRegister(); return; }
                     } while (SearchElementByInnerText("a", "削除") == null &&
@@ -981,7 +981,7 @@ namespace StampRegister
 
                         do
                         {
-                            Thread.Sleep(10);
+                            Thread.Sleep(500);
                             Application.DoEvents();
                             if (stop) { StopRegister(); return; }
                         } while ((okButton = SearchElementByAttribute("a", "ng-click", "close(true)")) == null);
@@ -992,7 +992,7 @@ namespace StampRegister
                         // 完全に読み込むまで待機
                         do
                         {
-                            Thread.Sleep(10);
+                            Thread.Sleep(500);
                             Application.DoEvents();
                             if (stop) { StopRegister(); return; }
 
