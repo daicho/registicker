@@ -940,7 +940,7 @@ namespace StampRegister
             StartRegister();
             if (Login()) { StopRegister(); return; } // ログイン
 
-            foreach (ListViewItem item in nameList.Items)
+			foreach (ListViewItem item in nameList.Items)
 			{
 				for (int i = 0; i < 2; i++)
 				{
@@ -954,8 +954,11 @@ namespace StampRegister
 					if (item.SubItems[(int)Columns.url1 + i].Text == "")
                         continue;
 
-                    // アイテム管理ページに移動
-                    mainBrowser.Navigate(item.SubItems[(int)Columns.url1 + i].Text);
+					Thread.Sleep(1000);
+					Application.DoEvents();
+
+					// アイテム管理ページに移動
+					mainBrowser.Navigate(item.SubItems[(int)Columns.url1 + i].Text);
                     if (WaitLoad()) { StopRegister(); return; }
 
                     if (SearchElementByInnerText("h1", "エラーが発生しました") != null)
@@ -964,35 +967,41 @@ namespace StampRegister
                     // 完全に読み込むまで待機
                     do
                     {
-                        Thread.Sleep(500);
+                        Thread.Sleep(100);
                         Application.DoEvents();
                         if (stop) { StopRegister(); return; }
                     } while (SearchElementByInnerText("a", "削除") == null &&
                              SearchElementByInnerText("a", "編集") == null &&
                              SearchElementByInnerText("label", "編集に戻す  ") == null);
 
-                    if ((releaseButton = SearchElementByInnerText("label", "リリース  ")) == null)
+					if ((releaseButton = SearchElementByInnerText("label", "リリース  ")) == null)
                         continue;
 
                     do
-                    {
-                        // リリースボタンクリック
-                        releaseButton.All[0].InvokeMember("click");
+					{
+						Thread.Sleep(1000);
+						Application.DoEvents();
+
+						// リリースボタンクリック
+						releaseButton.All[0].InvokeMember("click");
 
                         do
                         {
-                            Thread.Sleep(500);
+                            Thread.Sleep(100);
                             Application.DoEvents();
                             if (stop) { StopRegister(); return; }
                         } while ((okButton = SearchElementByAttribute("a", "ng-click", "close(true)")) == null);
 
-                        okButton.InvokeMember("click");
+						Thread.Sleep(1000);
+						Application.DoEvents();
+
+						okButton.InvokeMember("click");
                         if (WaitLoad()) { StopRegister(); return; }
 
                         // 完全に読み込むまで待機
                         do
                         {
-                            Thread.Sleep(500);
+                            Thread.Sleep(100);
                             Application.DoEvents();
                             if (stop) { StopRegister(); return; }
 
