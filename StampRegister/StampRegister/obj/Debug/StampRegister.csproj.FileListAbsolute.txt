@@ -246,3 +246,5 @@ C:\Users\Daichi\Git\registicker\StampRegister\StampRegister\obj\Debug\StampRegis
 C:\Users\Daichi\Git\registicker\StampRegister\StampRegister\obj\Debug\StampRegister.csproj.CopyComplete
 C:\Users\Daichi\Git\registicker\StampRegister\StampRegister\obj\Debug\StampRegister.exe
 C:\Users\Daichi\Git\registicker\StampRegister\StampRegister\obj\Debug\StampRegister.pdb
+C:\Users\Daichi\Git\registicker\StampRegister\StampRegister\bin\Debug\WebDriver.dll
+C:\Users\Daichi\Git\registicker\StampRegister\StampRegister\bin\Debug\WebDriver.xml

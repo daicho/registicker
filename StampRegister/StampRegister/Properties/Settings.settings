@@ -68,9 +68,6 @@
     <Setting Name="Rectangle" Type="System.Drawing.Rectangle" Scope="User">
       <Value Profile="(Default)">100, 100, 1000, 600</Value>
     </Setting>
-    <Setting Name="SplitWidth" Type="System.Int32" Scope="User">
-      <Value Profile="(Default)">500</Value>
-    </Setting>
     <Setting Name="TagFilePath" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
     </Setting>
@@ -172,9 +169,6 @@
     </Setting>
     <Setting Name="SettingRectangle" Type="System.Drawing.Rectangle" Scope="User">
       <Value Profile="(Default)">100, 100, 343, 580</Value>
-    </Setting>
-    <Setting Name="RestartCount" Type="System.Decimal" Scope="User">
-      <Value Profile="(Default)">16</Value>
     </Setting>
     <Setting Name="BoyStampName" Type="System.String" Scope="User">
       <Value Profile="(Default)">Mr.パンダ</Value>

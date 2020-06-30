@@ -5,8 +5,12 @@ using System.Threading;
 using System.Configuration;
 using System.ComponentModel;
 using System.Diagnostics;
+using System.Reflection;
 using System.Windows.Forms;
 using ClosedXML.Excel;
+using OpenQA.Selenium;
+using OpenQA.Selenium.Chrome;
+using OpenQA.Selenium.Support.UI;
 
 namespace StampRegister
 {
@@ -31,54 +35,12 @@ namespace StampRegister
         const int waitSeconds = 60;
         private bool stop = false;
         private bool menuCancel = false;
-        private bool save = true;
+		ChromeDriver driver;
 
-        public Form1()
+
+		public Form1()
         {
             InitializeComponent();
-        }
-
-        /// <summary>
-        /// Webbrowserの読み込みが終わるまで待機する。
-        /// </summary>
-        /// <returns>中断ボタンが押されたかどうか</returns>
-        private bool WaitLoad()
-        {
-            // 読み込みを開始するまで待機
-            while (!mainBrowser.IsBusy && mainBrowser.ReadyState == WebBrowserReadyState.Complete)
-            {
-                Thread.Sleep(10);
-                Application.DoEvents();
-                if (stop) return true;
-            }
-
-            // 読み込みが完了するまで待機
-            do
-            {
-                Thread.Sleep(10);
-                Application.DoEvents();
-                if (stop) return true;
-            } while (mainBrowser.IsBusy || mainBrowser.ReadyState != WebBrowserReadyState.Complete);
-
-            return false;
-        }
-
-        /// <summary>
-        /// HTMLの要素を属性を使って取得する。
-        /// </summary>
-        /// <param name="tagName">タグ名</param>
-        /// <param name="attribute">属性名</param>
-        /// <param name="value">値</param>
-        /// <returns>見つかったHTML要素</returns>
-        private HtmlElement SearchElementByAttribute(string tagName, string attribute, string value)
-        {
-            foreach (HtmlElement element in mainBrowser.Document.GetElementsByTagName(tagName))
-            {
-                if (element.GetAttribute(attribute) == value)
-                    return element;
-            }
-
-            return null;
         }
 
         /// <summary>
@@ -89,11 +51,11 @@ namespace StampRegister
         /// <returns>見つかったHTML要素</returns>
         private HtmlElement SearchElementByInnerText(string tagName, string text)
         {
-            foreach (HtmlElement element in mainBrowser.Document.GetElementsByTagName(tagName))
+            /*foreach (HtmlElement element in mainBrowser.Document.GetElementsByTagName(tagName))
             {
                 if (element.InnerText == text)
                     return element;
-            }
+            }*/
 
             return null;
         }
@@ -108,11 +70,11 @@ namespace StampRegister
         /// <returns>見つかったHTML要素</returns>
         private HtmlElement SearchElementByMix(string tagName, string attribute, string value, string text)
         {
-            foreach (HtmlElement element in mainBrowser.Document.GetElementsByTagName(tagName))
+            /*foreach (HtmlElement element in mainBrowser.Document.GetElementsByTagName(tagName))
             {
                 if (element.GetAttribute(attribute) == value && element.InnerText.IndexOf(text) != -1)
                     return element;
-            }
+            }*/
 
             return null;
         }
@@ -271,7 +233,6 @@ namespace StampRegister
             nameListFile.Enabled = false;
             browse.Enabled = false;
             nameReload.Enabled = false;
-            broserMenu.Enabled = false;
             nameMenu.Enabled = false;
 
 		}
@@ -297,7 +258,6 @@ namespace StampRegister
             nameListFile.Enabled = true;
             browse.Enabled = true;
             nameReload.Enabled = true;
-            broserMenu.Enabled = true;
             nameMenu.Enabled = true;
         }
         
@@ -305,25 +265,18 @@ namespace StampRegister
         /// ログインする。
         /// </summary>
         /// <returns>中断ボタンが押されたかどうか</returns>
-        bool Login()
+        void Login()
         {
-            HtmlElement loginButton;
+			IWebElement loginButton;
 
-            mainBrowser.Navigate("https://creator.line.me/signup/line_auth");
-            if (WaitLoad()) return true;
+			driver.Url = "https://creator.line.me/signup/line_auth";
 
-            if ((loginButton = SearchElementByAttribute("input", "value", "ログイン")) != null)
+			if ((loginButton = driver.FindElementByXPath("//input[@value='ログイン']")) != null)
             {
-                mainBrowser.Document.GetElementById("tid").SetAttribute("value", mailAddress.Text);
-                mainBrowser.Document.GetElementById("tpasswd").SetAttribute("value", password.Text);
-
-                loginButton.Enabled = true;
-                loginButton.InvokeMember("click");
-
-                if (WaitLoad()) return true;
+				driver.FindElementById("id").SendKeys(mailAddress.Text);
+				driver.FindElementById("passwd").SendKeys(password.Text);
+                loginButton.Click();
             }
-
-            return false;
         }
 
         private void Escape_Click(object sender, EventArgs e)
@@ -442,7 +395,8 @@ namespace StampRegister
 			string[] countries = Properties.Settings.Default.Countries.Split(','); // 販売する国
 
             StartRegister();
-            if (Login()) { StopRegister(); return; } // ログイン
+			Login();
+            if (stop) { StopRegister(); return; }
 
             foreach (ListViewItem item in nameList.Items)
             {
@@ -450,8 +404,6 @@ namespace StampRegister
                 
                 for (int i = int.Parse(item.SubItems[(int)Columns.stamp].Text); i < 2; i++)
                 {
-                    HtmlElement okButton;
-
                     string enTitle;
                     string jpTitle;
                     string enDescription;
@@ -591,27 +543,29 @@ namespace StampRegister
                     enDescription = baseDescription_en.Replace("***", item.SubItems[(int)Columns.roma].Text);
                     jpDescription = baseDescription_jp.Replace("***", item.SubItems[(int)Columns.name].Text).Replace("@@@", item.SubItems[(int)Columns.honorific].Text);
 
-                    // 登録ページに移動
-                    mainBrowser.Navigate("https://creator.line.me" + mainBrowser.Document.GetElementsByTagName("base")[0].GetAttribute("href") + "sticker/create");
-                    if (WaitLoad()) { StopRegister(); return; }
+					// 登録ページに移動
+					MessageBox.Show(driver.FindElementByTagName("base").GetAttribute("href"));
+					driver.Navigate().GoToUrl("https://creator.line.me" + driver.FindElementByTagName("base").GetAttribute("href") + "sticker/create");
+                    if (stop) { StopRegister(); return; }
 
-                    // 完全に読み込むまで待機
+					/*// 完全に読み込むまで待機
                     do
                     {
                         Thread.Sleep(10);
                         Application.DoEvents();
                         if (stop) { StopRegister(); return; }
-                    } while (SearchElementByInnerText("span", "選択したエリアで販売する") == null);
+                    } while (SearchElementByInnerText("span", "選択したエリアで販売する") == null);*/
 
-                    // 各項目入力
-                    mainBrowser.Document.GetElementsByTagName("input").GetElementsByName("meta[en][title]")[0].InnerText = enTitle;
-                    mainBrowser.Document.GetElementsByTagName("textarea").GetElementsByName("meta[en][description]")[0].InnerText = enDescription;
-                    mainBrowser.Document.GetElementsByTagName("input").GetElementsByName("copyright")[0].InnerText = Properties.Settings.Default.Copyright;
-                    SearchElementByInnerText("span", "選択したエリアで販売する").Parent.GetElementsByTagName("input")[0].InvokeMember("click");
+					// 各項目入力
+					driver.FindElementByTagName("input").FindElement(By.Name("meta[en][title]")).SendKeys(enTitle);
+					driver.FindElementByTagName("textarea").FindElement(By.Name("meta[en][description]")).SendKeys(enDescription);
+					driver.FindElementByTagName("input").FindElement(By.Name("copyright")).SendKeys(Properties.Settings.Default.Copyright);
+					driver.FindElementByXPath("//select[text()='選択したエリアで販売する']").FindElement(By.XPath("..")).FindElement(By.TagName("input")).Click();
+					//SearchElementByInnerText("span", "選択したエリアで販売する").Parent.GetElementsByTagName("input")[0].InvokeMember("click");
 
                     // セレクトボックスの項目数を減らす
-                    HtmlElement lang = SearchElementByAttribute("select", "ng-model", "selected_desc_lang");
-                    foreach (HtmlElement langOption in lang.All)
+                    /*var lang = driver.FindElementsByXPath("//select[@ng-model='selected_desc_lang']");
+                    foreach (IWebElement langOption in lang)
                     {
                         if (langOption.GetAttribute("value") == "0")
                             langOption.SetAttribute("label", "JapaneseJapaneseJapaneseJapaneseJapanese");
@@ -619,13 +573,13 @@ namespace StampRegister
                             langOption.OuterHtml = "";
                     }
 
-					HtmlElement chara = SearchElementByAttribute("select", "ng-model", "sticker.categories.character");
-					foreach (HtmlElement charaOption in chara.All)
+					var chara = driver.FindElementsByXPath("//select[@ng-model='sticker.categories.character']");
+					foreach (IWebElement charaOption in chara)
 					{
 						if (charaOption.GetAttribute("value") != "" && charaOption.GetAttribute("value") != (baseChara - 1).ToString())
 							charaOption.OuterHtml = "";
-					}
-
+					}*/
+					/*
 					// 手動部分が終わるまで待機
 					do
 					{
@@ -634,59 +588,43 @@ namespace StampRegister
                         if (stop) { StopRegister(); return; }
                     } while (mainBrowser.Document.GetElementsByTagName("input").GetElementsByName("meta[ja][title]").Count == 0 ||
 							 (baseChara != 0 && chara.GetAttribute("selectedIndex") == "0"));
+					*/
+					driver.FindElementByTagName("input").FindElement(By.Name("meta[ja][title]")).SendKeys(jpTitle);
+					driver.FindElementByTagName("textarea").FindElement(By.Name("meta[ja][description]")).SendKeys(jpDescription);
 
-					mainBrowser.Document.GetElementsByTagName("input").GetElementsByName("meta[ja][title]")[0].InnerText = jpTitle;
-                    mainBrowser.Document.GetElementsByTagName("textarea").GetElementsByName("meta[ja][description]")[0].InnerText = jpDescription;
-
-                    foreach (HtmlElement element in mainBrowser.Document.GetElementsByTagName("input").GetElementsByName("areas[]"))
+					foreach (IWebElement element in driver.FindElementByTagName("input").FindElements(By.Name("areas[]")))
                     {
                         if (element.GetAttribute("type") == "checkbox")
                         {
                             if (Array.IndexOf(countries, element.GetAttribute("value")) != -1)
                             {
-                                element.SetAttribute("checked", "checked");
+                                //element.SetAttribute("checked", "checked");
                             }
                             else
                             {
-                                element.SetAttribute("checked", "");
+                                //element.SetAttribute("checked", "");
                             }
                         }
                     }
 
-                    do
-                    {
-                        Thread.Sleep(10);
-                        Application.DoEvents();
-                        if (stop) { StopRegister(); return; }
-                    } while (mainBrowser.Document.GetElementsByTagName("input").GetElementsByName("meta[ja][title]")[0].GetAttribute("className") == "ng-scope ng-isolate-scope ng-valid-pattern ng-valid-max-eaw ng-valid-bad-word ng-valid-contains-uri ng-dirty ng-valid-required ng-valid-min-eaw ng-invalid ng-invalid-duplicated");
-
-                    // 保存ボタンクリック
-                    SearchElementByAttribute("input", "type", "submit").InvokeMember("click");
-
-                    do
-                    {
-                        Thread.Sleep(10);
-                        Application.DoEvents();
-                        if (stop) { StopRegister(); return; }
-                    } while ((okButton = SearchElementByAttribute("a", "ng-click", "close(true)")) == null);
-
-                    okButton.InvokeMember("click");
-                    if (WaitLoad()) { StopRegister(); return; }
+					// 保存ボタンクリック
+					driver.FindElementByXPath("//input[@type='submit']").Click();
+					driver.FindElementByXPath("//a[@ng-click='close(true)']").Click();
+                    if (stop) { StopRegister(); return; }
 
                     // URL&完了状況保存
-                    item.SubItems[(int)Columns.url1 + i].Text = mainBrowser.Url.ToString().Replace("?saved=true", "");
+                    item.SubItems[(int)Columns.url1 + i].Text = driver.Url.Replace("?saved=true", "");
                     item.SubItems[(int)Columns.stamp].Text = (i + 1).ToString();
                 }
             }
             
             StopRegister();
             MessageBox.Show("終了！");
-            Restart("");
         }
 
         private void RegisterImages_Click(object sender, EventArgs e)
         {
-            string desptopPath = Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory);
+            /*string desptopPath = Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory);
 
             // 作業用フォルダ作成
             if (!Directory.Exists(desptopPath + @"\LINE zip"))
@@ -823,12 +761,12 @@ namespace StampRegister
 
             StopRegister();
             MessageBox.Show("終了！");
-            Restart("");
+            Restart("");*/
         }
         
         private void Request_Click(object sender, EventArgs e)
         {
-			Random random = new Random();
+			/*Random random = new Random();
             int cnt = 0;
 
             StartRegister();
@@ -930,12 +868,12 @@ namespace StampRegister
             }
 
             StopRegister();
-            MessageBox.Show("終了！");
+            MessageBox.Show("終了！");*/
         }
 
         private void Release_Click(object sender, EventArgs e)
         {
-            int cnt = 0;
+            /*int cnt = 0;
 
             StartRegister();
             if (Login()) { StopRegister(); return; } // ログイン
@@ -1029,12 +967,12 @@ namespace StampRegister
             }
 
             StopRegister();
-            MessageBox.Show("終了！");
+            MessageBox.Show("終了！");*/
 		}
 
 		private void change_Click(object sender, EventArgs e)
 		{
-			StartRegister();
+			/*StartRegister();
 			if (Login()) { StopRegister(); return; } // ログイン
 
 			foreach (ListViewItem item in nameList.Items)
@@ -1137,7 +1075,7 @@ namespace StampRegister
 			}
 
 			StopRegister();
-			MessageBox.Show("終了！");
+			MessageBox.Show("終了！");*/
 		}
 
 		private void StampSetting_Click(object sender, EventArgs e)
@@ -1165,40 +1103,9 @@ namespace StampRegister
             LoadNameList(nameListFile.Text);
         }
 
-        private void MainBrowser_Navigated(object sender, WebBrowserNavigatedEventArgs e)
-        {
-            url.Text = mainBrowser.Url.ToString();
-            back.Enabled = mainBrowser.CanGoBack;
-            forward.Enabled = mainBrowser.CanGoForward;
-        }
-
-        private void Back_Click(object sender, EventArgs e)
-        {
-            mainBrowser.GoBack();
-        }
-
-        private void Forward_Click(object sender, EventArgs e)
-        {
-            mainBrowser.GoForward();
-        }
-
-        private void Reload_Click(object sender, EventArgs e)
-        {
-            mainBrowser.Refresh();
-        }
-
-        private void Url_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Enter)
-            {
-                e.SuppressKeyPress = true;
-                mainBrowser.Navigate(url.Text);
-            }
-        }
-
         private void MainBrowser_DocumentCompleted(object sender, WebBrowserDocumentCompletedEventArgs e)
         {
-            ListViewItem curItem = null;
+            /*ListViewItem curItem = null;
             int number = 0;
             string stampName;
 
@@ -1226,7 +1133,7 @@ namespace StampRegister
                     element.InnerText = "「" + stampName + "」のアイテム管理";
                     break;
                 }
-            }
+            }*/
         }
 
         /// <summary>
@@ -1235,7 +1142,7 @@ namespace StampRegister
         /// <param name="number">スタンプの番号</param>
         void OpenStampPage(int number)
         {
-            ListViewItem selectedItem = ((ListView)nameMenu.SourceControl).SelectedItems[0];
+           /* ListViewItem selectedItem = ((ListView)nameMenu.SourceControl).SelectedItems[0];
 
             // ページに移動
             mainBrowser.Navigate(selectedItem.SubItems[(int)Columns.url1 + (number - 1)].Text);
@@ -1245,7 +1152,7 @@ namespace StampRegister
             {
                 Login(); // ログイン
                 mainBrowser.Navigate(selectedItem.SubItems[(int)Columns.url1 + (number - 1)].Text);
-            }
+            }*/
         }
 
         private void LoadSetting_Click(object sender, EventArgs e)
@@ -1318,13 +1225,11 @@ namespace StampRegister
         /// </summary>
         void LoadProperties()
         {
-            split.SplitterDistance = Properties.Settings.Default.SplitWidth;
             this.Bounds = Properties.Settings.Default.Rectangle;
             this.WindowState = Properties.Settings.Default.WindowState;
             mailAddress.Text = Properties.Settings.Default.MailAddress;
             password.Text = Properties.Settings.Default.Password;
             nameListFile.Text = Properties.Settings.Default.NameListFile;
-            restartCount.Value = Properties.Settings.Default.RestartCount;
             LoadNameList(nameListFile.Text);
         }
 
@@ -1339,54 +1244,25 @@ namespace StampRegister
                 Properties.Settings.Default.Rectangle = this.RestoreBounds;
 
             Properties.Settings.Default.WindowState = WindowState;
-            Properties.Settings.Default.SplitWidth = split.SplitterDistance;
             Properties.Settings.Default.MailAddress = mailAddress.Text;
             Properties.Settings.Default.Password = password.Text;
             Properties.Settings.Default.NameListFile = nameListFile.Text;
-            Properties.Settings.Default.RestartCount = restartCount.Value;
             Properties.Settings.Default.Save();
-        }
-
-
-        /// <summary>
-        /// 再起動する。
-        /// </summary>
-        private void Restart(string arg)
-        {
-            save = false;
-
-            SaveProperties();
-            SaveNameList(nameListFile.Text);
-
-            // 再起動
-            Process.Start(Application.ExecutablePath, arg);
-            Application.Exit();
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
             LoadProperties();
-
-            if (Environment.GetCommandLineArgs().Length >= 2) { 
-                switch (Environment.GetCommandLineArgs()[1])
-                {
-                    case "/req":
-                        request.PerformClick();
-                        break;
-
-                    case "/rel":
-                        release.PerformClick();
-                        break;
-                }
-            }
-        }
+			driver = new ChromeDriver();
+			driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(20);
+		}
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if (save) {
-                SaveProperties();
-                SaveNameList(nameListFile.Text);
-            }
+            SaveProperties();
+            SaveNameList(nameListFile.Text);
+
+			driver.Quit();
         }
 	}
 }

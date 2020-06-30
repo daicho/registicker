@@ -30,7 +30,6 @@
         {
 			this.components = new System.ComponentModel.Container();
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-			this.split = new System.Windows.Forms.SplitContainer();
 			this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
 			this.change = new System.Windows.Forms.Button();
 			this.escape = new System.Windows.Forms.Button();
@@ -67,61 +66,20 @@
 			this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
 			this.openStampPage2 = new System.Windows.Forms.ToolStripMenuItem();
 			this.stampInfo = new System.Windows.Forms.GroupBox();
-			this.restartCount = new System.Windows.Forms.NumericUpDown();
-			this.label4 = new System.Windows.Forms.Label();
 			this.stampSetting = new System.Windows.Forms.Button();
 			this.loginInfo = new System.Windows.Forms.GroupBox();
 			this.label1 = new System.Windows.Forms.Label();
 			this.label2 = new System.Windows.Forms.Label();
 			this.password = new System.Windows.Forms.TextBox();
 			this.mailAddress = new System.Windows.Forms.TextBox();
-			this.mainBrowser = new System.Windows.Forms.WebBrowser();
-			this.broserMenu = new System.Windows.Forms.ToolStrip();
-			this.back = new System.Windows.Forms.ToolStripButton();
-			this.forward = new System.Windows.Forms.ToolStripButton();
-			this.reload = new System.Windows.Forms.ToolStripButton();
-			this.url = new StampRegister.ToolStripSpringTextBox();
-			((System.ComponentModel.ISupportInitialize)(this.split)).BeginInit();
-			this.split.Panel1.SuspendLayout();
-			this.split.Panel2.SuspendLayout();
-			this.split.SuspendLayout();
 			this.tableLayoutPanel2.SuspendLayout();
 			this.settingFile.SuspendLayout();
 			this.tableLayoutPanel1.SuspendLayout();
 			this.nameInfo.SuspendLayout();
 			this.nameMenu.SuspendLayout();
 			this.stampInfo.SuspendLayout();
-			((System.ComponentModel.ISupportInitialize)(this.restartCount)).BeginInit();
 			this.loginInfo.SuspendLayout();
-			this.broserMenu.SuspendLayout();
 			this.SuspendLayout();
-			// 
-			// split
-			// 
-			this.split.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-			this.split.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-			this.split.FixedPanel = System.Windows.Forms.FixedPanel.Panel1;
-			this.split.Location = new System.Drawing.Point(0, 0);
-			this.split.Name = "split";
-			// 
-			// split.Panel1
-			// 
-			this.split.Panel1.Controls.Add(this.tableLayoutPanel2);
-			this.split.Panel1.Controls.Add(this.settingFile);
-			this.split.Panel1.Controls.Add(this.nameInfo);
-			this.split.Panel1.Controls.Add(this.stampInfo);
-			this.split.Panel1.Controls.Add(this.loginInfo);
-			// 
-			// split.Panel2
-			// 
-			this.split.Panel2.Controls.Add(this.mainBrowser);
-			this.split.Panel2.Controls.Add(this.broserMenu);
-			this.split.Size = new System.Drawing.Size(984, 604);
-			this.split.SplitterDistance = 500;
-			this.split.TabIndex = 0;
-			this.split.TabStop = false;
 			// 
 			// tableLayoutPanel2
 			// 
@@ -142,21 +100,21 @@
 			this.tableLayoutPanel2.Controls.Add(this.start, 2, 0);
 			this.tableLayoutPanel2.Controls.Add(this.request, 4, 0);
 			this.tableLayoutPanel2.Controls.Add(this.release, 5, 0);
-			this.tableLayoutPanel2.Location = new System.Drawing.Point(1, 576);
+			this.tableLayoutPanel2.Location = new System.Drawing.Point(12, 560);
 			this.tableLayoutPanel2.Name = "tableLayoutPanel2";
 			this.tableLayoutPanel2.RowCount = 1;
 			this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
 			this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 23F));
-			this.tableLayoutPanel2.Size = new System.Drawing.Size(496, 23);
+			this.tableLayoutPanel2.Size = new System.Drawing.Size(470, 23);
 			this.tableLayoutPanel2.TabIndex = 18;
 			// 
 			// change
 			// 
 			this.change.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.change.Location = new System.Drawing.Point(422, 0);
+			this.change.Location = new System.Drawing.Point(404, 0);
 			this.change.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
 			this.change.Name = "change";
-			this.change.Size = new System.Drawing.Size(72, 23);
+			this.change.Size = new System.Drawing.Size(64, 23);
 			this.change.TabIndex = 22;
 			this.change.Text = "修正";
 			this.change.UseVisualStyleBackColor = true;
@@ -169,7 +127,7 @@
 			this.escape.Location = new System.Drawing.Point(2, 0);
 			this.escape.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
 			this.escape.Name = "escape";
-			this.escape.Size = new System.Drawing.Size(66, 23);
+			this.escape.Size = new System.Drawing.Size(63, 23);
 			this.escape.TabIndex = 16;
 			this.escape.Text = "中断";
 			this.escape.UseVisualStyleBackColor = true;
@@ -178,10 +136,10 @@
 			// exportImages
 			// 
 			this.exportImages.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.exportImages.Location = new System.Drawing.Point(72, 0);
+			this.exportImages.Location = new System.Drawing.Point(69, 0);
 			this.exportImages.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
 			this.exportImages.Name = "exportImages";
-			this.exportImages.Size = new System.Drawing.Size(66, 23);
+			this.exportImages.Size = new System.Drawing.Size(63, 23);
 			this.exportImages.TabIndex = 16;
 			this.exportImages.Text = "画像出力";
 			this.exportImages.UseVisualStyleBackColor = true;
@@ -190,10 +148,10 @@
 			// registerImages
 			// 
 			this.registerImages.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.registerImages.Location = new System.Drawing.Point(212, 0);
+			this.registerImages.Location = new System.Drawing.Point(203, 0);
 			this.registerImages.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
 			this.registerImages.Name = "registerImages";
-			this.registerImages.Size = new System.Drawing.Size(66, 23);
+			this.registerImages.Size = new System.Drawing.Size(63, 23);
 			this.registerImages.TabIndex = 20;
 			this.registerImages.Text = "画像登録";
 			this.registerImages.UseVisualStyleBackColor = true;
@@ -202,10 +160,10 @@
 			// start
 			// 
 			this.start.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.start.Location = new System.Drawing.Point(142, 0);
+			this.start.Location = new System.Drawing.Point(136, 0);
 			this.start.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
 			this.start.Name = "start";
-			this.start.Size = new System.Drawing.Size(66, 23);
+			this.start.Size = new System.Drawing.Size(63, 23);
 			this.start.TabIndex = 17;
 			this.start.Text = "新規登録";
 			this.start.UseVisualStyleBackColor = true;
@@ -214,10 +172,10 @@
 			// request
 			// 
 			this.request.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.request.Location = new System.Drawing.Point(282, 0);
+			this.request.Location = new System.Drawing.Point(270, 0);
 			this.request.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
 			this.request.Name = "request";
-			this.request.Size = new System.Drawing.Size(66, 23);
+			this.request.Size = new System.Drawing.Size(63, 23);
 			this.request.TabIndex = 21;
 			this.request.Text = "リクエスト";
 			this.request.UseVisualStyleBackColor = true;
@@ -226,10 +184,10 @@
 			// release
 			// 
 			this.release.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.release.Location = new System.Drawing.Point(352, 0);
+			this.release.Location = new System.Drawing.Point(337, 0);
 			this.release.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
 			this.release.Name = "release";
-			this.release.Size = new System.Drawing.Size(66, 23);
+			this.release.Size = new System.Drawing.Size(63, 23);
 			this.release.TabIndex = 19;
 			this.release.Text = "リリース";
 			this.release.UseVisualStyleBackColor = true;
@@ -240,9 +198,9 @@
 			this.settingFile.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
 			this.settingFile.Controls.Add(this.tableLayoutPanel1);
-			this.settingFile.Location = new System.Drawing.Point(3, 3);
+			this.settingFile.Location = new System.Drawing.Point(12, 12);
 			this.settingFile.Name = "settingFile";
-			this.settingFile.Size = new System.Drawing.Size(492, 47);
+			this.settingFile.Size = new System.Drawing.Size(470, 47);
 			this.settingFile.TabIndex = 0;
 			this.settingFile.TabStop = false;
 			this.settingFile.Text = "設定ファイル";
@@ -262,7 +220,7 @@
 			this.tableLayoutPanel1.RowCount = 1;
 			this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
 			this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 23F));
-			this.tableLayoutPanel1.Size = new System.Drawing.Size(480, 23);
+			this.tableLayoutPanel1.Size = new System.Drawing.Size(458, 23);
 			this.tableLayoutPanel1.TabIndex = 3;
 			// 
 			// loadSetting
@@ -271,7 +229,7 @@
 			this.loadSetting.Location = new System.Drawing.Point(0, 0);
 			this.loadSetting.Margin = new System.Windows.Forms.Padding(0, 0, 2, 0);
 			this.loadSetting.Name = "loadSetting";
-			this.loadSetting.Size = new System.Drawing.Size(238, 23);
+			this.loadSetting.Size = new System.Drawing.Size(227, 23);
 			this.loadSetting.TabIndex = 1;
 			this.loadSetting.Text = "読み込み";
 			this.loadSetting.UseVisualStyleBackColor = true;
@@ -280,10 +238,10 @@
 			// saveSetting
 			// 
 			this.saveSetting.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.saveSetting.Location = new System.Drawing.Point(242, 0);
+			this.saveSetting.Location = new System.Drawing.Point(231, 0);
 			this.saveSetting.Margin = new System.Windows.Forms.Padding(2, 0, 0, 0);
 			this.saveSetting.Name = "saveSetting";
-			this.saveSetting.Size = new System.Drawing.Size(238, 23);
+			this.saveSetting.Size = new System.Drawing.Size(227, 23);
 			this.saveSetting.TabIndex = 2;
 			this.saveSetting.Text = "書き出し";
 			this.saveSetting.UseVisualStyleBackColor = true;
@@ -300,9 +258,9 @@
 			this.nameInfo.Controls.Add(this.browse);
 			this.nameInfo.Controls.Add(this.nameListFile);
 			this.nameInfo.Controls.Add(this.nameList);
-			this.nameInfo.Location = new System.Drawing.Point(3, 208);
+			this.nameInfo.Location = new System.Drawing.Point(12, 192);
 			this.nameInfo.Name = "nameInfo";
-			this.nameInfo.Size = new System.Drawing.Size(492, 362);
+			this.nameInfo.Size = new System.Drawing.Size(470, 362);
 			this.nameInfo.TabIndex = 12;
 			this.nameInfo.TabStop = false;
 			this.nameInfo.Text = "名前情報";
@@ -328,7 +286,7 @@
 			// nameReload
 			// 
 			this.nameReload.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-			this.nameReload.Location = new System.Drawing.Point(465, 18);
+			this.nameReload.Location = new System.Drawing.Point(443, 18);
 			this.nameReload.Name = "nameReload";
 			this.nameReload.Size = new System.Drawing.Size(21, 21);
 			this.nameReload.TabIndex = 16;
@@ -339,7 +297,7 @@
 			// browse
 			// 
 			this.browse.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-			this.browse.Location = new System.Drawing.Point(442, 18);
+			this.browse.Location = new System.Drawing.Point(420, 18);
 			this.browse.Name = "browse";
 			this.browse.Size = new System.Drawing.Size(21, 21);
 			this.browse.TabIndex = 14;
@@ -354,7 +312,7 @@
 			this.nameListFile.Location = new System.Drawing.Point(6, 19);
 			this.nameListFile.Name = "nameListFile";
 			this.nameListFile.ReadOnly = true;
-			this.nameListFile.Size = new System.Drawing.Size(433, 19);
+			this.nameListFile.Size = new System.Drawing.Size(411, 19);
 			this.nameListFile.TabIndex = 13;
 			// 
 			// nameList
@@ -382,7 +340,7 @@
 			this.nameList.Location = new System.Drawing.Point(6, 63);
 			this.nameList.MultiSelect = false;
 			this.nameList.Name = "nameList";
-			this.nameList.Size = new System.Drawing.Size(480, 293);
+			this.nameList.Size = new System.Drawing.Size(458, 293);
 			this.nameList.TabIndex = 15;
 			this.nameList.UseCompatibleStateImageBehavior = false;
 			this.nameList.View = System.Windows.Forms.View.Details;
@@ -478,33 +436,13 @@
 			// 
 			this.stampInfo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-			this.stampInfo.Controls.Add(this.restartCount);
-			this.stampInfo.Controls.Add(this.label4);
 			this.stampInfo.Controls.Add(this.stampSetting);
-			this.stampInfo.Location = new System.Drawing.Point(3, 130);
+			this.stampInfo.Location = new System.Drawing.Point(12, 139);
 			this.stampInfo.Name = "stampInfo";
-			this.stampInfo.Size = new System.Drawing.Size(492, 72);
+			this.stampInfo.Size = new System.Drawing.Size(470, 47);
 			this.stampInfo.TabIndex = 8;
 			this.stampInfo.TabStop = false;
 			this.stampInfo.Text = "スタンプ情報";
-			// 
-			// restartCount
-			// 
-			this.restartCount.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-			this.restartCount.Location = new System.Drawing.Point(81, 47);
-			this.restartCount.Name = "restartCount";
-			this.restartCount.Size = new System.Drawing.Size(405, 19);
-			this.restartCount.TabIndex = 15;
-			// 
-			// label4
-			// 
-			this.label4.AutoSize = true;
-			this.label4.Location = new System.Drawing.Point(6, 50);
-			this.label4.Name = "label4";
-			this.label4.Size = new System.Drawing.Size(65, 12);
-			this.label4.TabIndex = 13;
-			this.label4.Text = "再起動周期";
 			// 
 			// stampSetting
 			// 
@@ -512,7 +450,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
 			this.stampSetting.Location = new System.Drawing.Point(6, 18);
 			this.stampSetting.Name = "stampSetting";
-			this.stampSetting.Size = new System.Drawing.Size(480, 23);
+			this.stampSetting.Size = new System.Drawing.Size(458, 23);
 			this.stampSetting.TabIndex = 9;
 			this.stampSetting.Text = "スタンプ詳細設定";
 			this.stampSetting.UseVisualStyleBackColor = true;
@@ -526,9 +464,9 @@
 			this.loginInfo.Controls.Add(this.label2);
 			this.loginInfo.Controls.Add(this.password);
 			this.loginInfo.Controls.Add(this.mailAddress);
-			this.loginInfo.Location = new System.Drawing.Point(3, 56);
+			this.loginInfo.Location = new System.Drawing.Point(12, 65);
 			this.loginInfo.Name = "loginInfo";
-			this.loginInfo.Size = new System.Drawing.Size(492, 68);
+			this.loginInfo.Size = new System.Drawing.Size(470, 68);
 			this.loginInfo.TabIndex = 3;
 			this.loginInfo.TabStop = false;
 			this.loginInfo.Text = "ログイン情報";
@@ -557,7 +495,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
 			this.password.Location = new System.Drawing.Point(81, 43);
 			this.password.Name = "password";
-			this.password.Size = new System.Drawing.Size(405, 19);
+			this.password.Size = new System.Drawing.Size(383, 19);
 			this.password.TabIndex = 7;
 			this.password.UseSystemPasswordChar = true;
 			// 
@@ -567,94 +505,24 @@
             | System.Windows.Forms.AnchorStyles.Right)));
 			this.mailAddress.Location = new System.Drawing.Point(81, 18);
 			this.mailAddress.Name = "mailAddress";
-			this.mailAddress.Size = new System.Drawing.Size(405, 19);
+			this.mailAddress.Size = new System.Drawing.Size(383, 19);
 			this.mailAddress.TabIndex = 5;
-			// 
-			// mainBrowser
-			// 
-			this.mainBrowser.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.mainBrowser.Location = new System.Drawing.Point(0, 33);
-			this.mainBrowser.MinimumSize = new System.Drawing.Size(20, 20);
-			this.mainBrowser.Name = "mainBrowser";
-			this.mainBrowser.ScriptErrorsSuppressed = true;
-			this.mainBrowser.Size = new System.Drawing.Size(478, 569);
-			this.mainBrowser.TabIndex = 18;
-			this.mainBrowser.DocumentCompleted += new System.Windows.Forms.WebBrowserDocumentCompletedEventHandler(this.MainBrowser_DocumentCompleted);
-			this.mainBrowser.Navigated += new System.Windows.Forms.WebBrowserNavigatedEventHandler(this.MainBrowser_Navigated);
-			// 
-			// broserMenu
-			// 
-			this.broserMenu.AutoSize = false;
-			this.broserMenu.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
-			this.broserMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.back,
-            this.forward,
-            this.reload,
-            this.url});
-			this.broserMenu.Location = new System.Drawing.Point(0, 0);
-			this.broserMenu.Name = "broserMenu";
-			this.broserMenu.Size = new System.Drawing.Size(478, 33);
-			this.broserMenu.TabIndex = 19;
-			this.broserMenu.Text = "toolStrip1";
-			// 
-			// back
-			// 
-			this.back.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-			this.back.Enabled = false;
-			this.back.Image = ((System.Drawing.Image)(resources.GetObject("back.Image")));
-			this.back.ImageTransparentColor = System.Drawing.Color.Magenta;
-			this.back.Margin = new System.Windows.Forms.Padding(4, 2, 2, 2);
-			this.back.Name = "back";
-			this.back.Size = new System.Drawing.Size(23, 29);
-			this.back.Text = "戻る";
-			this.back.Click += new System.EventHandler(this.Back_Click);
-			// 
-			// forward
-			// 
-			this.forward.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-			this.forward.Enabled = false;
-			this.forward.Image = ((System.Drawing.Image)(resources.GetObject("forward.Image")));
-			this.forward.ImageTransparentColor = System.Drawing.Color.Magenta;
-			this.forward.Margin = new System.Windows.Forms.Padding(2);
-			this.forward.Name = "forward";
-			this.forward.Size = new System.Drawing.Size(23, 29);
-			this.forward.Text = "進む";
-			this.forward.Click += new System.EventHandler(this.Forward_Click);
-			// 
-			// reload
-			// 
-			this.reload.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-			this.reload.Image = ((System.Drawing.Image)(resources.GetObject("reload.Image")));
-			this.reload.ImageTransparentColor = System.Drawing.Color.Magenta;
-			this.reload.Margin = new System.Windows.Forms.Padding(2);
-			this.reload.Name = "reload";
-			this.reload.Size = new System.Drawing.Size(23, 29);
-			this.reload.Text = "更新";
-			this.reload.Click += new System.EventHandler(this.Reload_Click);
-			// 
-			// url
-			// 
-			this.url.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-			this.url.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-			this.url.Name = "url";
-			this.url.Size = new System.Drawing.Size(355, 33);
-			this.url.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Url_KeyDown);
 			// 
 			// Form1
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(984, 604);
-			this.Controls.Add(this.split);
+			this.ClientSize = new System.Drawing.Size(494, 595);
+			this.Controls.Add(this.tableLayoutPanel2);
+			this.Controls.Add(this.settingFile);
+			this.Controls.Add(this.nameInfo);
+			this.Controls.Add(this.stampInfo);
+			this.Controls.Add(this.loginInfo);
 			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
 			this.Name = "Form1";
 			this.Text = "StampRegister";
 			this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
 			this.Load += new System.EventHandler(this.Form1_Load);
-			this.split.Panel1.ResumeLayout(false);
-			this.split.Panel2.ResumeLayout(false);
-			((System.ComponentModel.ISupportInitialize)(this.split)).EndInit();
-			this.split.ResumeLayout(false);
 			this.tableLayoutPanel2.ResumeLayout(false);
 			this.settingFile.ResumeLayout(false);
 			this.tableLayoutPanel1.ResumeLayout(false);
@@ -662,24 +530,17 @@
 			this.nameInfo.PerformLayout();
 			this.nameMenu.ResumeLayout(false);
 			this.stampInfo.ResumeLayout(false);
-			this.stampInfo.PerformLayout();
-			((System.ComponentModel.ISupportInitialize)(this.restartCount)).EndInit();
 			this.loginInfo.ResumeLayout(false);
 			this.loginInfo.PerformLayout();
-			this.broserMenu.ResumeLayout(false);
-			this.broserMenu.PerformLayout();
 			this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.SplitContainer split;
         private System.Windows.Forms.TextBox password;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox mailAddress;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.WebBrowser mainBrowser;
         private System.Windows.Forms.GroupBox loginInfo;
         private System.Windows.Forms.Button start;
         private System.Windows.Forms.GroupBox stampInfo;
@@ -696,11 +557,6 @@
         private System.Windows.Forms.GroupBox settingFile;
         private System.Windows.Forms.Button saveSetting;
         private System.Windows.Forms.Button loadSetting;
-        private System.Windows.Forms.ToolStrip broserMenu;
-        private System.Windows.Forms.ToolStripButton back;
-        private System.Windows.Forms.ToolStripButton forward;
-        private System.Windows.Forms.ToolStripButton reload;
-        private ToolStripSpringTextBox url;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.ContextMenuStrip nameMenu;
         private System.Windows.Forms.ColumnHeader url1;
@@ -720,8 +576,6 @@
         private System.Windows.Forms.ColumnHeader requestComp;
         private System.Windows.Forms.Button nameReload;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
-        private System.Windows.Forms.NumericUpDown restartCount;
-        private System.Windows.Forms.Label label4;
 		private System.Windows.Forms.Label label3;
 		private System.Windows.Forms.Label releaseCount;
 		private System.Windows.Forms.Button change;

@@ -290,18 +290,6 @@ namespace StampRegister.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("500")]
-        public int SplitWidth {
-            get {
-                return ((int)(this["SplitWidth"]));
-            }
-            set {
-                this["SplitWidth"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("")]
         public string TagFilePath {
             get {
@@ -707,18 +695,6 @@ namespace StampRegister.Properties {
             }
             set {
                 this["SettingRectangle"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("16")]
-        public decimal RestartCount {
-            get {
-                return ((decimal)(this["RestartCount"]));
-            }
-            set {
-                this["RestartCount"] = value;
             }
         }
         
