@@ -264,12 +264,11 @@ namespace StampRegister
         /// <summary>
         /// ログインする。
         /// </summary>
-        /// <returns>中断ボタンが押されたかどうか</returns>
         void Login()
         {
 			IWebElement loginButton;
 
-			driver.Url = "https://creator.line.me/signup/line_auth";
+			driver.Navigate().GoToUrl("https://creator.line.me/signup/line_auth");
 
 			if ((loginButton = driver.FindElementByXPath("//input[@value='ログイン']")) != null)
             {
@@ -544,79 +543,69 @@ namespace StampRegister
                     jpDescription = baseDescription_jp.Replace("***", item.SubItems[(int)Columns.name].Text).Replace("@@@", item.SubItems[(int)Columns.honorific].Text);
 
 					// 登録ページに移動
-					MessageBox.Show(driver.FindElementByTagName("base").GetAttribute("href"));
-					driver.Navigate().GoToUrl("https://creator.line.me" + driver.FindElementByTagName("base").GetAttribute("href") + "sticker/create");
+					driver.Navigate().GoToUrl(driver.FindElementByTagName("base").GetAttribute("href") + "sticker/create");
+					Application.DoEvents();
                     if (stop) { StopRegister(); return; }
 
-					/*// 完全に読み込むまで待機
-                    do
-                    {
-                        Thread.Sleep(10);
-                        Application.DoEvents();
-                        if (stop) { StopRegister(); return; }
-                    } while (SearchElementByInnerText("span", "選択したエリアで販売する") == null);*/
-
 					// 各項目入力
-					driver.FindElementByTagName("input").FindElement(By.Name("meta[en][title]")).SendKeys(enTitle);
-					driver.FindElementByTagName("textarea").FindElement(By.Name("meta[en][description]")).SendKeys(enDescription);
-					driver.FindElementByTagName("input").FindElement(By.Name("copyright")).SendKeys(Properties.Settings.Default.Copyright);
-					driver.FindElementByXPath("//select[text()='選択したエリアで販売する']").FindElement(By.XPath("..")).FindElement(By.TagName("input")).Click();
-					//SearchElementByInnerText("span", "選択したエリアで販売する").Parent.GetElementsByTagName("input")[0].InvokeMember("click");
+					driver.FindElementByName("meta[en][title]").SendKeys(enTitle);
+					driver.FindElementByName("meta[en][description]").SendKeys(enDescription);
 
-                    // セレクトボックスの項目数を減らす
-                    /*var lang = driver.FindElementsByXPath("//select[@ng-model='selected_desc_lang']");
-                    foreach (IWebElement langOption in lang)
-                    {
-                        if (langOption.GetAttribute("value") == "0")
-                            langOption.SetAttribute("label", "JapaneseJapaneseJapaneseJapaneseJapanese");
-                        else if (langOption.GetAttribute("value") != "")
-                            langOption.OuterHtml = "";
-                    }
+					Application.DoEvents();
+					if (stop) { StopRegister(); return; }
 
-					var chara = driver.FindElementsByXPath("//select[@ng-model='sticker.categories.character']");
-					foreach (IWebElement charaOption in chara)
+					driver.FindElementByXPath("//option[@value='ja']").Click();
+					driver.FindElementByXPath("//span[text()='追加']/..").Click();
+
+					Application.DoEvents();
+					if (stop) { StopRegister(); return; }
+
+					driver.FindElementByName("meta[ja][title]").SendKeys(jpTitle);
+					driver.FindElementByName("meta[ja][description]").SendKeys(jpDescription);
+
+					Application.DoEvents();
+					if (stop) { StopRegister(); return; }
+
+					driver.FindElementByName("copyright").SendKeys(Properties.Settings.Default.Copyright);
+					driver.FindElementByXPath("//span[text()='選択したエリアで販売する']/../..//input").Click();
+
+					Application.DoEvents();
+					if (stop) { StopRegister(); return; }
+
+					foreach (IWebElement element in driver.FindElementsByXPath("//div[@class='MdCMN27Collapsable ExCollapsed']"))
 					{
-						if (charaOption.GetAttribute("value") != "" && charaOption.GetAttribute("value") != (baseChara - 1).ToString())
-							charaOption.OuterHtml = "";
-					}*/
-					/*
-					// 手動部分が終わるまで待機
-					do
-					{
-                        Thread.Sleep(10);
-                        Application.DoEvents();
-                        if (stop) { StopRegister(); return; }
-                    } while (mainBrowser.Document.GetElementsByTagName("input").GetElementsByName("meta[ja][title]").Count == 0 ||
-							 (baseChara != 0 && chara.GetAttribute("selectedIndex") == "0"));
-					*/
-					driver.FindElementByTagName("input").FindElement(By.Name("meta[ja][title]")).SendKeys(jpTitle);
-					driver.FindElementByTagName("textarea").FindElement(By.Name("meta[ja][description]")).SendKeys(jpDescription);
+						element.FindElement(By.TagName("input")).Click();
+						element.Click();
 
-					foreach (IWebElement element in driver.FindElementByTagName("input").FindElements(By.Name("areas[]")))
+						Application.DoEvents();
+						if (stop) { StopRegister(); return; }
+					}
+
+					foreach (IWebElement element in driver.FindElementsByXPath("//input[@name='areas[]']"))
                     {
-                        if (element.GetAttribute("type") == "checkbox")
+                        if (Array.IndexOf(countries, element.GetAttribute("value")) != -1)
                         {
-                            if (Array.IndexOf(countries, element.GetAttribute("value")) != -1)
-                            {
-                                //element.SetAttribute("checked", "checked");
-                            }
-                            else
-                            {
-                                //element.SetAttribute("checked", "");
-                            }
-                        }
+							element.Click();
+
+							Application.DoEvents();
+							if (stop) { StopRegister(); return; }
+						}
                     }
 
 					// 保存ボタンクリック
-					driver.FindElementByXPath("//input[@type='submit']").Click();
-					driver.FindElementByXPath("//a[@ng-click='close(true)']").Click();
-                    if (stop) { StopRegister(); return; }
+					driver.FindElementByXPath("//main/form").Submit();
+					driver.FindElementByXPath("//p[text()='保存しますか？']/../..//span[text()='OK']").Click();
+					driver.FindElementByXPath("//dt[text()='ステータス']");
 
-                    // URL&完了状況保存
-                    item.SubItems[(int)Columns.url1 + i].Text = driver.Url.Replace("?saved=true", "");
+					Application.DoEvents();
+					if (stop) { StopRegister(); return; }
+
+					// URL&完了状況保存
+					item.SubItems[(int)Columns.url1 + i].Text = driver.Url.Replace("?saved=true", "");
                     item.SubItems[(int)Columns.stamp].Text = (i + 1).ToString();
-                }
-            }
+
+				}
+			}
             
             StopRegister();
             MessageBox.Show("終了！");
@@ -1254,7 +1243,7 @@ namespace StampRegister
         {
             LoadProperties();
 			driver = new ChromeDriver();
-			driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(20);
+			driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
 		}
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
