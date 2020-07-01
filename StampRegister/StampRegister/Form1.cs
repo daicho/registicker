@@ -158,7 +158,7 @@ namespace StampRegister
                 }
             }
 
-			releaseCount.Text = countRelease().ToString();
+			releaseCount.Text = CountRelease().ToString();
         }
 
         /// <summary>
@@ -202,7 +202,7 @@ namespace StampRegister
 		/// リリース未完数をカウントする
 		/// </summary>
 		/// <returns>リリース未完数</returns>
-		int countRelease()
+		int CountRelease()
 		{
 			int relNum = 0;
 			
@@ -245,7 +245,8 @@ namespace StampRegister
             menuCancel = false;
             SaveNameList(nameListFile.Text);
             this.Text = "StampRegister";
-            exportImages.Enabled = true;
+			escape.Enabled = false;
+			exportImages.Enabled = true;
             start.Enabled = true;
             registerImages.Enabled = true;
             request.Enabled = true;
@@ -266,17 +267,23 @@ namespace StampRegister
         /// </summary>
         void Login()
         {
-			IWebElement loginButton;
-
 			driver.Navigate().GoToUrl("https://creator.line.me/signup/line_auth");
+			driver.FindElementByTagName("h1");
 
-			if ((loginButton = driver.FindElementByXPath("//input[@value='ログイン']")) != null)
-            {
+			driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(5);
+			var loginButtons = driver.FindElementsByXPath("//input[@value='ログイン']");
+			driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
+
+			if (loginButtons.Count > 0)
+			{
 				driver.FindElementById("id").SendKeys(mailAddress.Text);
 				driver.FindElementById("passwd").SendKeys(password.Text);
-                loginButton.Click();
-            }
-        }
+				Thread.Sleep(100);
+
+				loginButtons[0].Click();
+				driver.FindElementByXPath("//h1[text()='アイテム管理']");
+			}
+		}
 
         private void Escape_Click(object sender, EventArgs e)
         {
@@ -555,7 +562,13 @@ namespace StampRegister
 					if (stop) { StopRegister(); return; }
 
 					driver.FindElementByXPath("//option[@value='ja']").Click();
+					Thread.Sleep(1000);
+
+					Application.DoEvents();
+					if (stop) { StopRegister(); return; }
+
 					driver.FindElementByXPath("//span[text()='追加']/..").Click();
+					Thread.Sleep(100);
 
 					Application.DoEvents();
 					if (stop) { StopRegister(); return; }
@@ -568,6 +581,7 @@ namespace StampRegister
 
 					driver.FindElementByName("copyright").SendKeys(Properties.Settings.Default.Copyright);
 					driver.FindElementByXPath("//span[text()='選択したエリアで販売する']/../..//input").Click();
+					Thread.Sleep(100);
 
 					Application.DoEvents();
 					if (stop) { StopRegister(); return; }
@@ -576,6 +590,7 @@ namespace StampRegister
 					{
 						element.FindElement(By.TagName("input")).Click();
 						element.Click();
+						Thread.Sleep(100);
 
 						Application.DoEvents();
 						if (stop) { StopRegister(); return; }
@@ -586,6 +601,7 @@ namespace StampRegister
                         if (Array.IndexOf(countries, element.GetAttribute("value")) != -1)
                         {
 							element.Click();
+							Thread.Sleep(100);
 
 							Application.DoEvents();
 							if (stop) { StopRegister(); return; }
@@ -594,7 +610,16 @@ namespace StampRegister
 
 					// 保存ボタンクリック
 					driver.FindElementByXPath("//main/form").Submit();
+					Thread.Sleep(100);
+
+					Application.DoEvents();
+					if (stop) { StopRegister(); return; }
+
 					driver.FindElementByXPath("//p[text()='保存しますか？']/../..//span[text()='OK']").Click();
+
+					Application.DoEvents();
+					if (stop) { StopRegister(); return; }
+
 					driver.FindElementByXPath("//dt[text()='ステータス']");
 
 					Application.DoEvents();
@@ -603,7 +628,6 @@ namespace StampRegister
 					// URL&完了状況保存
 					item.SubItems[(int)Columns.url1 + i].Text = driver.Url.Replace("?saved=true", "");
                     item.SubItems[(int)Columns.stamp].Text = (i + 1).ToString();
-
 				}
 			}
             
@@ -613,28 +637,16 @@ namespace StampRegister
 
         private void RegisterImages_Click(object sender, EventArgs e)
         {
-            /*string desptopPath = Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory);
-
-            // 作業用フォルダ作成
-            if (!Directory.Exists(desptopPath + @"\LINE zip"))
-                Directory.CreateDirectory(desptopPath + @"\LINE zip");
-            if (!Directory.Exists(desptopPath + @"\LINE select zip"))
-                Directory.CreateDirectory(desptopPath + @"\LINE select zip");
-
-            // 残っているファイルを戻す
-            foreach (string file in Directory.GetFiles(desptopPath + @"\LINE select zip"))
-                File.Move(file, desptopPath + @"\LINE zip\" + Path.GetFileName(file));
-
+            string desptopPath = Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory);
+			
             StartRegister();
-            if (Login()) { StopRegister(); return; } // ログイン
+			Login();
+			if (stop) { StopRegister(); return; } // ログイン
 
             foreach (ListViewItem item in nameList.Items)
             {
                 for (int i = int.Parse(item.SubItems[(int)Columns.image].Text); i < 2; i++)
                 {
-                    HtmlElement perSet;
-                    HtmlElement okButton;
-
 					string name = item.SubItems[(int)Columns.name].Text;
 					string pandaName;
 					string stampName;
@@ -651,97 +663,41 @@ namespace StampRegister
 					if (item.SubItems[(int)Columns.url1 + i].Text == "")
                         continue;
 
-                    // zipファイルを移動
-                    if (File.Exists(desptopPath + @"\LINE zip\" + stampName + ".zip"))
-                    {
-                        File.Move(desptopPath + @"\LINE zip\" + stampName + ".zip", desptopPath + @"\LINE select zip\" + stampName + ".zip");
-                    }
-                    else
+                    // zipファイル存在確認
+                    if (!File.Exists(desptopPath + @"\LINE zip\" + stampName + ".zip"))
                     {
                         MessageBox.Show(stampName + ".zipが存在しません", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         continue;
                     }
 
                     // ページに移動
-                    mainBrowser.Navigate(item.SubItems[(int)Columns.url1 + i].Text + "/image");
-                    if (WaitLoad()) { StopRegister(); return; }
+                    driver.Navigate().GoToUrl(item.SubItems[(int)Columns.url1 + i].Text + "/image");
+					Application.DoEvents();
+                    if (stop) { StopRegister(); return; }
+					
+					driver.FindElementByXPath("//option[@value='40']").Click();
+					Thread.Sleep(1000);
 
-                    if (SearchElementByInnerText("h1", "エラーが発生しました") != null)
-                        continue;
+					Application.DoEvents();
+					if (stop) { StopRegister(); return; }
 
-                    // 完全に読み込むまで待機
-                    do
-                    {
-                        Thread.Sleep(10);
-                        Application.DoEvents();
-                    } while ((perSet = SearchElementByAttribute("select", "ng-model", "sticker.stickersPerSet")) == null);
+					driver.FindElementByXPath("//p[contains(text(),'スタンプの個数を変更します。')]/../..//a[text()='OK']").Click();
+					Thread.Sleep(1000);
 
-                    // セレクトボックスの項目数を減らす
-                    foreach (HtmlElement perSetOption in perSet.All)
-                    {
-                        if (perSetOption.GetAttribute("value") != "8" && perSetOption.GetAttribute("value") != "40")
-                            perSetOption.OuterHtml = "";
-                    }
+					Application.DoEvents();
+					if (stop) { StopRegister(); return; }
 
-                    // アップロードボタン無効化
-                    mainBrowser.Document.GetElementsByTagName("input").GetElementsByName("file")[0].SetAttribute("disabled", "disabled");
+					driver.FindElementByXPath("//input[@type='file']").SendKeys(desptopPath + @"\LINE zip\" + stampName + ".zip");
+					
+					Application.DoEvents();
+					if (stop) { StopRegister(); return; }
 
-                    // 見出しの変更
-                    foreach (HtmlElement element in mainBrowser.Document.GetElementsByTagName("h1"))
-                    {
-                        if (element.InnerText == "スタンプの編集")
-                        {
-                            element.InnerText = "「" + stampName + "」のスタンプの編集";
-                            break;
-                        }
-                    }
+					driver.FindElementByXPath("//div[@ng-if=\"sticker.stickerType !== 'animation' || image.key === 'tab'\"]");
 
-                    // スタンプ個数を変更するまで待機
-                    do
-                    {
-                        Thread.Sleep(10);
-                        Application.DoEvents();
-                        if (stop) { StopRegister(); return; }
-                    } while (perSet.GetAttribute("selectedIndex") == "0");
+					Application.DoEvents();
+					if (stop) { StopRegister(); return; }
 
-                    do
-                    {
-                        Thread.Sleep(10);
-                        Application.DoEvents();
-                        if (stop) { StopRegister(); return; }
-                    } while ((okButton = SearchElementByAttribute("a", "ng-click", "close(true)")) == null);
-
-                    // OKボタンクリック
-                    okButton.InvokeMember("click");
-
-                    // アップロードボタン有効化
-                    mainBrowser.Document.GetElementsByTagName("input").GetElementsByName("file")[0].SetAttribute("disabled", "");
-
-                    // アップロードが終わるまで待機
-                    do
-                    {
-                        Thread.Sleep(10);
-                        Application.DoEvents();
-                        if (stop) { StopRegister(); return; }
-                    } while (SearchElementByAttribute("div", "ng-if", "sticker.stickerType !== 'animation' || image.key === 'tab'") == null);
-
-                    string[] files = Directory.GetFiles(desptopPath + @"\LINE zip\", "*.zip");
-                    foreach (string file in files)
-                    {
-                        if (file.IndexOf("■") >= 0)
-                        {
-                            try
-                            {
-                                File.Delete(file);
-                            }
-                            catch
-                            {
-
-                            }
-                        }
-                    }
-                    
-                    File.Move(desptopPath + @"\LINE select zip\" + stampName + ".zip", desptopPath + @"\LINE zip\■" + stampName + ".zip");
+					File.Delete(desptopPath + @"\LINE zip\" + stampName + ".zip");
 
                     // 完了状況保存
                     item.SubItems[(int)Columns.image].Text = (i + 1).ToString();
@@ -750,7 +706,6 @@ namespace StampRegister
 
             StopRegister();
             MessageBox.Show("終了！");
-            Restart("");*/
         }
         
         private void Request_Click(object sender, EventArgs e)
@@ -959,7 +914,7 @@ namespace StampRegister
             MessageBox.Show("終了！");*/
 		}
 
-		private void change_Click(object sender, EventArgs e)
+		private void Change_Click(object sender, EventArgs e)
 		{
 			/*StartRegister();
 			if (Login()) { StopRegister(); return; } // ログイン
@@ -1075,12 +1030,13 @@ namespace StampRegister
 
         private void Browse_Click(object sender, EventArgs e)
         {
-            var dialog = new OpenFileDialog();
+			var dialog = new OpenFileDialog
+			{
+				Title = "名前一覧ファイルの選択",
+				Filter = "Excelファイル (*.xlsx)|*.xlsx|すべてのファイル (*.*)|*.*"
+			};
 
-            dialog.Title = "名前一覧ファイルの選択";
-            dialog.Filter = "Excelファイル (*.xlsx)|*.xlsx|すべてのファイル (*.*)|*.*";
-
-            if (dialog.ShowDialog() == DialogResult.OK)
+			if (dialog.ShowDialog() == DialogResult.OK)
             {
                 nameListFile.Text = dialog.FileName;
                 LoadNameList(nameListFile.Text);
@@ -1146,12 +1102,13 @@ namespace StampRegister
 
         private void LoadSetting_Click(object sender, EventArgs e)
         {
-            var dialog = new OpenFileDialog();
+			var dialog = new OpenFileDialog
+			{
+				Title = "設定ファイルの読み込み",
+				Filter = "設定ファイル (*.config)|*.config|すべてのファイル (*.*)|*.*"
+			};
 
-            dialog.Title = "設定ファイルの読み込み";
-            dialog.Filter = "設定ファイル (*.config)|*.config|すべてのファイル (*.*)|*.*";
-
-            if (dialog.ShowDialog() == DialogResult.OK)
+			if (dialog.ShowDialog() == DialogResult.OK)
             {
                 Properties.Settings.Default.Save();
                 File.Copy(dialog.FileName, ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.PerUserRoamingAndLocal).FilePath, true);
@@ -1162,13 +1119,14 @@ namespace StampRegister
 
         private void SaveSetting_Click(object sender, EventArgs e)
         {
-            var dialog = new SaveFileDialog();
+			var dialog = new SaveFileDialog
+			{
+				FileName = "Setting.config",
+				Title = "設定ファイルの書き出し",
+				Filter = "設定ファイル (*.config)|*.config|すべてのファイル (*.*)|*.*"
+			};
 
-            dialog.FileName = "Setting.config";
-            dialog.Title = "設定ファイルの書き出し";
-            dialog.Filter = "設定ファイル (*.config)|*.config|すべてのファイル (*.*)|*.*";
-
-            if (dialog.ShowDialog() == DialogResult.OK)
+			if (dialog.ShowDialog() == DialogResult.OK)
             {
                 SaveProperties();
                 File.Copy(ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.PerUserRoamingAndLocal).FilePath, dialog.FileName, true);
@@ -1242,7 +1200,11 @@ namespace StampRegister
         private void Form1_Load(object sender, EventArgs e)
         {
             LoadProperties();
-			driver = new ChromeDriver();
+
+			ChromeDriverService service = ChromeDriverService.CreateDefaultService();
+			service.HideCommandPromptWindow = true;
+
+			driver = new ChromeDriver(service);
 			driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
 		}
 
