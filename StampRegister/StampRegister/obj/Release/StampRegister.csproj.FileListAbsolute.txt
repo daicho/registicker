@@ -357,12 +357,6 @@ D:\DaichiBox\MyProjects\StampRegister\StampRegister 3.60\Code\StampRegister\Stam
 C:\Users\Daichi\git\registicker\StampRegister\StampRegister\bin\Release\StampRegister.exe.config
 C:\Users\Daichi\git\registicker\StampRegister\StampRegister\bin\Release\StampRegister.exe
 C:\Users\Daichi\git\registicker\StampRegister\StampRegister\bin\Release\StampRegister.pdb
-C:\Users\Daichi\git\registicker\StampRegister\StampRegister\bin\Release\ExcelNumberFormat.dll
-C:\Users\Daichi\git\registicker\StampRegister\StampRegister\bin\Release\FastMember.Signed.dll
-C:\Users\Daichi\git\registicker\StampRegister\StampRegister\bin\Release\ClosedXML.pdb
-C:\Users\Daichi\git\registicker\StampRegister\StampRegister\bin\Release\ClosedXML.xml
-C:\Users\Daichi\git\registicker\StampRegister\StampRegister\bin\Release\DocumentFormat.OpenXml.xml
-C:\Users\Daichi\git\registicker\StampRegister\StampRegister\bin\Release\ExcelNumberFormat.xml
 C:\Users\Daichi\git\registicker\StampRegister\StampRegister\obj\Release\StampRegister.csprojAssemblyReference.cache
 C:\Users\Daichi\git\registicker\StampRegister\StampRegister\obj\Release\Interop.Illustrator.dll
 C:\Users\Daichi\git\registicker\StampRegister\StampRegister\obj\Release\StampRegister.csproj.ResolveComReference.cache

@@ -549,81 +549,90 @@ namespace StampRegister
                     enDescription = baseDescription_en.Replace("***", item.SubItems[(int)Columns.roma].Text);
                     jpDescription = baseDescription_jp.Replace("***", item.SubItems[(int)Columns.name].Text).Replace("@@@", item.SubItems[(int)Columns.honorific].Text);
 
-					// 登録ページに移動
-					driver.Navigate().GoToUrl(driver.FindElementByTagName("base").GetAttribute("href") + "sticker/create");
-					Application.DoEvents();
-                    if (stop) { StopRegister(); return; }
-
-					// 各項目入力
-					driver.FindElementByName("meta[en][title]").SendKeys(enTitle);
-					driver.FindElementByName("meta[en][description]").SendKeys(enDescription);
-
-					Application.DoEvents();
-					if (stop) { StopRegister(); return; }
-
-					driver.FindElementByXPath("//option[@value='ja']").Click();
-					Thread.Sleep(1000);
-
-					Application.DoEvents();
-					if (stop) { StopRegister(); return; }
-
-					driver.FindElementByXPath("//span[text()='追加']/..").Click();
-					Thread.Sleep(100);
-
-					Application.DoEvents();
-					if (stop) { StopRegister(); return; }
-
-					driver.FindElementByName("meta[ja][title]").SendKeys(jpTitle);
-					driver.FindElementByName("meta[ja][description]").SendKeys(jpDescription);
-
-					Application.DoEvents();
-					if (stop) { StopRegister(); return; }
-
-					driver.FindElementByName("copyright").SendKeys(Properties.Settings.Default.Copyright);
-					driver.FindElementByXPath("//span[text()='選択したエリアで販売する']/../..//input").Click();
-					Thread.Sleep(100);
-
-					Application.DoEvents();
-					if (stop) { StopRegister(); return; }
-
-					foreach (IWebElement element in driver.FindElementsByXPath("//div[@class='MdCMN27Collapsable ExCollapsed']"))
+					try
 					{
-						element.FindElement(By.TagName("input")).Click();
-						element.Click();
+						// 登録ページに移動
+						driver.Navigate().GoToUrl(driver.FindElementByTagName("base").GetAttribute("href") + "sticker/create");
+						Application.DoEvents();
+						if (stop) { StopRegister(); return; }
+
+						// 各項目入力
+						driver.FindElementByName("meta[en][title]").SendKeys(enTitle);
+						driver.FindElementByName("meta[en][description]").SendKeys(enDescription);
+
+						Application.DoEvents();
+						if (stop) { StopRegister(); return; }
+
+						driver.FindElementByXPath("//option[@value='ja']").Click();
+						Thread.Sleep(1000);
+
+						Application.DoEvents();
+						if (stop) { StopRegister(); return; }
+
+						driver.FindElementByXPath("//span[text()='追加']/..").Click();
 						Thread.Sleep(100);
 
 						Application.DoEvents();
 						if (stop) { StopRegister(); return; }
-					}
 
-					foreach (IWebElement element in driver.FindElementsByXPath("//input[@name='areas[]']"))
-                    {
-                        if (Array.IndexOf(countries, element.GetAttribute("value")) != -1)
-                        {
+						driver.FindElementByName("meta[ja][title]").SendKeys(jpTitle);
+						driver.FindElementByName("meta[ja][description]").SendKeys(jpDescription);
+
+						Application.DoEvents();
+						if (stop) { StopRegister(); return; }
+
+						driver.FindElementByName("copyright").SendKeys(Properties.Settings.Default.Copyright);
+						driver.FindElementByXPath("//span[text()='選択したエリアで販売する']/../..//input").Click();
+						Thread.Sleep(100);
+
+						Application.DoEvents();
+						if (stop) { StopRegister(); return; }
+
+						foreach (IWebElement element in driver.FindElementsByXPath("//div[@class='MdCMN27Collapsable ExCollapsed']"))
+						{
+							element.FindElement(By.TagName("input")).Click();
 							element.Click();
 							Thread.Sleep(100);
 
 							Application.DoEvents();
 							if (stop) { StopRegister(); return; }
 						}
-                    }
 
-					// 保存ボタンクリック
-					driver.FindElementByXPath("//main/form").Submit();
-					Thread.Sleep(100);
+						foreach (IWebElement element in driver.FindElementsByXPath("//input[@name='areas[]']"))
+						{
+							if (Array.IndexOf(countries, element.GetAttribute("value")) != -1)
+							{
+								element.Click();
+								Thread.Sleep(100);
 
-					Application.DoEvents();
-					if (stop) { StopRegister(); return; }
+								Application.DoEvents();
+								if (stop) { StopRegister(); return; }
+							}
+						}
 
-					driver.FindElementByXPath("//p[text()='保存しますか？']/../..//span[text()='OK']").Click();
+						// 保存ボタンクリック
+						driver.FindElementByXPath("//main/form").Submit();
+						Thread.Sleep(100);
 
-					Application.DoEvents();
-					if (stop) { StopRegister(); return; }
+						Application.DoEvents();
+						if (stop) { StopRegister(); return; }
 
-					driver.FindElementByXPath("//dt[text()='ステータス']");
+						driver.FindElementByXPath("//p[text()='保存しますか？']/../..//span[text()='OK']").Click();
 
-					Application.DoEvents();
-					if (stop) { StopRegister(); return; }
+						Application.DoEvents();
+						if (stop) { StopRegister(); return; }
+
+						driver.FindElementByXPath("//dt[text()='ステータス']");
+
+						Application.DoEvents();
+						if (stop) { StopRegister(); return; }
+					}
+					catch
+					{
+						StopRegister();
+						MessageBox.Show("エラーが発生しました", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+						return;
+					}
 
 					// URL&完了状況保存
 					item.SubItems[(int)Columns.url1 + i].Text = driver.Url.Replace("?saved=true", "");
@@ -670,34 +679,43 @@ namespace StampRegister
                         continue;
                     }
 
-                    // ページに移動
-                    driver.Navigate().GoToUrl(item.SubItems[(int)Columns.url1 + i].Text + "/image");
-					Application.DoEvents();
-                    if (stop) { StopRegister(); return; }
-					
-					driver.FindElementByXPath("//option[@value='40']").Click();
-					Thread.Sleep(1000);
+					try
+					{
+						// ページに移動
+						driver.Navigate().GoToUrl(item.SubItems[(int)Columns.url1 + i].Text + "/image");
+						Application.DoEvents();
+						if (stop) { StopRegister(); return; }
 
-					Application.DoEvents();
-					if (stop) { StopRegister(); return; }
+						driver.FindElementByXPath("//option[@value='40']").Click();
+						Thread.Sleep(1000);
 
-					driver.FindElementByXPath("//p[contains(text(),'スタンプの個数を変更します。')]/../..//a[text()='OK']").Click();
-					Thread.Sleep(1000);
+						Application.DoEvents();
+						if (stop) { StopRegister(); return; }
 
-					Application.DoEvents();
-					if (stop) { StopRegister(); return; }
+						driver.FindElementByXPath("//p[contains(text(),'スタンプの個数を変更します。')]/../..//a[text()='OK']").Click();
+						Thread.Sleep(1000);
 
-					driver.FindElementByXPath("//input[@type='file']").SendKeys(desptopPath + @"\LINE zip\" + stampName + ".zip");
-					
-					Application.DoEvents();
-					if (stop) { StopRegister(); return; }
+						Application.DoEvents();
+						if (stop) { StopRegister(); return; }
 
-					driver.FindElementByXPath("//div[@ng-if=\"sticker.stickerType !== 'animation' || image.key === 'tab'\"]");
+						driver.FindElementByXPath("//input[@type='file']").SendKeys(desptopPath + @"\LINE zip\" + stampName + ".zip");
 
-					Application.DoEvents();
-					if (stop) { StopRegister(); return; }
+						Application.DoEvents();
+						if (stop) { StopRegister(); return; }
 
-					File.Delete(desptopPath + @"\LINE zip\" + stampName + ".zip");
+						driver.FindElementByXPath("//div[@ng-if=\"sticker.stickerType !== 'animation' || image.key === 'tab'\"]");
+
+						Application.DoEvents();
+						if (stop) { StopRegister(); return; }
+
+						File.Delete(desptopPath + @"\LINE zip\" + stampName + ".zip");
+					}
+					catch
+					{
+						StopRegister();
+						MessageBox.Show("エラーが発生しました", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+						return;
+					}
 
                     // 完了状況保存
                     item.SubItems[(int)Columns.image].Text = (i + 1).ToString();
