@@ -516,6 +516,8 @@ namespace StampRegister
 					{
 						// 登録ページに移動
 						driver.Navigate().GoToUrl(driver.FindElementByTagName("base").GetAttribute("href") + "sticker/create");
+						Thread.Sleep(1000);
+
 						Application.DoEvents();
 						if (stop) { StopRegister(); return; }
 
@@ -663,6 +665,8 @@ namespace StampRegister
 					{
 						// ページに移動
 						driver.Navigate().GoToUrl(item.SubItems[(int)Columns.url1 + i].Text + "/image");
+						Thread.Sleep(1000);
+
 						Application.DoEvents();
 						if (stop) { StopRegister(); return; }
 
@@ -729,6 +733,8 @@ namespace StampRegister
 					{
 						// アイテム管理ページに移動
 						driver.Navigate().GoToUrl(item.SubItems[(int)Columns.url1 + i].Text);
+						Thread.Sleep(1000);
+
 						Application.DoEvents();
 						if (stop) { StopRegister(); return; }
 
@@ -802,6 +808,8 @@ namespace StampRegister
 					{
 						// アイテム管理ページに移動
 						driver.Navigate().GoToUrl(item.SubItems[(int)Columns.url1 + i].Text);
+						Thread.Sleep(1000);
+
 						Application.DoEvents();
 						if (stop) { StopRegister(); return; }
 
@@ -902,17 +910,19 @@ namespace StampRegister
 					{
 						// アイテム管理ページに移動
 						driver.Navigate().GoToUrl(item.SubItems[(int)Columns.url1 + i].Text + "/update");
+						Thread.Sleep(3000);
+
 						Application.DoEvents();
 						if (stop) { StopRegister(); return; }
 
 						driver.FindElementsByXPath("//select[@data-test='select-style-category']/option")[baseTaste].Click();
-						Thread.Sleep(2000);
+						Thread.Sleep(1000);
 
 						Application.DoEvents();
 						if (stop) { StopRegister(); return; }
 
 						driver.FindElementsByXPath("//select[@data-test='select-character-category']/option")[baseChara].Click();
-						Thread.Sleep(2000);
+						Thread.Sleep(1000);
 
 						// 保存ボタンクリック
 						driver.FindElementByXPath("//main/form").Submit();
