@@ -244,7 +244,7 @@ namespace StampRegister
 				Thread.Sleep(200);
 
 				loginButtons[0].Click();
-				driver.FindElementByXPath("//h1[text()='アイテム管理']");
+				driver.FindElementByXPath("//a[text()='マイページ']");
 			}
 		}
 
@@ -604,7 +604,7 @@ namespace StampRegister
 						Application.DoEvents();
 						if (stop) { StopRegister(); return; }
 
-						driver.FindElementByXPath("//dt[text()='ステータス']");
+						driver.FindElementByXPath("//dt[contains(text(),'ステータス')]");
 
 						Application.DoEvents();
 						if (stop) { StopRegister(); return; }
@@ -761,7 +761,7 @@ namespace StampRegister
 						Application.DoEvents();
 						if (stop) { StopRegister(); return; }
 
-						driver.FindElementByXPath("//dt[text()='ステータス']");
+						driver.FindElementByXPath("//dt[contains(text(),'ステータス')]");
 
 						Application.DoEvents();
 						if (stop) { StopRegister(); return; }
@@ -827,7 +827,7 @@ namespace StampRegister
 						Application.DoEvents();
 						if (stop) { StopRegister(); return; }
 
-						driver.FindElementByXPath("//dt[text()='ステータス']");
+						driver.FindElementByXPath("//dt[contains(text(),'ステータス')]");
 
 						Application.DoEvents();
 						if (stop) { StopRegister(); return; }
@@ -936,7 +936,7 @@ namespace StampRegister
 						Application.DoEvents();
 						if (stop) { StopRegister(); return; }
 
-						driver.FindElementByXPath("//dt[text()='ステータス']");
+						driver.FindElementByXPath("//dt[contains(text(),'ステータス')]");
 
 						Application.DoEvents();
 						if (stop) { StopRegister(); return; }
@@ -990,8 +990,8 @@ namespace StampRegister
 
             // ページに移動
             driver.Navigate().GoToUrl(selectedItem.SubItems[(int)Columns.url1 + (number - 1)].Text);
-
-            if (driver.Url == "https://creator.line.me/ja/")
+			
+			if (driver.Url.IndexOf("https://access.line.me/") >= 0)
             {
                 Login(); // ログイン
 				driver.Navigate().GoToUrl(selectedItem.SubItems[(int)Columns.url1 + (number - 1)].Text);
