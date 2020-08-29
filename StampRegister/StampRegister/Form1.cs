@@ -605,6 +605,7 @@ namespace StampRegister
 						if (stop) { StopRegister(); return; }
 
 						driver.FindElementByXPath("//dt[contains(text(),'ステータス')]");
+						Thread.Sleep(1000);
 
 						Application.DoEvents();
 						if (stop) { StopRegister(); return; }
@@ -688,6 +689,7 @@ namespace StampRegister
 						if (stop) { StopRegister(); return; }
 
 						driver.FindElementByXPath("//div[@ng-if=\"sticker.stickerType !== 'animation' || image.key === 'tab'\"]");
+						Thread.Sleep(200);
 
 						Application.DoEvents();
 						if (stop) { StopRegister(); return; }
@@ -762,6 +764,7 @@ namespace StampRegister
 						if (stop) { StopRegister(); return; }
 
 						driver.FindElementByXPath("//dt[contains(text(),'ステータス')]");
+						Thread.Sleep(1000);
 
 						Application.DoEvents();
 						if (stop) { StopRegister(); return; }
@@ -828,6 +831,7 @@ namespace StampRegister
 						if (stop) { StopRegister(); return; }
 
 						driver.FindElementByXPath("//dt[contains(text(),'ステータス')]");
+						Thread.Sleep(1000);
 
 						Application.DoEvents();
 						if (stop) { StopRegister(); return; }

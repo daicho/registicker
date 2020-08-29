@@ -369,6 +369,6 @@ C:\Users\Daichi\git\registicker\StampRegister\StampRegister\obj\Release\StampReg
 C:\Users\Daichi\git\registicker\StampRegister\StampRegister\obj\Release\StampRegister.pdb
 C:\Users\Daichi\Git\registicker\StampRegister\StampRegister\bin\Release\WebDriver.dll
 C:\Users\Daichi\Git\registicker\StampRegister\StampRegister\bin\Release\WebDriver.xml
-C:\Users\Daichi\Git\registicker\StampRegister\StampRegister\bin\Release\ExcelNumberFormat.dll
-C:\Users\Daichi\Git\registicker\StampRegister\StampRegister\bin\Release\FastMember.Signed.dll
 C:\Users\Daichi\Git\registicker\StampRegister\StampRegister\obj\Release\Interop.Illustrator.dll
+C:\Users\Daichi\Git\registicker\StampRegister\StampRegister\bin\Release\DocumentFormat.OpenXml.dll
+C:\Users\Daichi\Git\registicker\StampRegister\StampRegister\bin\Release\DocumentFormat.OpenXml.xml
