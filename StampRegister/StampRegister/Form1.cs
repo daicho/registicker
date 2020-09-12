@@ -1106,7 +1106,10 @@ namespace StampRegister
 			ChromeDriverService service = ChromeDriverService.CreateDefaultService();
 			service.HideCommandPromptWindow = true;
 
-			driver = new ChromeDriver(service);
+			ChromeOptions options = new ChromeOptions();
+			options.AddArgument("user-data-dir=" + AppDomain.CurrentDomain.BaseDirectory + "Profile");
+
+			driver = new ChromeDriver(service, options);
 			driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
 		}
 
