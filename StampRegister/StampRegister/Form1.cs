@@ -55,17 +55,17 @@ namespace StampRegister
 			
             if (filePath != "")
             {
-                try
-                {
+                /*try
+                {*/
                     // Excelファイルを開く
                     workbook = new XLWorkbook(filePath);
-                }
+                /*}
                 catch
                 {
                     nameListFile.Text = "";
                     MessageBox.Show("名前情報ファイルを開けませんでした", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
-                }
+                }*/
 
                 worksheet = workbook.Worksheet(1);
                 
@@ -234,16 +234,22 @@ namespace StampRegister
 			driver.FindElementByTagName("h1");
 
 			driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(3);
-			var loginButtons = driver.FindElementsByXPath("//input[@value='ログイン']");
+			var loginButtons = driver.FindElementsByXPath("//button[text()='ログイン']");
 			driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
 
 			if (loginButtons.Count > 0)
 			{
-				driver.FindElementById("id").SendKeys(mailAddress.Text);
-				driver.FindElementById("passwd").SendKeys(password.Text);
+				driver.FindElementByName("tid").SendKeys(mailAddress.Text);
+				driver.FindElementByName("tpasswd").SendKeys(password.Text);
 				Thread.Sleep(200);
 
 				loginButtons[0].Click();
+				
+				driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(3);
+				while (driver.FindElementsByXPath("//span[text()='認証番号で本人確認']").Count > 0)
+					;
+
+				driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
 				driver.FindElementByXPath("//a[text()='マイページ']");
 			}
 		}
@@ -1107,7 +1113,7 @@ namespace StampRegister
 			service.HideCommandPromptWindow = true;
 
 			ChromeOptions options = new ChromeOptions();
-			options.AddArgument("user-data-dir=" + AppDomain.CurrentDomain.BaseDirectory + "Profile");
+			//options.AddArgument("user-data-dir=" + AppDomain.CurrentDomain.BaseDirectory + "Profile");
 
 			driver = new ChromeDriver(service, options);
 			driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
