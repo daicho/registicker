@@ -231,8 +231,6 @@ C:\Users\Daichi\Git\registicker\StampRegister\StampRegister\bin\Debug\StampRegis
 C:\Users\Daichi\Git\registicker\StampRegister\StampRegister\bin\Debug\StampRegister.pdb
 C:\Users\Daichi\Git\registicker\StampRegister\StampRegister\bin\Debug\ExcelNumberFormat.dll
 C:\Users\Daichi\Git\registicker\StampRegister\StampRegister\bin\Debug\FastMember.Signed.dll
-C:\Users\Daichi\Git\registicker\StampRegister\StampRegister\bin\Debug\ClosedXML.pdb
-C:\Users\Daichi\Git\registicker\StampRegister\StampRegister\bin\Debug\ClosedXML.xml
 C:\Users\Daichi\Git\registicker\StampRegister\StampRegister\bin\Debug\DocumentFormat.OpenXml.xml
 C:\Users\Daichi\Git\registicker\StampRegister\StampRegister\bin\Debug\ExcelNumberFormat.xml
 C:\Users\Daichi\Git\registicker\StampRegister\StampRegister\obj\Debug\StampRegister.csprojAssemblyReference.cache
@@ -249,3 +247,4 @@ C:\Users\Daichi\Git\registicker\StampRegister\StampRegister\obj\Debug\StampRegis
 C:\Users\Daichi\Git\registicker\StampRegister\StampRegister\bin\Debug\WebDriver.dll
 C:\Users\Daichi\Git\registicker\StampRegister\StampRegister\bin\Debug\WebDriver.xml
 C:\Users\Daichi\Git\registicker\StampRegister\StampRegister\bin\Debug\DocumentFormat.OpenXml.dll
+C:\Users\Daichi\Git\registicker\StampRegister\StampRegister\bin\Debug\ClosedXML.dll

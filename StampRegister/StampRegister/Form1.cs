@@ -55,17 +55,17 @@ namespace StampRegister
 			
             if (filePath != "")
             {
-                /*try
-                {*/
+                try
+                {
                     // Excelファイルを開く
                     workbook = new XLWorkbook(filePath);
-                /*}
+                }
                 catch
                 {
                     nameListFile.Text = "";
                     MessageBox.Show("名前情報ファイルを開けませんでした", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
-                }*/
+                }
 
                 worksheet = workbook.Worksheet(1);
                 

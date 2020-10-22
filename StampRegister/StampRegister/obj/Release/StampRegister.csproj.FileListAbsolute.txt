@@ -354,26 +354,25 @@ D:\DaichiBox\MyProjects\StampRegister\StampRegister 3.60\Code\StampRegister\Stam
 D:\DaichiBox\MyProjects\StampRegister\StampRegister 3.60\Code\StampRegister\StampRegister\obj\Release\StampRegister.csproj.CopyComplete
 D:\DaichiBox\MyProjects\StampRegister\StampRegister 3.60\Code\StampRegister\StampRegister\obj\Release\StampRegister.exe
 D:\DaichiBox\MyProjects\StampRegister\StampRegister 3.60\Code\StampRegister\StampRegister\obj\Release\StampRegister.pdb
-C:\Users\Daichi\git\registicker\StampRegister\StampRegister\bin\Release\StampRegister.exe.config
-C:\Users\Daichi\git\registicker\StampRegister\StampRegister\bin\Release\StampRegister.exe
-C:\Users\Daichi\git\registicker\StampRegister\StampRegister\bin\Release\StampRegister.pdb
-C:\Users\Daichi\git\registicker\StampRegister\StampRegister\obj\Release\StampRegister.csprojAssemblyReference.cache
-C:\Users\Daichi\git\registicker\StampRegister\StampRegister\obj\Release\StampRegister.csproj.ResolveComReference.cache
-C:\Users\Daichi\git\registicker\StampRegister\StampRegister\obj\Release\StampRegister.Form1.resources
-C:\Users\Daichi\git\registicker\StampRegister\StampRegister\obj\Release\StampRegister.Form2.resources
-C:\Users\Daichi\git\registicker\StampRegister\StampRegister\obj\Release\StampRegister.Properties.Resources.resources
-C:\Users\Daichi\git\registicker\StampRegister\StampRegister\obj\Release\StampRegister.csproj.GenerateResource.cache
-C:\Users\Daichi\git\registicker\StampRegister\StampRegister\obj\Release\StampRegister.csproj.CoreCompileInputs.cache
-C:\Users\Daichi\git\registicker\StampRegister\StampRegister\obj\Release\StampRegister.csproj.CopyComplete
-C:\Users\Daichi\git\registicker\StampRegister\StampRegister\obj\Release\StampRegister.exe
-C:\Users\Daichi\git\registicker\StampRegister\StampRegister\obj\Release\StampRegister.pdb
-C:\Users\Daichi\Git\registicker\StampRegister\StampRegister\bin\Release\WebDriver.dll
-C:\Users\Daichi\Git\registicker\StampRegister\StampRegister\bin\Release\WebDriver.xml
-C:\Users\Daichi\Git\registicker\StampRegister\StampRegister\obj\Release\Interop.Illustrator.dll
+C:\Users\Daichi\Git\registicker\StampRegister\StampRegister\bin\Release\StampRegister.exe.config
+C:\Users\Daichi\Git\registicker\StampRegister\StampRegister\bin\Release\StampRegister.exe
+C:\Users\Daichi\Git\registicker\StampRegister\StampRegister\bin\Release\StampRegister.pdb
+C:\Users\Daichi\Git\registicker\StampRegister\StampRegister\bin\Release\ClosedXML.dll
 C:\Users\Daichi\Git\registicker\StampRegister\StampRegister\bin\Release\DocumentFormat.OpenXml.dll
-C:\Users\Daichi\Git\registicker\StampRegister\StampRegister\bin\Release\DocumentFormat.OpenXml.xml
 C:\Users\Daichi\Git\registicker\StampRegister\StampRegister\bin\Release\ExcelNumberFormat.dll
-C:\Users\Daichi\Git\registicker\StampRegister\StampRegister\bin\Release\FastMember.Signed.dll
+C:\Users\Daichi\Git\registicker\StampRegister\StampRegister\bin\Release\WebDriver.dll
 C:\Users\Daichi\Git\registicker\StampRegister\StampRegister\bin\Release\ClosedXML.pdb
 C:\Users\Daichi\Git\registicker\StampRegister\StampRegister\bin\Release\ClosedXML.xml
+C:\Users\Daichi\Git\registicker\StampRegister\StampRegister\bin\Release\DocumentFormat.OpenXml.xml
 C:\Users\Daichi\Git\registicker\StampRegister\StampRegister\bin\Release\ExcelNumberFormat.xml
+C:\Users\Daichi\Git\registicker\StampRegister\StampRegister\bin\Release\WebDriver.xml
+C:\Users\Daichi\Git\registicker\StampRegister\StampRegister\obj\Release\Interop.Illustrator.dll
+C:\Users\Daichi\Git\registicker\StampRegister\StampRegister\obj\Release\StampRegister.csproj.ResolveComReference.cache
+C:\Users\Daichi\Git\registicker\StampRegister\StampRegister\obj\Release\StampRegister.Form1.resources
+C:\Users\Daichi\Git\registicker\StampRegister\StampRegister\obj\Release\StampRegister.Form2.resources
+C:\Users\Daichi\Git\registicker\StampRegister\StampRegister\obj\Release\StampRegister.Properties.Resources.resources
+C:\Users\Daichi\Git\registicker\StampRegister\StampRegister\obj\Release\StampRegister.csproj.GenerateResource.cache
+C:\Users\Daichi\Git\registicker\StampRegister\StampRegister\obj\Release\StampRegister.csproj.CoreCompileInputs.cache
+C:\Users\Daichi\Git\registicker\StampRegister\StampRegister\obj\Release\StampRegister.csproj.CopyComplete
+C:\Users\Daichi\Git\registicker\StampRegister\StampRegister\obj\Release\StampRegister.exe
+C:\Users\Daichi\Git\registicker\StampRegister\StampRegister\obj\Release\StampRegister.pdb
