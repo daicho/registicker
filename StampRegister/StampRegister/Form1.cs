@@ -746,9 +746,9 @@ namespace StampRegister
 						Application.DoEvents();
 						if (stop) { StopRegister(); return; }
 
-						requestButton = driver.FindElementByXPath("//label[contains(text(),'リクエスト')]");
-
-						if (requestButton.FindElement(By.TagName("input")).GetAttribute("disabled") == "disabled")
+						requestButton = driver.FindElementByXPath("//a[contains(text(),'リクエスト')]");
+					
+						if (requestButton.FindElement(By.XPath("..")).GetAttribute("class").IndexOf("ExDisabled") != -1)
 							continue;
 
 						// リクエストボタンクリック
@@ -758,13 +758,13 @@ namespace StampRegister
 						Application.DoEvents();
 						if (stop) { StopRegister(); return; }
 
-						driver.FindElementByXPath("//input[@ng-model='photoAgreement']").Click();
+						driver.FindElementByXPath("//span[text()='同意します']/..//input").Click();
 						Thread.Sleep(500);
 
 						Application.DoEvents();
 						if (stop) { StopRegister(); return; }
 
-						driver.FindElementByXPath("//a[@ng-click='submitted = true; photoAgreement && close(true)']").Click();
+						driver.FindElementsByXPath("//span[text()='同意します']")[1].Click();
 
 						Application.DoEvents();
 						if (stop) { StopRegister(); return; }

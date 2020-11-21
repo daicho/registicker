@@ -376,3 +376,4 @@ C:\Users\Daichi\Git\registicker\StampRegister\StampRegister\obj\Release\StampReg
 C:\Users\Daichi\Git\registicker\StampRegister\StampRegister\obj\Release\StampRegister.csproj.CopyComplete
 C:\Users\Daichi\Git\registicker\StampRegister\StampRegister\obj\Release\StampRegister.exe
 C:\Users\Daichi\Git\registicker\StampRegister\StampRegister\obj\Release\StampRegister.pdb
+C:\Users\Daichi\Git\registicker\StampRegister\StampRegister\obj\Release\StampRegister.csprojAssemblyReference.cache
