@@ -746,7 +746,7 @@ namespace StampRegister
 						Application.DoEvents();
 						if (stop) { StopRegister(); return; }
 
-						requestButton = driver.FindElementByXPath("//a[contains(text(),'リクエスト')]");
+						requestButton = driver.FindElementByXPath("//a[contains(text(),'リクエスト') and @class='mdBtn']");
 					
 						if (requestButton.FindElement(By.XPath("..")).GetAttribute("class").IndexOf("ExDisabled") != -1)
 							continue;
