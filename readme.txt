@@ -34,8 +34,9 @@ StampRegister.exe    … 本体
 
 
 ◇ 更新履歴 ◇
-Version 5.20 (2021/2/26)
+Version 5.20 (2021/2/27)
 ・画像出力機能を復活
+・Cokkieを保持
 
 Version 5.18 (2021/1/30)
 ・Selemium Chrome Driverのバージョンを更新
