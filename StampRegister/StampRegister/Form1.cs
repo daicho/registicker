@@ -764,7 +764,7 @@ namespace StampRegister
 						Application.DoEvents();
 						if (stop) { StopRegister(); return; }
 
-						driver.FindElementsByXPath("//span[text()='同意します']")[1].Click();
+						driver.FindElementByXPath("//span[@data-test='dialog-btn-ok']").Click();
 
 						Application.DoEvents();
 						if (stop) { StopRegister(); return; }
