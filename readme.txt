@@ -1,5 +1,5 @@
 ======================================================================================
-                             StampRegister - Version 5.23
+                             StampRegister - Version 5.24
 
                                                              Made by Daichi Fukuzawa
 ======================================================================================
@@ -34,6 +34,9 @@ StampRegister.exe … 本体
 
 
 ◇ 更新履歴 ◇
+Version 5.24 (2021/7/26)
+・Chrome Driverを更新
+
 Version 5.23 (2021/4/24)
 ・Chrome Driverを更新
 
