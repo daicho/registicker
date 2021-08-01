@@ -1,0 +1,1350 @@
+
+<!DOCTYPE html>
+<html xmlns:ng="http://angularjs.org" id="ng-app" ng-app="lc.line.creators.market.cms" class="ExLang_ja" lang="ja">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>マイページ - LINE Creators Market</title>
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <meta http-equiv="Content-Script-Type" content="text/javascript" />
+    <meta name="viewport" content="width=1200, maximum-scale=1.0, shrink-to-fit=yes" />
+    <meta name="format-detection" content="telephone=no" />
+    <base href="/my/s6Hsot0EkqxIZdK2/">
+    <link href="//creator-static.line.me/cms/img/favicon_line.29b44883d9f792ab738b6646a893c1d8.ico" rel="shortcut icon" type="image/x-icon"/>
+    <link href="//creator-static.line.me/cms/css/cms.c0833282aa13d76c35187c660950eabf.css" rel="stylesheet" type="text/css" />
+    
+    <script crossorigin>
+        (function(g,d){
+        var v='release/stable';
+        g._trmq=g._trmq||[];g._trm=g._trm||function(){g._trmq.push(arguments)};
+        g.onerror=function(m,f,l,c){g._trm('send','exception',m,f,l,c)};
+        var h=location.protocol==='https:'?'https://d.line-scdn.net':'http://d.line-cdn.net';
+        var s=d.createElement('script');s.async=1;
+        s.src=h+'/n/_4/torimochi.js/public/v1/'+v+'/min/torimochi.js';
+        var t=d.getElementsByTagName('script')[0];t.parentNode.insertBefore(s,t);
+        })(window, document);
+        _trm('performance', { rate: 0.1 });
+        _trm('enable', {
+            productKey: 'lcm-real'
+        });
+        _trm('send', 'pageview');
+    </script>
+
+    
+<script  src="//creator-static.line.me/chunk/0.d62a94fd982537995ca2.js"></script>
+<script  src="//creator-static.line.me/cms/js/utils/xlt-reader.02524a9d0240f431155d.js"></script>
+
+    
+        
+<script type="text/javascript">
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('/sw.js');
+    });
+  }
+</script>
+
+
+    
+    <script defer src="//creator-static.line.me/cms/js/lcm.common.f83d92fd51669e3de3e29e906402091a.js"></script>
+    
+<script defer src="//creator-static.line.me/chunk/0.d62a94fd982537995ca2.js"></script>
+<script defer src="//creator-static.line.me/chunk/1.ca21e85b9435c17efba8.js"></script>
+<script defer src="//creator-static.line.me/chunk/3.b09212dc74f431c65206.js"></script>
+<script defer src="//creator-static.line.me/chunk/2.ac05f499dbb9107d6c22.js"></script>
+<script defer src="//creator-static.line.me/chunk/4.e67099b366b145dc2f43.js"></script>
+<script defer src="//creator-static.line.me/chunk/5.1578dc13dd1cb7ca10d9.js"></script>
+<script defer src="//creator-static.line.me/chunk/6.e55d164ec05a52a23df4.js"></script>
+<script defer src="//creator-static.line.me/chunk/9.014751d11b36934e38f2.js"></script>
+<script defer src="//creator-static.line.me/chunk/10.5afff3f52d3d53518049.js"></script>
+<script defer src="//creator-static.line.me/chunk/8.53c9a4c36f2286fecc0c.js"></script>
+<script defer src="//creator-static.line.me/chunk/12.5d9fd222126ad2b6cc48.js"></script>
+<script defer src="//creator-static.line.me/chunk/20.e22f4000684b1c7e7efc.js"></script>
+<script defer src="//creator-static.line.me/chunk/7.596328e1e848f4f9e468.js"></script>
+<script defer src="//creator-static.line.me/chunk/11.05da5c7ce0ab81af605a.js"></script>
+<script defer src="//creator-static.line.me/chunk/16.8de30d32c25a98c81366.js"></script>
+<script defer src="//creator-static.line.me/chunk/22.b77297eb5dbcf4ec60fa.js"></script>
+<script defer src="//creator-static.line.me/cms/js/page-script/sticker-detail.vue.16ed965cd96c7495e97b.js"></script>
+
+    
+
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-66883015-1', 'auto');
+ga('send', 'pageview');
+</script></head>
+<body ng-controller="AppCtrl" lcm-ui-language="ja" lcm-broadcast-keyup lcm-environment="real">
+    
+    
+<div class="LyWrap"><div class="lyWrapInner">
+
+<!--HEADER-AREA-->
+<header class="LyHead" ng-controller="CmsHeaderCtrl">
+  <div class="lyHeadL">
+    
+    <a href="/my/" class="MdGHD01Logo">マイページ</a>
+    
+  </div>
+  
+  <div class="lyHeadR">
+    <div class="MdGHD02Link">
+      <ul class="mdGHD02List">
+        <li>はんま〜@福澤</li>
+        <li><a href="" ng-click="logout($event)">ログアウト</a></li>
+      </ul>
+    <!--/MdGHD01Link--></div>
+    <div class="MdGHD03Lang FnLang" lang-select>
+      <ul class="mdGHD03List" style="white-space:nowrap">
+        <li><a href="/my/set_language?language=en">English</a></li>
+        <li class="ExSelected"><a href="/my/set_language?language=ja">日本語</a></li>
+        <li><a href="/my/set_language?language=zh-tw">中文(繁體)</a></li>
+        <li><a href="/my/set_language?language=th">ภาษาไทย</a></li>
+        <li><a href="/my/set_language?language=id">Bahasa Indonesia</a></li>
+      </ul>
+    <!--/MdGHD03Lang--></div>
+  </div>
+  
+<!--/LyHead--></header>
+<!--/HEADER-AREA-->
+
+<!--CONTENTS-AREA-->
+<div class="LyContents">
+
+
+<!--SUB-CONTENTS-AREA-->
+<aside class="LySub" ng-controller="CmsSideMenuCtrl" >
+<h2 class="MdHide">cms.menu</h2>
+
+<div class="ArSub01">
+<div class="MdBtn02"><a href="/my/s6Hsot0EkqxIZdK2/create" class="mdBtn">新規登録</a></div>
+<!--/ArSub01--></div>
+
+<nav class="MdSB01Menu">
+  <h3 class="MdHide">cms.contents</h3>
+  <ul class="mdSB01List">
+    <li class="mdSB01Manage" ng-class="{'ExError': seller.hasApprovedMajorUpdateRequest}"><a href="/my/s6Hsot0EkqxIZdK2/sticker/">アイテム管理</a></li>
+    <li class="mdSB01Transfer" ng-class="{'ExSelected': selected_report, 'ExError': has_failed_request || seller.needMoreInfo}" ng-click="toggleMenu($event, 'selected_report')"><a href="">売上/送金</a>
+      <ul class="mdSB01SubList">
+        <li ng-class="{'ExSelected': type=='daily_report'}"><a href="/my/s6Hsot0EkqxIZdK2/daily_report/sticker">売上レポート</a></li>
+        <li ng-class="{'ExSelected': type=='payment_request', 'ExError': has_failed_request || seller.needMoreInfo}"><a href="/my/s6Hsot0EkqxIZdK2/payment_request/">送金申請</a></li>
+      </ul>
+    </li>
+      <li class="mdSB01Statistics" ng-class="{'ExSelected': selected_stats}" ng-click="toggleMenu($event, 'selected_stats')"><a href="">統計情報
+</a>
+        <ul class="mdSB01SubList">
+          <li ng-class="{'ExSelected': type=='stats_sticker'}"><a href="/my/s6Hsot0EkqxIZdK2/stats/sticker">アイテム</a></li>
+          <li ng-class="{'ExSelected': type=='stats_area'}"><a href="/my/s6Hsot0EkqxIZdK2/stats/area/sticker">エリア
+</a></li>
+        </ul>
+      </li>
+    <li class="mdSB01MessageCenter" ng-class="{'ExNew': has_new_message}"><a href="/my/s6Hsot0EkqxIZdK2/message/">メッセージセンター</a></li>
+    <li class="mdSB01Account" ng-class="{'ExError': has_personal_account || seller.needMoreInfo}"><a href="/my/s6Hsot0EkqxIZdK2/seller/edit_basic">アカウント設定</a></li>
+    <li class="mdSB01Guide" ng-class="{'ExSelected': selected_guideline}" ng-click="toggleMenu($event, 'selected_guideline')"><a href="">ガイドライン</a>
+      <ul class="mdSB01SubList">
+        <li>
+          <dl class="mdSB01GuideList">
+            <dt>制作ガイドライン</dt>
+            <dd>
+              <ul>
+                <li><a href="/ja/guideline/sticker/" target="_blank">スタンプ</a></li>
+                <li><a href="/ja/guideline/animationsticker/" target="_blank">アニメーションスタンプ</a></li>
+                <li><a href="/ja/guideline/customsticker/" target="_blank">カスタムスタンプ</a></li>
+                <li><a href="/ja/guideline/messagesticker/" target="_blank">メッセージスタンプ</a></li>
+                <li><a href="/ja/guideline/bigsticker/" target="_blank">BIGスタンプ</a></li>
+                <li><a href="/ja/guideline/popupsticker/" target="_blank">ポップアップスタンプ</a></li>
+                <li><a href="/ja/guideline/effectsticker/" target="_blank">エフェクトスタンプ</a></li>
+                <li><a href="/ja/guideline/emoji/" target="_blank">絵文字</a></li>
+                <li><a href="/ja/guideline/theme/" target="_blank">着せかえ</a></li>
+              </ul>
+            </dd>
+          </dl>
+          <dl class="mdSB01GuideList">
+            <dt>審査ガイドライン</dt>
+            <dd>
+              <ul>
+                <li><a href="/ja/review_guideline/" target="_blank">スタンプ</a></li>
+                <li><a href="/ja/review_guideline/#emoji" target="_blank">絵文字</a></li>
+                <li><a href="/ja/review_guideline/#theme" target="_blank">着せかえ</a></li>
+              </ul>
+            </dd>
+          </dl>
+        </li>
+      </ul>
+    </li>
+    <li class="mdSB01Manual">
+        
+            <a href="http://creator-manual.line.me/ja/" target="_blank">販売マニュアル</a>
+        
+    </li>
+    <li class="mdSB01Faq"><a href="/my/s6Hsot0EkqxIZdK2/help/faq">Q&A</a></li>
+  </ul>
+<!--/MdSB01Menu--></nav>
+<div class="ArSub01">
+<div class="MdSB02LinkList">
+  <h3 class="mdSB02Ttl"><a href="/my/s6Hsot0EkqxIZdK2/announce/">お知らせ</a></h3>
+  <ul class="mdSB02List">
+    <li ng-repeat="notice in notices|limitTo: 3" ng-cloak><a href="/my/s6Hsot0EkqxIZdK2/announce/article?id={{notice.id}}">{{notice.title}}</a></li>
+  </ul>
+<!--/MdSB02LinkList--></div>
+<!--/ArSub01--></div>
+
+<div class="ArBanners">
+  <nav class="MdSB04Banner">
+    <a ng-click="simulator.open()"><strong>作ったスタンプを<br>
+チェックしよう！</strong></a>
+  </nav>
+  <nav class="MdSB05Banner">
+    
+    <a ng-click="animationHelp.open()">
+      <strong >
+        動くスタンプを<br>
+つくってみよう！
+      </strong>
+    </a>
+  </nav>
+  <nav class="MdSB05Banner">
+      <a class="mdSB05BannerNoImage" target="_blank" href="/ja/studio/"><strong>スマホで簡単！<br>LINEスタンプができる！</strong></a>
+  </nav>
+  <nav class="MdSB05Banner" ng-if="showOAQRcode">
+    <a class="mdSB05BannerQRCode" ng-class="{jp: seller.isJapanese, th: seller.isThai, tw: seller.isTaiwanese}" ng-click="oaQrcode.open()">
+      <strong>公式アカウントを<br>友だち追加！</strong>
+    </a>
+  </nav>
+</div>
+
+<!--/LySub--></aside>
+
+<!--/SUB-CONTENTS-AREA-->
+
+
+
+
+<script type="text/javascript">
+window.recentRequestCount = 30;
+</script>
+
+<script type="text/javascript">
+    window.XLTReader.registerXLT({
+        'cms.language.ja': '日本語',
+        'cms.language.en': 'English',
+        'cms.language.th': 'ภาษาไทย',
+        'cms.language.es_es': 'Español (España)',
+        'cms.language.id': 'Bahasa Indonesia',
+        'cms.language.ko': '한국어',
+        'cms.language.tw': '中文(繁體)',
+        'cms.language.es': 'Español (Latinoamérica)',
+        'cms.error.private.settings.first': '審査が必要な情報です',
+        'cms.display.information.input.error.seller.area': '販売エリアを選択してください',
+        'cms.custom.sale.region.only.jp': '「日本」のみで販売する',
+        'cms.custom.sale.region.only.tw': '「台湾、マカオ、香港」のみで販売する',
+        'cms.custom.sale.region.only.th': '「タイ」のみで販売する',
+        'cms.custom.sale.region.only.selected': '選択したエリアで販売する',
+        'cms.custom.not.simultaneous.sale': 'カスタムスタンプは「日本」「台湾、マカオ、香港」「タイ」を含めたエリアで同時に販売することができません。',
+        'cms.ms.not.simultaneous.sale': 'メッセージスタンプは「日本」「台湾、マカオ、香港」「タイ」を含めたエリアで同時に販売することができません。',
+        'cms.custom.not.change.add.sale.region': '※更新リクエスト時、販売エリアに「日本」「台湾、マカオ、香港」「タイ」が設定されている場合は、あとで変更や追加をすることはできません。',
+        'error.message.areas.campaign.restriction.web': '%1でのみ販売可能なキャンペーンに参加しています。販売エリアを変更してください。',
+        'cms.display.information.seller.area': '販売エリア',
+        'popup.about.sale.region.title': '販売エリア',
+        'cms.custom.popup.sale.region': 'カスタムスタンプは「日本」「台湾、マカオ、香港」「タイ」を含めたエリアで同時に販売することができません。&lt;br&gt;&lt;br&gt; [選択したエリアで販売する]を選ぶと、チェックを入れたエリアでのみ販売されます。',
+        'cms.ms.popup.sale.region': 'メッセージスタンプは「日本」「台湾、マカオ、香港」「タイ」を含めたエリアで同時に販売することができません。&lt;br&gt;&lt;br&gt;[選択したエリアで販売する]を選ぶと、チェックを入れたエリアでのみ販売されます。',
+        'popup.about.sale.region.desc.lgbt': '[販売可能な全てのエリア]LINEがサポートされているすべてのエリアで販売されます。&lt;br&gt;&lt;br&gt;[販売可能な一部のエリア]LINEがサポートされているエリアのうち、世界の異なる文化・習慣を考慮した一部のエリアで販売されます。&lt;br&gt;&lt;br&gt;[選択したエリアで販売する]チェックを入れたエリアでのみ販売されます。',
+        'cms.display.info.distribute.all.country.lgbt': '販売可能な一部のエリア',
+        'cms.popup.default.future.title': '特集企画',
+        'cms.ep.campaign.title': 'タイトル：',
+        'cms.ep.campaign.find.out.more': 'くわしくは&lt;a href=&quot;%1&quot; target=&quot;_blank&quot;&gt;こちら&lt;/a&gt;を確認してください。',
+        'cms.ep.campaign.application.period': '審査受付期間：',
+        'cms.ep.campaign.banner.advertisement.period': 'バナー掲載期間(予定)：',
+        'cms.popup.default.description': '不定期に開催されるキャンペーンや特集企画への参加に関する設定です。&lt;br&gt;企画によって内容が異なるため、くわしくはお知らせを確認してください。',
+        'cms.campaign.participation': '参加する',
+        'cms.campaign.non.participation': '参加しない',
+        'cms.custom.campaign.type': 'スタンプのタイプ',
+        'cms.custom.campaign.type.sticker.animation': 'スタンプ/アニメーションスタンプ',
+        'cms.custom.campaign.type.custom': 'カスタムスタンプ',
+        'cms.custom.campaign.type.message': 'メッセージスタンプ',
+        'cms.custom.campaign.type.big': 'BIGスタンプ',
+        'cms.custom.campaign.type.sticker.animation.big': 'スタンプ/アニメーションスタンプ/BIGスタンプ',
+        'cms.custom.error.message.areas.campaign.restriction': '日本、タイ、台湾、マカオ、香港以外の国家のみで販売可能なキャンペーンに参加しています。販売エリアを変更してください。',
+        'default.cancel': 'キャンセル',
+        'default.ok': 'OK',
+        'cms.display.information.character.category': 'キャラクターカテゴリ',
+        'popup.about.category.title': 'カテゴリ',
+        'popup.about.category.desc': 'カテゴリを設定すると、LINEスタンプショップのカテゴリに掲載されます。',
+        'cms.display.information.category.not.set': '未設定',
+        'cms.character.category.name.explain': '名前などを含むスタンプを販売する場合は必ず「名前・名字」を選択してください',
+        'cms.display.information.copyright': 'コピーライト',
+        'popup.about.copyright.title': 'コピーライト',
+        'popup.about.copyright.desc': 'コピーライトは、以下の登録ができます。&lt;br&gt; ・英数字&lt;br&gt; ・半角中黒（･）&lt;br&gt; ・全角中黒（・）&lt;br&gt; ・特殊文字（©）（®）（™ ）のみ',
+        'cms.display.information.input.error.copyright': 'コピーライトを入力してください',
+        'registration.input.error.limited.characters': '%1文字まで入力可能です',
+        'cms.display.information.premium': 'LINEスタンプ&lt;br&gt;プレミアム',
+        'popup.about.premium.desc': '「LINEスタンプ プレミアム」の参加に関する設定です。&lt;br&gt;[参加する]に設定すると、そのスタンプは「LINEスタンプ プレミアム」に加入しているユーザーが自由に使えるようになります。&lt;br&gt;その場合、スタンプの送信ユーザー数に応じて売上として分配されます。&lt;br&gt;※「LINEスタンプ プレミアム」には、販売開始から180日以上経過しているスタンプが参加できます。&lt;br&gt;※「LINEスタンプ プレミアム」に参加しても、通常どおり販売を継続できます。',
+        'popup.about.premium.desc.lplink': '※「LINEスタンプ プレミアム」についてくわしくは&lt;a href=&quot;%1&quot; target=&quot;_blank&quot;&gt;こちら&lt;/a&gt;。',
+        'cms.display.information.premium.not.join': '参加しない',
+        'cms.display.information.premium.join': '参加する',
+        'cms.custom.premium': 'スタンプタイプが「カスタムスタンプ」の場合、LINEスタンプ プレミアムに参加できません',
+        'cms.ms.premium': 'スタンプタイプが「メッセージスタンプ」の場合、LINEスタンプ プレミアムに参加できません',
+        'popup.about.sale.region.desc': '[販売可能な全てのエリア]を選ぶと、LINEがサポートされているすべてのエリアで販売されます。&lt;br&gt;&lt;br&gt;[選択したエリアで販売する]を選ぶと、チェックを入れたエリアでのみ販売されます。',
+        'cms.display.info.distribute.all.country': '販売可能な全てのエリア',
+        'cms.display.info.distribute.select.country': '選択したエリアで販売する',
+        'cms.display.info.distribute.select.country.id': '｢インドネシア｣限定で選択すると、特定エリアで販売することができる価格(格安価格)が選択できます。',
+        'cms.display.info.distribute.select.only.id': 'インドネシア限定',
+        'cms.premium.error.specified.sales.region2': '「LINEスタンプ プレミアム」に参加する場合、かならず販売エリアに[日本]、[台湾]、[インドネシア]のいずれかを含めてください',
+        'cms.display.information.sellername': 'クリエイター名',
+        'popup.about.creators.name.title': 'クリエイター名',
+        'popup.emoji.about.creators.name.desc': 'すべてのアイテムに同じクリエイター名を設定できます。&lt;br&gt; &lt;br&gt;言語別に翻訳を設定できます。翻訳が設定されていない言語には、英語が表示されます。&lt;br&gt; &lt;br&gt;クリエイター名は、審査中または販売開始前のアイテムがない場合のみ修正できます。',
+        'default.edit': '編集',
+        'cms.display.information.add.button': '追加',
+        'cms.creators.name.not.change.review.in': 'ほかのアイテムが審査中のため、クリエイター名を変更できません。',
+        'cms.display.information.input.error.sellername': 'クリエイター名を登録してください',
+        'cms.new.ranking': 'プライベート設定',
+        'cms.popup.new.ranking.desc': 'LINEスタンプショップの新着・ランキング表示に関する設定です。',
+        'cms.rank.display.need.time': '※反映には時間がかかる場合があります。',
+        'cms.new.ranking.display': 'LINE STORE/ショップ公開',
+        'cms.new.ranking.not.display': 'LINE STORE/ショップ非公開',
+        'cms.rank.display.not.show': 'LINE STORE、LINEアプリ内のスタンプショップの新着スタンプ・ランキング、検索結果に表示されなくなります。また、カテゴリを設定している場合は、カテゴリにも表示されなくなります。',
+        'cms.rank.display.introduce': '購入用URLはステータスが「承認」以降に、どちらかの方法で確認できます。&lt;br&gt;1. [アイテム管理]からアイテムを選択し、[表示情報]＞[購入用URL]にアクセスします。&lt;br&gt;2. トークルームまたはタイムラインに送信されたスタンプをタップします。',
+        'cms.rank.display.attention': '※プライベート設定は、新着スタンプ・ランキングでのスタンプの表示を制限するための機能です。そのため、スタンプの購入ページに直接アクセスしたユーザーは、スタンプを閲覧・購入することができます。',
+        'cms.display.information.taste.category': 'テイストカテゴリ',
+        'cms.license.certificate.title': 'ライセンス証明',
+        'cms.picture.sticker': '写真の使用',
+        'cms.popup.set.includes.photos': '登録した画像の中に、ひとつでも写真を使用したり、写真を加工した場合は、「写真を使用しています」にチェックをしてください。',
+        'cms.option.license.certificate': 'ライセンス証明書',
+        'popup.license.certificate.title': 'ライセンス証明書',
+        'popup.about.license.certificate.desc': '2次ライセンスなど、登録する作品が自社の著作物でない場合は、必ずライセンス証明書を添付してください。',
+        'cms.license.certificate.appended.security': '審査に必要なライセンス証明書などを添付してください。',
+        'cms.file.attach': 'ファイルの添付',
+        'cms.license.certificate.attach.file.security1': '合計20MB以下のファイル（最大10ファイルまで）をZIPファイルに圧縮してください。',
+        'cms.license.certificate.attach.file.security2': 'ファイルは画像(JPEG,PNG,GIF)、PDFファイル、またはそれらをZIP形式で圧縮したものです。これ以外の形式のファイルは審査に利用できない場合があります。',
+        'cms.file.attach.celebrity': '著作権の証明が必要なスタンプの場合、ライセンス証明書や契約書などはここから添付してください。',
+        'cms.option.product.url': '作品が確認できるURL',
+        'popup.about.product.url.title': '作品が確認できるURL',
+        'popup.about.product.url.desc': '作品を確認できるURLがある場合は必ず入力してください。&lt;br&gt;新作またはオリジナルの作品は、審査に時間がかかることがあります。',
+        'cms.input.error.fail.wrong.weburl': 'URLが正しくありません',
+        'cms.option.others.comment': 'その他、補足事項',
+        'popup.about.others.comments.title': 'その他、補足事項',
+        'popup.about.others.comments.desc': 'その他、審査に必要な補足事項がありましたら記入してください。',
+        'popup.system.delete': '削除',
+        'cms.subtitle.sale.info.region': '販売情報',
+        'cms.display.information.input.error.unexpected.character': '利用できない文字が含まれています',
+        'cms.display.information.input.error.unexpected.word': '利用できない単語が含まれています',
+        'cms.display.information.input.error.not.url': '%1にはURLを含むことはできません',
+        'cms.display.information.add.Language': '言語を追加',
+        'popup.about.language.setting.title': '言語を追加',
+        'popup.about.language.setting.desc': 'タイトルと説明文の翻訳を言語別に設定できます。翻訳が設定されていない言語には、英語が表示されます。&lt;br&gt;&lt;br&gt;半角カナや不適切な英単語は入力できません。',
+        'cms.display.info.language.en.sticker.exlpain': '英語の説明文は、半角英数字、半角記号のみが入力できます',
+        'cms.display.information.input.error.10.more.characters': '10文字以上で入力してください',
+        'cms.display.information.title': 'タイトル',
+        'cms.display.information.input.error.2.more.characters': '2文字以上で入力してください',
+        'cms.display.information.input.error.not.use.title': '既に存在するタイトルのため利用できません',
+        'default.appended': '添付',
+        'my.img.validation.not.target.file': '対象ファイルではありません',
+        'my.img.validation.filesize.too-large': 'ファイルの容量オーバーです。',
+        'upload.error.png.only': 'png形式のみアップロードできます。',
+        'cms.display.information.language': '言語',
+        'cms.display.information.language.annotation': '(LINE STOREおよびLINEアプリ内ショップでは、設定していない言語は英語が表示されます。)',
+        'cms.sale.region.desc1.id': '以下の条件を満たしていると、格安価格で販売できます。&lt;br&gt;①1セットに含まれるスタンプの数が8個&lt;br&gt;②販売エリアがインドネシアのみ&lt;br&gt;&lt;br&gt;',
+        'cms.sale.region.desc2.id': 'スタンプ販売後の価格情報変更をするには、[販売停止]にしてから変更できます。&lt;br&gt;&lt;br&gt;',
+        'cms.sale.region.desc3.id': 'インドネシア限定で販売してよろしいですか？',
+        'cms.display.information.temporary.save': '保存',
+        'popup.temporary.save': '保存しますか？',
+        'cms.country.asia.jp': '日本',
+        'cms.license.certificate.download': 'ライセンス証明書は&lt;a href=&quot;%1&quot; target=&quot;_blank&quot;&gt;こちら&lt;/a&gt;をご利用ください。',
+        'cms.ms.fbm.announcement': '「メッセージスタンプ」をつくって販売できるようになりました。くわしくは&lt;a href=&quot;%1&quot; target=&quot;_blank&quot;&gt;こちら&lt;/a&gt;。&lt;br&gt;[新規登録]ボタンをクリックし[スタンプ]を選択します。スタンプのタイプは[メッセージスタンプ]を選択してください。',
+        'cms.tier02.popup.title.new.regist1_2.id': '下記の条件を満たすと、販売価格情報から格安価格を設定することができます。',
+        'cms.tier02.popup.desc1_2.id': '・スタンプのタイプ：スタンプ&lt;br&gt;・1セット：8個&lt;br&gt;・販売国：インドネシア限定',
+        'cms.message.auto.tag': 'タグを設定していないスタンプには、承認後から2～3日以内にシステム側で自動設定されます。&lt;br&gt;自動設定されたタグは、編集ボタンから編集できます。',
+        'default.close': '閉じる',
+        'cms.custom.popup.back.unset': 'スタイル情報が保存済みで販売エリアを変更すると、スタイル情報が失われ、未設定の状態に戻ります。&lt;br&gt;本当に保存してよろしいですか？',
+        'cms.popup.price.settings': '販売価格設定',
+        'cms.popup.price.settings.desc': '一部の販売価格は、特定の販売エリアにしか設定できないことがあります。くわしくは&lt;a href=&quot;%1&quot; target=&quot;_blank&quot;&gt;こちら&lt;/a&gt;を確認してください。',
+        'cms.choose.cannotset': '現在選択されている販売価格は利用できません。',
+        'cms.tier06.endoftier02.cannotsale': '現在選択されている価格の選択可能期間は終了しました。&lt;br /&gt;他の販売価格を選択・設定するまで販売再開はできません。',
+        'cms.popup.close.fixtier': 'この画面を閉じて、 「販売価格情報」から販売価格を修正してください。',
+        'cms.popup.close': '閉じる',
+        'cms.tier06.endoftier02.cannotnewreq': '現在選択されている価格の選択可能期間は終了しました。&lt;br /&gt;他の販売価格を選択・設定するまで新規のリクエストはできません。',
+        'cms.price.tier02.all.id': '特定エリアでしか販売できない価格を希望する場合は、条件を満たす必要があります。',
+        'cms.price.tier02.sale.region': '特定の販売エリアにのみ設定できる価格が選択されています。&lt;br&gt;選択したエリアで販売するには、ほかの&lt;a href=&quot;%1&quot;&gt;販売価格&lt;/a&gt;を選んでください。',
+        'cms.price.tier02.update.request.sale.region': '現在、特定の販売エリアにのみ設定可能な販売価格が選択されています。&lt;br&gt;選択したエリアで販売する場合は、&lt;a href=&quot;%1&quot;&gt;販売価格&lt;/a&gt;を変更してください。',
+        'cms.price.tier02.change.sales.region.reopen': '現在、販売エリアを変更できません。&lt;br&gt;販売エリアを変更するには、選択中の販売価格で販売を再開してください。',
+        'cms.top.newregistration.title': '新規登録',
+        'cms.heading.new.registration': 'LINE STOREおよびLINEアプリ内ショップに掲載する情報を登録します。',
+        'cms.heading.edit.infomation': 'LINE STOREおよびLINEアプリ内ショップに掲載する情報を編集します。',
+        'cms.heading.edit.text': 'テキスト情報を登録してください。',
+        'cms.top.update.request.title': '更新リクエスト',
+        'cms.sele.price.info.setting.history.subtitle': '価格変更履歴',
+        'popup.about.change.log.title': '価格変更履歴',
+        'popup.about.change.log.desc': '販売価格を変更して[保存]ボタンをクリックしても、[価格変更履歴]の内容には反映されません。&lt;br&gt;&lt;br&gt;販売を開始した時点で、[価格変更履歴]に表示されるようになります。',
+        'cms.sele.price.info.before.change.price': '変更前価格',
+        'cms.sele.price.info.after.change.price': '変更後価格',
+        'cms.sele.price.info.change.date.time': '変更日時',
+        'cms.sele.price.info.change.date.time.gmt': '(日本時間)',
+        'cms.sele.price.info.setting.no.history.desc': '価格変更の履歴がありません',
+        'cms.sele.price.info.setting.subtitle': '販売価格設定',
+        'cms.stickerlist.sele.price': '販売価格',
+        'cms.sele.price.info.setting.now': '現在設定されている価格 %1',
+        'cms.sele.price.after.change.onsale': '販売中のスタンプの価格を変更するには、[販売停止]ボタンをクリックしてください。',
+        'cms.emoji.sele.price.after.change.onsale': '販売中の絵文字の価格変更を行う場合は、上部の[販売停止]ボタンを押してから変更してください。',
+        'cms.sele.price.after.24hours.not.changed': '価格を変更して販売を再開すると、再開してから24時間は次の変更ができません。',
+        'cms.sele.price.after.reopen.sales': '販売停止中に価格を変更した場合は、販売を停止してから約3時間ほどすると販売できるようになります。',
+        'cms.sale.price.annotation.about.premium': '販売を停止すると、「LINEスタンプ プレミアム」への参加設定は[参加しない]が自動的に設定されます。&lt;br&gt;あらためて「LINEスタンプ プレミアム」に参加したい場合は、販売再開後に[販売情報]＞[LINEスタンプ プレミアム]で[参加する]を選択してください。',
+        'default.save': '保存',
+        'cms.popup.price.settings': '販売価格設定',
+        'cms.popup.price.settings.desc': '一部の販売価格は、特定の販売エリアにしか設定できないことがあります。くわしくは&lt;a href=&quot;%1&quot; target=&quot;_blank&quot;&gt;こちら&lt;/a&gt;を確認してください。',
+        'popup.wait.until.reopen.sales.title': '販売価格を保存します',
+        'popup.now.on.sale.desc': '販売価格に変更がない場合は、今すぐ販売を再開できます。',
+        'popup.wait.until.reopen.sales.desc': '設定した価格で販売します。[販売再開]ボタンが有効になるまで少しお待ちください。',
+        'popup.wait.until.reopen.sales.now.desc': '販売を停止してから3時間が経ちました。[販売再開]ボタンをクリックすると販売を再開できます。',
+        'error.msg.server.error': '一時的な問題によりサーバーにアクセスできない可能性があります。&lt;br&gt;しばらくしてからもう一度お試しください。',
+        'cms.emoji.tag.settings.desc': 'タグを登録すると、LINEのトーク画面で入力した文字に該当する「スタンプ」や「絵文字」が自動的に候補として表示されます。&lt;br&gt;タグの登録は任意です。&lt;br&gt;未登録画像の場合はタグの登録ができません。',
+        'cms.as.register.tag.msg': 'タグの登録ができます',
+        'cms.newregistration.information.tab': '表示情報',
+        'cms.newregistrtation.image.tab': 'スタンプ画像',
+        'cms.as.tag.settings': 'タグ設定',
+        'cms.subtitle.sale.price.info': '販売価格情報',
+        'cms.display.information.store.url': '購入用URL',
+        'cms.display.information.store.url.desc': 'アイテムが承認されると購入用URLを確認することができます。',
+        'cms.status.premium.before.schedulefix.desc': 'リリースすると、「LINEスタンプ プレミアム」の対象になる日が決まります。',
+        'cms.status.premium.waiting.start.period.desc': '%1から「LINEスタンプ プレミアム」の対象になります。',
+        'cms.status.premium.waiting.end.period.desc': '%1まで「LINEスタンプ プレミアム」の対象です。',
+        'cms.selection.of.some': '国家選択',
+        'param.title': 'タイトル',
+        'cms.update.request.delete.btn': '更新情報の削除',
+        'cms.display.revenue.share.rate.stickermaker.0.version4': 'LINEスタンプメーカーアプリで「無料ダウンロード / 売上分配なし」を選択したため、分配額は0円になります。',
+        'cms.display.revenue.share.rate.50': '(a) スタンプの売上の50％',
+        'cms.display.revenue.share.rate.35': '(b) スタンプの売上(Apple、Google等の手数料30%を除く)×50％',
+        'cms.display.revenue.share.rate.payperdl': '&lt;a href=&quot;%1&quot;&gt;個別販売における収益分配率&lt;/a&gt;',
+        'cms.popup.number.of.requests.desc': '審査リクエスト数の上限は1日30回です。&lt;br&gt;審査リクエスト数の上限に達すると、リクエスト数がリセットされるまでリクエストできません。&lt;br&gt;※毎日00:00(GMT+9)にリクエスト数がリセットされます。',
+        'cms.error.wait.until.reopen.sales': '｢販売再開｣ボタンが有効になるまで今しばらくお待ち下さい',
+        'cms.save.content': '内容を保存しました',
+        'cms.heading.rejected': 'リクエストがリジェクトされました。&lt;br&gt;くわしくはメッセージセンターで確認してください。内容を修正すると、もう一度リクエストできます。',
+        'cms.heading.banned': '販売できません。',
+        'cms.error.unregistrated.bank.accout.info': '送金先が登録されていません。画面の左側にあるメニューの[アカウント設定]＞[送金先情報]から登録してください。',
+        'cms.error.reopen.sales': '販売再開できます',
+        'cms.message.sales.close': '販売を終了しました',
+        'cms.top.info.publication.store.title': 'LINE STOREおよびLINEアプリ内ショップに掲載中の情報',
+        'cms.top.manege.stickers.title': 'アイテム管理',
+        'cms.heading.waiting.for.review': '審査はリクエスト済みです。&lt;br&gt;審査開始までお待ちください。',
+        'cms.heading.in.review': '現在審査中です。 &lt;br&gt;審査が完了するまでお待ちください。',
+        'cms.heading.approved': 'スタンプが承認されました。&lt;br&gt;販売を開始する場合は｢リリース｣をクリックしてください。',
+        'cms.heading.approved.theme': '着せかえが承認されました。&lt;br&gt;販売を開始するには[リリース]ボタンをクリックしてください。',
+        'cms.emoji.approved': '「絵文字」が承認されました。&lt;br&gt;販売を開始する場合は[リリース]をクリックしてください。',
+        'cms.heading.ready.for.sale': '現在スタンプを販売しています。 &lt;br&gt;画像の変更や修正はできません。販売を停止する場合は｢販売停止｣ボタンをクリックしてください。',
+        'cms.heading.ready.for.sale.theme': '着せかえを販売中です。 &lt;br&gt;画像の変更や修正はできません。販売を停止するには[販売停止]ボタンをクリックしてください。',
+        'cms.update.emoji.on.sales': '現在「絵文字」を販売しています。 &lt;br&gt; 画像の変更や修正はできません。販売を停止する場合は[販売停止]ボタンをクリックしてください。',
+        'cms.heading.release.stopped': '現在スタンプの販売を停止しています。&lt;br&gt;販売を再開する場合は｢販売再開｣ボタンをクリックしてください。',
+        'cms.heading.release.stopped.theme': '着せかえの販売を停止しています。&lt;br&gt;販売を再開するには[販売再開]ボタンをクリックしてください。',
+        'ms.heading.release.emoji.stopped': 'ms.heading.release.emoji.stopped',
+        'cms.heading.released.request': '編集内容の審査をリクエストしてください。&lt;br&gt;承認されるとアップデートできます。',
+        'cms.heading.released.waiting.for.review': '審査が完了するまでお待ちください。',
+        'cms.heading.released.in.review': '審査が完了するまでお待ちください。',
+        'cms.heading.released.approved': '編集内容が承認されました。&lt;br&gt;更新する場合は｢アップデート｣をクリックしてください。',
+        'cms.number.of.requests': '本日のリクエスト回数',
+        'cms.number.of.requests.count': '%1/30回',
+        'cms.popup.number.of.requests.explain.title': 'リクエスト回数',
+        'cms.popup.number.of.requests.explain.desc': '審査リクエスト数の上限は1日30回です。&lt;br&gt;審査リクエストの受付が完了すると、リクエスト数がカウントされます。&lt;br&gt;審査リクエスト数の上限に達すると、リクエスト数がリセットされるまでリクエストできません。&lt;br&gt;※毎日00:00(GMT+9)にリクエスト数がリセットされます。',
+        'cms.preview.button': 'プレビュー',
+        'cms.main.button.request': 'リクエスト',
+        'cms.main.button.release': 'リリース',
+        'cms.main.button.sale.again': '販売再開',
+        'cms.sales.reservation.btn': '販売予約',
+        'cms.main.button.update': 'アップデート',
+        'cms.stickerlist.status': 'ステータス',
+        'status.return.to.edit.button': '編集に戻す',
+        'cms.status.message.box.button': 'メッセージセンター',
+        'cms.reservation.cancellation.btn': '予約取消',
+        'status.stop.selling.button': '販売停止',
+        'cms.ep.future.title': '特集企画',
+        'cms.common.not.requested': '2019年11月25日以前に作成されたアイテムの画像はアップロードできません',
+        'cms.display.information.input.error.number': '数字のみの入力は登録できません',
+        'popup.about.picture.sticker.title': '写真の使用',
+        'default.image.error.button': 'Error',
+        'default.image.upload.button': 'Upload',
+        'default.image.delete.button': 'Delete',
+        'cms.edit.image.anis.firefox': '※PNG(APNG)の動作チェックの推奨環境はFirefox（最新バージョン）です。スタンプを登録する前に必ず動作をチェックしてください。',
+        'cms.newregistrtation.image.error.ng': 'アップロードできなかった画像があります。[Error]をクリックすると、エラーの詳細が表示されます。ガイドラインを確認して、画像をもう一度アップロードしてください。',
+        'upload.error.zipfile.only': 'ZIPファイルのみアップロードできます。',
+        'upload.error.zipfile.not.open': 'ZIPファイルを開けません。',
+        'upload.error.notfound.from.zip.sticker': '%1.png がZIPファイルの中に含まれていません。',
+        'lp.sticker.less.than.1mb': '画像のサイズは、1個あたり1MB以下にしてください。',
+        'upload.error.zipfile.nonconformity': 'ZIPファイルに含まれる画像の数と、必要とされる画像の数が一致しません。画像の数を確認して、もう一度アップロードしてください。',
+        'my.img.validation.filesize.too-large.20mb': 'ファイル容量が大きすぎます。ZIPファイルの場合は、20MB以下にしてください。',
+        'my.img.validation.filesize.too-large.30mb': 'ファイル容量が大きすぎます。ZIPファイルの場合は、30MB以下にしてください。',
+        'my.img.validation.filesize.too-large.300kb': 'ファイル容量が大きすぎます。1ファイルにつき300KB以下にしてください。',
+        'my.img.validation.filesize.too-large.500kb': 'ファイル容量が大きすぎます。1ファイルにつき500KB以下にしてください。',
+        'my.img.validation.filesize.too-large.sticker': 'ファイル容量が大きすぎます。1ファイルにつき1MB以下にしてください。',
+        'cms.1set.sticker.change': 'スタンプ個数(1セット)の変更',
+        'cms.1set.sticker.unit': '個',
+        'cms.zipfile.upload.button': 'ZIPファイル アップロード',
+        'default.image.delete.all.button': 'すべて削除',
+        'cms.background.color': '背景色を変えて画像の透過を確認',
+        'popup.delete.image': '削除しますか？',
+        'cms.campaign.tier.over': '下限価格：%1',
+        'cms.campaign.tier.desc': '「参加する」にチェックすると、キャンペーンで設定された下限価格に自動で設定されます。&lt;br&gt;価格設定がキャンペーンで設定された下限価格以上であれば、価格の変更ができます。',
+        'popup.about.premium.desc2': '「LINEスタンプ プレミアム」の参加に関する設定です。&lt;br&gt;[参加する]に設定すると、そのスタンプまたは絵文字は「LINEスタンプ プレミアム」に加入しているユーザーが自由に使えるようになります。&lt;br&gt;その場合、スタンプまたは絵文字の送信ユーザー数に応じて売上として分配されます。&lt;br&gt;※「LINEスタンプ プレミアム」には、販売開始から180日以上経過しているスタンプと絵文字が参加できます。&lt;br&gt;※「LINEスタンプ プレミアム」に参加しても、通常どおり販売を継続できます。',
+        'cms.price.tier.campaign.participating': '販売価格の下限値はスタンプの種類やキャンペーンへの参加によって変動します。',
+        'cms.status.premium.waiting.start.period': '(%1〜)',
+        'cms.status.premium.waiting.end.period': '(〜%1)',
+        'cms.icon.help': 'Help',
+        'cms.status.premium': 'プレミアム',
+        'cms.display.information.premium.notjoin.annotation': '設定された内容が適用されるのは、翌月1日です。',
+        'cms.status.premium.tobe.premium': 'プレミアム予定',
+        'cms.fbm.announcement.subscription.emoji': 'クリエイターズマーケットでつくった絵文字は、「LINEスタンプ プレミアム」に参加できます。&lt;br&gt;「LINEスタンプ プレミアム」の設定だけを変更した場合は、審査をせずにリリースできます。&lt;br&gt;※「LINEスタンプ プレミアム」には、販売開始から180日以上経過している絵文字が参加できます。&lt;br&gt;※「LINEスタンプ プレミアム」の設定だけでなく[表示情報]も編集した場合は、審査が必要です。',
+        'popup.status.application.request.title': '審査のリクエストをします',
+        'cms.custom.request.review.confirm.style': 'スタイル情報の編集が完了しているか確認してください。&lt;br&gt; プレビューで最終確認をしてください。',
+        'popup.status.request.checklist.emoji': '「スタンプ」や「絵文字」が著作権を侵害していないことを確認してください。&lt;br&gt;「スタンプ」や「絵文字」の背景画像が透過になっていることを確認してください。&lt;br&gt;タグを設定している場合は、「スタンプ」や「絵文字」に合うタグかどうか確認してください。&lt;br&gt;審査で承認されるとリリースができます。',
+        'cms.photo.consent.matter': '同意事項',
+        'cms.includes.photos.agree.check': '私は上記の内容について、十分に理解をし、同意すると同時に、該当する権利者の方々に上記内容を周知した上で同意を得ています。&lt;br&gt;※同意日はクリエイターの皆さまが審査リクエストを申請した日とします。',
+        'cms.terms.agree': '同意します',
+        'cms.input.error.agree': '同意する必要があります',
+        'cms.popup.number.of.requests.title': '審査リクエスト数が&lt;br&gt;1日あたりの上限に達しています',
+        'cms.ms.popup.status.request': 'つくったスタンプが著作権を侵害していないことを確認してください。&lt;br&gt;スタンプは、審査で承認されると販売できるようになります。',
+        'cms.error.unregistrated.sticker.info': '未登録の画像があります。確認して登録を完了してください。',
+        'cms.edit.tag.title': 'タグの編集',
+        'cms.emoji.edit.tag.desc1': 'LINEのトーク画面で入力したテキストに適した「スタンプ」や「絵文字」を変換候補として表示するためのタグを編集します。',
+        'cms.edit.tag.desc2': 'タグを登録してください。',
+        'cms.as.flow.language': '1.登録したい言語を選択します。',
+        'cms.emoji.flow.pick.tag': '2. 登録した画像に合うタグを以下から選びます。画像1個につき、3個まで設定できます。',
+        'cms.as.flow.submission.btn': '3.｢保存｣ボタンをクリックすると登録完了です。',
+        'cms.as.flow.review.tag': '4. タグが審査で承認されると、販売を開始できます。',
+        'cms.as.flow.tag.language': '※タグのかっこ（）内の数字は、他言語での設定数です。',
+        'cms.as.flow.tag.update.within.24h': '※編集したタグは、審査承認を経て、アップデート後24時間以内に反映されます。',
+        'default.back.button': '戻る',
+        'cms.emoji.error.upto.3tags' : 'タグは3個まで登録可能です。',
+        'cms.emoji.error.upto.3tags' : 'タグは3個まで登録可能です。',
+        'cms.tag.language.title': 'タグの翻訳',
+        'cms.register.tag.search': 'タグを検索する',
+        'cms.register.tag.search.nohit': '一致するタグがありません。',
+        // ./static/cms/js/product/components/product-list.vue
+        'cms.heading.top.list':	"登録したアイテムの確認や編集を行います。",
+        'cms.menu.newregistration.sticker':	"スタンプ",
+        'cms.emoji.tab':	"絵文字",
+        'cms.menu.newregistration.theme':	"着せかえ",
+        'cms.top.manege.items.noitem':	"アイテムがありません",
+        'cms.menu.newregistration':	"新規登録",
+        'cms.themelist.thumbnail':	"サムネイル",
+        'cms.themelist.owntitle':	"タイトル",
+        'cms.stickerlist.packageID':	"スタンプID",
+        'cms.emoji.id':	"絵文字ID",
+        'cms.themelist.packageID':	"着せかえID",
+        'cms.stickerlist.version':	"バージョン",
+        'cms.themelist.version':	"LINE バージョン",
+        'cms.themelist.sele.price':	"販売価格 ",
+        'cms.themelist.status':	"ステータス",
+        'cms.stickerlist.other':	"その他",
+        'cms.sales.reservation.list':   "販売予約中&lt;br&gt;%1～",
+        'cms.sales.reservation.desc':   "販売予約中：このアイテムは%1から販売開始予定です",
+        // /Users/Shared/Projects/LineUserStickers/static/cms/js/components/common-confirm-dialogs.vue
+        'popup.status.start.selling.title':	"販売を開始します",
+        'popup.status.start.selling.desc':	"アイテムの販売を開始したあとで、画像の変更や修正はできません。登録内容に問題がないか確認してください。&lt;br&gt;LINE STOREとLINEアプリ内ショップに反映されるまで少しお待ちください。",
+        'cms.picture.sticker.attention':	"写真の使用に関するご注意",
+        'cms.emoji.picture.sticker.attention.desc':	"写真には、撮影者の権利に加え、写真に写った人や物などに関する複数の権利が生じている場合があります。「スタンプ」や「絵文字」の素材になった写真について、著作権、商標権、肖像権、プライバシー権等の各権利または法律上保護される利益を侵害していないことを十分にご確認ください。&lt;br&gt;権利者からの通報等により、権利侵害のおそれがあると当社が認めた場合には、直ちに販売停止その他の措置を講じる場合があります。",
+        'popup.status.stop.publishing.title':	"販売を停止します",
+        'popup.emoji.status.stop.publishing.desc':	"LINEスタンプショップから非表示となり、「スタンプ」や「絵文字」の購入ができなくなります。&lt;br&gt; 購入済みのユーザーは、継続して「スタンプ」や「絵文字」を利用できます。",
+        'popup.status.stop.publishing.time.desc':	"販売停止中に価格を変更した場合は、販売を停止してから約3時間ほどすると販売できるようになります。",
+        'popup.status.stop.publishing.subscription.desc':	"販売を停止すると、「LINEスタンプ プレミアム」への参加設定は[参加しない]が自動的に設定されます。&lt;br&gt;あらためて「LINEスタンプ プレミアム」に参加したい場合は、販売再開後に[販売情報]＞[LINEスタンプ プレミアム]で[参加する]を選択してください。",
+        'popup.status.sale.again.title':	"販売を再開します",
+        'popup.status.start.selling.wait.desc':	"LINE STOREおよびLINEアプリ内ショップに反映されるまでしばらくお待ちいただく場合があります。",
+        'popup.status.return.edit.title':	"編集に戻ります",
+        'popup.status.return.edit.desc':	"リクエストを取り下げて編集に戻ります。&lt;br&gt;編集後に再び審査のリクエストを行う場合、審査開始までお待ちいただく必要があります。",
+        'cms.popup.sales.reservation.title':	"販売の予約をします",
+        'cms.popup.sales.reservation.desc':	"販売の予約後は、アイテムの画像の変更や修正はできません。&lt;br&gt;キャンペーン開始日時になると、自動的にLINEスタンプショップに反映されます。&lt;br&gt;LINEスタンプショップに反映されるまでしばらくお時間がかかる場合があります。&lt;br&gt;&lt;br&gt;",
+        'cms.popup.reservation.cancellation.title':	"予約の取消をします",
+        'cms.popup.reservation.cancellation.desc':	"販売予約ができる状態に戻ります。&lt;br&gt;下の[OK]ボタンをクリックすると、「販売予約]ボタンが表示されます。",
+        'popup.status.copyright.infingement.desc':	"編集内容が著作権を侵害していないことを確認してください。&lt;br&gt; 審査で承認されるとアップデートができます。",
+        'popup.status.edit.update.title':	"アップデートをします",
+        'popup.status.edit.update.desc':	"編集した内容でスタンプをアップデートします。&lt;br&gt;LINE STOREとLINEアプリ内ショップに反映されるまで少しお待ちください。",
+        'popup.status.edit.update.desc.theme':	"編集した内容で着せかえをアップデートします。&lt;br&gt;LINE STOREとLINEアプリ内ショップに反映されるまで少しお待ちください。",
+        'popup.delete.this.page':	"このスタンプを削除しますか？",
+        'cms.emoji.popup.delete':	"この絵文字を削除しますか？",
+        'popup.delete.this.page.theme':	"この着せかえを削除しますか？",
+        'popup.delete.update.request.page':	"更新情報を削除しますか？",
+        'cms.emoji.error.contents.image':	"登録した画像も一緒に枠自体が削除されます。&lt;br&gt;削除しますか？",
+        'cms.emoji.flow.pick.9tag':   "2. 登録した画像に合うタグを以下から選びます。画像1個につき、9個まで設定できます。",
+        'cms.emoji.error.upto.9tags':   "タグは9個まで登録可能です。",
+    });
+
+// XXX: The Following can be removed after New year EP campaign 2021 (Application Ends After 12/23).
+
+    const CAMPAIGN_2021_STRINGS = {
+        'cms.ep2021.additional.campaign.description': "&lt;br&gt;&lt;br&gt;「年末年始キャンペーン2021」参加スタンプ限定！&lt;br&gt;パッケージの中に下記の内容のいずれかのスタンプが含まれてる場合、通常の年末年始特集バナーに加えて、追加でもう1つ掲載することができます。&lt;br&gt;※追加できる特集は1つまでです。&lt;br&gt;※追加の選択は任意です。&lt;br&gt;※選択した内容のスタンプが含まれていない場合はリジェクトになる場合がありますのでご注意ください。&lt;br&gt;",
+        'cms.ep2021.additional.campaign.family': "ファミリー編：家族や親戚向けに使えるあけおめスタンプが入っていること",
+        'cms.ep2021.additional.campaign.love': "ラブ♡ラブ編：恋人や好きな人向けに使えるあけおめスタンプが入っていること",
+        'cms.ep2021.additional.campaign.formal': "フォーマル編：上司や同僚向けに使えるあけおめスタンプが入っていること",
+        'cms.ep2021.additional.campaign.joke': "おふざけ編：友だちや同級生向けに使えるあけおめスタンプが入っていること",
+        'cms.ep2021.additional.campaign.none': "該当しない",
+    };
+
+    window.XLTReader.registerXLT(CAMPAIGN_2021_STRINGS);
+</script>
+
+<script type="text/javascript">
+    window.XLTReader.registerXLT({
+        'cms.collabo.sticker.error.specified.sales.region': '指定の販売エリアを選択してください',
+        'cms.choice.campaign.collaboration': '特集企画（キャンペーン）とCollaborationの両方を選択することはできません',
+        'cms.collabo.title': 'LINE Creators&lt;br&gt; Collaboration',
+        'cms.popup.collaboration.title': 'LINE Creators Collaboration',
+        'cms.popup.collaboration.desc': '人気キャラクターを使ったスタンプを販売することができます。&lt;br&gt;分配率は作品ごとに異なります。',
+        'cms.collabo.sticker.no': 'LINE Creators Collaborationのスタンプではありません',
+        'cms.collabo.sticker.yes': 'LINE Creators Collaborationのスタンプです',
+        'cms.collabo.sticker.pulldown.name.default': '選択してください',
+        'cms.premium.error.collaboration': '「LINEスタンプ プレミアム」に参加する場合、LINE Creators Collaborationに参加できません',
+        'cms.collabo.close.sale.period': '販売可能期間は終了しました',
+        'cms.collabo.close.application.period': '審査の受付は終了しました',
+        'cms.collabo.sticker.error.specified.sales.region': '指定の販売エリアを選択してください',
+        'cms.collabo.sticker.error.add.lan.ja': '指定言語を登録してください',
+        'cms.collabo.sticker.title.name': '言語と指定タイトル名',
+        'cms.collabo.sticker.revenue.share.rate': '分配率',
+        'cms.collabo.sticker.sale.region': '販売エリア',
+        'cms.collabo.sticker.revenue.share.rate.desc1': 'AppleやGoogleなどの手数料30%を除いたスタンプの売上 × 50％',
+        'cms.collabo.sticker.revenue.share.rate.pay': 'スタンプ売上総額の35%のうち、クリエイターに%1%、版権元に%2%が支払われます。',
+        'cms.collabo.sticker.reject.language': '・言語には英語と日本語（必須）を登録してください。※英語・日本語以外の言語を登録するとリジェクトされます。',
+        'cms.collabo.sticker.desc.rejected': '・スタンプのタイトルには、指定されたタイトル名を含めてください。タイトルの位置は問いません。指定されたタイトルを含んでいないか、表記に誤りがある場合は、リジェクトされます。',
+        'cms.collabo.sticker.desc.character': '・スタンプにはコラボ対象作品のキャラクターを使ってください。',
+        'cms.collabo.sticker.desc.copyright.both': '・コピーライトでは、クリエイターと版権元が並列で表示されます。',
+        'cms.collabo.sticker.desc.different.revenue.share.rate': '・分配率は作品ごとに異なります。',
+        'cms.collabo.sticker.desc.sale.region': '・販売エリアは作品ごとに指定され、指定エリア外では販売できません。',
+        'cms.collabo.sticker.desc.ban': '・販売期間が終了すると、スタンプの販売が自動的に停止されます。また、販売を再開することはできません。',
+        'cms.collabo.sticker.desc.number.amount': '・スタンプの数は8個から、金額は120円から設定できます。',
+        'cms.collabo.sticker.desc.sticker.all': '・静止画とアニメーションのどちらのスタンプでも参加できます。',
+        'cms.collabo.sticker.desc.not.stickermaker.app': '・LINEスタンプメーカーアプリからの参加はできません。',
+        'cms.collabo.sticker.desc.see.detail': '・LINE Creators Collaborationガイドラインは&lt;a href=&quot;%1&quot; target=&quot;_blank&quot;&gt;こちら&lt;/a&gt;。',
+        'cms.collabo.sticker.title.name.202004.en': 'ONE PIECE',
+        'cms.collabo.sticker.title.name.202004.ja': 'ONE PIECE',
+        'cms.picture.sticker.no.use': 'スタンプに写真を使用していません',
+        'cms.picture.sticker.use': 'スタンプに写真を使用しています',
+        'cms.display.information.sticker.exlpain': 'スタンプ説明文',
+        'cms.picture.sticker.error.attachment': 'スタンプに写真(人物)を使用している方は同意書を添付してください。',
+        'cms.subtitle.sticker.detail': 'スタンプ詳細',
+        'cms.display.sticker.type': 'スタンプのタイプ',
+        'popup.about.sticker.type.title': 'スタンプのタイプ',
+        'popup.about.sticker.type.desc': 'スタンプ：静止画のスタンプです。',
+        'popup.about.sticker.type.desc.move': 'アニメーションスタンプ：動くスタンプです。',
+        'cms.custom.popup.sticker.type.desc.custom': 'カスタムスタンプ：購入者が入力エリアに表示したいテキストを入れて送信することができるスタンプです。',
+        'cms.ms.popup.sticker.type.desc': 'メッセージスタンプ：購入者が入力エリアに表示したい長いテキスト（最大100文字）を入れて送信することができるスタンプです。',
+        'popup.about.sticker.type.desc.no.change': '※スタンプのタイプは、あとで変更することはできません。 ',
+        'cms.display.sticker.type.sticker': 'スタンプ',
+        'cms.display.sticker.type.anis': 'アニメーションスタンプ',
+        'cms.custom.customsticker': 'カスタムスタンプ',
+        'cms.ms.messagesicker': 'メッセージスタンプ',
+        'cms.display.sticker.no.change': '※スタンプのタイプは、あとで変更することはできません。',
+        'cms.1set.sticker': 'スタンプ個数(1セット)',
+        'cms.1set.sticker.no.change.after.request': '審査をリクエストしたあとで、スタンプの個数は変更できません。',
+        'cms.1set.sticker.explain': 'スタンプの個数はスタンプ編集画面で設定できます。',
+        'cms.1set.sticker.before.review': '※審査をリクエストするまでは、スタンプの個数を変更できます。',
+        'cms.custom.popup.change.sticker.type': 'スタンプのタイプをカスタムスタンプからそれ以外、それ以外からカスタムスタンプに変更すると、設定していた販売エリアの情報やキャンペーン情報がリセットされます。',
+        'cms.ms.popup.change.sticker.type': 'スタンプのタイプを「メッセージスタンプ」からそれ以外、それ以外から「メッセージスタンプ」に変更すると、設定していた販売エリアの情報やキャンペーン情報がリセットされます。',
+        'cms.top.edt.sticker.title': 'スタンプの編集',
+        'cms.sticker.en.label.sticker': '※「スタンプ」の英語表記は「Sticker」です。',
+        'cms.custom.campaign.type.sticker.animation.big': 'スタンプ/アニメーションスタンプ/BIGスタンプ',
+        'cms.custom.campaign.type.big': 'BIGスタンプ',
+        'cms.big.popup.sticker.type.desc': 'BIGスタンプ：通常のスタンプよりも大きい静止画のスタンプです。',
+        'cms.sticker.type.big': 'BIGスタンプ',
+        'cms.fbm.announcement.sticker.big.phase1': '「BIGスタンプ」をつくって販売できるようになります。&lt;br&gt;つくりかたについては、&lt;a href=&quot;%1&quot; target=&quot;_blank&quot;&gt;ガイドライン&lt;/a&gt;をご覧ください。&lt;br&gt;審査のリクエストができるのは2020年6月中旬以降の予定です。',
+        'cms.fbm.announcement.sticker.big': '「BIGスタンプ」をつくって販売できるようになりました。くわしくは&lt;a href=&quot;%1&quot; target=&quot;_blank&quot;&gt;こちら&lt;/a&gt;。&lt;br&gt;[新規登録]ボタンをクリックし[スタンプ]を選択します。スタンプのタイプは[BIGスタンプ]を選択してください。',
+        'cms.sticker.big.add.description': '※BIGスタンプは説明文の末尾に、言語に合わせて下記テキストが自動で追加されます。&lt;br&gt;「※このスタンプはトークルームで大きく表示されるBIGスタンプです。」',
+        'cms.custom.check.style.infor.btn': 'スタイル情報の確認',
+        'cms.stickerlist.packageID': 'スタンプID',
+        'cms.stickerlist.version': 'バージョン',
+        'cms.sticker.author.url': 'スタンプ作者URL',
+        'cms.sticker.author.url.desc': 'スタンプ作者URLはスタンプ承認後に確認できます。',
+        'sticker.collaboration.creatorRevenueShare': 'sticker.collaboration.creatorRevenueShare',
+        'sticker.collaboration.ipRevenueShare': 'sticker.collaboration.ipRevenueShare',
+        'cms.error.not.available.sticker.title': '利用できないタイトルが存在します。タイトルを修正してください。',
+        'cms.display.information.taste.category': 'テイストカテゴリ',
+        'cms.display.information.category.not.set': '未設定',
+        'cms.display.information.character.category': 'キャラクターカテゴリ',
+        'cms.picture.sticker': '写真の使用',
+        'cms.heading.register.anis.edit': 'アニメーションスタンプの編集',
+        'cms.custom.image.registration': 'カスタムスタンプ画像の登録',
+        'cms.ms.image.registration': 'メッセージスタンプ画像の登録',
+        'cms.sticker.big.image.title': 'BIGスタンプの編集',
+        'cms.sticker.popup.image.title': 'ポップアップスタンプ画像の登録',
+        'cms.sticker.effect.image.title': 'エフェクトスタンプ画像の登録',
+        'cms.heading.register.sticker': 'スタンプ画像を登録します。&lt;span class=&quot;MdBtn04&quot;&gt;&lt;a href=&quot;%1&quot; class=&quot;mdBtn&quot;&gt;登録方法&lt;/a&gt;&lt;/span&gt;',
+        'cms.heading.register.anis': 'アニメーションスタンプ画像を登録します。&lt;span class=&quot;MdBtn04&quot;&gt;&lt;a href=&quot;%1&quot; class=&quot;mdBtn&quot;&gt;登録方法&lt;/a&gt;&lt;/span&gt;',
+        'cms.custom.image.registration.desc': 'カスタムスタンプ画像を登録します。&lt;span class=&quot;MdBtn04&quot;&gt;&lt;a href=&quot;%1&quot; class=&quot;mdBtn&quot;&gt;登録方法&lt;/a&gt;&lt;/span&gt;',
+        'cms.ms.image.registration.desc': 'メッセージスタンプ画像を登録します。&lt;span class=&quot;MdBtn04&quot;&gt;&lt;a href=&quot;%1&quot; class=&quot;mdBtn&quot;&gt;登録方法&lt;/a&gt;&lt;/span&gt;',
+        'cms.sticker.big.image.desc': 'BIGスタンプ画像を登録します。',
+        'cms.sticker.popup.image.desc': 'ポップアップスタンプの画像を登録します。',
+        'cms.sticker.effect.image.desc': 'エフェクトスタンプの画像を登録します。',
+        'cms.heading.edit.sticker': '指定された画像サイズで、メイン画像を1個、トークルームタブ画像を1個、スタンプ画像を選択した個数登録します。&lt;br&gt;ZIPファイルでの一括アップロードもできます。',
+        'cms.edit.image.anis.registration': '指定された画像サイズで、メイン画像(PNG(APNG))を1個、トークルームタブ画像(PNG)を1個、アニメーションスタンプ画像(PNG(APNG))を選択した個数登録します。&lt;br&gt;ZIPファイルでの一括アップロードもできます。',
+        'cms.custom.image.registration.desc2': '指定された画像サイズで、メイン画像を1個、トークルームタブ画像を1個、テキストを入れる前のベースとなる画像を選択した個数を登録します。&lt;br&gt; ZIPファイルでの一括アップロードもできます。',
+        'cms.custom.upload.images.reset.style': '登録した画像を削除しアップロードし直すと、[スタイル情報の編集]ページで設定していたスタイル情報はリセットされます。',
+        'cms.sticker.popup.image.desc.image': '指定された画像サイズで、メイン画像を1個、トークルームタブ画像を1個、ポップアップメイン画像を1個、スタンプ画像とポップアップ画像を選択した個数登録します。&lt;br&gt;ZIPファイルでの一括アップロードもできます。',
+        'cms.sticker.popup.image.desc.vertical': 'ポップアップ画像は表示位置を指定できます。',
+        'cms.sticker.effect.image.desc.image': '指定された画像サイズで、メイン画像を1個、トークルームタブ画像を1個、エフェクトメイン画像を1個、スタンプ画像とエフェクト画像を選択した個数登録します。&lt;br&gt;ZIPファイルでの一括アップロードもできます。',
+        'cms.sticker.effect.image.desc.vertical': 'エフェクト画像は表示位置を指定できます。',
+        'cms.sticker.popup.image.button.back': '戻る',
+        'cms.sticker.popup.image.button.save': '保存',
+        'cms.sticker.popup.image.sticker': 'スタンプ画像',
+        'cms.sticker.popup.image.popup': 'ポップアップ画像',
+        'cms.sticker.effect.image.effect': 'エフェクト画像',
+        'cms.sticker.popup.image.vertical': '表示位置',
+        'cms.sticker.popup.image.popup.vertical.title': '表示位置',
+        'cms.sticker.popup.image.popup.vertical.desc': 'ポップアップ画像を画面上のどの位置に表示するかを設定します。&lt;br&gt;(例：画面下部からキャラクターが飛び出すポップアップ画像の場合「bottom」を選択)',
+        'cms.sticker.effect.image.popup.vertical.desc': 'エフェクト画像を画面上のどの位置に表示するかを設定します。&lt;br&gt;(例：画面下部からキャラクターが飛び出すエフェクト画像の場合「bottom」を選択)',
+        'cms.sticker.popup.image.vertical.top': 'top',
+        'cms.sticker.popup.image.vertical.center': 'center',
+        'cms.sticker.popup.image.vertical.bottom': 'bottom',
+        'cms.change.add.nom.of.sticker': 'スタンプの個数を変更します。&lt;br&gt;よろしいですか？',
+        'cms.change.reduce.nom.of.sticker': 'スタンプの個数を変更します。&lt;br&gt;個数を減らしたスタンプ画像は削除されます。&lt;br&gt;よろしいですか？',
+        'cms.sticker.popup.image.popup.desc': '前ページに戻る場合は[保存]ボタンを押してください。&lt;br&gt;[保存]ボタンを押さないまま前ページに戻ると、表示位置の設定が保存されません。',
+        'cms.fbm.announcement.sticker.popup': '「ポップアップスタンプ」と「エフェクトスタンプ」をつくって販売できるようになりました。&lt;br&gt;つくりかたについては、&lt;a href=&quot;%1&quot; target=&quot;_blank&quot;&gt;ポップアップスタンプのガイドライン&lt;/a&gt;/&lt;a href=&quot;%2&quot; target=&quot;_blank&quot;&gt;エフェクトスタンプのガイドライン&lt;/a&gt;をご覧ください。&lt;br&gt;[新規登録]ボタンをクリックし[スタンプ]を選択します。スタンプのタイプは[ポップアップスタンプ]または[エフェクトスタンプ]を選択してください。',
+        'cms.tier02.desc.ended': '現在選択されている価格の選択可能期間は終了しました。他の販売価格を選択してください。',
+        'cms.sticker.type.popup': 'ポップアップスタンプ',
+        'cms.sticker.type.effect': 'エフェクトスタンプ',
+        'cms.popup.popup.sticker.type.desc': 'ポップアップスタンプ：画面全体にアニメーションを表示するスタンプです。',
+        'cms.effect.popup.sticker.type.desc': 'エフェクトスタンプ：トークルームの背景にアニメーションを表示するスタンプです。',
+    });
+</script>
+
+<!-- AngularJS Popups-->
+<script type="text/ng-template" id="ConfirmStopSellingDialog">
+<div class="MdPOP01Modal MdPOP01ModalCenter FnConfirm">
+    <div class="mdPOP01Window">
+        <a href="" class="mdPOP01Close" ng-click="close(false)">閉じる</a>
+        <div class="MdPOP04Mag">
+            <dl>
+                <dt>販売を停止します</dt>
+                <dd>LINEスタンプショップから非表示となり、「スタンプ」や「絵文字」の購入ができなくなります。<br> 購入済みのユーザーは、継続して「スタンプ」や「絵文字」を利用できます。</dd>
+                <dd style="color: red;">販売停止中に価格を変更した場合は、販売を停止してから約3時間ほどすると販売できるようになります。</dd>
+                <dd>販売を停止すると、「LINEスタンプ プレミアム」への参加設定は[参加しない]が自動的に設定されます。<br>あらためて「LINEスタンプ プレミアム」に参加したい場合は、販売再開後に[販売情報]＞[LINEスタンプ プレミアム]で[参加する]を選択してください。</dd>
+            </dl>
+        </div>
+
+        <div class="MdPOP03Submit">
+            <span class="MdBtn01"><a href="" ng-click="close(false)" class="mdBtn">キャンセル</a></span><span class="MdBtn01 mdBtn01Cr01"><a href="" class="mdBtn" ng-click="close(true)">OK</a></span>
+        </div>
+    </div>
+</div>
+</script>
+
+<script id="ConfirmApplyUpdateRequestDialog" type="text/ng-template">
+<div class="MdPOP01Modal MdPOP01ModalCenter FnConfirm">
+    <div class="mdPOP01Window" data-test="confirm-apply-update">
+        <a href="" class="mdPOP01Close" ng-click="close(false)">閉じる</a>
+        <div class="MdPOP04Mag">
+            <dl>
+                <dt>アップデートをします</dt>
+                <dd>編集した内容でスタンプをアップデートします。<br>
+LINE STOREとLINEアプリ内ショップに反映されるまで少しお待ちください。</dd>
+            </dl>
+        </div>
+
+        <div class="MdPOP03Submit">
+            <span class="MdBtn01" data-test="btn-cancel"><a href="" ng-click="close(false)" class="mdBtn">キャンセル</a></span><span class="MdBtn01 mdBtn01Cr01" data-test="ok-button"><a href="" class="mdBtn" ng-click="close(true)">OK</a></span>
+        </div>
+    </div>
+</div>
+</script>
+
+<script id="ConfirmDeleteDialog" type="text/ng-template">
+<div class="MdPOP01Modal MdPOP01ModalCenter FnConfirm">
+    <div class="mdPOP01Window">
+        <a href="" class="mdPOP01Close" ng-click="close(false)">閉じる</a>
+        <div class="MdPOP04Mag">
+            <p class="mdPOP04Short">このスタンプを削除しますか？</p>
+        </div>
+
+        <div class="MdPOP03Submit">
+            <span class="MdBtn01"><a href="" ng-click="close(false)" class="mdBtn">キャンセル</a></span><span class="MdBtn01 mdBtn01Cr01"><a href="" class="mdBtn" ng-click="close(true)">OK</a></span>
+        </div>
+    </div>
+</div>
+</script>
+
+<script id="TagHelpPopup" type="text/ng-template">
+<div class="MdPOP01Modal FnConfirm FnTagHelp" ng-class="{'MdPOP01ModalCenter': !data.position}" lcm-on-keyup="Escape" on-keyup-action="close()">
+    <div class="mdPOP01Window" lcm-click-outside="close()" ignore-element-with-classes="mdIconHelp" ng-style="data.position ? {'position': 'absolute', 'top': data.position.y, 'left': data.position.x} : ''">
+        <a href="" class="mdPOP01Close" ng-click="close(false)">閉じる</a>
+        <div class="MdPOP04Mag">
+            <dl>
+              <dt>タグ設定</dt>
+              <dd>タグを登録すると、LINEのトーク画面で入力した文字に該当する「スタンプ」や「絵文字」が自動的に候補として表示されます。<br>
+タグの登録は任意です。<br>
+未登録画像の場合はタグの登録ができません。</dd>
+            </dl>
+        </div>
+    </div>
+</div>
+</script>
+
+<script id="TagLanguagesPopup" type="text/ng-template">
+<div class="MdPOP01Modal FnConfirm FnTagHelp" ng-class="{'MdPOP01ModalCenter': !data.position}" lcm-on-keyup="Escape" on-keyup-action="close()">
+    <div class="mdPOP01Window" lcm-click-outside="close()" ignore-element-with-classes="mdIconHelp" ng-style="data.position ? {'position': 'absolute', 'top': data.position.y, 'left': data.position.x} : ''">
+        <a href="" class="mdPOP01Close" ng-click="close(false)">閉じる</a>
+        <div class="MdPop21TagLanguages">
+            <h2>タグの翻訳</h2>
+            <tag-languages-tooltip tag-names="data.tagNames" labels="data.labels"></tag-languages-tooltip>
+        </div>
+    </div>
+</div>
+</script>
+
+<script id="ConfirmRequestingUpdateApplicationDialog" type="text/ng-template">
+<div class="MdPOP01Modal MdPOP01ModalCenter FnConfirm">
+    <div class="mdPOP01Window" data-test="confirm-requesting-update">
+        <a href="" class="mdPOP01Close" ng-click="close(false)">閉じる</a>
+        <div class="MdPOP04Mag">
+            <dl>
+                <dt>審査のリクエストをします</dt>
+                <dd>編集内容が著作権を侵害していないことを確認してください。<br> 
+タグを設定している場合は、「スタンプ」や「絵文字」に合うタグかどうか確認してください。<br>
+審査で承認されるとアップデートができます。</dd>
+            </dl>
+        </div>
+
+        <div class="MdPOP03Submit">
+            <span class="MdBtn01" data-test="btn-cancel"><a href="" ng-click="close(false)" class="mdBtn">キャンセル</a></span><span class="MdBtn01 mdBtn01Cr01" data-test="ok-button"><a href="" class="mdBtn" ng-click="close(true)">OK</a></span>
+        </div>
+    </div>
+</div>
+</script>
+
+<script id="ConfirmRemovingUpdateRequestDialog" type="text/ng-template">
+<div class="MdPOP01Modal MdPOP01ModalCenter FnConfirm">
+    <div class="mdPOP01Window">
+        <a href="" class="mdPOP01Close" ng-click="close(false)">閉じる</a>
+        <div class="MdPOP04Mag" ng-switch="data.isEditing">
+            <p ng-switch-when="true" class="mdPOP04Short">更新情報を削除しますか？</p>
+            <dl ng-switch-default>
+                <dt>編集に戻ります</dt>
+                <dd>リクエストを取り下げて編集に戻ります。<br>
+編集後に再び審査のリクエストを行う場合、審査開始までお待ちいただく必要があります。</dd>
+            </dl>
+        </div>
+
+        <div class="MdPOP03Submit">
+            <span class="MdBtn01"><a href="" ng-click="close(false)" class="mdBtn">キャンセル</a></span><span class="MdBtn01 mdBtn01Cr01"><a href="" class="mdBtn" ng-click="close(true)">OK</a></span>
+        </div>
+    </div>
+</div>
+</script>
+
+<script type="text/ng-template" id="ConfirmChangePriceDialog">
+<div class="MdPOP01Modal MdPOP01ModalCenter FnConfirm">
+    <div class="mdPOP01Window">
+        <a href="" class="mdPOP01Close" ng-click="close(false)">閉じる</a>
+        <div class="MdPOP04Mag">
+            <dl>
+                <dt>販売価格を保存します</dt>
+                <dd>販売を停止してから3時間が経ちました。[販売再開]ボタンをクリックすると販売を再開できます。</dd>
+            </dl>
+        </div>
+
+        <div class="MdPOP03Submit">
+            <span class="MdBtn01"><a href="" ng-click="close(false)" class="mdBtn">キャンセル</a></span><span class="MdBtn01 mdBtn01Cr01"><a href="" class="mdBtn" ng-click="close(true)">OK</a></span>
+        </div>
+    </div>
+</div>
+</script>
+
+<script type="text/ng-template" id="ConfirmChangePriceAndNotAvailableForSaleDialog">
+<div class="MdPOP01Modal MdPOP01ModalCenter FnConfirm">
+    <div class="mdPOP01Window">
+        <a href="" class="mdPOP01Close" ng-click="close(false)">閉じる</a>
+        <div class="MdPOP04Mag">
+            <dl>
+                <dt>販売価格を保存します</dt>
+                <dd>設定した価格で販売します。[販売再開]ボタンが有効になるまで少しお待ちください。</dd>
+            </dl>
+        </div>
+
+        <div class="MdPOP03Submit">
+            <span class="MdBtn01"><a href="" ng-click="close(false)" class="mdBtn">キャンセル</a></span><span class="MdBtn01 mdBtn01Cr01"><a href="" class="mdBtn" ng-click="close(true)">OK</a></span>
+        </div>
+    </div>
+</div>
+</script>
+
+<script id="ConfirmPriceTierNoChangeDialog" type="text/ng-template">
+<div class="MdPOP01Modal MdPOP01ModalCenter FnConfirm">
+    <div class="mdPOP01Window">
+        <a href="" class="mdPOP01Close" ng-click="close(false)">閉じる</a>
+        <div class="MdPOP04Mag">
+            <dl>
+                <dt>販売価格を保存します</dt>
+                <dd>販売価格に変更がない場合は、今すぐ販売を再開できます。</dd>
+            </dl>
+        </div>
+
+        <div class="MdPOP03Submit">
+            <span class="MdBtn01"><a href="" ng-click="close(false)" class="mdBtn">キャンセル</a></span><span class="MdBtn01 mdBtn01Cr01"><a href="" class="mdBtn" ng-click="close(true)">OK</a></span>
+        </div>
+    </div>
+</div>
+</script>
+
+
+<script type="text/ng-template" id="ConfirmRequestResellingDialog">
+<div class="MdPOP01Modal MdPOP01ModalCenter FnConfirm">
+    <div class="mdPOP01Window">
+        <a href="" class="mdPOP01Close" ng-click="close(false)">閉じる</a>
+        <div class="MdPOP04Mag">
+            <dl>
+                <dt>販売を再開します</dt>
+                <dd>LINE STOREおよびLINEアプリ内ショップに反映されるまでしばらくお待ちいただく場合があります。</dd>
+            </dl>
+        </div>
+
+        <div class="MdPOP03Submit">
+            <span class="MdBtn01"><a href="" ng-click="close(false)" class="mdBtn">キャンセル</a></span><span class="MdBtn01 mdBtn01Cr01"><a href="" class="mdBtn" ng-click="close(true)">OK</a></span>
+        </div>
+    </div>
+</div>
+</script>
+
+<script type="text/ng-template" id="ConfirmRequestStartSellingDialog">
+<div class="MdPOP01Modal MdPOP01ModalCenter FnConfirm">
+    <div class="mdPOP01Window">
+        <a href="" class="mdPOP01Close" ng-click="close(false)">閉じる</a>
+        <div class="MdPOP04Mag">
+            <dl>
+                <dt>販売を開始します</dt>
+                <dd>アイテムの販売を開始したあとで、画像の変更や修正はできません。登録内容に問題がないか確認してください。<br>
+LINE STOREとLINEアプリ内ショップに反映されるまで少しお待ちください。</dd>
+                <dd>写真の使用に関するご注意</dd>
+                <dd>写真には、撮影者の権利に加え、写真に写った人や物などに関する複数の権利が生じている場合があります。「スタンプ」や「絵文字」の素材になった写真について、著作権、商標権、肖像権、プライバシー権等の各権利または法律上保護される利益を侵害していないことを十分にご確認ください。<br>権利者からの通報等により、権利侵害のおそれがあると当社が認めた場合には、直ちに販売停止その他の措置を講じる場合があります。</dd>
+            </dl>
+        </div>
+
+        <div class="MdPOP03Submit">
+            <span class="MdBtn01"><a href="" ng-click="close(false)" class="mdBtn">キャンセル</a></span><span class="MdBtn01 mdBtn01Cr01"><a href="" class="mdBtn" ng-click="close(true)">OK</a></span>
+        </div>
+    </div>
+</div>
+</script>
+
+<script type="text/ng-template" id="ConfirmRequestScheduleSellingDialog">
+<div class="MdPOP01Modal MdPOP01ModalCenter FnConfirm">
+    <div class="mdPOP01Window">
+        <a href="" class="mdPOP01Close" ng-click="close(false)">閉じる</a>
+        <div class="MdPOP04Mag">
+            <dl>
+                <dt>販売の予約をします</dt>
+                <dd>販売の予約後は、アイテムの画像の変更や修正はできません。<br>キャンペーン開始日時になると、自動的にLINEスタンプショップに反映されます。<br>
+LINEスタンプショップに反映されるまでしばらくお時間がかかる場合があります。<br>
+<br></dd>
+                <dd ng-if="data.sticker || data.emoji">写真の使用に関するご注意</dd>
+                <dd ng-if="data.sticker || data.emoji">写真には、撮影者の権利に加え、写真に写った人や物などに関する複数の権利が生じている場合があります。「スタンプ」や「絵文字」の素材になった写真について、著作権、商標権、肖像権、プライバシー権等の各権利または法律上保護される利益を侵害していないことを十分にご確認ください。<br>権利者からの通報等により、権利侵害のおそれがあると当社が認めた場合には、直ちに販売停止その他の措置を講じる場合があります。</dd>
+            </dl>
+        </div>
+
+        <div class="MdPOP03Submit">
+            <span class="MdBtn01"><a href="" ng-click="close(false)" class="mdBtn">キャンセル</a></span><span class="MdBtn01 mdBtn01Cr01"><a href="" class="mdBtn" ng-click="close(true)">OK</a></span>
+        </div>
+    </div>
+</div>
+</script>
+
+<script type="text/ng-template" id="ConfirmCancelRequestDialog">
+<div class="MdPOP01Modal MdPOP01ModalCenter FnConfirm">
+    <div class="mdPOP01Window">
+        <a href="" class="mdPOP01Close" ng-click="close(false)">閉じる</a>
+        <div class="MdPOP04Mag">
+            <dl>
+                <dt>編集に戻ります</dt>
+                <dd>リクエストを取り下げて編集に戻ります。<br>
+編集後に再び審査のリクエストを行う場合、審査開始までお待ちいただく必要があります。</dd>
+            </dl>
+        </div>
+
+        <div class="MdPOP03Submit">
+            <span class="MdBtn01"><a href="" ng-click="close(false)" class="mdBtn">キャンセル</a></span><span class="MdBtn01 mdBtn01Cr01"><a href="" class="mdBtn" ng-click="close(true)">OK</a></span>
+        </div>
+    </div>
+</div>
+</script>
+
+<script type="text/ng-template" id="ConfirmCancelScheduledSaleDialog">
+<div class="MdPOP01Modal MdPOP01ModalCenter FnConfirm">
+    <div class="mdPOP01Window">
+        <a href="" class="mdPOP01Close" ng-click="close(false)">閉じる</a>
+        <div class="MdPOP04Mag">
+            <dl>
+                <dt>予約の取消をします</dt>
+                <dd>販売予約ができる状態に戻ります。<br>
+下の[OK]ボタンをクリックすると、「販売予約]ボタンが表示されます。</dd>
+            </dl>
+        </div>
+
+        <div class="MdPOP03Submit">
+            <span class="MdBtn01"><a href="" ng-click="close(false)" class="mdBtn">キャンセル</a></span><span class="MdBtn01 mdBtn01Cr01"><a href="" class="mdBtn" ng-click="close(true)">OK</a></span>
+        </div>
+    </div>
+</div>
+</script>
+
+<script id="PriceTierPopup" type="text/ng-template">
+  <div class="MdPOP01Modal FnConfirm" ng-class="{'MdPOP01ModalCenter': !data.position}" lcm-on-keyup="Escape" on-keyup-action="close()">
+      <div ng-if="data.type === 'info'" class="mdPOP01Window" lcm-click-outside="close()" ignore-element-with-classes="mdIconHelp" ng-style="data.position ? {'position': 'absolute', 'top': data.position.y, 'left': data.position.x} : ''">
+          <a href="" class="mdPOP01Close" ng-click="close(false)">閉じる</a>
+          <div class="MdPOP04Mag" ng-switch="data.type">
+              <dl>
+                <dt>販売価格設定</dt>
+                <dd lcm-link-replacement="{{data.faqUrl}}">一部の販売価格は、特定の販売エリアにしか設定できないことがあります。くわしくは<a href="#" target="_blank">こちら</a>を確認してください。</dd>
+              </dl>
+          </div>
+      </div>
+      <div ng-if="data.type !== 'info'" class="mdPOP01Window" ng-style="data.position ? {'position': 'absolute', 'top': data.position.y, 'left': data.position.x} : ''">
+          <a href="" class="mdPOP01Close" ng-click="close(false)">閉じる</a>
+          <div class="MdPOP04Mag" ng-switch="data.type">
+              <dl ng-switch-when="cannotReopenSales">
+                <dt style="color: red;">
+                  現在選択されている販売価格は利用できません。
+                </dt>
+                <dd>現在選択されている価格の選択可能期間は終了しました。<br />
+他の販売価格を選択・設定するまで販売再開はできません。</dd>
+                <dd>この画面を閉じて、 「販売価格情報」から販売価格を修正してください。</dd>
+              </dl>
+              <dl ng-switch-when="cannotSendUpdateRequest">
+                <dt style="color: red;">
+                  現在選択されている販売価格は利用できません。
+                </dt>
+                <dd>現在選択されている価格の選択可能期間は終了しました。<br />
+他の販売価格を選択・設定するまで新規のリクエストはできません。</dd>
+                <dd>この画面を閉じて、 「販売価格情報」から販売価格を修正してください。</dd>
+              </dl>
+              <dl ng-switch-when="conditionNotSatisfied">
+                <dd>特定エリアでしか販売できない価格を希望する場合は、条件を満たす必要があります。</dd>
+              </dl>
+              <dl ng-switch-when="saleAreasNotSatisfied">
+                <dd lcm-link-replacement="{{data.priceSettingUrl}}">特定の販売エリアにのみ設定できる価格が選択されています。<br>
+選択したエリアで販売するには、ほかの<a href="#">販売価格</a>を選んでください。</dd>
+              </dl>
+              <dl ng-switch-when="updateRequestSaleAreasNotSatisfied">
+                <dd lcm-link-replacement="{{data.priceSettingUrl}}">現在、特定の販売エリアにのみ設定可能な販売価格が選択されています。<br>
+選択したエリアで販売する場合は、<a href="#">販売価格</a>を変更してください。</dd>
+              </dl>
+              <dl ng-switch-when="updateRequestSaleAreasNotSatisfiedWhenSaleStopped">
+                <dd>現在、販売エリアを変更できません。<br>
+販売エリアを変更するには、選択中の販売価格で販売を再開してください。</dd>
+              </dl>
+              <dl ng-switch-when="serverError">
+                <dd>一時的な問題によりサーバーにアクセスできない可能性があります。<br>
+しばらくしてからもう一度お試しください。</dd>
+              </dl>
+          </div>
+          <div class="MdPOP03Submit">
+              <span class="MdBtn01 mdBtn01Cr01"><a href="" class="mdBtn" ng-click="close(true)">閉じる</a></span>
+          </div>
+      </div>
+  </div>
+</script>
+
+<script id="RequestLimitExceededDialog" type="text/ng-template">
+    <div class="MdPOP01Modal MdPOP01ModalCenter FnConfirm">
+        <div class="mdPOP01Window">
+            <a href="" class="mdPOP01Close" ng-click="close(false)">閉じる</a>
+            <div class="MdPOP04Mag">
+                <dl>
+                    <dt>審査リクエスト数が<br>1日あたりの上限に達しています</dt>
+                    <dd>審査リクエスト数の上限は1日30回です。<br>
+審査リクエスト数の上限に達すると、リクエスト数がリセットされるまでリクエストできません。<br>
+※毎日00:00(GMT+9)にリクエスト数がリセットされます。</dd>
+                </dl>
+            </div>
+
+            <div class="MdPOP03Submit">
+                <span class="MdBtn01"><a href="" ng-click="close(false)" class="mdBtn">閉じる</a></span>
+            </div>
+        </div>
+    </div>
+</script>
+
+<div class="MdPOP01Modal FnHelp MdNonDisp">
+    <div class="mdPOP01Window" style="top:200px;">
+        <a href="" class="mdPOP01Close">閉じる</a>
+        <div class="MdPOP04Mag"></div>
+    </div>
+</div>
+
+
+<!--MAIN-CONTENTS-AREA-->
+<div ng-non-bindable class="LyMain" role="main"></div>
+
+<!-- Vue templates.
+     Notice that Templates shouldn't be included inside Vue's main element.-->
+<div ng-non-bindable>
+    
+<script type="text/ng-template" id="product-status-signal">
+  <enum-describer
+    :value="value"
+    :descriptions="{
+      editing: '編集中',
+      uploading: '審査待ち',
+      waiting_for_review: '審査待ち',
+      in_review: '審査中',
+      in_review_1: '審査中',
+      in_review_2: '審査中',
+      in_review_3: '審査中',
+      waiting_for_approve: '審査中',
+      in_review_under_processing: '審査処理中',
+      pre_approved: '審査処理中',
+      waiting_for_uploading: '審査処理中',
+      waiting_for_billing: '審査処理中',
+      rejected: 'リジェクト',
+      ready_for_sale: '販売中',
+      approved: '承認',
+      stop_sale: '販売停止',
+      banned: '販売不可'
+    }"
+    :classes="{
+      editing: 'MdStatus_editing',
+      uploading: 'MdStatus_in_review',
+      waiting_for_review: 'MdStatus_waiting_for_review',
+      in_review: 'MdStatus_in_review',
+      in_review_1: 'MdStatus_in_review',
+      in_review_2: 'MdStatus_in_review',
+      in_review_3: 'MdStatus_in_review',
+      waiting_for_approve: 'MdStatus_in_review',
+      in_review_under_processing: 'MdStatus_in_review',
+      pre_approved: 'MdStatus_in_review',
+      waiting_for_uploading: 'MdStatus_in_review',
+      waiting_for_billing: 'MdStatus_in_review',
+      rejected: 'MdStatus_rejected',
+      ready_for_sale: 'MdStatus_ready_for_sale',
+      approved: 'MdStatus_approved',
+      stop_sale: 'MdStatus_stop_sale',
+      banned: 'MdStatus_banned'
+    }"
+  ></enum-describer>
+</script>
+</div>
+
+
+
+
+
+<!--LAYER-AREA-->
+<div class="MdPOP01Modal FnLogout MdNonDisp" ng-controller="CmsLogoutCtrl">
+  <div class="mdPOP01Window" style="top:200px;"><a class="mdPOP01Close">閉じる</a>
+    <div class="MdPOP04Mag">
+      <p class="mdPOP04Short">ログアウトしますか？</p>
+    <!--/MdPOP04Mag--></div>
+
+    <div class="MdPOP03Submit">
+      <span class="MdBtn01"><a href="" ng-click="cancel()" class="mdBtn">キャンセル</a></span><span class="MdBtn01 mdBtn01Cr01"><a href="" ng-click="submit()" class="mdBtn">OK</a></span>
+    <!--/MdPOP03Submit--></div>
+  </div>
+<!--/MdPOP01Modal--></div>
+<!--/LAYER-AREA-->
+
+<div class="MdPOP01Modal ExBackdrop FnSimulatorHelpPopup MdNonDisp">
+    <div class="mdPOP01Window mdPOP01Window02" ng-init="page = 1">
+        <div class="MdPOP10Simulator">
+            <div class="MdSM01Section" ng-show="page === 1">
+                <div class="mdSM01Inner">
+                    <h2>スタンプ画像をドラッグ&ドロップしてみよう</h2>
+                    <img src="//creator-static.line.me/cms/img/LP/simulator/popup01_0226.e94171a4312cbfa6da4a5ed421753e37.png" width="216" height="356" alt="LINE Simulator" class="mdSM01Img01">
+                    <p class="mdSM01Item01">トーク画面では、送信したスタンプと受け取ったスタンプのどちらでも表示できます。</p>
+                    <p class="mdSM01Item02">サムネイルエリア。<br>
+登録したスタンプのサムネイルが表示されます。<br>
+クリックしてスタンプを選択し、トークエリアにドラッグ&ドロップしてみよう。</p>
+                    <p class="mdSM01Item03">テキストを入力して[Send]ボタンをクリックすると、自分が送ったメッセージとして表示されます。また、[Receive]ボタンをクリックすると、相手から届いたメッセージとして表示されます。</p>
+                    <div class="MdSMNav">
+                        <ul>
+                            <li class="ExSelected"><a>page one</a></li>
+                            <li><a ng-click="page = 2">page two</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="MdSM01Section" ng-show="page === 2">
+                <div class="mdSM01Inner">
+                    <h2>背景色を変更して他のカラーで見てみよう</h2>
+                    <img src="//creator-static.line.me/cms/img/LP/simulator/popup02_0226.c182a98d717efcade903c5c1ad7fd592.png" width="218" height="374" alt="LINE Simulator" class="mdSM01Img02">
+                    <p class="mdSM01Item04">矢印をクリックすると、下部にメニューが表示されます。</p>
+                    <p class="mdSM01Item05"><span>Clear Chat</span>トーク画面全体を消去します。</p>
+                    <p class="mdSM01Item06"><span>Image</span>トークルーム画面をキャプチャしてダウンロードできます。</p>
+                    <p class="mdSM01Item07"><span>Theme</span>基本的な着せかえカラーを用意。背景が何色かによってスタンプの見え方が変わってきます。</p>
+                    <div class="MdSMNav">
+                        <ul>
+                            <li><a ng-click="page = 1">page one</a></li>
+                            <li class="ExSelected"><a ng-click="page = 2">page two</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="MdSM02Section">
+                <div class="mdSM02Inner">
+                    <h1>スタンプシミュレータを<br>使ってみよう！</h1>
+                    <p>スタンプ画像をひとつでも登録すると、自動でサムネイルエリアに表示されます。</p>
+                    <p>つくっているスタンプをシミュレータにアップロードして、LINEのトークルームでどのように見えるかチェックできます。ぜひ試してみましょう。</p>
+
+                    <div class="MdSMBtn01"><a class="mdSMBtn" ng-click="simulator.open(true)">スタンプシミュレータを使ってみる</a></div>
+
+                    <ul>
+                        <li>※シミュレータは英語版のみ提供</li>
+                        <li>※PC内にある指定サイズ以外の画像をアップロードした場合、スタンプの動作は保障されません。</li>
+                        <li>※アニメーションスタンプの動きをチェックするには、Firefoxの最新バージョンを利用することをお勧めします。</li>
+                        <li>※BIGスタンプは非対応です。シミュレータ上は、トークルームで表示されるサイズより縮小されます。</li>
+                    </ul>
+                    <p class="mdSM02Check"><input id="chk" type="checkbox" ng-model="disable" ng-change="simulator.disableHelpDialog(disable)"><label for="chk">今後、この画面を表示しない</label></p>
+                    <a class="mdSM02CheckBtn FnCloseDialogBtn">閉じる</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/ng-template" id="AnimationHelpPopup">
+<div class="MdPOP01Modal MdPOP01ModalCenter ExBackdrop FnAnimationHelp">
+    <div class="mdPOP01Window">
+        <div class="MdPop13AnimationHelp">
+            <div class="MdAH01Title">
+                <h1>アニメーションスタンプづくりのポイント</h1>
+            </div>
+            <div class="MdAH01Jumbotron">
+                <div class="mdAH01Video">
+                    <iframe src="https://www.youtube.com/embed/SfC2Geq2x7A?enablejsapi=1" frameborder="0" allowfullscreen></iframe>
+                </div>
+                <div class="mdAH01Link">
+                    <a href="https://www.youtube.com/watch?v=SfC2Geq2x7A" target="_blank">https://www.youtube.com/watch?v=SfC2Geq2x7A</a>
+                </div>
+            </div>
+            <div class="MdAH01Description">
+                <div>アニメーションスタンプをつくるときにポイントとなる5つのステップを、以下の動画（90秒）で確認してください。</div>
+                <div class="mdAH01DescriptionSteps">
+                    <div>STEP1.余白をトリミング</div>
+                    <div>STEP2.並び順の調整</div>
+                    <div>STEP3.ファイル容量の調整</div>
+                    <div>STEP4.APNGデータの作成</div>
+                    <div>STEP5.APNGの動作確認</div>
+                </div>
+            </div>
+            <div class="MdAH01Control">
+                <div>
+                    <button class="FnCloseDialogBtn" ng-click="close(false)">閉じる</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</script>
+<div class="MdPOP01Modal FnThemeTier1Campaign ExBackdrop MdNonDisp" lcm-fixed-backdrop>
+    <div class="mdPOP01Window mdPOP01Window03">
+        
+<div class="MdPop22CampaignBasic">
+    <div class="MdPop22CampaignBasicTitle">
+        <h1>着せかえが、購入しやすい価格で販売できるようになりました！</h1>
+    </div>
+    <div class="MdPop22CampaignBasicBody">
+        <div class="mdPop22CampaignBasicBodyDesc">着せかえの[販売エリア]で[日本を含まないエリアで販売]を選ぶと、販売価格を低く設定できます。</div>
+        <div class="mdPop22CampaignBasicBodyDesc" lcm-text-replacement="{_1_: '{{themeTier1Campaign.data['3'].price}}'}">※着せかえの[販売エリア]で[販売可能な全てのエリア]を選ぶと、販売価格が_1_になります。</div>
+        <div class="mdPop22CampaignBasicBodyFlex">
+            <div>
+                <div class="mdPop22CampaignBasicBodyDesc">すでに着せかえを販売している方は、以下の方法で低価格に変更できます。</div>
+                <div class="mdPop22CampaignBasicBodyDesc">1. [販売エリア]で[日本を含まないエリアで販売]を選んで、アップデートをリクエストします。<br>
+2. 審査で承認されたら販売を開始します。<br>
+3. 価格を低く設定したい着せかえの販売を停止します。<br>
+4. [販売価格情報]から価格を低く設定します。<br>
+5. 販売を再開します。<br>
+※価格を変更してから販売を再開するには、販売を停止してから約3時間ほどすると販売できるようになります。</div>
+                <div class="mdPop22CampaignBasicBodyFootnote">詳細は<a href="/my/s6Hsot0EkqxIZdK2/announce/article?id=20072319" target="_blank">こちら</a>からご覧ください。</div>
+            </div>
+            <div class="mdPop22CampaignBasicBodyImage">
+                <img src="//creator-static.line.me/cms/img/CMS/popup/sixth_anniversary_campaign.c57041cd9e672314c5acf19ee81ee21d.png">
+            </div>
+        </div>
+    </div>
+    <div class="MdPop22CampaignBasicControl"> <!-- Control -->
+        <div>
+            <label><input name="check" ng-click="themeTier1Campaign.toggleDisablement()" type="checkbox">今後、この画面を表示しない</label>
+        </div>
+        <div class="MdBtn01 mdBtn01Cr01">
+            <button class="FnCloseDialogBtn mdBtn">閉じる</button>
+        </div>
+    </div>
+</div>
+
+    </div>
+<!--/MdPOP01Modal--></div>
+
+<div class="MdPOP01Modal ExBackdrop FnOaQrcode MdNonDisp">
+    <div class="mdPOP01Window mdPOP01Window02">
+        <div class="MdPop24OAQRcode">
+            <div class="MdPop24OAQRcodeHead">
+                <img ng-if="seller.isJapanese" src="//creator-static.line.me/cms/img/CMS/qrcode/oa_jp.9a2c5e073a69a2be99521970873ad2d4.png" alt="Japan official account's QR code">
+                <img ng-if="seller.isThai" src="//creator-static.line.me/cms/img/CMS/qrcode/oa_th.f9e24d103646e7e4d4d9499c5993b936.png" alt="Thai official account's QR code">
+                <img ng-if="seller.isTaiwanese" src="//creator-static.line.me/cms/img/CMS/qrcode/oa_tw.69c0c5a44edd6541e39ceae451ca84c5.png" alt="Taiwan official account's QR code">
+            </div>
+            <div class="MdPop24OAQRcodeBody">
+                <h1>公式アカウントを友だち追加</h1>
+                <p>公式アカウントを友だち追加するには、LINEアプリを起動し、<br>[ウォレット]＞[コードリーダー]で上記のQRコードをスキャンしてください。</p>
+            </div>
+            <div class="MdPop24OAQRcodeControl">
+                <div class="mdPop24OAQRcodeControl">
+                    <button class="FnCloseDialogBtn">閉じる</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div ng-repeat="popupData in popupModels" class="MdPOP01Modal ExBackdrop MdNonDisp {{'FnGenericPopup' + popupData.id }}" lcm-fixed-backdrop>
+    <div class="mdPOP01Window mdPOP01Window03">
+      <div class="MdPop22CampaignBasic">
+        <div class="MdPop22CampaignBasicTitle">
+          <h1>{{ popupData.meta.title }}</h1>
+        </div>
+        <div class="MdPop22CampaignFloatBody">
+          <div class="mdPop22CampaignFloatBodySpacer"></div>
+          <img class="mdPop22CampaignFloatBodyImage" ng-src="{{ popupData.getImageByArea(countryOrRegion).cmsUrl }}">
+          <div class="mdPop22CampaignFloatBodyDesc" ng-bind-html="popupData.meta.description"></div>
+          <div ng-if="popupData.meta.url" class="mdPop22CampaignFloatBodyDesc" lcm-link-replacement="{{popupData.meta.url}}">くわしくは<a href="#" target="_blank">こちら</a>を確認してください。</div>
+          <div class="mdPop22CampaignBasicBodyFootnote"></div>
+          <div class="mdPop22CampaignFloatBodyFootSpacer"></div>
+        </div>
+        <div class="MdPop22CampaignBasicControl"> <!-- Control -->
+          <div>
+            <label><input name="check" ng-click="genericPopups[popupData.id].toggleDisablement()" type="checkbox">今後、この画面を表示しない</label>
+          </div>
+          <div class="MdBtn01 mdBtn01Cr01">
+            <button class="FnCloseDialogBtn mdBtn">閉じる</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+<!--FOOTER-AREA-->
+
+<footer class="LyFoot" role="contentinfo"><div class="lyFootInner">
+<div class="MdGFT01List">
+  <ul>
+    <li><a href="https://store.line.me/">LINE STORE</a></li>
+    <li><a href="https://creator.line.me/ja/terms/" target="_blank">利用規約</a></li>
+
+    <li><a href="http://terms.line.me/line_rules/?lang=ja" target="_blank">プライバシーポリシー</a></li>
+    <li><small>© LINE Corporation</small></li>
+    
+  </ul>
+
+<!--/MdGFT01List--></div>
+<!--/LyFoot--></div></footer>
+<!--/FOOTER-AREA-->
+
+
+
+<script>
+// TODO: remove it when we are able to use UILangauge service in AppCtrl
+window.language = "ja";
+window.environment = "real";
+window.__LCM_CURRENT_LOCALE = 'ja';
+var MSG_LOGOUT = "ログアウトしますか？";
+var YOU_MOVE   = "このページから移動しますか？";
+</script>
+
+
+</body>
+</html>

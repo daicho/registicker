@@ -831,7 +831,7 @@ namespace StampRegister
 						releaseButton.Click();
 						Thread.Sleep(1000);
 
-						driver.FindElementByXPath("//a[@ng-click='close(true)']").Click();
+						driver.FindElementsByXPath("//span[@data-test='dialog-btn-ok']")[2].Click();
 
 						Application.DoEvents();
 						if (stop) { StopRegister(); return; }

@@ -1,0 +1,571 @@
+/* eslint-disable no-undef, no-console */
+importScripts(
+    'https://storage.googleapis.com/workbox-cdn/releases/3.5.0/workbox-sw.js',
+);
+
+const templateRoutes = [
+    'my/[a-zA-Z0-9]+/create$',
+    'my/[a-zA-Z0-9]+/emoji/$',
+    'my/[a-zA-Z0-9]+/theme/$',
+    'my/[a-zA-Z0-9]+/sticker/$',
+];
+
+const apiRoutes = [
+    'my/[a-zA-Z0-9]+/api/sticker/sellable_areas',
+    'my/[a-zA-Z0-9]+/api/theme/common_price_tiers',
+    'my/[a-zA-Z0-9]+/api/seller/detail',
+    'my/[a-zA-Z0-9]+/api/seller/unread_count',
+    'my/[a-zA-Z0-9]+/api/emoji/\\?limit=20&page=1',
+    'my/[a-zA-Z0-9]+/api/emoji/tier/',
+    'my/[a-zA-Z0-9]+/api/payment_request',
+    'my/[a-zA-Z0-9]+/api/account/has_personal_account',
+    'my/api/campaign/currents',
+    'api/popup/currents',
+];
+
+// clean up old SW caches
+self.addEventListener('activate', function(event) {
+    const cacheNeedToBePurged = [].concat(
+        templateRoutes.map(d => `${d}-network-first-cache`),
+        apiRoutes.map(d => `${d}-network-first-cache`),
+    );
+
+    event.waitUntil(
+        caches.keys().then(function(cacheNames) {
+            const target = cacheNames.filter(function(cacheName) {
+                return cacheNeedToBePurged.indexOf(cacheName) !== -1;
+            });
+            return Promise.all(
+                target.map(function(cacheName) {
+                    console.log('deleting cache', cacheName);
+                    return caches.delete(cacheName);
+                }),
+            );
+        }),
+    );
+});
+
+if (workbox) {
+    console.log(`Yay! Workbox is loaded 🎉`);
+    workbox.precaching.precacheAndRoute([
+  {
+    "url": "//creator-static.line.me/chunk/0.d62a94fd982537995ca2.js",
+    "revision": "3598cf239310d300155f595cb3a37178"
+  },
+  {
+    "url": "//creator-static.line.me/chunk/1.ca21e85b9435c17efba8.js",
+    "revision": "b936851630b741ae6eeac1911501e4b8"
+  },
+  {
+    "url": "//creator-static.line.me/chunk/10.5afff3f52d3d53518049.js",
+    "revision": "fbd5d6560038e9ed1312f1b30ac5d664"
+  },
+  {
+    "url": "//creator-static.line.me/chunk/11.05da5c7ce0ab81af605a.js",
+    "revision": "11da50c60fe8c7414e9e8baab90116a2"
+  },
+  {
+    "url": "//creator-static.line.me/chunk/12.5d9fd222126ad2b6cc48.js",
+    "revision": "e09ce7b035da04bc1a7c62c48116250a"
+  },
+  {
+    "url": "//creator-static.line.me/chunk/13.3a5589f9ba7e6784e5a9.js",
+    "revision": "712cbf5b294aaecda54f733c9ee71fcf"
+  },
+  {
+    "url": "//creator-static.line.me/chunk/14.6c723edf6bc919925f94.js",
+    "revision": "3d82dcd4fc46aab0d84f1f85a2b20d43"
+  },
+  {
+    "url": "//creator-static.line.me/chunk/15.8cc8dc386b17881765a4.js",
+    "revision": "d058799bc29b8860683935401f2cd931"
+  },
+  {
+    "url": "//creator-static.line.me/chunk/16.8de30d32c25a98c81366.js",
+    "revision": "ec31a9266538b4efc4a37a3b10a3db49"
+  },
+  {
+    "url": "//creator-static.line.me/chunk/17.e9399a94d4ebf598e9d8.js",
+    "revision": "c2130fa1d886c75ef7a1b2e59323f01a"
+  },
+  {
+    "url": "//creator-static.line.me/chunk/18.0050c4189544fe369cff.js",
+    "revision": "9f6c566c3f8df8d3218ba7fa70032453"
+  },
+  {
+    "url": "//creator-static.line.me/chunk/19.465329ef7a2f5bdb0c0c.js",
+    "revision": "289e23d70752bde9456be51215f427d6"
+  },
+  {
+    "url": "//creator-static.line.me/chunk/2.ac05f499dbb9107d6c22.js",
+    "revision": "27c0257a03fd1a3a48cf38e15397a6ff"
+  },
+  {
+    "url": "//creator-static.line.me/chunk/20.e22f4000684b1c7e7efc.js",
+    "revision": "06292443957de500c0551b3fab421c7e"
+  },
+  {
+    "url": "//creator-static.line.me/chunk/21.9af5d321037ec0da5006.js",
+    "revision": "5b83f8216106ef02e030d4bd879fbae7"
+  },
+  {
+    "url": "//creator-static.line.me/chunk/22.b77297eb5dbcf4ec60fa.js",
+    "revision": "f617207203ce4df06da408f5c79ba39f"
+  },
+  {
+    "url": "//creator-static.line.me/chunk/23.a6aa7bc8663d594675d8.js",
+    "revision": "ac928423392c8410c1d6dbab4379f5a9"
+  },
+  {
+    "url": "//creator-static.line.me/chunk/3.b09212dc74f431c65206.js",
+    "revision": "aed6812b4eee1ccc577e2a8ff84e1cb5"
+  },
+  {
+    "url": "//creator-static.line.me/chunk/4.e67099b366b145dc2f43.js",
+    "revision": "ae5659dd6e1a8516ad2d3271c65561c3"
+  },
+  {
+    "url": "//creator-static.line.me/chunk/5.1578dc13dd1cb7ca10d9.js",
+    "revision": "30c251ac4383587af5b64a0d5709b228"
+  },
+  {
+    "url": "//creator-static.line.me/chunk/6.e55d164ec05a52a23df4.js",
+    "revision": "86ac3869160870931a8f2aef513bd0f2"
+  },
+  {
+    "url": "//creator-static.line.me/chunk/68.36d234b33b40c1090c48.js",
+    "revision": "e978626d6c3b47a3382747cafc113f2c"
+  },
+  {
+    "url": "//creator-static.line.me/chunk/69.b0d6b282b13f8c18d2e1.js",
+    "revision": "7a6fcef8823a2ee20ed2653c5ba9b64e"
+  },
+  {
+    "url": "//creator-static.line.me/chunk/7.596328e1e848f4f9e468.js",
+    "revision": "da444b1ecb95a035b442f31317bf9015"
+  },
+  {
+    "url": "//creator-static.line.me/chunk/70.5a51302ab9f03e1983c9.js",
+    "revision": "87a899450d740bd6684092651458e4f4"
+  },
+  {
+    "url": "//creator-static.line.me/chunk/71.374973e8cd933e48a339.js",
+    "revision": "7d4b465ac579e3586b772d22109e1174"
+  },
+  {
+    "url": "//creator-static.line.me/chunk/72.c91102c9806b220dea6a.js",
+    "revision": "de8ab2027e6e1fdd29619b6ab5c9398b"
+  },
+  {
+    "url": "//creator-static.line.me/chunk/73.c0d077210c5d6c01a5d8.js",
+    "revision": "30f66c117b1ca35c26a150f6cf3fe28b"
+  },
+  {
+    "url": "//creator-static.line.me/chunk/74.9a4c48948eaf97c84bce.js",
+    "revision": "584e9c59963da6d3db3adfd2d0be6a9e"
+  },
+  {
+    "url": "//creator-static.line.me/chunk/8.53c9a4c36f2286fecc0c.js",
+    "revision": "ea0243546a4b16f7f27620f88591156d"
+  },
+  {
+    "url": "//creator-static.line.me/chunk/9.014751d11b36934e38f2.js",
+    "revision": "35f75b0a157da2b098b972236ab11cdf"
+  },
+  {
+    "url": "//creator-static.line.me/cms/js/api-mock-server.61a8a604ced0464c9184.js",
+    "revision": "d73f67550933494559d660a700f0554a"
+  },
+  {
+    "url": "//creator-static.line.me/cms/js/cms.app.c15dc561b05137656925.js",
+    "revision": "2f60570246241a4bee64043c385ac7ee"
+  },
+  {
+    "url": "//creator-static.line.me/cms/js/lcm.campaign.d0ff5eec29b68b89b1781a1aed72f86e.js",
+    "revision": "d0ff5eec29b68b89b1781a1aed72f86e"
+  },
+  {
+    "url": "//creator-static.line.me/cms/js/lcm.common.f83d92fd51669e3de3e29e906402091a.js",
+    "revision": "f83d92fd51669e3de3e29e906402091a"
+  },
+  {
+    "url": "//creator-static.line.me/cms/js/lcm.common.ie.b5d3b72d625aecc8ff23b3b8f083da30.js",
+    "revision": "b5d3b72d625aecc8ff23b3b8f083da30"
+  },
+  {
+    "url": "//creator-static.line.me/cms/js/lcm.common.sp.97106ec3a15a2415b343fa6df1f282da.js",
+    "revision": "97106ec3a15a2415b343fa6df1f282da"
+  },
+  {
+    "url": "//creator-static.line.me/cms/js/lcm.registration.app.19cde5d8973d89306baa.js",
+    "revision": "eca3dc06c3987b9fc245c44c133d6fbf"
+  },
+  {
+    "url": "//creator-static.line.me/cms/js/lcm.simulator.app.63473e6909628feb084f.js",
+    "revision": "6e9f8410c3455b06bc01761a907780a6"
+  },
+  {
+    "url": "//creator-static.line.me/cms/js/page-script/account-settings.vue.9d4d0a89261a7435facb.js",
+    "revision": "1e5f515f52377bd39c42f50563baf409"
+  },
+  {
+    "url": "//creator-static.line.me/cms/js/page-script/custom-sticker-preview.vue.1dd348c7a5cdafaaafbc.js",
+    "revision": "2480f092b98c588c38f8df170164a88a"
+  },
+  {
+    "url": "//creator-static.line.me/cms/js/page-script/emoji-create.vue.2cc01b787b9149ec2a32.js",
+    "revision": "7ca7574d3490a58da7c229fc79fa6a5c"
+  },
+  {
+    "url": "//creator-static.line.me/cms/js/page-script/emoji-detail.vue.dde2a8a741b58e4b5547.js",
+    "revision": "36da8cd58b2ddd74d6ad6b2e881fed02"
+  },
+  {
+    "url": "//creator-static.line.me/cms/js/page-script/emoji-edit.vue.29baf21343b2e48f8ea3.js",
+    "revision": "1a75bb0be2f1ec5dc7b1df2a5466f35e"
+  },
+  {
+    "url": "//creator-static.line.me/cms/js/page-script/emoji-image.vue.6b49bdd5fc0154324c25.js",
+    "revision": "21625d58722bbca662ec351e2d7bc893"
+  },
+  {
+    "url": "//creator-static.line.me/cms/js/page-script/emoji-list.vue.c9173a8c3df520eece6a.js",
+    "revision": "ad4ab3a4172c16329a92eaad064d5f3c"
+  },
+  {
+    "url": "//creator-static.line.me/cms/js/page-script/emoji-preview.vue.ed0d94e02f71bd3dacfb.js",
+    "revision": "3246a2314ba9494b0088ece145ae9b05"
+  },
+  {
+    "url": "//creator-static.line.me/cms/js/page-script/emoji-tag.vue.97dfe07afe6f4f8a4e88.js",
+    "revision": "67ff0d948e3cded5e2e63763fcbaebe1"
+  },
+  {
+    "url": "//creator-static.line.me/cms/js/page-script/emoji-update-request.vue.42919e96a4122c836803.js",
+    "revision": "e2d32ed58d78b810d389af1d9d56d342"
+  },
+  {
+    "url": "//creator-static.line.me/cms/js/page-script/message-sticker-preview.vue.dd473a2e13ea4c9f5ba5.js",
+    "revision": "8959ab31c752e7f98a520010d46e5885"
+  },
+  {
+    "url": "//creator-static.line.me/cms/js/page-script/message-sticker-style-editor.1fbab0076cd6f9f0cc5c.js",
+    "revision": "a2eb85b2850d5e1ec888b85263b964b6"
+  },
+  {
+    "url": "//creator-static.line.me/cms/js/page-script/sp/index.vue.b7ab84ccd937cee39d73.js",
+    "revision": "8af52a12e93047e3e4eeea25925e1ebd"
+  },
+  {
+    "url": "//creator-static.line.me/cms/js/page-script/sp/message-detail.vue.63c3690571897ef0ae4b.js",
+    "revision": "1322d7b335da0a6db74c05e131b9d376"
+  },
+  {
+    "url": "//creator-static.line.me/cms/js/page-script/sp/message.vue.2547ddddb6b8da18cf5d.js",
+    "revision": "bcf21512bf3a288c54e71c8d1d8a05e5"
+  },
+  {
+    "url": "//creator-static.line.me/cms/js/page-script/sp/notice-detail.vue.4fb950fac89139113ee4.js",
+    "revision": "db059248a36551539bb9b62d429fb897"
+  },
+  {
+    "url": "//creator-static.line.me/cms/js/page-script/sp/notice.vue.a3c1f9d19e19102c0f57.js",
+    "revision": "ca57e7b9a5532cf5d2192a53e76256eb"
+  },
+  {
+    "url": "//creator-static.line.me/cms/js/page-script/sp/report-emoji.vue.76338024989d19e9608d.js",
+    "revision": "657c8e3b436ae695acb719a43cac6753"
+  },
+  {
+    "url": "//creator-static.line.me/cms/js/page-script/sp/report-sticker.vue.c5097daf1eb3c49282c9.js",
+    "revision": "82d270077bc31475a83f7bbf1fde86bd"
+  },
+  {
+    "url": "//creator-static.line.me/cms/js/page-script/sp/report-theme.vue.94792878963e662aa2f9.js",
+    "revision": "ef449036124a0025f901ec3fe1e54757"
+  },
+  {
+    "url": "//creator-static.line.me/cms/js/page-script/sp/transfer.vue.48ff3d513d9cc4ac796d.js",
+    "revision": "015b60acbac9c835f73870980229eb71"
+  },
+  {
+    "url": "//creator-static.line.me/cms/js/page-script/statistics.e2c4a567de19a2ee6378.js",
+    "revision": "11ec032d4370d18afc83976cc8359be1"
+  },
+  {
+    "url": "//creator-static.line.me/cms/js/page-script/sticker-create.vue.028a2e98b3c4207ab7f6.js",
+    "revision": "a9816bc68d7c9330a69c3cba409efbef"
+  },
+  {
+    "url": "//creator-static.line.me/cms/js/page-script/sticker-detail.vue.16ed965cd96c7495e97b.js",
+    "revision": "dcbdc4a34f8983b3bf44f1453cc372c8"
+  },
+  {
+    "url": "//creator-static.line.me/cms/js/page-script/sticker-edit-popup-image.vue.903e96fcb49a1445cdfd.js",
+    "revision": "d38ec1b856bd24fee365f162e5d64292"
+  },
+  {
+    "url": "//creator-static.line.me/cms/js/page-script/sticker-image.vue.efc6b95471281a939c32.js",
+    "revision": "4cef27394cabb208e7a04f2c617ff968"
+  },
+  {
+    "url": "//creator-static.line.me/cms/js/page-script/sticker-list.vue.4f426b95c6d68300bc98.js",
+    "revision": "4030871744e70ac16657074b421e717c"
+  },
+  {
+    "url": "//creator-static.line.me/cms/js/page-script/sticker-preview.vue.2d6f439765c8c37a5698.js",
+    "revision": "333e8157f7b9ed52124e62ff1d126fa8"
+  },
+  {
+    "url": "//creator-static.line.me/cms/js/page-script/sticker-style-editor.vue.94feeee23bbdb94ca885.js",
+    "revision": "02b7cc4abe6b578370702e9c6b37c0b0"
+  },
+  {
+    "url": "//creator-static.line.me/cms/js/page-script/sticker-tag.vue.eb4919e0c856e260650d.js",
+    "revision": "8f7bb80f3cc08d05ba6f16b83381614e"
+  },
+  {
+    "url": "//creator-static.line.me/cms/js/page-script/sticker-update-request.vue.e83d3c9ecbceda57f407.js",
+    "revision": "d83a2d4a96148fe5cc7855a3c066fb16"
+  },
+  {
+    "url": "//creator-static.line.me/cms/js/page-script/sticker-update.vue.eb79fb7fef3050289d1d.js",
+    "revision": "5af764cfd5a2148ba7149430bcc74e00"
+  },
+  {
+    "url": "//creator-static.line.me/cms/js/page-script/theme-create.vue.839bc20fc0dd64632145.js",
+    "revision": "2392a6b54271ca4ee38c8a35e03a43bc"
+  },
+  {
+    "url": "//creator-static.line.me/cms/js/page-script/theme-detail.vue.74f9cdb7eca5c4513c74.js",
+    "revision": "67f80abef439b0d0da4be19fe3fadde7"
+  },
+  {
+    "url": "//creator-static.line.me/cms/js/page-script/theme-image.vue.791010978da436c90308.js",
+    "revision": "4f605b9c57987e4a699a47d0f8459f25"
+  },
+  {
+    "url": "//creator-static.line.me/cms/js/page-script/theme-list.vue.83f7a0bce4fdad13930f.js",
+    "revision": "84571328813fb2ca5842ba88a732a355"
+  },
+  {
+    "url": "//creator-static.line.me/cms/js/page-script/theme-update-request.vue.3287acbef838e1753ad9.js",
+    "revision": "27dfd6cee4555d2b71fac2a2a1c47be0"
+  },
+  {
+    "url": "//creator-static.line.me/cms/js/page-script/theme-update.vue.9b81ca50a55e523e09e1.js",
+    "revision": "094a36efd1ee25a7c8abd7765a8ac633"
+  },
+  {
+    "url": "//creator-static.line.me/cms/js/utils/xlt-reader.02524a9d0240f431155d.js",
+    "revision": "640d40d28a1d703fa872363d14709014"
+  },
+  {
+    "url": "//creator-static.line.me/cms/css/cms_preview.f88a8f6ed54c055920bd4598a3bba32f.css",
+    "revision": "2c034cdfe5ec45797b2132e180b17355"
+  },
+  {
+    "url": "//creator-static.line.me/cms/css/cms.c0833282aa13d76c35187c660950eabf.css",
+    "revision": "0385c233664f625dd818c503bda34e84"
+  },
+  {
+    "url": "//creator-static.line.me/cms/img/sprite/common.682bc304e43878175813fc8c3a375463.png",
+    "revision": "682bc304e43878175813fc8c3a375463"
+  },
+  {
+    "url": "//creator-static.line.me/cms/img/sprite/cms-common.9492a0dbf6ec755e07f2d3b721529362.png",
+    "revision": "9492a0dbf6ec755e07f2d3b721529362"
+  },
+  {
+    "url": "//creator-static.line.me/cms/img/CMS/animation_sticker_banner.41ee4a68593ac2056f7a2157ca909e5a.png",
+    "revision": "41ee4a68593ac2056f7a2157ca909e5a"
+  },
+  {
+    "url": "//creator-static.line.me/cms/img/CMS/animation.0e0207139f4f95a916bdb3c87820e651.png",
+    "revision": "0e0207139f4f95a916bdb3c87820e651"
+  },
+  {
+    "url": "//creator-static.line.me/cms/img/CMS/bg_transparent.7c3b51b6710cbddc41a442220c6108c0.png",
+    "revision": "7c3b51b6710cbddc41a442220c6108c0"
+  },
+  {
+    "url": "//creator-static.line.me/cms/img/CMS/check_on.59bf5547f5f5392ee7f4ff570680d55a.gif",
+    "revision": "59bf5547f5f5392ee7f4ff570680d55a"
+  },
+  {
+    "url": "//creator-static.line.me/cms/img/CMS/color_menu_arrow.0c1918e0f226d155fcd5b0b8bdaaf989.gif",
+    "revision": "0c1918e0f226d155fcd5b0b8bdaaf989"
+  },
+  {
+    "url": "//creator-static.line.me/cms/img/CMS/custom-sticker-bg.377a1e8d76f64303fb7836f764a2424d.png",
+    "revision": "377a1e8d76f64303fb7836f764a2424d"
+  },
+  {
+    "url": "//creator-static.line.me/cms/img/CMS/ico_line_creators.8051801cee39c1810942506388f1288e.png",
+    "revision": "8051801cee39c1810942506388f1288e"
+  },
+  {
+    "url": "//creator-static.line.me/cms/img/CMS/ico_linepay.f707ebc33ba5f34b9e3d18c00e2b97c1.png",
+    "revision": "f707ebc33ba5f34b9e3d18c00e2b97c1"
+  },
+  {
+    "url": "//creator-static.line.me/cms/img/CMS/ico_simulator.e251e317a1f9e6c445e0fd45f0b280cd.png",
+    "revision": "e251e317a1f9e6c445e0fd45f0b280cd"
+  },
+  {
+    "url": "//creator-static.line.me/cms/img/CMS/icon-custom-sticker-indicator.e3ad2d2b13c6ce062283e36c1d9eb711.png",
+    "revision": "e3ad2d2b13c6ce062283e36c1d9eb711"
+  },
+  {
+    "url": "//creator-static.line.me/cms/img/CMS/img_complete.0e25c3f4d1ef719a3ed36a335e6d3941.gif",
+    "revision": "0e25c3f4d1ef719a3ed36a335e6d3941"
+  },
+  {
+    "url": "//creator-static.line.me/cms/img/CMS/img_dummy.1b165779b6ea7323efb99343e59a0520.png",
+    "revision": "1b165779b6ea7323efb99343e59a0520"
+  },
+  {
+    "url": "//creator-static.line.me/cms/img/CMS/img_dummy.5e8fc402a90c97bc4ed60de4b4bc9929.gif",
+    "revision": "5e8fc402a90c97bc4ed60de4b4bc9929"
+  },
+  {
+    "url": "//creator-static.line.me/cms/img/CMS/img_line_logo.05ad80fe7cde3410e84c068e89853ef3.png",
+    "revision": "05ad80fe7cde3410e84c068e89853ef3"
+  },
+  {
+    "url": "//creator-static.line.me/cms/img/CMS/img_linepay_campaign.2b3f6efdf416c058a767b9ffe6f29e10.png",
+    "revision": "2b3f6efdf416c058a767b9ffe6f29e10"
+  },
+  {
+    "url": "//creator-static.line.me/cms/img/CMS/img_no_02.b08a74c0633feedabb20a7e71fb770a6.png",
+    "revision": "b08a74c0633feedabb20a7e71fb770a6"
+  },
+  {
+    "url": "//creator-static.line.me/cms/img/CMS/img_no.fce9854273fd33d517c8901032023fa4.png",
+    "revision": "fce9854273fd33d517c8901032023fa4"
+  },
+  {
+    "url": "//creator-static.line.me/cms/img/CMS/img_preview_noimage_main.5c7ee2ff0337004ce5b161499f3f4008.png",
+    "revision": "5c7ee2ff0337004ce5b161499f3f4008"
+  },
+  {
+    "url": "//creator-static.line.me/cms/img/CMS/img_registered.776e6e95c3c6d56f6031d17b671c80d4.gif",
+    "revision": "776e6e95c3c6d56f6031d17b671c80d4"
+  },
+  {
+    "url": "//creator-static.line.me/cms/img/CMS/img_simulator.ef7f3eb19fca4023e234b7328f05c4ac.png",
+    "revision": "ef7f3eb19fca4023e234b7328f05c4ac"
+  },
+  {
+    "url": "//creator-static.line.me/cms/img/CMS/img_top.2290d3859f4de5be2fe3ec9bbb5c2d31.gif",
+    "revision": "2290d3859f4de5be2fe3ec9bbb5c2d31"
+  },
+  {
+    "url": "//creator-static.line.me/cms/img/CMS/new_submission_image.8412426be71a7cf06e000b7aaa51ccee.gif",
+    "revision": "8412426be71a7cf06e000b7aaa51ccee"
+  },
+  {
+    "url": "//creator-static.line.me/cms/img/CMS/popup_image.11eb3d4991d067778af268f372de6025.png",
+    "revision": "11eb3d4991d067778af268f372de6025"
+  },
+  {
+    "url": "//creator-static.line.me/cms/img/CMS/theme_parts_01.dcba1711be158069a42469937f8ced33.png",
+    "revision": "dcba1711be158069a42469937f8ced33"
+  },
+  {
+    "url": "//creator-static.line.me/cms/img/CMS/theme_parts_02.f1240b5fb5c0308de3d0f825ad991e6f.png",
+    "revision": "f1240b5fb5c0308de3d0f825ad991e6f"
+  },
+  {
+    "url": "//creator-static.line.me/cms/img/CMS/theme_parts_03.8e676f8394b140843c71581856c6c0c7.png",
+    "revision": "8e676f8394b140843c71581856c6c0c7"
+  },
+  {
+    "url": "//creator-static.line.me/cms/img/CMS/theme_parts_04.1dae5a6e8492b5a1e45c0099eb81bdc6.png",
+    "revision": "1dae5a6e8492b5a1e45c0099eb81bdc6"
+  },
+  {
+    "url": "//creator-static.line.me/cms/img/CMS/theme_parts_05.f213a298d926f917869df700ab3ec7b4.png",
+    "revision": "f213a298d926f917869df700ab3ec7b4"
+  },
+  {
+    "url": "//creator-static.line.me/cms/img/CMS/theme_parts_06.a4c76665cca76ab76b9790e2f9e1baeb.png",
+    "revision": "a4c76665cca76ab76b9790e2f9e1baeb"
+  },
+  {
+    "url": "//creator-static.line.me/cms/img/CMS/theme_parts_07.0518622dd07710aaa8a8bea4e35b22bb.png",
+    "revision": "0518622dd07710aaa8a8bea4e35b22bb"
+  },
+  {
+    "url": "//creator-static.line.me/cms/img/CMS/tumbnail.a799666f3545729dad70c6d969726717.gif",
+    "revision": "a799666f3545729dad70c6d969726717"
+  },
+  {
+    "url": "//creator-static.line.me/cms/img/CMS/txt_linepay_campaign.f23432734fa4aabd5054e1f0d87e58d5.png",
+    "revision": "f23432734fa4aabd5054e1f0d87e58d5"
+  },
+  {
+    "url": "//creator-static.line.me/cms/img/CMS/qrcode/oa_jp.9a2c5e073a69a2be99521970873ad2d4.png",
+    "revision": "9a2c5e073a69a2be99521970873ad2d4"
+  },
+  {
+    "url": "//creator-static.line.me/cms/img/CMS/qrcode/oa_th.f9e24d103646e7e4d4d9499c5993b936.png",
+    "revision": "f9e24d103646e7e4d4d9499c5993b936"
+  },
+  {
+    "url": "//creator-static.line.me/cms/img/CMS/qrcode/oa_tw.69c0c5a44edd6541e39ceae451ca84c5.png",
+    "revision": "69c0c5a44edd6541e39ceae451ca84c5"
+  }
+]);
+    // custom cache strategy
+
+    workbox.routing.registerRoute(
+        /(.*)\.(?:png|gif|jpg)/,
+        workbox.strategies.cacheFirst({
+            cacheName: 'images-cache',
+            plugins: [
+                new workbox.expiration.Plugin({
+                    maxEntries: 50,
+                    maxAgeSeconds: 30 * 24 * 60 * 60, // 30 Days
+                }),
+            ],
+        }),
+    );
+
+    workbox.routing.registerRoute(
+        /my\/[a-zA-Z0-9]+\/sticker\/[0-9]+\/show_image\?type=main/,
+        workbox.strategies.cacheFirst({
+            cacheName: 'sticker-images-cache',
+            plugins: [
+                new workbox.expiration.Plugin({
+                    maxEntries: 40,
+                    maxAgeSeconds: 30 * 24 * 60 * 60, // 30 Days
+                }),
+            ],
+            fetchOptions: {
+                credentials: 'include',
+            },
+        }),
+    );
+
+    const createNetworkFirstCacheHandler = function(route) {
+        const regexp = new RegExp(route);
+        const handler = workbox.strategies.networkFirst({
+            cacheName: `${route}-network-first-cache`,
+            plugins: [
+                new workbox.expiration.Plugin({
+                    maxEntries: 5,
+                    maxAgeSeconds: 7 * 24 * 60 * 60, // 7 Days
+                }),
+            ],
+            fetchOptions: {
+                credentials: 'include',
+            },
+        });
+        workbox.routing.registerRoute(regexp, handler);
+    };
+    templateRoutes.forEach(createNetworkFirstCacheHandler);
+    apiRoutes.forEach(createNetworkFirstCacheHandler);
+} else {
+    console.log(`Boo! Workbox didn't load 😬`);
+}

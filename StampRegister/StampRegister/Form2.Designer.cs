@@ -215,7 +215,7 @@
 			// 
 			this.label26.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
 			this.label26.AutoSize = true;
-			this.label26.Location = new System.Drawing.Point(16, 528);
+			this.label26.Location = new System.Drawing.Point(12, 528);
 			this.label26.Name = "label26";
 			this.label26.Size = new System.Drawing.Size(57, 12);
 			this.label26.TabIndex = 19;
@@ -225,9 +225,9 @@
 			// 
 			this.copyright.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-			this.copyright.Location = new System.Drawing.Point(98, 525);
+			this.copyright.Location = new System.Drawing.Point(94, 525);
 			this.copyright.Name = "copyright";
-			this.copyright.Size = new System.Drawing.Size(213, 19);
+			this.copyright.Size = new System.Drawing.Size(221, 19);
 			this.copyright.TabIndex = 20;
 			// 
 			// tabControl1
@@ -1621,9 +1621,9 @@
 			// 
 			this.girlStampName.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-			this.girlStampName.Location = new System.Drawing.Point(98, 500);
+			this.girlStampName.Location = new System.Drawing.Point(94, 500);
 			this.girlStampName.Name = "girlStampName";
-			this.girlStampName.Size = new System.Drawing.Size(213, 19);
+			this.girlStampName.Size = new System.Drawing.Size(221, 19);
 			this.girlStampName.TabIndex = 20;
 			// 
 			// label51
@@ -1631,7 +1631,7 @@
 			this.label51.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
 			this.label51.AutoSize = true;
-			this.label51.Location = new System.Drawing.Point(16, 503);
+			this.label51.Location = new System.Drawing.Point(12, 503);
 			this.label51.Name = "label51";
 			this.label51.Size = new System.Drawing.Size(76, 12);
 			this.label51.TabIndex = 19;
@@ -1641,9 +1641,9 @@
 			// 
 			this.boyStampName.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-			this.boyStampName.Location = new System.Drawing.Point(98, 475);
+			this.boyStampName.Location = new System.Drawing.Point(94, 475);
 			this.boyStampName.Name = "boyStampName";
-			this.boyStampName.Size = new System.Drawing.Size(213, 19);
+			this.boyStampName.Size = new System.Drawing.Size(221, 19);
 			this.boyStampName.TabIndex = 20;
 			// 
 			// label52
@@ -1651,7 +1651,7 @@
 			this.label52.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
 			this.label52.AutoSize = true;
-			this.label52.Location = new System.Drawing.Point(16, 478);
+			this.label52.Location = new System.Drawing.Point(12, 478);
 			this.label52.Name = "label52";
 			this.label52.Size = new System.Drawing.Size(76, 12);
 			this.label52.TabIndex = 19;
@@ -1661,16 +1661,16 @@
 			// 
 			this.countries.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-			this.countries.Location = new System.Drawing.Point(98, 550);
+			this.countries.Location = new System.Drawing.Point(94, 550);
 			this.countries.Name = "countries";
-			this.countries.Size = new System.Drawing.Size(213, 19);
+			this.countries.Size = new System.Drawing.Size(221, 19);
 			this.countries.TabIndex = 20;
 			// 
 			// label53
 			// 
 			this.label53.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
 			this.label53.AutoSize = true;
-			this.label53.Location = new System.Drawing.Point(16, 553);
+			this.label53.Location = new System.Drawing.Point(12, 553);
 			this.label53.Name = "label53";
 			this.label53.Size = new System.Drawing.Size(41, 12);
 			this.label53.TabIndex = 19;
