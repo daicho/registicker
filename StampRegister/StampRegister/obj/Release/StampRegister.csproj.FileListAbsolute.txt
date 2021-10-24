@@ -365,7 +365,6 @@ C:\Users\Daichi\Git\registicker\StampRegister\StampRegister\bin\Release\ClosedXM
 C:\Users\Daichi\Git\registicker\StampRegister\StampRegister\bin\Release\ClosedXML.xml
 C:\Users\Daichi\Git\registicker\StampRegister\StampRegister\bin\Release\DocumentFormat.OpenXml.xml
 C:\Users\Daichi\Git\registicker\StampRegister\StampRegister\bin\Release\ExcelNumberFormat.xml
-C:\Users\Daichi\Git\registicker\StampRegister\StampRegister\bin\Release\WebDriver.xml
 C:\Users\Daichi\Git\registicker\StampRegister\StampRegister\obj\Release\Interop.Illustrator.dll
 C:\Users\Daichi\Git\registicker\StampRegister\StampRegister\obj\Release\StampRegister.csproj.ResolveComReference.cache
 C:\Users\Daichi\Git\registicker\StampRegister\StampRegister\obj\Release\StampRegister.Form1.resources

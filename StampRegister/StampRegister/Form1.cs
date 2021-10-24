@@ -231,26 +231,26 @@ namespace StampRegister
         void Login()
         {
 			driver.Navigate().GoToUrl("https://creator.line.me/signup/line_auth");
-			driver.FindElementByTagName("h1");
+			driver.FindElement(By.TagName("h1"));
 
 			driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(3);
-			var loginButtons = driver.FindElementsByXPath("//button[text()='ログイン']");
+			var loginButtons = driver.FindElements(By.XPath("//button[text()='ログイン']"));
 			driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
 
 			if (loginButtons.Count > 0)
 			{
-				driver.FindElementByName("tid").SendKeys(mailAddress.Text);
-				driver.FindElementByName("tpasswd").SendKeys(password.Text);
+				driver.FindElement(By.Name("tid")).SendKeys(mailAddress.Text);
+				driver.FindElement(By.Name("tpasswd")).SendKeys(password.Text);
 				Thread.Sleep(200);
 
 				loginButtons[0].Click();
 				
 				driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(3);
-				while (driver.FindElementsByXPath("//span[text()='認証番号で本人確認']").Count > 0)
+				while (driver.FindElements(By.XPath("//span[text()='認証番号で本人確認']")).Count > 0)
 					;
 
 				driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
-				driver.FindElementByXPath("//a[text()='マイページ']");
+				driver.FindElement(By.XPath("//a[text()='マイページ']"));
 			}
 		}
 
@@ -521,62 +521,62 @@ namespace StampRegister
 					try
 					{
 						// 登録ページに移動
-						driver.Navigate().GoToUrl(driver.FindElementByTagName("base").GetAttribute("href") + "sticker/create");
+						driver.Navigate().GoToUrl(driver.FindElement(By.TagName("base")).GetAttribute("href") + "sticker/create");
 						Thread.Sleep(1000);
 
 						Application.DoEvents();
 						if (stop) { StopRegister(); return; }
 
 						// 各項目入力
-						driver.FindElementByName("meta[en][title]").SendKeys(enTitle);
-						driver.FindElementByName("meta[en][description]").SendKeys(enDescription);
+						driver.FindElement(By.Name("meta[en][title]")).SendKeys(enTitle);
+						driver.FindElement(By.Name("meta[en][description]")).SendKeys(enDescription);
 
 						Application.DoEvents();
 						if (stop) { StopRegister(); return; }
 
-						driver.FindElementByXPath("//option[@value='ja']").Click();
+						driver.FindElement(By.XPath("//option[@value='ja']")).Click();
 						Thread.Sleep(1000);
 
 						Application.DoEvents();
 						if (stop) { StopRegister(); return; }
 
-						driver.FindElementByXPath("//span[text()='追加']/..").Click();
+						driver.FindElement(By.XPath("//span[text()='追加']/..")).Click();
 						Thread.Sleep(100);
 
 						Application.DoEvents();
 						if (stop) { StopRegister(); return; }
 
-						driver.FindElementByName("meta[ja][title]").SendKeys(jpTitle);
-						driver.FindElementByName("meta[ja][description]").SendKeys(jpDescription);
+						driver.FindElement(By.Name("meta[ja][title]")).SendKeys(jpTitle);
+						driver.FindElement(By.Name("meta[ja][description]")).SendKeys(jpDescription);
 
 						Application.DoEvents();
 						if (stop) { StopRegister(); return; }
 
-						driver.FindElementByName("copyright").SendKeys(Properties.Settings.Default.Copyright);
+						driver.FindElement(By.Name("copyright")).SendKeys(Properties.Settings.Default.Copyright);
 
 						Application.DoEvents();
 						if (stop) { StopRegister(); return; }
 
-						driver.FindElementsByXPath("//select[@data-test='select-style-category']/option")[baseTaste].Click();
+						driver.FindElements(By.XPath("//select[@data-test='select-style-category']/option"))[baseTaste].Click();
 						Thread.Sleep(500);
 
 						Application.DoEvents();
 						if (stop) { StopRegister(); return; }
 
-						driver.FindElementsByXPath("//select[@data-test='select-character-category']/option")[baseChara].Click();
+						driver.FindElements(By.XPath("//select[@data-test='select-character-category']/option"))[baseChara].Click();
 						Thread.Sleep(500);
 
 						Application.DoEvents();
 						if (stop) { StopRegister(); return; }
 
 
-						driver.FindElementByXPath("//span[text()='選択したエリアで販売する']/../..//input").Click();
+						driver.FindElement(By.XPath("//span[text()='選択したエリアで販売する']/../..//input")).Click();
 						Thread.Sleep(500);
 
 						Application.DoEvents();
 						if (stop) { StopRegister(); return; }
 
-						foreach (IWebElement element in driver.FindElementsByXPath("//div[@class='MdCMN27Collapsable ExCollapsed']"))
+						foreach (IWebElement element in driver.FindElements(By.XPath("//div[@class='MdCMN27Collapsable ExCollapsed']")))
 						{
 							element.FindElement(By.TagName("input")).Click();
 							element.Click();
@@ -586,7 +586,7 @@ namespace StampRegister
 							if (stop) { StopRegister(); return; }
 						}
 
-						foreach (IWebElement element in driver.FindElementsByXPath("//input[@name='areas[]']"))
+						foreach (IWebElement element in driver.FindElements(By.XPath("//input[@name='areas[]']")))
 						{
 							if (Array.IndexOf(countries, element.GetAttribute("value")) != -1)
 							{
@@ -599,18 +599,18 @@ namespace StampRegister
 						}
 
 						// 保存ボタンクリック
-						driver.FindElementByXPath("//main/form").Submit();
+						driver.FindElement(By.XPath("//main/form")).Submit();
 						Thread.Sleep(1000);
 
 						Application.DoEvents();
 						if (stop) { StopRegister(); return; }
 
-						driver.FindElementByXPath("//p[text()='保存しますか？']/../..//span[text()='OK']").Click();
+						driver.FindElement(By.XPath("//p[contains(text(),'保存しますか？')]/../..//span[text()='OK']")).Click();
 
 						Application.DoEvents();
 						if (stop) { StopRegister(); return; }
 
-						driver.FindElementByXPath("//dt[contains(text(),'ステータス')]");
+						driver.FindElement(By.XPath("//dt[contains(text(),'ステータス')]"));
 						Thread.Sleep(1000);
 
 						Application.DoEvents();
@@ -677,24 +677,24 @@ namespace StampRegister
 						Application.DoEvents();
 						if (stop) { StopRegister(); return; }
 
-						driver.FindElementByXPath("//option[@value='40']").Click();
+						driver.FindElement(By.XPath("//option[@value='40']")).Click();
 						Thread.Sleep(1000);
 
 						Application.DoEvents();
 						if (stop) { StopRegister(); return; }
 
-						driver.FindElementByXPath("//p[contains(text(),'スタンプの個数を変更します。')]/../..//a[text()='OK']").Click();
+						driver.FindElement(By.XPath("//p[contains(text(),'スタンプの個数を変更します。')]/../..//a[text()='OK']")).Click();
 						Thread.Sleep(1000);
 
 						Application.DoEvents();
 						if (stop) { StopRegister(); return; }
 
-						driver.FindElementByXPath("//input[@type='file']").SendKeys(desptopPath + @"\LINE zip\" + stampName + ".zip");
+						driver.FindElement(By.XPath("//input[@type='file']")).SendKeys(desptopPath + @"\LINE zip\" + stampName + ".zip");
 
 						Application.DoEvents();
 						if (stop) { StopRegister(); return; }
 
-						driver.FindElementByXPath("//div[@ng-if=\"sticker.stickerType !== 'animation' || image.key === 'tab'\"]");
+						driver.FindElement(By.XPath("//div[@ng-if=\"sticker.stickerType !== 'animation' || image.key === 'tab'\"]"));
 						Thread.Sleep(200);
 
 						Application.DoEvents();
@@ -746,7 +746,7 @@ namespace StampRegister
 						Application.DoEvents();
 						if (stop) { StopRegister(); return; }
 
-						requestButton = driver.FindElementByXPath("//a[contains(text(),'リクエスト') and @class='mdBtn']");
+						requestButton = driver.FindElement(By.XPath("//a[contains(text(),'リクエスト') and @class='mdBtn']"));
 					
 						if (requestButton.FindElement(By.XPath("..")).GetAttribute("class").IndexOf("ExDisabled") != -1)
 							continue;
@@ -758,18 +758,18 @@ namespace StampRegister
 						Application.DoEvents();
 						if (stop) { StopRegister(); return; }
 
-						driver.FindElementByXPath("//span[text()='同意します']/..//input").Click();
+						driver.FindElement(By.XPath("//span[text()='同意します']/..//input")).Click();
 						Thread.Sleep(500);
 
 						Application.DoEvents();
 						if (stop) { StopRegister(); return; }
 
-						driver.FindElementByXPath("//span[@data-test='dialog-btn-ok']").Click();
+						driver.FindElement(By.XPath("//span[@data-test='dialog-btn-ok']")).Click();
 
 						Application.DoEvents();
 						if (stop) { StopRegister(); return; }
 
-						driver.FindElementByXPath("//dt[contains(text(),'ステータス')]");
+						driver.FindElement(By.XPath("//dt[contains(text(),'ステータス')]"));
 						Thread.Sleep(1000);
 
 						Application.DoEvents();
@@ -822,7 +822,7 @@ namespace StampRegister
 						Application.DoEvents();
 						if (stop) { StopRegister(); return; }
 
-						releaseButton = driver.FindElementByXPath("//label[contains(text(),'リリース')]");
+						releaseButton = driver.FindElement(By.XPath("//label[contains(text(),'リリース')]"));
 
 						if (releaseButton.FindElement(By.TagName("input")).GetAttribute("disabled") == "disabled")
 							continue;
@@ -831,12 +831,12 @@ namespace StampRegister
 						releaseButton.Click();
 						Thread.Sleep(1000);
 
-						driver.FindElementsByXPath("//span[@data-test='dialog-btn-ok']")[2].Click();
+						driver.FindElements(By.XPath("//span[@data-test='dialog-btn-ok']"))[2].Click();
 
 						Application.DoEvents();
 						if (stop) { StopRegister(); return; }
 
-						driver.FindElementByXPath("//dt[contains(text(),'ステータス')]");
+						driver.FindElement(By.XPath("//dt[contains(text(),'ステータス')]"));
 						Thread.Sleep(1000);
 
 						Application.DoEvents();
@@ -925,28 +925,28 @@ namespace StampRegister
 						Application.DoEvents();
 						if (stop) { StopRegister(); return; }
 
-						driver.FindElementsByXPath("//select[@data-test='select-style-category']/option")[baseTaste].Click();
+						driver.FindElements(By.XPath("//select[@data-test='select-style-category']/option"))[baseTaste].Click();
 						Thread.Sleep(1000);
 
 						Application.DoEvents();
 						if (stop) { StopRegister(); return; }
 
-						driver.FindElementsByXPath("//select[@data-test='select-character-category']/option")[baseChara].Click();
+						driver.FindElements(By.XPath("//select[@data-test='select-character-category']/option"))[baseChara].Click();
 						Thread.Sleep(1000);
 
 						// 保存ボタンクリック
-						driver.FindElementByXPath("//main/form").Submit();
+						driver.FindElement(By.XPath("//main/form")).Submit();
 						Thread.Sleep(1000);
 
 						Application.DoEvents();
 						if (stop) { StopRegister(); return; }
 
-						driver.FindElementByXPath("//p[text()='保存しますか？']/../..//span[text()='OK']").Click();
+						driver.FindElement(By.XPath("//p[text()='保存しますか？']/../..//span[text()='OK']")).Click();
 
 						Application.DoEvents();
 						if (stop) { StopRegister(); return; }
 
-						driver.FindElementByXPath("//dt[contains(text(),'ステータス')]");
+						driver.FindElement(By.XPath("//dt[contains(text(),'ステータス')]"));
 
 						Application.DoEvents();
 						if (stop) { StopRegister(); return; }
