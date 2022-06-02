@@ -1,2 +1,3 @@
-2021/08/01-14:13:15.265 45d0 Creating DB C:\Users\Daichi\Git\registicker\StampRegister\StampRegister\bin\Release\Profile\Default\data_reduction_proxy_leveldb since it was missing.
-2021/08/01-14:13:15.305 45d0 Delete type=3 #1
+2021/12/01-23:04:40.096 182c Recovering log #21
+2021/12/01-23:04:40.132 182c Delete type=0 #21
+2021/12/01-23:04:40.132 182c Delete type=3 #20

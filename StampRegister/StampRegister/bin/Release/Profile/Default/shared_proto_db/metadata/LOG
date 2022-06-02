@@ -1,2 +1,3 @@
-2021/08/01-14:13:15.371 4064 Creating DB C:\Users\Daichi\Git\registicker\StampRegister\StampRegister\bin\Release\Profile\Default\shared_proto_db\metadata since it was missing.
-2021/08/01-14:13:15.385 4064 Reusing MANIFEST C:\Users\Daichi\Git\registicker\StampRegister\StampRegister\bin\Release\Profile\Default\shared_proto_db\metadata/MANIFEST-000001
+2022/06/02-21:37:29.460 3064 Reusing MANIFEST C:\Users\Daichi\Git\registicker\StampRegister\StampRegister\bin\Release\Profile\Default\shared_proto_db\metadata/MANIFEST-000001
+2022/06/02-21:37:29.461 3064 Recovering log #3
+2022/06/02-21:37:29.461 3064 Reusing old log C:\Users\Daichi\Git\registicker\StampRegister\StampRegister\bin\Release\Profile\Default\shared_proto_db\metadata/000003.log 

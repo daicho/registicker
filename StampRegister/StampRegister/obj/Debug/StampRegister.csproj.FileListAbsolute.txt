@@ -244,7 +244,6 @@ C:\Users\Daichi\Git\registicker\StampRegister\StampRegister\obj\Debug\StampRegis
 C:\Users\Daichi\Git\registicker\StampRegister\StampRegister\obj\Debug\StampRegister.exe
 C:\Users\Daichi\Git\registicker\StampRegister\StampRegister\obj\Debug\StampRegister.pdb
 C:\Users\Daichi\Git\registicker\StampRegister\StampRegister\bin\Debug\WebDriver.dll
-C:\Users\Daichi\Git\registicker\StampRegister\StampRegister\bin\Debug\WebDriver.xml
 C:\Users\Daichi\Git\registicker\StampRegister\StampRegister\bin\Debug\DocumentFormat.OpenXml.dll
 C:\Users\Daichi\Git\registicker\StampRegister\StampRegister\bin\Debug\ClosedXML.dll
 C:\Users\Daichi\Git\registicker\StampRegister\StampRegister\bin\Debug\ClosedXML.pdb
