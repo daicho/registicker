@@ -822,7 +822,7 @@ namespace StampRegister
 						Application.DoEvents();
 						if (stop) { StopRegister(); return; }
 
-						releaseButton = driver.FindElement(By.XPath("//label[contains(text(),'リリース')]"));
+						releaseButton = driver.FindElement(By.XPath("//label[text()='リリース']"));
 
 						if (releaseButton.FindElement(By.TagName("input")).GetAttribute("disabled") == "disabled")
 							continue;
