@@ -683,7 +683,7 @@ namespace StampRegister
 						Application.DoEvents();
 						if (stop) { StopRegister(); return; }
 
-						driver.FindElement(By.XPath("//p[contains(text(),'スタンプの個数を変更します。')]/../..//a[text()='OK']")).Click();
+						driver.FindElement(By.XPath("//p[contains(text(),'スタンプの個数を変更します。')]/../..//span[text()='OK']")).Click();
 						Thread.Sleep(1000);
 
 						Application.DoEvents();
@@ -694,8 +694,10 @@ namespace StampRegister
 						Application.DoEvents();
 						if (stop) { StopRegister(); return; }
 
-						driver.FindElement(By.XPath("//div[@ng-if=\"sticker.stickerType !== 'animation' || image.key === 'tab'\"]"));
-						Thread.Sleep(200);
+						while (driver.FindElements(By.XPath("//img[@class='cm-product-image']")).Count < 42)
+							Thread.Sleep(100);
+
+						Thread.Sleep(1000);
 
 						Application.DoEvents();
 						if (stop) { StopRegister(); return; }
@@ -1113,7 +1115,7 @@ namespace StampRegister
 			service.HideCommandPromptWindow = true;
 
 			ChromeOptions options = new ChromeOptions();
-			//options.AddArgument("user-data-dir=" + AppDomain.CurrentDomain.BaseDirectory + "Profile"); /////////////////////////////////////////////////////////////////////////////////
+			options.AddArgument("user-data-dir=" + AppDomain.CurrentDomain.BaseDirectory + "Profile"); /////////////////////////////////////////////////////////////////////////////////
 
 			driver = new ChromeDriver(service, options);
 			driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
