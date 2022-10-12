@@ -616,10 +616,10 @@ namespace StampRegister
 						Application.DoEvents();
 						if (stop) { StopRegister(); return; }
 					}
-					catch
+					catch (Exception ex)
 					{
 						StopRegister();
-						MessageBox.Show("エラーが発生しました", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+						MessageBox.Show("エラーが発生しました\n\n" + ex.ToString(), "", MessageBoxButtons.OK, MessageBoxIcon.Error);
 						return;
 					}
 
@@ -704,10 +704,10 @@ namespace StampRegister
 
 						File.Delete(desptopPath + @"\LINE zip\" + stampName + ".zip");
 					}
-					catch
+					catch (Exception ex)
 					{
 						StopRegister();
-						MessageBox.Show("エラーが発生しました", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+						MessageBox.Show("エラーが発生しました\n\n" + ex.ToString(), "", MessageBoxButtons.OK, MessageBoxIcon.Error);
 						return;
 					}
 
@@ -777,10 +777,10 @@ namespace StampRegister
 						Application.DoEvents();
 						if (stop) { StopRegister(); return; }
 					}
-					catch
+					catch (Exception ex)
 					{
 						StopRegister();
-						MessageBox.Show("エラーが発生しました", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+						MessageBox.Show("エラーが発生しました\n\n" + ex.ToString(), "", MessageBoxButtons.OK, MessageBoxIcon.Error);
 						return;
 					}
 
@@ -844,10 +844,10 @@ namespace StampRegister
 						Application.DoEvents();
 						if (stop) { StopRegister(); return; }
 					}
-					catch
+					catch (Exception ex)
 					{
 						StopRegister();
-						MessageBox.Show("エラーが発生しました", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+						MessageBox.Show("エラーが発生しました\n\n" + ex.ToString(), "", MessageBoxButtons.OK, MessageBoxIcon.Error);
 						return;
 					}
 
@@ -953,10 +953,10 @@ namespace StampRegister
 						Application.DoEvents();
 						if (stop) { StopRegister(); return; }
 					}
-					catch
+					catch (Exception ex)
 					{
 						StopRegister();
-						MessageBox.Show("エラーが発生しました", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+						MessageBox.Show("エラーが発生しました\n\n" + ex.ToString(), "", MessageBoxButtons.OK, MessageBoxIcon.Error);
 						return;
 					}
 				}
@@ -1169,10 +1169,10 @@ namespace StampRegister
 						Application.DoEvents();
 						if (stop) { StopRegister(); return; }
 					}
-					catch
+					catch (Exception ex)
 					{
 						StopRegister();
-						MessageBox.Show("エラーが発生しました", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+						MessageBox.Show("エラーが発生しました\n\n" + ex.ToString(), "", MessageBoxButtons.OK, MessageBoxIcon.Error);
 						return;
 					}
 
