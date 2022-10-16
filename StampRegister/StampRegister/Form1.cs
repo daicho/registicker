@@ -770,8 +770,8 @@ namespace StampRegister
 
 						Application.DoEvents();
 						if (stop) { StopRegister(); return; }
-
-						driver.FindElement(By.XPath("//dt[contains(text(),'ステータス')]"));
+						
+						driver.FindElement(By.XPath("//span[contains(text(),'審査待ち') and @class='MdStatus_waiting_for_review']"));
 						Thread.Sleep(1000);
 
 						Application.DoEvents();
@@ -837,8 +837,8 @@ namespace StampRegister
 
 						Application.DoEvents();
 						if (stop) { StopRegister(); return; }
-
-						driver.FindElement(By.XPath("//dt[contains(text(),'ステータス')]"));
+						
+						driver.FindElement(By.XPath("//span[contains(text(),'販売中') and @class='MdStatus_ready_for_sale']"));
 						Thread.Sleep(1000);
 
 						Application.DoEvents();
