@@ -1,6 +1,6 @@
 ﻿namespace StampRegister
 {
-    partial class Form2
+    partial class SettingForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form2));
+			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SettingForm));
 			this.label17 = new System.Windows.Forms.Label();
 			this.ok = new System.Windows.Forms.Button();
 			this.cancel = new System.Windows.Forms.Button();
@@ -1696,8 +1696,8 @@
 			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
 			this.Name = "Form2";
 			this.Text = "スタンプ詳細設定";
-			this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form2_FormClosing);
-			this.Load += new System.EventHandler(this.Form2_Load);
+			this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.SettingForm_FormClosing);
+			this.Load += new System.EventHandler(this.SettingForm_Load);
 			this.tabControl1.ResumeLayout(false);
 			this.tabPage1.ResumeLayout(false);
 			this.tabPage1.PerformLayout();

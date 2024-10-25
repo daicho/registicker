@@ -1,6 +1,6 @@
 ﻿namespace StampRegister
 {
-    partial class Form1
+    partial class MainForm
     {
         /// <summary>
         /// 必要なデザイナー変数です。
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
 			this.components = new System.ComponentModel.Container();
-			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
 			this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
 			this.change = new System.Windows.Forms.Button();
 			this.escape = new System.Windows.Forms.Button();
@@ -522,8 +522,8 @@
 			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
 			this.Name = "Form1";
 			this.Text = "StampRegister";
-			this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
-			this.Load += new System.EventHandler(this.Form1_Load);
+			this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
+			this.Load += new System.EventHandler(this.MainForm_Load);
 			this.tableLayoutPanel2.ResumeLayout(false);
 			this.settingFile.ResumeLayout(false);
 			this.tableLayoutPanel1.ResumeLayout(false);

@@ -1,44 +1,45 @@
-﻿using System;
-using System.IO;
-using System.Text.RegularExpressions;
-using System.Threading;
-using System.Configuration;
-using System.ComponentModel;
-using System.Diagnostics;
-using System.Reflection;
-using System.Windows.Forms;
-using ClosedXML.Excel;
+﻿using ClosedXML.Excel;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
-using OpenQA.Selenium.Support.UI;
 using StampRegister.Properties;
+using System;
+using System.ComponentModel;
+using System.Configuration;
+using System.IO;
+using System.IO.Compression;
+using System.Text.RegularExpressions;
+using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace StampRegister;
 
-public partial class Form1 : Form
+public partial class MainForm : Form
 {
-    enum Columns
+    private enum Columns
     {
-        name,
-        roma,
-        gender,
-        honorific,
-        export,
-        stamp,
-        image,
-        request,
-        release,
-        url1,
-        url2,
-        origin
+        Name,
+        Roma,
+        Gender,
+        Honorific,
+        Export,
+        Stamp,
+        Image,
+        Request,
+        Release,
+        Url1,
+        Url2,
+        Origin,
     }
 
     const int waitSeconds = 60;
-    private bool stop = false;
-    private bool menuCancel = false;
-    ChromeDriver driver;
 
-    public Form1()
+    private bool stop = false;
+
+    private bool menuCancel = false;
+
+    private ChromeDriver driver = default!;
+
+    public MainForm()
     {
         InitializeComponent();
     }
@@ -47,7 +48,7 @@ public partial class Form1 : Form
     /// 名前のリストを読み込む。
     /// </summary>
     /// <param name="filePath">読み込むファイル名</param>
-    void LoadNameList(string filePath)
+    private void LoadNameList(string filePath)
     {
         XLWorkbook workbook;
         IXLWorksheet worksheet;
@@ -129,7 +130,7 @@ public partial class Form1 : Form
     /// 名前のリストを保存する。
     /// </summary>
     /// <param name="filePath">書き出すファイル名</param>
-    void SaveNameList(string filePath)
+    private void SaveNameList(string filePath)
     {
         XLWorkbook workbook;
         IXLWorksheet worksheet;
@@ -166,12 +167,14 @@ public partial class Form1 : Form
     /// リリース未完数をカウントする
     /// </summary>
     /// <returns>リリース未完数</returns>
-    int CountRelease()
+    private int CountRelease()
     {
         int relNum = 0;
 
         foreach (ListViewItem item in nameList.Items)
+        {
             relNum += 2;
+        }
 
         return relNum;
     }
@@ -179,7 +182,7 @@ public partial class Form1 : Form
     /// <summary>
     /// 登録開始の処理をする。
     /// </summary>
-    void StartRegister()
+    private void StartRegister()
     {
         stop = false;
         menuCancel = true;
@@ -204,7 +207,7 @@ public partial class Form1 : Form
     /// <summary>
     /// 終了の処理をする。
     /// </summary>
-    void StopRegister()
+    private void StopRegister()
     {
         menuCancel = false;
         SaveNameList(nameListFile.Text);
@@ -229,7 +232,7 @@ public partial class Form1 : Form
     /// <summary>
     /// ログインする。
     /// </summary>
-    void Login()
+    private async Task Login()
     {
         driver.Navigate().GoToUrl("https://creator.line.me/signup/line_auth");
         driver.FindElement(By.TagName("h1"));
@@ -242,13 +245,15 @@ public partial class Form1 : Form
         {
             driver.FindElement(By.Name("tid")).SendKeys(mailAddress.Text);
             driver.FindElement(By.Name("tpasswd")).SendKeys(password.Text);
-            Thread.Sleep(200);
+            await Task.Delay(200);
 
             loginButtons[0].Click();
 
             driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(3);
             while (driver.FindElements(By.XPath("//span[text()='認証番号で本人確認']")).Count > 0)
-                ;
+            {
+                await Task.Delay(100);
+            }
 
             driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
             driver.FindElement(By.XPath("//a[text()='マイページ']"));
@@ -262,60 +267,67 @@ public partial class Form1 : Form
 
     private void ExportImages_Click(object sender, EventArgs e)
     {
-        string desptopPath = Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory);
+        string desktopPath = Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory);
 
         StartRegister();
 
         // フォルダ作成
-        if (!Directory.Exists(desptopPath + @"\LINE zip"))
-            Directory.CreateDirectory(desptopPath + @"\LINE zip");
+        if (!Directory.Exists(desktopPath + @"\LINE zip"))
+            Directory.CreateDirectory(desktopPath + @"\LINE zip");
 
         // Illustrator起動
-        dynamic app = Activator.CreateInstance(Type.GetTypeFromProgID("Illustrator.Application"));
+        Illustrator.Application app = new();
 
         foreach (ListViewItem item in nameList.Items)
         {
-            for (int i = int.Parse(item.SubItems[(int)Columns.export].Text); i < 2; i++)
+            for (int i = int.Parse(item.SubItems[(int)Columns.Export].Text); i < 2; i++)
             {
-                string name = item.SubItems[(int)Columns.name].Text;
+                string name = item.SubItems[(int)Columns.Name].Text;
                 string stampName;
                 string pandaName;
                 string fileName;
 
                 // パンダの名前
-                if (item.SubItems[(int)Columns.gender].Text == "男")
-                    pandaName = Settings.Default.BoyStampName;
-                else
-                    pandaName = Settings.Default.GirlStampName;
+                pandaName = item.SubItems[(int)Columns.Gender].Text == "男" ? Settings.Default.BoyStampName : Settings.Default.GirlStampName;
 
                 // 出力ファイル名
                 stampName = pandaName + "-" + name + "-" + (i + 1);
 
                 // 既にzipがあるかどうか
-                if (File.Exists(desptopPath + @"\LINE zip\" + stampName + @".zip"))
+                if (File.Exists(desktopPath + @"\LINE zip\" + stampName + @".zip"))
+                {
                     continue;
+                }
 
                 // 特殊パターンかどうか
-                if (item.SubItems[(int)Columns.origin].Text != "")
+                if (item.SubItems[(int)Columns.Origin].Text != "")
                 {
-                    fileName = pandaName + "-" + item.SubItems[(int)Columns.origin].Text + "-" + (i + 1) + ".ai";
+                    fileName = pandaName + "-" + item.SubItems[(int)Columns.Origin].Text + "-" + (i + 1) + ".ai";
                 }
                 else
                 {
                     // ひらがな・カタカナ・漢字判定
                     if (Regex.IsMatch(name, @"^[\p{IsHiragana}\p{IsKatakana}\da-zA-Zａ-ｚＡ-Ｚ～！？★☆●○♪]+$"))
+                    {
                         fileName = pandaName + "-ひらがな" + name.Length + "文字-" + (i + 1) + ".ai";
+                    }
                     else if (Regex.IsMatch(name, @"^[^\p{IsHiragana}\p{IsKatakana}\da-zA-Zａ-ｚＡ-Ｚ～！？★☆●○♪]+$"))
+                    {
                         fileName = pandaName + "-漢字" + name.Length + "文字-" + (i + 1) + ".ai";
+                    }
                     else
+                    {
                         continue;
+                    }
                 }
 
                 // Illustratorファイルを開く
                 if (!File.Exists(Application.StartupPath + @"\スタンプ\" + fileName))
+                {
                     continue;
+                }
 
-                dynamic doc = app.Open(Application.StartupPath + @"\スタンプ\" + fileName);
+                Illustrator.Document doc = app.Open(Application.StartupPath + @"\スタンプ\" + fileName);
 
                 // 名前を置換
                 foreach (dynamic TextFrame in doc.TextFrames)
@@ -325,7 +337,7 @@ public partial class Form1 : Form
                 }
 
                 // 書き出し
-                doc.Export(desptopPath + @"\a", Illustrator.AiExportType.aiPNG24);
+                doc.Export(desktopPath + @"\a", Illustrator.AiExportType.aiPNG24);
                 Application.DoEvents();
 
                 // ファイルを閉じる
@@ -334,19 +346,19 @@ public partial class Form1 : Form
 
                 // リネーム
                 for (int j = 1; j <= 40; j++)
-                    File.Move(desptopPath + @"\images\a_" + j.ToString("D2") + ".png", desptopPath + @"\images\" + j.ToString("D2") + ".png");
+                    File.Move(desktopPath + @"\images\a_" + j.ToString("D2") + ".png", desktopPath + @"\images\" + j.ToString("D2") + ".png");
 
-                File.Move(desptopPath + @"\images\a_41.png", desptopPath + @"\images\main.png");
-                File.Move(desptopPath + @"\images\a_42.png", desptopPath + @"\images\tab.png");
-                File.Delete(desptopPath + @"\images\a_43.png");
-                File.Delete(desptopPath + @"\images\a_44.png");
+                File.Move(desktopPath + @"\images\a_41.png", desktopPath + @"\images\main.png");
+                File.Move(desktopPath + @"\images\a_42.png", desktopPath + @"\images\tab.png");
+                File.Delete(desktopPath + @"\images\a_43.png");
+                File.Delete(desktopPath + @"\images\a_44.png");
 
                 // zipに圧縮
-                System.IO.Compression.ZipFile.CreateFromDirectory(desptopPath + @"\images", desptopPath + @"\LINE zip\" + stampName + @".zip");
-                Directory.Delete(desptopPath + @"\images", true);
+                ZipFile.CreateFromDirectory(desktopPath + @"\images", desktopPath + @"\LINE zip\" + stampName + @".zip");
+                Directory.Delete(desktopPath + @"\images", true);
 
                 // 完了状況保存
-                item.SubItems[(int)Columns.export].Text = (i + 1).ToString();
+                item.SubItems[(int)Columns.Export].Text = (i + 1).ToString();
 
                 Application.DoEvents();
 
@@ -366,19 +378,23 @@ public partial class Form1 : Form
         MessageBox.Show("終了！");
     }
 
-    private void Start_Click(object sender, EventArgs e)
+    private async void Start_Click(object sender, EventArgs e)
     {
-        string[] countries = Settings.Default.Countries.Split(','); // 販売する国
+        // 販売する国
+        string[] countries = Settings.Default.Countries.Split(',');
 
         StartRegister();
-        Login();
+        await Login();
         if (stop) { StopRegister(); return; }
 
         foreach (ListViewItem item in nameList.Items)
         {
-            if (item.SubItems[(int)Columns.gender].Text != "男" && item.SubItems[(int)Columns.gender].Text != "女") continue;
+            if (item.SubItems[(int)Columns.Gender].Text != "男" && item.SubItems[(int)Columns.Gender].Text != "女")
+            {
+                continue;
+            }
 
-            for (int i = int.Parse(item.SubItems[(int)Columns.stamp].Text); i < 2; i++)
+            for (int i = int.Parse(item.SubItems[(int)Columns.Stamp].Text); i < 2; i++)
             {
                 string enTitle;
                 string jpTitle;
@@ -393,7 +409,7 @@ public partial class Form1 : Form
                 int baseChara;
 
                 // 入力文字列識別
-                switch (item.SubItems[(int)Columns.honorific].Text)
+                switch (item.SubItems[(int)Columns.Honorific].Text)
                 {
                     case "くん":
                         if (i == 0)
@@ -434,7 +450,7 @@ public partial class Form1 : Form
                         break;
 
                     case "さん":
-                        if (item.SubItems[(int)Columns.gender].Text == "男")
+                        if (item.SubItems[(int)Columns.Gender].Text == "男")
                         {
                             if (i == 0)
                             {
@@ -474,7 +490,7 @@ public partial class Form1 : Form
                         break;
 
                     default:
-                        if (item.SubItems[(int)Columns.gender].Text == "男")
+                        if (item.SubItems[(int)Columns.Gender].Text == "男")
                         {
                             if (i == 0)
                             {
@@ -514,16 +530,16 @@ public partial class Form1 : Form
                         break;
                 }
 
-                enTitle = baseTitle_en.Replace("***", item.SubItems[(int)Columns.roma].Text);
-                jpTitle = baseTitle_jp.Replace("***", item.SubItems[(int)Columns.name].Text).Replace("@@@", item.SubItems[(int)Columns.honorific].Text);
-                enDescription = baseDescription_en.Replace("***", item.SubItems[(int)Columns.roma].Text);
-                jpDescription = baseDescription_jp.Replace("***", item.SubItems[(int)Columns.name].Text).Replace("@@@", item.SubItems[(int)Columns.honorific].Text);
+                enTitle = baseTitle_en.Replace("***", item.SubItems[(int)Columns.Roma].Text);
+                jpTitle = baseTitle_jp.Replace("***", item.SubItems[(int)Columns.Name].Text).Replace("@@@", item.SubItems[(int)Columns.Honorific].Text);
+                enDescription = baseDescription_en.Replace("***", item.SubItems[(int)Columns.Roma].Text);
+                jpDescription = baseDescription_jp.Replace("***", item.SubItems[(int)Columns.Name].Text).Replace("@@@", item.SubItems[(int)Columns.Honorific].Text);
 
                 try
                 {
                     // 登録ページに移動
                     driver.Navigate().GoToUrl(driver.FindElement(By.TagName("base")).GetAttribute("href") + "sticker/create");
-                    Thread.Sleep(1000);
+                    await Task.Delay(1000);
 
                     Application.DoEvents();
                     if (stop) { StopRegister(); return; }
@@ -536,13 +552,13 @@ public partial class Form1 : Form
                     if (stop) { StopRegister(); return; }
 
                     driver.FindElement(By.XPath("//option[@value='ja']")).Click();
-                    Thread.Sleep(1000);
+                    await Task.Delay(1000);
 
                     Application.DoEvents();
                     if (stop) { StopRegister(); return; }
 
                     driver.FindElement(By.XPath("//span[text()='追加']")).Click();
-                    Thread.Sleep(100);
+                    await Task.Delay(100);
 
                     Application.DoEvents();
                     if (stop) { StopRegister(); return; }
@@ -559,20 +575,20 @@ public partial class Form1 : Form
                     if (stop) { StopRegister(); return; }
 
                     driver.FindElements(By.XPath("//select[@data-test='select-style-category']/option"))[baseTaste].Click();
-                    Thread.Sleep(500);
+                    await Task.Delay(500);
 
                     Application.DoEvents();
                     if (stop) { StopRegister(); return; }
 
                     driver.FindElements(By.XPath("//select[@data-test='select-character-category']/option"))[baseChara].Click();
-                    Thread.Sleep(500);
+                    await Task.Delay(500);
 
                     Application.DoEvents();
                     if (stop) { StopRegister(); return; }
 
 
                     driver.FindElement(By.XPath("//span[text()='選択したエリアで販売する']/../..//input")).Click();
-                    Thread.Sleep(500);
+                    await Task.Delay(500);
 
                     Application.DoEvents();
                     if (stop) { StopRegister(); return; }
@@ -581,7 +597,7 @@ public partial class Form1 : Form
                     {
                         element.FindElement(By.TagName("input")).Click();
                         element.Click();
-                        Thread.Sleep(200);
+                        await Task.Delay(200);
 
                         Application.DoEvents();
                         if (stop) { StopRegister(); return; }
@@ -592,7 +608,7 @@ public partial class Form1 : Form
                         if (Array.IndexOf(countries, element.GetAttribute("value")) != -1)
                         {
                             element.Click();
-                            Thread.Sleep(200);
+                            await Task.Delay(200);
 
                             Application.DoEvents();
                             if (stop) { StopRegister(); return; }
@@ -601,7 +617,7 @@ public partial class Form1 : Form
 
                     // 保存ボタンクリック
                     driver.FindElement(By.XPath("//form")).Submit();
-                    Thread.Sleep(1000);
+                    await Task.Delay(1000);
 
                     Application.DoEvents();
                     if (stop) { StopRegister(); return; }
@@ -612,7 +628,7 @@ public partial class Form1 : Form
                     if (stop) { StopRegister(); return; }
 
                     driver.FindElement(By.XPath("//dt[contains(text(),'ステータス')]"));
-                    Thread.Sleep(1000);
+                    await Task.Delay(1000);
 
                     Application.DoEvents();
                     if (stop) { StopRegister(); return; }
@@ -625,8 +641,8 @@ public partial class Form1 : Form
                 }
 
                 // URL&完了状況保存
-                item.SubItems[(int)Columns.url1 + i].Text = driver.Url.Replace("?saved=true", "");
-                item.SubItems[(int)Columns.stamp].Text = (i + 1).ToString();
+                item.SubItems[(int)Columns.Url1 + i].Text = driver.Url.Replace("?saved=true", "");
+                item.SubItems[(int)Columns.Stamp].Text = (i + 1).ToString();
             }
         }
 
@@ -634,33 +650,32 @@ public partial class Form1 : Form
         MessageBox.Show("終了！");
     }
 
-    private void RegisterImages_Click(object sender, EventArgs e)
+    private async void RegisterImages_Click(object sender, EventArgs e)
     {
         string desptopPath = Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory);
 
         StartRegister();
-        Login();
+        await Login();
         if (stop) { StopRegister(); return; } // ログイン
 
         foreach (ListViewItem item in nameList.Items)
         {
-            for (int i = int.Parse(item.SubItems[(int)Columns.image].Text); i < 2; i++)
+            for (int i = int.Parse(item.SubItems[(int)Columns.Image].Text); i < 2; i++)
             {
-                string name = item.SubItems[(int)Columns.name].Text;
+                string name = item.SubItems[(int)Columns.Name].Text;
                 string pandaName;
                 string stampName;
 
                 // パンダの名前
-                if (item.SubItems[(int)Columns.gender].Text == "男")
-                    pandaName = Settings.Default.BoyStampName;
-                else
-                    pandaName = Settings.Default.GirlStampName;
+                pandaName = item.SubItems[(int)Columns.Gender].Text == "男" ? Settings.Default.BoyStampName : Settings.Default.GirlStampName;
 
                 // スタンプ名
                 stampName = pandaName + "-" + name + "-" + (i + 1);
 
-                if (item.SubItems[(int)Columns.url1 + i].Text == "")
+                if (item.SubItems[(int)Columns.Url1 + i].Text == "")
+                {
                     continue;
+                }
 
                 // zipファイル存在確認
                 if (!File.Exists(desptopPath + @"\LINE zip\" + stampName + ".zip"))
@@ -672,20 +687,20 @@ public partial class Form1 : Form
                 try
                 {
                     // ページに移動
-                    driver.Navigate().GoToUrl(item.SubItems[(int)Columns.url1 + i].Text + "/image");
-                    Thread.Sleep(1000);
+                    driver.Navigate().GoToUrl(item.SubItems[(int)Columns.Url1 + i].Text + "/image");
+                    await Task.Delay(1000);
 
                     Application.DoEvents();
                     if (stop) { StopRegister(); return; }
 
                     driver.FindElement(By.XPath("//option[@value='40']")).Click();
-                    Thread.Sleep(1000);
+                    await Task.Delay(1000);
 
                     Application.DoEvents();
                     if (stop) { StopRegister(); return; }
 
                     driver.FindElement(By.XPath("//p[contains(text(),'スタンプの個数を変更します。')]/../..//span[text()='OK']")).Click();
-                    Thread.Sleep(1000);
+                    await Task.Delay(1000);
 
                     Application.DoEvents();
                     if (stop) { StopRegister(); return; }
@@ -696,9 +711,9 @@ public partial class Form1 : Form
                     if (stop) { StopRegister(); return; }
 
                     while (driver.FindElements(By.XPath("//img[@class='cm-product-image']")).Count < 42)
-                        Thread.Sleep(100);
+                        await Task.Delay(100);
 
-                    Thread.Sleep(1000);
+                    await Task.Delay(1000);
 
                     Application.DoEvents();
                     if (stop) { StopRegister(); return; }
@@ -713,7 +728,7 @@ public partial class Form1 : Form
                 }
 
                 // 完了状況保存
-                item.SubItems[(int)Columns.image].Text = (i + 1).ToString();
+                item.SubItems[(int)Columns.Image].Text = (i + 1).ToString();
             }
         }
 
@@ -721,10 +736,10 @@ public partial class Form1 : Form
         MessageBox.Show("終了！");
     }
 
-    private void Request_Click(object sender, EventArgs e)
+    private async void Request_Click(object sender, EventArgs e)
     {
         StartRegister();
-        Login();
+        await Login();
         if (stop) { StopRegister(); return; } // ログイン
 
         foreach (ListViewItem item in nameList.Items)
@@ -732,19 +747,23 @@ public partial class Form1 : Form
             for (int i = 0; i < 2; i++)
             {
                 IWebElement requestButton;
-                string reqComp = item.SubItems[(int)Columns.request].Text;
+                string reqComp = item.SubItems[(int)Columns.Request].Text;
 
                 if (reqComp == "3" || reqComp == (i + 1).ToString())
+                {
                     continue;
+                }
 
-                if (item.SubItems[(int)Columns.url1 + i].Text == "")
+                if (item.SubItems[(int)Columns.Url1 + i].Text == "")
+                {
                     continue;
+                }
 
                 try
                 {
                     // アイテム管理ページに移動
-                    driver.Navigate().GoToUrl(item.SubItems[(int)Columns.url1 + i].Text);
-                    Thread.Sleep(1000);
+                    driver.Navigate().GoToUrl(item.SubItems[(int)Columns.Url1 + i].Text);
+                    await Task.Delay(1000);
 
                     Application.DoEvents();
                     if (stop) { StopRegister(); return; }
@@ -756,13 +775,13 @@ public partial class Form1 : Form
 
                     // リクエストボタンクリック
                     requestButton.Click();
-                    Thread.Sleep(1000);
+                    await Task.Delay(1000);
 
                     Application.DoEvents();
                     if (stop) { StopRegister(); return; }
 
                     driver.FindElement(By.XPath("//span[text()='同意します']/..//input")).Click();
-                    Thread.Sleep(500);
+                    await Task.Delay(500);
 
                     Application.DoEvents();
                     if (stop) { StopRegister(); return; }
@@ -773,7 +792,7 @@ public partial class Form1 : Form
                     if (stop) { StopRegister(); return; }
 
                     driver.FindElement(By.XPath("//span[contains(text(),'審査待ち') and @class='MdStatus_waiting_for_review']"));
-                    Thread.Sleep(1000);
+                    await Task.Delay(1000);
 
                     Application.DoEvents();
                     if (stop) { StopRegister(); return; }
@@ -786,10 +805,7 @@ public partial class Form1 : Form
                 }
 
                 // 完了状況保存
-                if (reqComp == "0")
-                    item.SubItems[(int)Columns.request].Text = (i + 1).ToString();
-                else
-                    item.SubItems[(int)Columns.request].Text = "3";
+                item.SubItems[(int)Columns.Request].Text = reqComp == "0" ? (i + 1).ToString() : "3";
             }
         }
 
@@ -797,10 +813,10 @@ public partial class Form1 : Form
         MessageBox.Show("終了！");
     }
 
-    private void Release_Click(object sender, EventArgs e)
+    private async void Release_Click(object sender, EventArgs e)
     {
         StartRegister();
-        Login();
+        await Login();
         if (stop) { StopRegister(); return; } // ログイン
 
         foreach (ListViewItem item in nameList.Items)
@@ -808,19 +824,23 @@ public partial class Form1 : Form
             for (int i = 0; i < 2; i++)
             {
                 IWebElement releaseButton;
-                string relComp = item.SubItems[(int)Columns.release].Text;
+                string relComp = item.SubItems[(int)Columns.Release].Text;
 
                 if (relComp == "3" || relComp == (i + 1).ToString())
+                {
                     continue;
+                }
 
-                if (item.SubItems[(int)Columns.url1 + i].Text == "")
+                if (item.SubItems[(int)Columns.Url1 + i].Text == "")
+                {
                     continue;
+                }
 
                 try
                 {
                     // アイテム管理ページに移動
-                    driver.Navigate().GoToUrl(item.SubItems[(int)Columns.url1 + i].Text);
-                    Thread.Sleep(1000);
+                    driver.Navigate().GoToUrl(item.SubItems[(int)Columns.Url1 + i].Text);
+                    await Task.Delay(1000);
 
                     Application.DoEvents();
                     if (stop) { StopRegister(); return; }
@@ -832,7 +852,7 @@ public partial class Form1 : Form
 
                     // リリースボタンクリック
                     releaseButton.Click();
-                    Thread.Sleep(1000);
+                    await Task.Delay(1000);
 
                     driver.FindElements(By.XPath("//span[@data-test='dialog-btn-ok']"))[2].Click();
 
@@ -840,7 +860,7 @@ public partial class Form1 : Form
                     if (stop) { StopRegister(); return; }
 
                     driver.FindElement(By.XPath("//span[contains(text(),'販売中') and @class='MdStatus_ready_for_sale']"));
-                    Thread.Sleep(1000);
+                    await Task.Delay(1000);
 
                     Application.DoEvents();
                     if (stop) { StopRegister(); return; }
@@ -853,10 +873,7 @@ public partial class Form1 : Form
                 }
 
                 // 完了状況保存
-                if (relComp == "0")
-                    item.SubItems[(int)Columns.release].Text = (i + 1).ToString();
-                else
-                    item.SubItems[(int)Columns.release].Text = "3";
+                item.SubItems[(int)Columns.Release].Text = relComp == "0" ? (i + 1).ToString() : "3";
             }
         }
 
@@ -864,10 +881,10 @@ public partial class Form1 : Form
         MessageBox.Show("終了！");
     }
 
-    private void Change_Click(object sender, EventArgs e)
+    private async void Change_Click(object sender, EventArgs e)
     {
         StartRegister();
-        Login();
+        await Login();
         if (stop) { StopRegister(); return; }
 
         foreach (ListViewItem item in nameList.Items)
@@ -878,7 +895,7 @@ public partial class Form1 : Form
                 int baseChara;
 
                 // 入力文字列識別
-                switch (item.SubItems[(int)Columns.honorific].Text)
+                switch (item.SubItems[(int)Columns.Honorific].Text)
                 {
                     case "くん":
                         baseTaste = Settings.Default.BoyTaste1;
@@ -891,7 +908,7 @@ public partial class Form1 : Form
                         break;
 
                     case "さん":
-                        if (item.SubItems[(int)Columns.gender].Text == "男")
+                        if (item.SubItems[(int)Columns.Gender].Text == "男")
                         {
                             baseTaste = Settings.Default.SanBoyTaste1;
                             baseChara = Settings.Default.SanBoyChara1;
@@ -905,7 +922,7 @@ public partial class Form1 : Form
                         break;
 
                     default:
-                        if (item.SubItems[(int)Columns.gender].Text == "男")
+                        if (item.SubItems[(int)Columns.Gender].Text == "男")
                         {
                             baseTaste = Settings.Default.AllBoyTaste1;
                             baseChara = Settings.Default.AllBoyChara1;
@@ -922,24 +939,24 @@ public partial class Form1 : Form
                 try
                 {
                     // アイテム管理ページに移動
-                    driver.Navigate().GoToUrl(item.SubItems[(int)Columns.url1 + i].Text + "/update");
-                    Thread.Sleep(3000);
+                    driver.Navigate().GoToUrl(item.SubItems[(int)Columns.Url1 + i].Text + "/update");
+                    await Task.Delay(3000);
 
                     Application.DoEvents();
                     if (stop) { StopRegister(); return; }
 
                     driver.FindElements(By.XPath("//select[@data-test='select-style-category']/option"))[baseTaste].Click();
-                    Thread.Sleep(1000);
+                    await Task.Delay(1000);
 
                     Application.DoEvents();
                     if (stop) { StopRegister(); return; }
 
                     driver.FindElements(By.XPath("//select[@data-test='select-character-category']/option"))[baseChara].Click();
-                    Thread.Sleep(1000);
+                    await Task.Delay(1000);
 
                     // 保存ボタンクリック
                     driver.FindElement(By.XPath("//main/form")).Submit();
-                    Thread.Sleep(1000);
+                    await Task.Delay(1000);
 
                     Application.DoEvents();
                     if (stop) { StopRegister(); return; }
@@ -969,13 +986,13 @@ public partial class Form1 : Form
 
     private void StampSetting_Click(object sender, EventArgs e)
     {
-        var f = new Form2();
-        f.ShowDialog(this);
+        using SettingForm form = new();
+        form.ShowDialog(this);
     }
 
     private void Browse_Click(object sender, EventArgs e)
     {
-        var dialog = new OpenFileDialog
+        using OpenFileDialog dialog = new()
         {
             Title = "名前一覧ファイルの選択",
             Filter = "Excelファイル (*.xlsx)|*.xlsx|すべてのファイル (*.*)|*.*"
@@ -1002,18 +1019,18 @@ public partial class Form1 : Form
         ListViewItem selectedItem = ((ListView)nameMenu.SourceControl).SelectedItems[0];
 
         // ページに移動
-        driver.Navigate().GoToUrl(selectedItem.SubItems[(int)Columns.url1 + (number - 1)].Text);
+        driver.Navigate().GoToUrl(selectedItem.SubItems[(int)Columns.Url1 + (number - 1)].Text);
 
         if (driver.Url.IndexOf("https://access.line.me/") >= 0)
         {
             Login(); // ログイン
-            driver.Navigate().GoToUrl(selectedItem.SubItems[(int)Columns.url1 + (number - 1)].Text);
+            driver.Navigate().GoToUrl(selectedItem.SubItems[(int)Columns.Url1 + (number - 1)].Text);
         }
     }
 
     private void LoadSetting_Click(object sender, EventArgs e)
     {
-        var dialog = new OpenFileDialog
+        using OpenFileDialog dialog = new()
         {
             Title = "設定ファイルの読み込み",
             Filter = "設定ファイル (*.config)|*.config|すべてのファイル (*.*)|*.*"
@@ -1030,11 +1047,11 @@ public partial class Form1 : Form
 
     private void SaveSetting_Click(object sender, EventArgs e)
     {
-        var dialog = new SaveFileDialog
+        using SaveFileDialog dialog = new()
         {
             FileName = "Setting.config",
             Title = "設定ファイルの書き出し",
-            Filter = "設定ファイル (*.config)|*.config|すべてのファイル (*.*)|*.*"
+            Filter = "設定ファイル (*.config)|*.config|すべてのファイル (*.*)|*.*",
         };
 
         if (dialog.ShowDialog() == DialogResult.OK)
@@ -1046,26 +1063,22 @@ public partial class Form1 : Form
 
     private void NameMenu_Opening(object sender, CancelEventArgs e)
     {
-        if (menuCancel) e.Cancel = true;
-
-        if (nameList.SelectedItems.Count > 0)
-        {
-            var list = (ListView)nameMenu.SourceControl;
-
-            if (list.SelectedItems[0].SubItems[(int)Columns.url1].Text == "")
-                openStampPage1.Enabled = false;
-            else
-                openStampPage1.Enabled = true;
-
-            if (list.SelectedItems[0].SubItems[(int)Columns.url2].Text == "")
-                openStampPage2.Enabled = false;
-            else
-                openStampPage2.Enabled = true;
-        }
-        else
+        if (menuCancel)
         {
             e.Cancel = true;
+            return;
         }
+
+        if (nameList.SelectedItems.Count <= 0)
+        {
+            e.Cancel = true;
+            return;
+        }
+
+        var list = (ListView)nameMenu.SourceControl;
+
+        openStampPage1.Enabled = list.SelectedItems[0].SubItems[(int)Columns.Url1].Text != "";
+        openStampPage2.Enabled = list.SelectedItems[0].SubItems[(int)Columns.Url2].Text != "";
     }
 
     private void OpenStampPage1_Click(object sender, EventArgs e)
@@ -1096,11 +1109,7 @@ public partial class Form1 : Form
     /// </summary>
     void SaveProperties()
     {
-        if (WindowState == FormWindowState.Normal)
-            Settings.Default.Rectangle = this.Bounds;
-        else
-            Settings.Default.Rectangle = this.RestoreBounds;
-
+        Settings.Default.Rectangle = WindowState == FormWindowState.Normal ? this.Bounds : this.RestoreBounds;
         Settings.Default.WindowState = WindowState;
         Settings.Default.MailAddress = mailAddress.Text;
         Settings.Default.Password = password.Text;
@@ -1108,15 +1117,15 @@ public partial class Form1 : Form
         Settings.Default.Save();
     }
 
-    private void Form1_Load(object sender, EventArgs e)
+    private void MainForm_Load(object sender, EventArgs e)
     {
         LoadProperties();
 
         ChromeDriverService service = ChromeDriverService.CreateDefaultService();
         service.HideCommandPromptWindow = true;
 
-        ChromeOptions options = new ChromeOptions();
-        //options.AddArgument("user-data-dir=" + AppDomain.CurrentDomain.BaseDirectory + "Profile"); /////////////////////////////////////////////////////////////////////////////////
+        ChromeOptions options = new();
+        //options.AddArgument("user-data-dir=" + AppDomain.CurrentDomain.BaseDirectory + "Profile");
 
         driver = new ChromeDriver(service, options);
         driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
@@ -1124,7 +1133,7 @@ public partial class Form1 : Form
         Login();
     }
 
-    private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+    private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
     {
         SaveProperties();
         SaveNameList(nameListFile.Text);
@@ -1132,23 +1141,23 @@ public partial class Form1 : Form
         driver.Quit();
     }
 
-    private void AutoDelete_Click(object sender, EventArgs e)
+    private async void AutoDelete_Click(object sender, EventArgs e)
     {
         StartRegister();
-        Login();
-        if (stop) { StopRegister(); return; } // ログイン
+        await Login();
+        if (stop) { StopRegister(); return; }
 
         foreach (ListViewItem item in nameList.Items)
         {
-            for (int i = int.Parse(item.SubItems[(int)Columns.stamp].Text) - 1; i >= 0; i--)
+            for (int i = int.Parse(item.SubItems[(int)Columns.Stamp].Text) - 1; i >= 0; i--)
             {
                 IWebElement deleteButton;
 
                 try
                 {
                     // アイテム管理ページに移動
-                    driver.Navigate().GoToUrl(item.SubItems[(int)Columns.url1 + i].Text);
-                    Thread.Sleep(1000);
+                    driver.Navigate().GoToUrl(item.SubItems[(int)Columns.Url1 + i].Text);
+                    await Task.Delay(1000);
 
                     Application.DoEvents();
                     if (stop) { StopRegister(); return; }
@@ -1157,7 +1166,7 @@ public partial class Form1 : Form
 
                     // 削除ボタンクリック
                     deleteButton.Click();
-                    Thread.Sleep(1000);
+                    await Task.Delay(1000);
 
                     driver.FindElements(By.XPath("//span[@data-test='dialog-btn-ok']"))[2].Click();
 
@@ -1165,7 +1174,7 @@ public partial class Form1 : Form
                     if (stop) { StopRegister(); return; }
 
                     driver.FindElement(By.XPath("//th[contains(text(),'タイトル')]"));
-                    Thread.Sleep(1000);
+                    await Task.Delay(1000);
 
                     Application.DoEvents();
                     if (stop) { StopRegister(); return; }
@@ -1178,10 +1187,10 @@ public partial class Form1 : Form
                 }
 
                 // 完了状況保存
-                item.SubItems[(int)Columns.export].Text = i.ToString();
-                item.SubItems[(int)Columns.stamp].Text = i.ToString();
-                item.SubItems[(int)Columns.image].Text = i.ToString();
-                item.SubItems[(int)Columns.url1 + i].Text = "";
+                item.SubItems[(int)Columns.Export].Text = i.ToString();
+                item.SubItems[(int)Columns.Stamp].Text = i.ToString();
+                item.SubItems[(int)Columns.Image].Text = i.ToString();
+                item.SubItems[(int)Columns.Url1 + i].Text = "";
             }
         }
     }

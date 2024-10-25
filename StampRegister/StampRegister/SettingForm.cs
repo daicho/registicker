@@ -4,19 +4,16 @@ using System.Windows.Forms;
 
 namespace StampRegister;
 
-public partial class Form2 : Form
+public partial class SettingForm : Form
 {
-    public Form2()
+    public SettingForm()
     {
         InitializeComponent();
     }
 
     private void ok_Click(object sender, EventArgs e)
     {
-        if (WindowState == FormWindowState.Normal)
-            Settings.Default.SettingRectangle = this.Bounds;
-        else
-            Settings.Default.SettingRectangle = this.RestoreBounds;
+        Settings.Default.SettingRectangle = WindowState == FormWindowState.Normal ? this.Bounds : this.RestoreBounds;
 
         Settings.Default.BoyStampName = boyStampName.Text;
         Settings.Default.GirlStampName = girlStampName.Text;
@@ -84,15 +81,12 @@ public partial class Form2 : Form
 
     private void cancel_Click(object sender, EventArgs e)
     {
-        if (WindowState == FormWindowState.Normal)
-            Settings.Default.SettingRectangle = this.Bounds;
-        else
-            Settings.Default.SettingRectangle = this.RestoreBounds;
+        Settings.Default.SettingRectangle = WindowState == FormWindowState.Normal ? this.Bounds : this.RestoreBounds;
 
         this.Close();
     }
 
-    private void Form2_Load(object sender, EventArgs e)
+    private void SettingForm_Load(object sender, EventArgs e)
     {
         this.Bounds = Settings.Default.SettingRectangle;
 
@@ -156,11 +150,8 @@ public partial class Form2 : Form
         allGirlChara1.SelectedIndex = Settings.Default.AllGirlChara1;
     }
 
-    private void Form2_FormClosing(object sender, FormClosingEventArgs e)
+    private void SettingForm_FormClosing(object sender, FormClosingEventArgs e)
     {
-        if (WindowState == FormWindowState.Normal)
-            Settings.Default.SettingRectangle = this.Bounds;
-        else
-            Settings.Default.SettingRectangle = this.RestoreBounds;
+        Settings.Default.SettingRectangle = WindowState == FormWindowState.Normal ? this.Bounds : this.RestoreBounds;
     }
 }
