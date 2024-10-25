@@ -50,13 +50,12 @@ public partial class MainForm : Form
     /// <param name="filePath">読み込むファイル名</param>
     private void LoadNameList(string filePath)
     {
-        XLWorkbook workbook;
-        IXLWorksheet worksheet;
-
         nameList.Items.Clear();
 
         if (filePath != "")
         {
+            IXLWorkbook workbook;
+
             try
             {
                 // Excelファイルを開く
@@ -69,57 +68,60 @@ public partial class MainForm : Form
                 return;
             }
 
-            worksheet = workbook.Worksheet(1);
-
-            for (int i = 0; worksheet.Cell(i + 2, 1).Value.ToString() != ""; i++)
+            using (workbook)
             {
-                int col = 1;
+                IXLWorksheet worksheet = workbook.Worksheet(1);
 
-                nameList.Items.Add(worksheet.Cell(i + 2, col++).Value.ToString());             // 名前
-                nameList.Items[i].SubItems.Add(worksheet.Cell(i + 2, col++).Value.ToString()); // ローマ字
-                nameList.Items[i].SubItems.Add(worksheet.Cell(i + 2, col++).Value.ToString()); // 性別
-                nameList.Items[i].SubItems.Add(worksheet.Cell(i + 2, col++).Value.ToString()); // 敬称
+                for (int i = 0; worksheet.Cell(i + 2, 1).Value.ToString() != ""; i++)
+                {
+                    int col = 1;
 
-                // 画像出力完了
-                if (worksheet.Cell(i + 2, col).Value.ToString() == "")
-                    nameList.Items[i].SubItems.Add("0");
-                else
-                    nameList.Items[i].SubItems.Add(worksheet.Cell(i + 2, col).Value.ToString());
-                col++;
+                    nameList.Items.Add(worksheet.Cell(i + 2, col++).Value.ToString());             // 名前
+                    nameList.Items[i].SubItems.Add(worksheet.Cell(i + 2, col++).Value.ToString()); // ローマ字
+                    nameList.Items[i].SubItems.Add(worksheet.Cell(i + 2, col++).Value.ToString()); // 性別
+                    nameList.Items[i].SubItems.Add(worksheet.Cell(i + 2, col++).Value.ToString()); // 敬称
 
-                // 新規登録完了
-                if (worksheet.Cell(i + 2, col).Value.ToString() == "")
-                    nameList.Items[i].SubItems.Add("0");
-                else
-                    nameList.Items[i].SubItems.Add(worksheet.Cell(i + 2, col).Value.ToString());
-                col++;
+                    // 画像出力完了
+                    if (worksheet.Cell(i + 2, col).Value.ToString() == "")
+                        nameList.Items[i].SubItems.Add("0");
+                    else
+                        nameList.Items[i].SubItems.Add(worksheet.Cell(i + 2, col).Value.ToString());
+                    col++;
 
-                // 画像登録完了
-                if (worksheet.Cell(i + 2, col).Value.ToString() == "")
-                    nameList.Items[i].SubItems.Add("0");
-                else
-                    nameList.Items[i].SubItems.Add(worksheet.Cell(i + 2, col).Value.ToString());
-                col++;
+                    // 新規登録完了
+                    if (worksheet.Cell(i + 2, col).Value.ToString() == "")
+                        nameList.Items[i].SubItems.Add("0");
+                    else
+                        nameList.Items[i].SubItems.Add(worksheet.Cell(i + 2, col).Value.ToString());
+                    col++;
 
-                col++;
+                    // 画像登録完了
+                    if (worksheet.Cell(i + 2, col).Value.ToString() == "")
+                        nameList.Items[i].SubItems.Add("0");
+                    else
+                        nameList.Items[i].SubItems.Add(worksheet.Cell(i + 2, col).Value.ToString());
+                    col++;
 
-                // リクエスト完了
-                if (worksheet.Cell(i + 2, col).Value.ToString() == "")
-                    nameList.Items[i].SubItems.Add("0");
-                else
-                    nameList.Items[i].SubItems.Add(worksheet.Cell(i + 2, col).Value.ToString());
-                col++;
+                    col++;
 
-                // リリース完了
-                if (worksheet.Cell(i + 2, col).Value.ToString() == "")
-                    nameList.Items[i].SubItems.Add("0");
-                else
-                    nameList.Items[i].SubItems.Add(worksheet.Cell(i + 2, col).Value.ToString());
-                col++;
+                    // リクエスト完了
+                    if (worksheet.Cell(i + 2, col).Value.ToString() == "")
+                        nameList.Items[i].SubItems.Add("0");
+                    else
+                        nameList.Items[i].SubItems.Add(worksheet.Cell(i + 2, col).Value.ToString());
+                    col++;
 
-                nameList.Items[i].SubItems.Add(worksheet.Cell(i + 2, col++).Value.ToString()); // URL1
-                nameList.Items[i].SubItems.Add(worksheet.Cell(i + 2, col++).Value.ToString()); // URL2
-                nameList.Items[i].SubItems.Add(worksheet.Cell(i + 2, col++).Value.ToString()); // Illustratorファイル名
+                    // リリース完了
+                    if (worksheet.Cell(i + 2, col).Value.ToString() == "")
+                        nameList.Items[i].SubItems.Add("0");
+                    else
+                        nameList.Items[i].SubItems.Add(worksheet.Cell(i + 2, col).Value.ToString());
+                    col++;
+
+                    nameList.Items[i].SubItems.Add(worksheet.Cell(i + 2, col++).Value.ToString()); // URL1
+                    nameList.Items[i].SubItems.Add(worksheet.Cell(i + 2, col++).Value.ToString()); // URL2
+                    nameList.Items[i].SubItems.Add(worksheet.Cell(i + 2, col++).Value.ToString()); // Illustratorファイル名
+                }
             }
         }
 
@@ -234,6 +236,8 @@ public partial class MainForm : Form
     /// </summary>
     private async Task Login()
     {
+        return;
+
         driver.Navigate().GoToUrl("https://creator.line.me/signup/line_auth");
         driver.FindElement(By.TagName("h1"));
 
@@ -1014,7 +1018,7 @@ public partial class MainForm : Form
     /// アイテム管理ページを開く。
     /// </summary>
     /// <param name="number">スタンプの番号</param>
-    void OpenStampPage(int number)
+    private async Task OpenStampPage(int number)
     {
         ListViewItem selectedItem = ((ListView)nameMenu.SourceControl).SelectedItems[0];
 
@@ -1023,7 +1027,7 @@ public partial class MainForm : Form
 
         if (driver.Url.IndexOf("https://access.line.me/") >= 0)
         {
-            Login(); // ログイン
+            await Login(); // ログイン
             driver.Navigate().GoToUrl(selectedItem.SubItems[(int)Columns.Url1 + (number - 1)].Text);
         }
     }
@@ -1081,14 +1085,14 @@ public partial class MainForm : Form
         openStampPage2.Enabled = list.SelectedItems[0].SubItems[(int)Columns.Url2].Text != "";
     }
 
-    private void OpenStampPage1_Click(object sender, EventArgs e)
+    private async void OpenStampPage1_Click(object sender, EventArgs e)
     {
-        OpenStampPage(1);
+        await OpenStampPage(1);
     }
 
-    private void OpenStampPage2_Click(object sender, EventArgs e)
+    private async void OpenStampPage2_Click(object sender, EventArgs e)
     {
-        OpenStampPage(2);
+        await OpenStampPage(2);
     }
 
     /// <summary>
@@ -1117,7 +1121,7 @@ public partial class MainForm : Form
         Settings.Default.Save();
     }
 
-    private void MainForm_Load(object sender, EventArgs e)
+    private async void MainForm_Load(object sender, EventArgs e)
     {
         LoadProperties();
 
@@ -1130,7 +1134,7 @@ public partial class MainForm : Form
         driver = new ChromeDriver(service, options);
         driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
 
-        Login();
+        await Login();
     }
 
     private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
