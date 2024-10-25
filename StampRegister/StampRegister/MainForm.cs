@@ -239,29 +239,38 @@ public partial class MainForm : Form
     /// </summary>
     private async Task Login()
     {
-        driver.Navigate().GoToUrl("https://creator.line.me/signup/line_auth");
-        driver.FindElement(By.TagName("h1"));
-
-        driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(3);
-        var loginButtons = driver.FindElements(By.XPath("//button[text()='ログイン']"));
-        driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
-
-        if (loginButtons.Count > 0)
+        try
         {
-            driver.FindElement(By.Name("tid")).SendKeys(mailAddress.Text);
-            driver.FindElement(By.Name("tpasswd")).SendKeys(password.Text);
-            await Task.Delay(200);
-
-            loginButtons[0].Click();
+            driver.Navigate().GoToUrl("https://creator.line.me/signup/line_auth");
+            driver.FindElement(By.TagName("h1"));
 
             driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(3);
-            while (driver.FindElements(By.XPath("//span[text()='認証番号で本人確認']")).Count > 0)
-            {
-                await Task.Delay(100);
-            }
-
+            var loginButtons = driver.FindElements(By.XPath("//button[text()='ログイン']"));
             driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
-            driver.FindElement(By.XPath("//a[text()='マイページ']"));
+
+            if (loginButtons.Count > 0)
+            {
+                driver.FindElement(By.Name("tid")).SendKeys(mailAddress.Text);
+                driver.FindElement(By.Name("tpasswd")).SendKeys(password.Text);
+                await Task.Delay(200);
+
+                loginButtons[0].Click();
+
+                driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(3);
+                while (driver.FindElements(By.XPath("//span[text()='認証番号で本人確認']")).Count > 0)
+                {
+                    await Task.Delay(100);
+                }
+
+                driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
+                driver.FindElement(By.XPath("//a[text()='マイページ']"));
+            }
+        }
+        catch (Exception ex)
+        {
+            StopRegister();
+            MessageBox.Show("エラーが発生しました\n\n" + ex.ToString(), "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            return;
         }
     }
 
