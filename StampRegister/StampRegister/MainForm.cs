@@ -620,11 +620,11 @@ public partial class MainForm : Form
                     Application.DoEvents();
                     if (stop) { StopRegister(); return; }
 
-                    foreach (IWebElement element in driver.FindElements(By.XPath("//div[@class='MdCMN27Collapsable ExCollapsed']")))
+                    foreach (IWebElement element in driver.FindElements(By.XPath("//details[@class='MdCMN28AreaListItem']")))
                     {
                         element.FindElement(By.TagName("input")).Click();
                         element.Click();
-                        await Task.Delay(200);
+                        await Task.Delay(500);
 
                         Application.DoEvents();
                         if (stop) { StopRegister(); return; }
@@ -641,6 +641,13 @@ public partial class MainForm : Form
                             if (stop) { StopRegister(); return; }
                         }
                     }
+
+                    // 自動で販売開始クリック
+                    driver.FindElement(By.XPath("//span[text()='自動で販売を開始']/../..//input")).Click();
+                    await Task.Delay(500);
+
+                    Application.DoEvents();
+                    if (stop) { StopRegister(); return; }
 
                     // 保存ボタンクリック
                     driver.FindElement(By.XPath("//form")).Submit();
@@ -737,8 +744,10 @@ public partial class MainForm : Form
                     Application.DoEvents();
                     if (stop) { StopRegister(); return; }
 
-                    while (driver.FindElements(By.XPath("//img[@class='cm-product-image']")).Count < 42)
+                    while (driver.FindElements(By.XPath("//input[@class='cm-product-image']")).Count < 42)
+                    {
                         await Task.Delay(100);
+                    }
 
                     await Task.Delay(1000);
 
