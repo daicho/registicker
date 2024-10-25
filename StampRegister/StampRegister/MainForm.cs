@@ -776,7 +776,7 @@ public partial class MainForm : Form
     {
         StartRegister();
         await Login();
-        if (stop) { StopRegister(); return; } // ログイン
+        if (stop) { StopRegister(); return; }
 
         foreach (ListViewItem item in nameList.Items)
         {
@@ -853,7 +853,7 @@ public partial class MainForm : Form
     {
         StartRegister();
         await Login();
-        if (stop) { StopRegister(); return; } // ログイン
+        if (stop) { StopRegister(); return; }
 
         foreach (ListViewItem item in nameList.Items)
         {
