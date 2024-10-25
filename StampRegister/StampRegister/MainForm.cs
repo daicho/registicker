@@ -8,6 +8,7 @@ using System.Configuration;
 using System.IO;
 using System.IO.Compression;
 using System.Text.RegularExpressions;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -54,12 +55,14 @@ public partial class MainForm : Form
 
         if (filePath != "")
         {
+            FileStream stream;
             IXLWorkbook workbook;
 
             try
             {
                 // Excelファイルを開く
-                workbook = new XLWorkbook(filePath);
+                stream = new FileStream(filePath, FileMode.Open, FileAccess.Read, FileShare.ReadWrite);
+                workbook = new XLWorkbook(stream);
             }
             catch
             {
@@ -236,8 +239,6 @@ public partial class MainForm : Form
     /// </summary>
     private async Task Login()
     {
-        return;
-
         driver.Navigate().GoToUrl("https://creator.line.me/signup/line_auth");
         driver.FindElement(By.TagName("h1"));
 
@@ -269,7 +270,7 @@ public partial class MainForm : Form
         stop = true;
     }
 
-    private void ExportImages_Click(object sender, EventArgs e)
+    private async void ExportImages_Click(object sender, EventArgs e)
     {
         string desktopPath = Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory);
 
@@ -277,7 +278,9 @@ public partial class MainForm : Form
 
         // フォルダ作成
         if (!Directory.Exists(desktopPath + @"\LINE zip"))
+        {
             Directory.CreateDirectory(desktopPath + @"\LINE zip");
+        }
 
         // Illustrator起動
         Illustrator.Application app = new();
@@ -326,17 +329,37 @@ public partial class MainForm : Form
                 }
 
                 // Illustratorファイルを開く
-                if (!File.Exists(Application.StartupPath + @"\スタンプ\" + fileName))
+                string filePath = Application.StartupPath + @"\スタンプ\" + fileName;
+
+                if (!File.Exists(filePath))
                 {
                     continue;
                 }
 
-                Illustrator.Document doc = app.Open(Application.StartupPath + @"\スタンプ\" + fileName);
+                Illustrator.Document? doc = null;
+
+                for (int j = 0; j < 10; j++)
+                {
+                    try
+                    {
+                        doc = app.Open(filePath);
+                        break;
+                    }
+                    catch
+                    {
+                        await Task.Delay(1000);
+                    }
+                }
+
+                if (doc is null)
+                {
+                    MessageBox.Show("ファイルを開けませんでした", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
 
                 // 名前を置換
-                foreach (dynamic TextFrame in doc.TextFrames)
+                foreach (Illustrator.TextFrame textFrame in doc.TextFrames)
                 {
-                    TextFrame.Contents = TextFrame.Contents.Replace("***", name);
+                    textFrame.Contents = textFrame.Contents.Replace("***", name);
                     Application.DoEvents();
                 }
 
