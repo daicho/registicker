@@ -1,13 +1,13 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <OutputType>Exe</OutputType>
+    <OutputType>WinExe</OutputType>
     <TargetFramework>net48</TargetFramework>
     <LangVersion>10</LangVersion>
     <UseWindowsForms>true</UseWindowsForms>
     <Nullable>enable</Nullable>
     <NoWarn>CS1701;CS1702;CS1998;NU1701;NU1702</NoWarn>
-    <VersionPrefix>5.6.2</VersionPrefix>
+    <VersionPrefix>5.6.3</VersionPrefix>
     <IncludeSourceRevisionInInformationalVersion>false</IncludeSourceRevisionInInformationalVersion>
     <AssemblyName>StampRegister</AssemblyName>
     <Authors>Daichi Fukuzawa</Authors>

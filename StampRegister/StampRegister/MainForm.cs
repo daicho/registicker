@@ -239,6 +239,11 @@ public partial class MainForm : Form
     /// </summary>
     private async Task Login()
     {
+        if (mailAddress.Text == "" || password.Text == "")
+        {
+            return;
+        }
+
         try
         {
             driver.Navigate().GoToUrl("https://creator.line.me/signup/line_auth");
