@@ -7,7 +7,7 @@
     <UseWindowsForms>true</UseWindowsForms>
     <Nullable>enable</Nullable>
     <NoWarn>CS1701;CS1702;CS1998;NU1701;NU1702</NoWarn>
-    <VersionPrefix>5.6.0</VersionPrefix>
+    <VersionPrefix>5.6.1</VersionPrefix>
     <IncludeSourceRevisionInInformationalVersion>false</IncludeSourceRevisionInInformationalVersion>
     <AssemblyName>StampRegister</AssemblyName>
     <Authors>Daichi Fukuzawa</Authors>

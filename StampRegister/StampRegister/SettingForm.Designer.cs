@@ -155,6 +155,8 @@
             this.label52 = new System.Windows.Forms.Label();
             this.countries = new System.Windows.Forms.TextBox();
             this.label53 = new System.Windows.Forms.Label();
+            this.label54 = new System.Windows.Forms.Label();
+            this.ver1Only = new System.Windows.Forms.CheckBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -190,7 +192,7 @@
             // 
             this.ok.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.ok.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.ok.Location = new System.Drawing.Point(240, 581);
+            this.ok.Location = new System.Drawing.Point(240, 606);
             this.ok.Name = "ok";
             this.ok.Size = new System.Drawing.Size(75, 23);
             this.ok.TabIndex = 22;
@@ -202,7 +204,7 @@
             // 
             this.cancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.cancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.cancel.Location = new System.Drawing.Point(159, 581);
+            this.cancel.Location = new System.Drawing.Point(159, 606);
             this.cancel.Name = "cancel";
             this.cancel.Size = new System.Drawing.Size(75, 23);
             this.cancel.TabIndex = 21;
@@ -222,7 +224,7 @@
             // 
             // copyright
             // 
-            this.copyright.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            this.copyright.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.copyright.Location = new System.Drawing.Point(94, 525);
             this.copyright.Name = "copyright";
@@ -231,8 +233,8 @@
             // 
             // tabControl1
             // 
-            this.tabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.tabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
@@ -271,7 +273,7 @@
             // 
             // boyChara1
             // 
-            this.boyChara1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.boyChara1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.boyChara1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.boyChara1.FormattingEnabled = true;
@@ -297,7 +299,7 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Controls.Add(this.boyTitle1_jp);
@@ -321,7 +323,7 @@
             // 
             // boyTitle1_jp
             // 
-            this.boyTitle1_jp.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.boyTitle1_jp.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.boyTitle1_jp.Location = new System.Drawing.Point(88, 43);
             this.boyTitle1_jp.Name = "boyTitle1_jp";
@@ -339,7 +341,7 @@
             // 
             // boyTitle1_en
             // 
-            this.boyTitle1_en.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.boyTitle1_en.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.boyTitle1_en.Location = new System.Drawing.Point(88, 18);
             this.boyTitle1_en.Name = "boyTitle1_en";
@@ -348,7 +350,7 @@
             // 
             // groupBox3
             // 
-            this.groupBox3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.groupBox3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox3.Controls.Add(this.label5);
             this.groupBox3.Controls.Add(this.boyTitle2_jp);
@@ -372,7 +374,7 @@
             // 
             // boyTitle2_jp
             // 
-            this.boyTitle2_jp.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.boyTitle2_jp.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.boyTitle2_jp.Location = new System.Drawing.Point(88, 43);
             this.boyTitle2_jp.Name = "boyTitle2_jp";
@@ -390,7 +392,7 @@
             // 
             // boyTitle2_en
             // 
-            this.boyTitle2_en.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.boyTitle2_en.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.boyTitle2_en.Location = new System.Drawing.Point(88, 18);
             this.boyTitle2_en.Name = "boyTitle2_en";
@@ -417,7 +419,7 @@
             // 
             // boyDescription1_jp
             // 
-            this.boyDescription1_jp.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.boyDescription1_jp.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.boyDescription1_jp.Location = new System.Drawing.Point(12, 272);
             this.boyDescription1_jp.Multiline = true;
@@ -427,7 +429,7 @@
             // 
             // boyDescription1_en
             // 
-            this.boyDescription1_en.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.boyDescription1_en.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.boyDescription1_en.Location = new System.Drawing.Point(12, 172);
             this.boyDescription1_en.Multiline = true;
@@ -437,7 +439,7 @@
             // 
             // boyTaste1
             // 
-            this.boyTaste1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.boyTaste1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.boyTaste1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.boyTaste1.FormattingEnabled = true;
@@ -500,7 +502,7 @@
             // 
             // girlChara1
             // 
-            this.girlChara1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.girlChara1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.girlChara1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.girlChara1.FormattingEnabled = true;
@@ -526,7 +528,7 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.girlTitle1_jp);
@@ -550,7 +552,7 @@
             // 
             // girlTitle1_jp
             // 
-            this.girlTitle1_jp.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.girlTitle1_jp.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.girlTitle1_jp.Location = new System.Drawing.Point(88, 43);
             this.girlTitle1_jp.Name = "girlTitle1_jp";
@@ -568,7 +570,7 @@
             // 
             // girlTitle1_en
             // 
-            this.girlTitle1_en.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.girlTitle1_en.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.girlTitle1_en.Location = new System.Drawing.Point(88, 18);
             this.girlTitle1_en.Name = "girlTitle1_en";
@@ -586,7 +588,7 @@
             // 
             // groupBox4
             // 
-            this.groupBox4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.groupBox4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox4.Controls.Add(this.label9);
             this.groupBox4.Controls.Add(this.girlTitle2_jp);
@@ -610,7 +612,7 @@
             // 
             // girlTitle2_jp
             // 
-            this.girlTitle2_jp.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.girlTitle2_jp.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.girlTitle2_jp.Location = new System.Drawing.Point(88, 43);
             this.girlTitle2_jp.Name = "girlTitle2_jp";
@@ -628,7 +630,7 @@
             // 
             // girlTitle2_en
             // 
-            this.girlTitle2_en.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.girlTitle2_en.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.girlTitle2_en.Location = new System.Drawing.Point(88, 18);
             this.girlTitle2_en.Name = "girlTitle2_en";
@@ -655,7 +657,7 @@
             // 
             // girlTaste1
             // 
-            this.girlTaste1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.girlTaste1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.girlTaste1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.girlTaste1.FormattingEnabled = true;
@@ -688,7 +690,7 @@
             // 
             // girlDescription1_en
             // 
-            this.girlDescription1_en.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.girlDescription1_en.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.girlDescription1_en.Location = new System.Drawing.Point(12, 172);
             this.girlDescription1_en.Multiline = true;
@@ -698,7 +700,7 @@
             // 
             // girlDescription1_jp
             // 
-            this.girlDescription1_jp.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.girlDescription1_jp.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.girlDescription1_jp.Location = new System.Drawing.Point(12, 272);
             this.girlDescription1_jp.Multiline = true;
@@ -729,7 +731,7 @@
             // 
             // sanBoyChara1
             // 
-            this.sanBoyChara1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.sanBoyChara1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.sanBoyChara1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.sanBoyChara1.FormattingEnabled = true;
@@ -755,7 +757,7 @@
             // 
             // groupBox5
             // 
-            this.groupBox5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.groupBox5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox5.Controls.Add(this.label15);
             this.groupBox5.Controls.Add(this.sanBoyTitle1_jp);
@@ -779,7 +781,7 @@
             // 
             // sanBoyTitle1_jp
             // 
-            this.sanBoyTitle1_jp.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.sanBoyTitle1_jp.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.sanBoyTitle1_jp.Location = new System.Drawing.Point(88, 43);
             this.sanBoyTitle1_jp.Name = "sanBoyTitle1_jp";
@@ -797,7 +799,7 @@
             // 
             // sanBoyTitle1_en
             // 
-            this.sanBoyTitle1_en.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.sanBoyTitle1_en.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.sanBoyTitle1_en.Location = new System.Drawing.Point(88, 18);
             this.sanBoyTitle1_en.Name = "sanBoyTitle1_en";
@@ -806,7 +808,7 @@
             // 
             // groupBox6
             // 
-            this.groupBox6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.groupBox6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox6.Controls.Add(this.label20);
             this.groupBox6.Controls.Add(this.sanBoyTitle2_jp);
@@ -830,7 +832,7 @@
             // 
             // sanBoyTitle2_jp
             // 
-            this.sanBoyTitle2_jp.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.sanBoyTitle2_jp.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.sanBoyTitle2_jp.Location = new System.Drawing.Point(88, 43);
             this.sanBoyTitle2_jp.Name = "sanBoyTitle2_jp";
@@ -848,7 +850,7 @@
             // 
             // sanBoyTitle2_en
             // 
-            this.sanBoyTitle2_en.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.sanBoyTitle2_en.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.sanBoyTitle2_en.Location = new System.Drawing.Point(88, 18);
             this.sanBoyTitle2_en.Name = "sanBoyTitle2_en";
@@ -875,7 +877,7 @@
             // 
             // sanBoyDescription1_jp
             // 
-            this.sanBoyDescription1_jp.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.sanBoyDescription1_jp.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.sanBoyDescription1_jp.Location = new System.Drawing.Point(12, 272);
             this.sanBoyDescription1_jp.Multiline = true;
@@ -885,7 +887,7 @@
             // 
             // sanBoyDescription1_en
             // 
-            this.sanBoyDescription1_en.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.sanBoyDescription1_en.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.sanBoyDescription1_en.Location = new System.Drawing.Point(12, 172);
             this.sanBoyDescription1_en.Multiline = true;
@@ -895,7 +897,7 @@
             // 
             // sanBoyTaste1
             // 
-            this.sanBoyTaste1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.sanBoyTaste1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.sanBoyTaste1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.sanBoyTaste1.FormattingEnabled = true;
@@ -958,7 +960,7 @@
             // 
             // sanGirlChara1
             // 
-            this.sanGirlChara1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.sanGirlChara1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.sanGirlChara1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.sanGirlChara1.FormattingEnabled = true;
@@ -984,7 +986,7 @@
             // 
             // groupBox7
             // 
-            this.groupBox7.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.groupBox7.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox7.Controls.Add(this.label27);
             this.groupBox7.Controls.Add(this.sanGirlTitle1_jp);
@@ -1008,7 +1010,7 @@
             // 
             // sanGirlTitle1_jp
             // 
-            this.sanGirlTitle1_jp.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.sanGirlTitle1_jp.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.sanGirlTitle1_jp.Location = new System.Drawing.Point(88, 43);
             this.sanGirlTitle1_jp.Name = "sanGirlTitle1_jp";
@@ -1026,7 +1028,7 @@
             // 
             // sanGirlTitle1_en
             // 
-            this.sanGirlTitle1_en.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.sanGirlTitle1_en.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.sanGirlTitle1_en.Location = new System.Drawing.Point(88, 18);
             this.sanGirlTitle1_en.Name = "sanGirlTitle1_en";
@@ -1035,7 +1037,7 @@
             // 
             // groupBox8
             // 
-            this.groupBox8.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.groupBox8.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox8.Controls.Add(this.label29);
             this.groupBox8.Controls.Add(this.sanGirlTitle2_jp);
@@ -1059,7 +1061,7 @@
             // 
             // sanGirlTitle2_jp
             // 
-            this.sanGirlTitle2_jp.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.sanGirlTitle2_jp.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.sanGirlTitle2_jp.Location = new System.Drawing.Point(88, 43);
             this.sanGirlTitle2_jp.Name = "sanGirlTitle2_jp";
@@ -1077,7 +1079,7 @@
             // 
             // sanGirlTitle2_en
             // 
-            this.sanGirlTitle2_en.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.sanGirlTitle2_en.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.sanGirlTitle2_en.Location = new System.Drawing.Point(88, 18);
             this.sanGirlTitle2_en.Name = "sanGirlTitle2_en";
@@ -1104,7 +1106,7 @@
             // 
             // sanGirlDescription1_jp
             // 
-            this.sanGirlDescription1_jp.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.sanGirlDescription1_jp.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.sanGirlDescription1_jp.Location = new System.Drawing.Point(12, 272);
             this.sanGirlDescription1_jp.Multiline = true;
@@ -1114,7 +1116,7 @@
             // 
             // sanGirlDescription1_en
             // 
-            this.sanGirlDescription1_en.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.sanGirlDescription1_en.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.sanGirlDescription1_en.Location = new System.Drawing.Point(12, 172);
             this.sanGirlDescription1_en.Multiline = true;
@@ -1124,7 +1126,7 @@
             // 
             // sanGirlTaste1
             // 
-            this.sanGirlTaste1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.sanGirlTaste1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.sanGirlTaste1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.sanGirlTaste1.FormattingEnabled = true;
@@ -1187,7 +1189,7 @@
             // 
             // allBoyChara1
             // 
-            this.allBoyChara1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.allBoyChara1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.allBoyChara1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.allBoyChara1.FormattingEnabled = true;
@@ -1213,7 +1215,7 @@
             // 
             // groupBox9
             // 
-            this.groupBox9.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.groupBox9.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox9.Controls.Add(this.label35);
             this.groupBox9.Controls.Add(this.allBoyTitle1_jp);
@@ -1237,7 +1239,7 @@
             // 
             // allBoyTitle1_jp
             // 
-            this.allBoyTitle1_jp.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.allBoyTitle1_jp.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.allBoyTitle1_jp.Location = new System.Drawing.Point(88, 43);
             this.allBoyTitle1_jp.Name = "allBoyTitle1_jp";
@@ -1255,7 +1257,7 @@
             // 
             // allBoyTitle1_en
             // 
-            this.allBoyTitle1_en.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.allBoyTitle1_en.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.allBoyTitle1_en.Location = new System.Drawing.Point(88, 18);
             this.allBoyTitle1_en.Name = "allBoyTitle1_en";
@@ -1264,7 +1266,7 @@
             // 
             // groupBox10
             // 
-            this.groupBox10.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.groupBox10.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox10.Controls.Add(this.label37);
             this.groupBox10.Controls.Add(this.allBoyTitle2_jp);
@@ -1288,7 +1290,7 @@
             // 
             // allBoyTitle2_jp
             // 
-            this.allBoyTitle2_jp.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.allBoyTitle2_jp.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.allBoyTitle2_jp.Location = new System.Drawing.Point(88, 43);
             this.allBoyTitle2_jp.Name = "allBoyTitle2_jp";
@@ -1306,7 +1308,7 @@
             // 
             // allBoyTitle2_en
             // 
-            this.allBoyTitle2_en.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.allBoyTitle2_en.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.allBoyTitle2_en.Location = new System.Drawing.Point(88, 18);
             this.allBoyTitle2_en.Name = "allBoyTitle2_en";
@@ -1333,7 +1335,7 @@
             // 
             // allBoyDescription1_jp
             // 
-            this.allBoyDescription1_jp.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.allBoyDescription1_jp.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.allBoyDescription1_jp.Location = new System.Drawing.Point(12, 272);
             this.allBoyDescription1_jp.Multiline = true;
@@ -1343,7 +1345,7 @@
             // 
             // allBoyDescription1_en
             // 
-            this.allBoyDescription1_en.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.allBoyDescription1_en.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.allBoyDescription1_en.Location = new System.Drawing.Point(12, 172);
             this.allBoyDescription1_en.Multiline = true;
@@ -1353,7 +1355,7 @@
             // 
             // allBoyTaste1
             // 
-            this.allBoyTaste1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.allBoyTaste1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.allBoyTaste1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.allBoyTaste1.FormattingEnabled = true;
@@ -1416,7 +1418,7 @@
             // 
             // allGirlChara1
             // 
-            this.allGirlChara1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.allGirlChara1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.allGirlChara1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.allGirlChara1.FormattingEnabled = true;
@@ -1442,7 +1444,7 @@
             // 
             // groupBox11
             // 
-            this.groupBox11.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.groupBox11.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox11.Controls.Add(this.label43);
             this.groupBox11.Controls.Add(this.allGirlTitle1_jp);
@@ -1466,7 +1468,7 @@
             // 
             // allGirlTitle1_jp
             // 
-            this.allGirlTitle1_jp.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.allGirlTitle1_jp.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.allGirlTitle1_jp.Location = new System.Drawing.Point(88, 43);
             this.allGirlTitle1_jp.Name = "allGirlTitle1_jp";
@@ -1484,7 +1486,7 @@
             // 
             // allGirlTitle1_en
             // 
-            this.allGirlTitle1_en.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.allGirlTitle1_en.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.allGirlTitle1_en.Location = new System.Drawing.Point(88, 18);
             this.allGirlTitle1_en.Name = "allGirlTitle1_en";
@@ -1493,7 +1495,7 @@
             // 
             // groupBox12
             // 
-            this.groupBox12.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.groupBox12.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox12.Controls.Add(this.label45);
             this.groupBox12.Controls.Add(this.allGirlTitle2_jp);
@@ -1517,7 +1519,7 @@
             // 
             // allGirlTitle2_jp
             // 
-            this.allGirlTitle2_jp.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.allGirlTitle2_jp.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.allGirlTitle2_jp.Location = new System.Drawing.Point(88, 43);
             this.allGirlTitle2_jp.Name = "allGirlTitle2_jp";
@@ -1535,7 +1537,7 @@
             // 
             // allGirlTitle2_en
             // 
-            this.allGirlTitle2_en.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.allGirlTitle2_en.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.allGirlTitle2_en.Location = new System.Drawing.Point(88, 18);
             this.allGirlTitle2_en.Name = "allGirlTitle2_en";
@@ -1562,7 +1564,7 @@
             // 
             // allGirlDescription1_jp
             // 
-            this.allGirlDescription1_jp.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.allGirlDescription1_jp.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.allGirlDescription1_jp.Location = new System.Drawing.Point(12, 272);
             this.allGirlDescription1_jp.Multiline = true;
@@ -1572,7 +1574,7 @@
             // 
             // allGirlDescription1_en
             // 
-            this.allGirlDescription1_en.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.allGirlDescription1_en.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.allGirlDescription1_en.Location = new System.Drawing.Point(12, 172);
             this.allGirlDescription1_en.Multiline = true;
@@ -1582,7 +1584,7 @@
             // 
             // allGirlTaste1
             // 
-            this.allGirlTaste1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.allGirlTaste1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.allGirlTaste1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.allGirlTaste1.FormattingEnabled = true;
@@ -1624,7 +1626,7 @@
             // 
             // girlStampName
             // 
-            this.girlStampName.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            this.girlStampName.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.girlStampName.Location = new System.Drawing.Point(94, 500);
             this.girlStampName.Name = "girlStampName";
@@ -1633,7 +1635,7 @@
             // 
             // label51
             // 
-            this.label51.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            this.label51.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label51.AutoSize = true;
             this.label51.Location = new System.Drawing.Point(12, 503);
@@ -1644,7 +1646,7 @@
             // 
             // boyStampName
             // 
-            this.boyStampName.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            this.boyStampName.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.boyStampName.Location = new System.Drawing.Point(94, 475);
             this.boyStampName.Name = "boyStampName";
@@ -1653,7 +1655,7 @@
             // 
             // label52
             // 
-            this.label52.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            this.label52.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label52.AutoSize = true;
             this.label52.Location = new System.Drawing.Point(12, 478);
@@ -1664,7 +1666,7 @@
             // 
             // countries
             // 
-            this.countries.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            this.countries.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.countries.Location = new System.Drawing.Point(94, 550);
             this.countries.Name = "countries";
@@ -1681,14 +1683,36 @@
             this.label53.TabIndex = 19;
             this.label53.Text = "販売国";
             // 
+            // label54
+            // 
+            this.label54.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.label54.AutoSize = true;
+            this.label54.Location = new System.Drawing.Point(12, 578);
+            this.label54.Name = "label54";
+            this.label54.Size = new System.Drawing.Size(50, 12);
+            this.label54.TabIndex = 19;
+            this.label54.Text = "Ver1のみ";
+            // 
+            // ver1Only
+            // 
+            this.ver1Only.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.ver1Only.AutoSize = true;
+            this.ver1Only.Location = new System.Drawing.Point(94, 578);
+            this.ver1Only.Name = "ver1Only";
+            this.ver1Only.Size = new System.Drawing.Size(15, 14);
+            this.ver1Only.TabIndex = 23;
+            this.ver1Only.UseVisualStyleBackColor = true;
+            // 
             // SettingForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(327, 616);
+            this.ClientSize = new System.Drawing.Size(327, 641);
+            this.Controls.Add(this.ver1Only);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.label52);
             this.Controls.Add(this.label51);
+            this.Controls.Add(this.label54);
             this.Controls.Add(this.label53);
             this.Controls.Add(this.label26);
             this.Controls.Add(this.boyStampName);
@@ -1866,11 +1890,13 @@
         private System.Windows.Forms.Label label49;
         private System.Windows.Forms.Label label50;
         private System.Windows.Forms.TextBox allGirlDescription1_jp;
-		private System.Windows.Forms.TextBox girlStampName;
-		private System.Windows.Forms.Label label51;
-		private System.Windows.Forms.TextBox boyStampName;
-		private System.Windows.Forms.Label label52;
-		private System.Windows.Forms.TextBox countries;
-		private System.Windows.Forms.Label label53;
-	}
+        private System.Windows.Forms.TextBox girlStampName;
+        private System.Windows.Forms.Label label51;
+        private System.Windows.Forms.TextBox boyStampName;
+        private System.Windows.Forms.Label label52;
+        private System.Windows.Forms.TextBox countries;
+        private System.Windows.Forms.Label label53;
+        private System.Windows.Forms.Label label54;
+        private System.Windows.Forms.CheckBox ver1Only;
+    }
 }

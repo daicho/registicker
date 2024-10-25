@@ -733,5 +733,17 @@ namespace StampRegister.Properties {
                 this["Countries"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("1")]
+        public int VerCount {
+            get {
+                return ((int)(this["VerCount"]));
+            }
+            set {
+                this["VerCount"] = value;
+            }
+        }
     }
 }

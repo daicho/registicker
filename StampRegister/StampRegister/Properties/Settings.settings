@@ -179,5 +179,8 @@
     <Setting Name="Countries" Type="System.String" Scope="User">
       <Value Profile="(Default)">JP,TW,TH,AU,US,CA,GU,BR,GB,SE,ES</Value>
     </Setting>
+    <Setting Name="VerCount" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">1</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

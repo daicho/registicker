@@ -19,6 +19,7 @@ public partial class SettingForm : Form
         Settings.Default.GirlStampName = girlStampName.Text;
         Settings.Default.Copyright = copyright.Text;
         Settings.Default.Countries = countries.Text;
+        Settings.Default.VerCount = ver1Only.Checked ? 1 : 2;
 
         Settings.Default.BoyTitle1_en = boyTitle1_en.Text;
         Settings.Default.BoyTitle1_jp = boyTitle1_jp.Text;
@@ -94,6 +95,7 @@ public partial class SettingForm : Form
         girlStampName.Text = Settings.Default.GirlStampName;
         copyright.Text = Settings.Default.Copyright;
         countries.Text = Settings.Default.Countries;
+        ver1Only.Checked = Settings.Default.VerCount == 1;
 
         boyTitle1_en.Text = Settings.Default.BoyTitle1_en;
         boyTitle1_jp.Text = Settings.Default.BoyTitle1_jp;

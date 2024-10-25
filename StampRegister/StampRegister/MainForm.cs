@@ -287,7 +287,7 @@ public partial class MainForm : Form
 
         foreach (ListViewItem item in nameList.Items)
         {
-            for (int i = int.Parse(item.SubItems[(int)Columns.Export].Text); i < 2; i++)
+            for (int i = int.Parse(item.SubItems[(int)Columns.Export].Text); i < Settings.Default.VerCount; i++)
             {
                 string name = item.SubItems[(int)Columns.Name].Text;
                 string stampName;
@@ -421,7 +421,7 @@ public partial class MainForm : Form
                 continue;
             }
 
-            for (int i = int.Parse(item.SubItems[(int)Columns.Stamp].Text); i < 2; i++)
+            for (int i = int.Parse(item.SubItems[(int)Columns.Stamp].Text); i < Settings.Default.VerCount; i++)
             {
                 string enTitle;
                 string jpTitle;
@@ -694,7 +694,7 @@ public partial class MainForm : Form
 
         foreach (ListViewItem item in nameList.Items)
         {
-            for (int i = int.Parse(item.SubItems[(int)Columns.Image].Text); i < 2; i++)
+            for (int i = int.Parse(item.SubItems[(int)Columns.Image].Text); i < Settings.Default.VerCount; i++)
             {
                 string name = item.SubItems[(int)Columns.Name].Text;
                 string pandaName;
@@ -780,7 +780,7 @@ public partial class MainForm : Form
 
         foreach (ListViewItem item in nameList.Items)
         {
-            for (int i = 0; i < 2; i++)
+            for (int i = 0; i < Settings.Default.VerCount; i++)
             {
                 IWebElement requestButton;
                 string reqComp = item.SubItems[(int)Columns.Request].Text;
@@ -857,7 +857,7 @@ public partial class MainForm : Form
 
         foreach (ListViewItem item in nameList.Items)
         {
-            for (int i = 0; i < 2; i++)
+            for (int i = 0; i < Settings.Default.VerCount; i++)
             {
                 IWebElement releaseButton;
                 string relComp = item.SubItems[(int)Columns.Release].Text;
@@ -925,7 +925,7 @@ public partial class MainForm : Form
 
         foreach (ListViewItem item in nameList.Items)
         {
-            for (int i = 0; i < 2; i++)
+            for (int i = 0; i < Settings.Default.VerCount; i++)
             {
                 int baseTaste;
                 int baseChara;
