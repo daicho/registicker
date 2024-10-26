@@ -55,14 +55,12 @@ public partial class MainForm : Form
 
         if (filePath != "")
         {
-            FileStream stream;
-            IXLWorkbook workbook;
+            XLWorkbook workbook;
 
             try
             {
                 // Excelファイルを開く
-                stream = new FileStream(filePath, FileMode.Open, FileAccess.Read, FileShare.ReadWrite);
-                workbook = new XLWorkbook(stream);
+                workbook = new XLWorkbook(filePath);
             }
             catch
             {
@@ -137,11 +135,10 @@ public partial class MainForm : Form
     /// <param name="filePath">書き出すファイル名</param>
     private void SaveNameList(string filePath)
     {
-        XLWorkbook workbook;
-        IXLWorksheet worksheet;
-
         if (filePath != "")
         {
+            XLWorkbook workbook;
+
             try
             {
                 // Excelファイルを開く
@@ -153,18 +150,22 @@ public partial class MainForm : Form
                 return;
             }
 
-            worksheet = workbook.Worksheet(1);
-
-            // リストを書き出し
-            int i = 2;
-            foreach (ListViewItem item in nameList.Items)
+            using (workbook)
             {
-                for (int j = 0; j < 12; j++)
-                    worksheet.Cell(i, j + (j < 7 ? 1 : 2)).Value = item.SubItems[j].Text;
-                i++;
-            }
 
-            workbook.Save();
+                IXLWorksheet worksheet = workbook.Worksheet(1);
+
+                // リストを書き出し
+                int i = 2;
+                foreach (ListViewItem item in nameList.Items)
+                {
+                    for (int j = 0; j < 12; j++)
+                        worksheet.Cell(i, j + (j < 7 ? 1 : 2)).Value = item.SubItems[j].Text;
+                    i++;
+                }
+
+                workbook.Save();
+            }
         }
     }
 
@@ -327,12 +328,16 @@ public partial class MainForm : Form
                 }
                 else
                 {
-                    // ひらがな・カタカナ・漢字判定
-                    if (Regex.IsMatch(name, @"^[\p{IsHiragana}\p{IsKatakana}\da-zA-Zａ-ｚＡ-Ｚ～！？★☆●○♪]+$"))
+                    // ひらがな・カタカナ・ローマ字・漢字判定
+                    if (Regex.IsMatch(name, @"^[\p{IsHiragana}\p{IsKatakana}\dａ-ｚＡ-Ｚー～！？★☆●○♪]+$"))
                     {
                         fileName = pandaName + "-ひらがな" + name.Length + "文字-" + (i + 1) + ".ai";
                     }
-                    else if (Regex.IsMatch(name, @"^[^\p{IsHiragana}\p{IsKatakana}\da-zA-Zａ-ｚＡ-Ｚ～！？★☆●○♪]+$"))
+                    else if (Regex.IsMatch(name, @"^[\da-zA-Z\-\!\?]+$"))
+                    {
+                        fileName = pandaName + "-ローマ字" + name.Length + "文字-" + (i + 1) + ".ai";
+                    }
+                    else if (Regex.IsMatch(name, @"^[^\p{IsHiragana}\p{IsKatakana}\dａ-ｚＡ-Ｚー～！？★☆●○♪a-zA-Z\-\!\?]+$"))
                     {
                         fileName = pandaName + "-漢字" + name.Length + "文字-" + (i + 1) + ".ai";
                     }
