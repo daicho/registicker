@@ -298,7 +298,7 @@ public partial class MainForm : Form
         }
 
         // Illustrator起動
-        Illustrator.Application app = new();
+        dynamic app = Activator.CreateInstance(Type.GetTypeFromProgID("Illustrator.Application"));
 
         foreach (ListViewItem item in nameList.Items)
         {
@@ -355,7 +355,7 @@ public partial class MainForm : Form
                     continue;
                 }
 
-                Illustrator.Document? doc = null;
+                dynamic? doc = null;
 
                 for (int j = 0; j < 10; j++)
                 {
@@ -373,10 +373,11 @@ public partial class MainForm : Form
                 if (doc is null)
                 {
                     MessageBox.Show("ファイルを開けませんでした", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    continue;
                 }
 
                 // 名前を置換
-                foreach (Illustrator.TextFrame textFrame in doc.TextFrames)
+                foreach (dynamic textFrame in doc.TextFrames)
                 {
                     textFrame.Contents = textFrame.Contents.Replace("***", name);
                     Application.DoEvents();
